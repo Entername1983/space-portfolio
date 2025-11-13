@@ -22,13 +22,19 @@ function startTwinkle() {
 export function enterLightSpeed() {
   if (lightSpeedActive) return;
   lightSpeedActive = true;
+
   stars.forEach((star) => {
     gsap.killTweensOf(star);
-    star.x = center.x;
-    star.y = center.y;
-    star.angle = Math.random() * Math.PI * 2;
+
+    // Calculate angle from current position to center for outward direction
+    const dx = star.x - center.x;
+    const dy = star.y - center.y;
+    star.angle = Math.atan2(dy, dx);
+
     star.alpha = Math.random() * 0.5 + 0.5;
     star.speed = 0;
+
+    // Animate speed for immediate outward streaking
     gsap.to(star, {
       speed: Math.random() * 25 + 5,
       duration: 3,
@@ -39,15 +45,19 @@ export function enterLightSpeed() {
 
 export function exitLightSpeed() {
   if (!lightSpeedActive) return;
+
   stars.forEach((star, index) => {
     gsap.killTweensOf(star);
+
+    // Animate speed to 0 while keeping light speed active for visual slowdown
     const tween = gsap.to(star, {
       speed: 0,
-      duration: 1.5,
+      duration: 2.5,
       ease: "power2.out",
     });
     if (index === stars.length - 1) {
       tween.eventCallback("onComplete", () => {
+        // Only stop light speed mode after all stars have slowed down
         lightSpeedActive = false;
         startTwinkle();
       });
@@ -68,11 +78,19 @@ function drawStars() {
       star.y += Math.sin(star.angle) * star.speed;
 
       starfieldCtx.beginPath();
-      starfieldCtx.moveTo(prevX, prevY);
-      starfieldCtx.lineTo(star.x, star.y);
-      starfieldCtx.strokeStyle = `rgba(255, 255, 255, ${star.alpha})`;
-      starfieldCtx.lineWidth = star.radius;
-      starfieldCtx.stroke();
+      
+      // Draw as point if speed is very low, otherwise draw streak
+      if (star.speed < 0.5) {
+        starfieldCtx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        starfieldCtx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+        starfieldCtx.fill();
+      } else {
+        starfieldCtx.moveTo(prevX, prevY);
+        starfieldCtx.lineTo(star.x, star.y);
+        starfieldCtx.strokeStyle = `rgba(255, 255, 255, ${star.alpha})`;
+        starfieldCtx.lineWidth = star.radius;
+        starfieldCtx.stroke();
+      }
 
       if (
         star.x < 0 ||
@@ -127,21 +145,6 @@ export function initCanvas(interiorImagePath) {
   window.addEventListener("resize", setAllCanvasSizes);
   startTwinkle();
   drawStars();
-}
-
-export function toggleLightSpeed(appState) {
-  console.log("entered lightspeed function");
-  if (!appState.isCurrentScene(appState.SCENES.SPACESHIP)) {
-    console.error("It's too dangerous, we can't go to light speed here!");
-    return;
-  }
-
-  if (appState.lightSpeedEnabled) {
-    exitLightSpeed();
-  } else {
-    enterLightSpeed();
-  }
-  appState.toggleLightSpeed();
 }
 
 function setAllCanvasSizes() {

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Space Portfolio Experience</title>
+    <title>Space Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,8 +23,11 @@
       rel="icon"
       type="image/x-icon"
       href="./assets/images/space/spaceship-2.webp" />
-
+    <link rel="stylesheet" href="./assets/css/alien-sidekick.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/space-backdrops.css" />
+    <link rel="stylesheet" href="./assets/css/control-panel.css" />
+    <link rel="stylesheet" href="./assets/css/space-station.css" />
   </head>
 
   <body>
@@ -38,33 +41,39 @@
         </div>
         <div id="space-scene-container">
           <div id="space-elements">
-            <div id="space-whale" class="spacewhale">
-              <img src="./assets/images/space/spacewhale.webp" />
+            <img
+              id="space-whale"
+              class="space-element active animated"
+              src="./assets/images/space/spacewhale.webp" />
+            <img
+              id="star"
+              class="space-element active animated"
+              src="./assets/images/space/star-1.webp" />
+            <img
+              id="red-planet"
+              class="space-element active"
+              src="./assets/images/space/planet-1.webp" />
+            <div id="satellite" class="space-element active">
+              <img src="./assets/images/space/satellite.webp" />
             </div>
-            <div id="asteroid" class="asteroid">
+            <img
+              id="space-station"
+              class="space-element active animated"
+              src="./assets/images/space/spaceship-1.webp" />
+            <img
+              id="space-black-hole"
+              class="space-element active"
+              src="./assets/images/space/black-hole.webp" />
+            <div id="asteroid" class="space-element active">
               <img
-                class="initial"
+                class="initial active"
                 src="./assets/images/space/asteroid-1.webp" />
               <img class="end" src="./assets/images/space/asteroid-2.webp" />
             </div>
-            <div id="star" class="star">
-              <img src="./assets/images/space/star-1.webp" />
-            </div>
-            <div id="red-planet" class="planet">
-              <img src="./assets/images/space/planet-1.webp" />
-            </div>
-            <div id="satellite" class="satellite">
-              <img src="./assets/images/space/satellite.webp" />
-            </div>
-            <div id="space-station" class="spacestation">
-              <img src="./assets/images/space/spaceship-1.webp" />
-            </div>
-            <div id="space-black-hole" class="black-hole">
-              <img src="./assets/images/space/black-hole.webp" />
-            </div>
-            <div id="alien-sidekick" class="alien-sidekick">
-              <img src="./assets/images/space/alien-sidekick.webp" />
-            </div>
+            <img
+              id="alien-sidekick"
+              class="alien-sidekick space-element active"
+              src="./assets/images/space/alien-sidekick.webp" />
           </div>
           <div id="space-video-scenes">
             <video

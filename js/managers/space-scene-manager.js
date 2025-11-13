@@ -1,5 +1,5 @@
 import { enterLightSpeed, exitLightSpeed } from "../canvas-animations.js";
-
+import { AnimationManager } from "./animation-manager.js";
 /** This class is in charge of switching out space scenes, such as the videos as well as managing lightspeed
  * canvas and spacestation **/
 const SPACE_SCENE_MAPPINGS = {
@@ -45,6 +45,8 @@ export class SpaceSceneManager {
     this.lightspeedIsOn = false;
     this.currentScene = "spaceship";
     this.currentBackdrop = "default";
+    this.wrapper = document.querySelector("#wrapper");
+    this.animationManager = new AnimationManager();
   }
   show(activeClick) {
     const scene = SPACE_SCENE_MAPPINGS[activeClick];
@@ -77,10 +79,57 @@ export class SpaceSceneManager {
   lightspeedIsEnabeled() {
     return this.lightspeedIsOn;
   }
+
+  getElementQuadrant(element, container) {
+    const containerRect = container.getBoundingClientRect();
+    const elementRect = element.getBoundingClientRect();
+    console.log("element", element);
+    console.log("elementRect", elementRect);
+    console.log("container", container);
+    console.log("containerRect", containerRect);
+    // Calculate container center
+    const containerCenterX = containerRect.left + containerRect.width / 2;
+    const containerCenterY = containerRect.top + containerRect.height / 2;
+
+    // Calculate element center
+    const elementCenterX = elementRect.left + elementRect.width / 2;
+    const elementCenterY = elementRect.top + elementRect.height / 2;
+
+    // Determine quadrant based on position relative to container center
+    const isLeft = elementCenterX < containerCenterX;
+    const isTop = elementCenterY < containerCenterY;
+
+    if (isTop && isLeft) return "top-left";
+    if (isTop && !isLeft) return "top-right";
+    if (!isTop && isLeft) return "bottom-left";
+    return "bottom-right";
+  }
+
   engageLightspeed() {
     this.lightspeedIsOn = true;
-    this.hideSpaceElements();
+
+    // Get all child elements of space-elements
+    const children = Array.from(this.spaceElements.children);
+
+    // Apply quadrant-based animations to each element (except satellite and asteroid)
+
+    // Wait for animations to complete before triggering lightspeed canvas
     enterLightSpeed();
+
+    setTimeout(() => {
+      children.forEach((child) => {
+        // Skip satellite and asteroid elements - they just disappear
+        if (child.id === "satellite" || child.id === "asteroid") {
+          child.style.opacity = "0";
+          return;
+        }
+        child.classList.remove("animated");
+        const quadrant = this.getElementQuadrant(child, this.wrapper);
+        const animationClass = `lightspeed-fly-out-${quadrant}`;
+        child.classList.add(animationClass);
+      });
+      // this.hideSpaceElements();
+    }, 2000);
   }
 
   updateCurrentScene(scene) {
@@ -100,7 +149,43 @@ export class SpaceSceneManager {
   disengageLightspeed() {
     this.lightspeedIsOn = false;
     exitLightSpeed();
-    this.showSpaceElements();
+
+    // Show elements first so they can be animated in
+    this.spaceElements.style.display = "block";
+
+    // Get all child elements of space-elements
+    const children = Array.from(this.spaceElements.children);
+
+    // Remove any fly-out classes and add fly-in classes
+    children.forEach((child) => {
+      // Remove any existing lightspeed classes
+      child.classList.remove(
+        "lightspeed-fly-out-top-left",
+        "lightspeed-fly-out-top-right",
+        "lightspeed-fly-out-bottom-left",
+        "lightspeed-fly-out-bottom-right"
+      );
+      // Apply reverse animation based on quadrant
+      const quadrant = this.getElementQuadrant(child, this.wrapper);
+      const animationClass = `lightspeed-fly-in-${quadrant}`;
+      child.classList.add(animationClass);
+    });
+
+    // After animations complete, clean up classes and ensure visibility
+    setTimeout(() => {
+      children.forEach((child) => {
+        child.classList.remove(
+          "lightspeed-fly-in-top-left",
+          "lightspeed-fly-in-top-right",
+          "lightspeed-fly-in-bottom-left",
+          "lightspeed-fly-in-bottom-right"
+        );
+        child.classList.add("animated");
+        child.classList.add("active");
+      });
+
+      this.spaceElements.style.opacity = "1";
+    }, 2000);
   }
 
   hideSpaceElements() {

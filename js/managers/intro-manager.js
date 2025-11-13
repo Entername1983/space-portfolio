@@ -37,7 +37,7 @@ export class IntroManager {
     const satellite = document.querySelector("#satellite");
     if (!satellite) return;
 
-    gsap.to(".satellite", {
+    gsap.to("#satellite", {
       y: -1200,
       x: -2000,
       autoAlpha: 1,
@@ -49,7 +49,7 @@ export class IntroManager {
     const planet = document.querySelector("#red-planet");
     if (!planet) return;
 
-    gsap.to(".planet", {
+    gsap.to("#red-planet", {
       y: -20,
       autoAlpha: 1,
       duration: 5,
