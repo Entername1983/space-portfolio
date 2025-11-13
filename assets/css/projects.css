@@ -1,0 +1,99 @@
+.projects-list.active {
+  padding-inline-start: 0px;
+}
+
+.projects-content .content {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.projects-content .content.active {
+  display: block;
+  opacity: 1;
+}
+.cephadex-content,
+.swift-swatch-content,
+.cognaite-content,
+.chair-the-fed-content,
+.ai-story-tellers-content,
+.space-portfolio-content {
+  padding: 20px 10px;
+  border-radius: 10px;
+
+  display: none;
+  font-family: "Orbitron", monospace;
+  color: var(--matrix-green);
+  text-shadow: 0 0 5px var(--matrix-green);
+  background: rgba(0, 0, 0, 0.9);
+  animation: terminalFlicker 0.1s infinite linear alternate;
+}
+.cephadex-content a,
+.swift-swatch-content a,
+.cognaite-content a,
+.chair-the-fed-content a,
+.ai-story-tellers-content a {
+  color: var(--matrix-green);
+  text-decoration: underline;
+  text-shadow: 0 0 5px var(--matrix-green);
+}
+
+.cephadex-content a:hover,
+.swift-swatch-content a:hover,
+.cognaite-content a:hover,
+.chair-the-fed-content a:hover,
+.ai-story-tellers-content a:hover {
+  text-shadow: 0 0 10px var(--matrix-green);
+  background: rgba(0, 160, 65, 0.1);
+}
+#projects-back-button {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  display: none;
+  padding: 4px 8px;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  font-family: "Press Start 2P", system-ui;
+  z-index: 30;
+  cursor: pointer;
+}
+
+#projects-back-button > #arrow-left-solid {
+  fill: var(--matrix-green);
+  height: 30px;
+  width: 30px;
+}
+
+@media (max-width: 650px) {
+  .front-screen-projects > h3 {
+    font-size: 16px;
+  }
+  .screen-content > ul {
+    margin-left: 0px;
+  }
+  .screen-content {
+    font-size: 8px;
+  }
+  .screen-content {
+    line-height: 1em;
+  }
+  .screen-content > ul {
+    line-height: 1em;
+  }
+  .screen-content > ul > li {
+    line-height: 1em;
+  }
+  .cephadex-content,
+  .swift-swatch-content,
+  .cognaite-content,
+  .chair-the-fed-content,
+  .ai-story-tellers-content {
+    border: 1px dotted var(--matrix-green);
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: none;
+  }
+}

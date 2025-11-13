@@ -12,7 +12,7 @@ export class AnimationManager {
     } else {
       element = targetOrElement;
     }
-    element.classList.add("active");
+    element.classList.remove("active");
   }
   revealElement(targetOrElement) {
     let element = null;
@@ -21,6 +21,6 @@ export class AnimationManager {
     } else {
       element = targetOrElement;
     }
-    element.classList.remove("active");
+    element.classList.add("active");
   }
 }

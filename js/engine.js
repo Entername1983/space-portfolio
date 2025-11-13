@@ -82,7 +82,8 @@ export class Engine {
 
   async interactWithDisplay(element, target, data) {
     console.log(`active click ${this.activeClick} elementId ${element.id}`);
-
+    this.monitorManager.show(data.monitorTargetId);
+    this.addClickToList(element);
     if (
       element.id.startsWith("control") &&
       this.activeClick == element.id &&
@@ -90,11 +91,10 @@ export class Engine {
     ) {
       console.log("resetting and closing display");
       this.displayManager.resetAndCloseDisplay();
+      this.monitorManager.reInitialize();
     } else {
       await this.displayManager.show(element, target, data);
     }
-    this.monitorManager.show(`#${data.monitorTargetId}`);
-    this.addClickToList(element);
   }
   handleDelegatedInteraction(element, target, data, event) {
     console.log("handling delegated interaction");
@@ -116,23 +116,17 @@ export class Engine {
   }
   handleViewProject(targetId) {
     this.addClickToList(targetId);
-    this.monitorManager.show(`#${targetId}-logo`);
+    this.monitorManager.show(`${targetId}-logo`);
     this.projectsContentManager.show(`#${targetId}-content`);
   }
   handleSpaceSceneInteraction(element, target, data, event) {
-    console.log("handling space scene interaction");
     this.spaceSceneManager.show(this.activeClick);
   }
   handleReturnToSpaceship(element, target, data, event) {
-    console.log("Returning to spaceship");
     this.spaceSceneManager.returnToSpaceship(this.activeClick);
   }
   toggleLightSpeed(element, target, data, event) {
-    console.log("toggling light speed");
-    // if lightspeed already enabled, disable
     if (!this.spaceSceneManager.lightspeedIsEnabeled()) {
-      console.log("here");
-      console.log(target);
       this.spaceSceneManager.engageLightspeed();
       this.monitorManager.show(target);
     } else {

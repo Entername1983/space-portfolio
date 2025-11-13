@@ -1,24 +1,24 @@
+import { AnimationManager } from "./animation-manager.js";
+
 export class MonitorManager {
   constructor() {
     this.monitor = document.querySelector("#spaceship-monitor");
     this.monitorChildren = [...this.monitor.children];
     this.defaultMonitorDisplay = document.querySelector("#monitor-spaceship");
+    this.animationManager = new AnimationManager();
   }
   clear() {
     this.monitorChildren.forEach((child) => {
-      child.classList.remove("active");
-      this.activeClick = null;
+      this.animationManager.hideElement(child);
     });
   }
   reInitialize() {
     this.clear();
-    this.defaultMonitorDisplay.classList.add("active");
+    this.animationManager.revealElement(this.defaultMonitorDisplay);
   }
   show(targetId) {
     console.log(`showing ${targetId}`);
     this.clear();
-    const targetElement = document.querySelector(targetId);
-    targetElement.classList.add("active");
-    this.activeClick = targetId;
+    this.animationManager.revealElement(targetId);
   }
 }

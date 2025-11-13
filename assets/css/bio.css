@@ -1,0 +1,27 @@
+.bio-portrait-section,
+.bio-right-section {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bio-right-section {
+  align-items: start;
+}
+.full-body-image {
+  width: 150%;
+  margin: auto;
+}
+
+.body-scan-overlay {
+  border-radius: 50px;
+  overflow: hidden;
+  border: 2px solid rgb(59, 2, 2);
+  aspect-ratio: 3 / 4.5;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
