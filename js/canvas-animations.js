@@ -19,7 +19,7 @@ function startTwinkle() {
   });
 }
 
-function enterLightSpeed() {
+export function enterLightSpeed() {
   if (lightSpeedActive) return;
   lightSpeedActive = true;
   stars.forEach((star) => {
@@ -49,11 +49,6 @@ export function exitLightSpeed() {
     if (index === stars.length - 1) {
       tween.eventCallback("onComplete", () => {
         lightSpeedActive = false;
-        // Redistribute stars across the full canvas
-        stars.forEach((star) => {
-          star.x = Math.random() * starfieldCanvas.width;
-          star.y = Math.random() * starfieldCanvas.height;
-        });
         startTwinkle();
       });
     }
