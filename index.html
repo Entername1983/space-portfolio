@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Space Portfolio Experience</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/EaselPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/space/spaceship-2.webp" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <!------------------ Starfield Layer 1 ----------------->
+    <main>
+      <div id="wrapper" class="wrapper">
+        <div id="fade-overlay"></div>
+        <canvas id="starfield"></canvas>
+        <div id="back-btn" class="back-button">
+          <img src="./assets/images/space/escape-hatch.webp" />
+        </div>
+        <div id="space-scene-container">
+          <div id="space-elements">
+            <div id="space-whale" class="spacewhale">
+              <img src="./assets/images/space/spacewhale.webp" />
+            </div>
+            <div id="asteroid" class="asteroid">
+              <img
+                class="initial"
+                src="./assets/images/space/asteroid-1.webp" />
+              <img class="end" src="./assets/images/space/asteroid-2.webp" />
+            </div>
+            <div id="star" class="star">
+              <img src="./assets/images/space/star-1.webp" />
+            </div>
+            <div id="red-planet" class="planet">
+              <img src="./assets/images/space/planet-1.webp" />
+            </div>
+            <div id="satellite" class="satellite">
+              <img src="./assets/images/space/satellite.webp" />
+            </div>
+            <div id="space-station" class="spacestation">
+              <img src="./assets/images/space/spaceship-1.webp" />
+            </div>
+            <div id="space-black-hole" class="black-hole">
+              <img src="./assets/images/space/black-hole.webp" />
+            </div>
+            <div id="alien-sidekick" class="alien-sidekick">
+              <img src="./assets/images/space/alien-sidekick.webp" />
+            </div>
+          </div>
+          <div id="space-video-scenes">
+            <video
+              id="star-space-scene"
+              class="space-scene-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              loading="lazy"
+              width="1920"
+              height="1080"
+              src="./assets/images/space/videos/Sun_Surface.mp4"></video>
+            <video
+              class="space-scene-video"
+              id="black-hole-space-scene"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              loading="lazy"
+              width="1920"
+              height="1080"
+              src="./assets/images/space/videos/Spinning_Black_Hole.mp4"></video>
+            <video
+              class="space-scene-video"
+              id="space-whale-space-scene"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              loading="lazy"
+              width="1920"
+              height="1080"
+              src="./assets/images/space/videos/space_whale_video.mp4"></video>
+            <video
+              class="space-scene-video"
+              id="infected-station-space-scene"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              loading="lazy"
+              width="1920"
+              height="1080"
+              src="./assets/images/space/videos/Alien_Infected_Satellite_Video_Ready.mp4"></video>
+            <video
+              class="space-scene-video"
+              id="red-planet-space-scene"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              loading="lazy"
+              width="1920"
+              height="1080"
+              src="./assets/images/space/videos/Alien_Landscape_Video_Generation.mp4"></video>
+            <video
+              class="space-scene-video"
+              id="red-planet-crater-space-scene"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              loading="lazy"
+              width="1920"
+              height="1080"
+              src="./assets/images/space/videos/Red_Planet_Crater_Video_Generated.mp4"></video>
+          </div>
+          <!------------------ Interior Layer 3----------------->
+          <section id="interior-sections">
+            <!------------------ Interior Spaceship ----------------->
+            <div id="spaceship-interior-section">
+              <div class="radar-container">
+                <div class="radar">
+                  <div class="sweep"></div>
+                </div>
+              </div>
+              <div class="spaceship-interior-background"></div>
+              <div class="spaceship-interior"></div>
+              <div id="spaceship-display" class="spaceship-front-screen">
+                <div
+                  id="display-content-container"
+                  class="front-screen-content"></div>
+              </div>
+              <div id="lightspeed-btn" class="lightspeed-button"></div>
+              <div id="control-projects" class="projects-button"></div>
+              <div id="control-log" class="captains-log-button"></div>
+              <div id="control-acorn" class="acorn-button"></div>
+              <div id="control-bio" class="about-button"></div>
+              <div id="control-one" class="one-button"></div>
+              <div id="spaceship-monitor" class="spaceship-monitor">
+                <div class="spaceship-content">testing</div>
+                <img
+                  class="monitor-content"
+                  id="monitor-satellite"
+                  src="./assets/images/space/satellite.webp" />
+                <img
+                  class="monitor-content"
+                  id="monitor-space-whale"
+                  src="./assets/images/space/spacewhale.webp" />
+                <img
+                  class="monitor-content"
+                  id="monitor-asteroid"
+                  src="./assets/images/space/asteroid-1.webp" />
+                <img
+                  id="monitor-space-station"
+                  class="monitor-content"
+                  src="./assets/images/space/spaceship-1.webp" />
+                <img
+                  id="monitor-star"
+                  class="monitor-content"
+                  src="./assets/images/space/star-1.webp" />
+                <img
+                  id="monitor-red-planet"
+                  class="monitor-content"
+                  src="./assets/images/space/planet-1.webp" />
+                <img
+                  id="monitor-black-hole"
+                  class="monitor-content"
+                  src="./assets/images/space/black-hole.webp" />
+                <img
+                  id="headshot-image"
+                  class="headshot-image monitor-content"
+                  src="./assets/images/space/capitains_portrait.png" />
+                <img
+                  id="monitor-lightspeed"
+                  class="headshot-image monitor-content"
+                  src="./assets/images/space/lightspeed-monitor.webp" />
+                <img
+                  id="monitor-spaceship"
+                  class="spaceship-2 active monitor-content"
+                  src="./assets/images/space/spaceship-2.webp" />
+                <img
+                  id="cephadex-logo"
+                  class="monitor-content"
+                  src="./assets/images/CephadexLogoSix.png" />
+                <img
+                  id="swift-swatch-logo"
+                  class="monitor-content"
+                  src="./assets/images/swift-swatch-logo-sm.png" />
+                <img
+                  id="cognaite-logo"
+                  class="monitor-content"
+                  src="./assets/images/starter-logo.svg" />
+                <img
+                  id="chair-the-fed-logo"
+                  class="monitor-content"
+                  src="./assets/images/chair-the-fed.png" />
+                <img
+                  id="ai-story-tellers-logo"
+                  class="monitor-content"
+                  src="./assets/images/aistorytellers.png" />
+                <img
+                  id="acorn-logo"
+                  class="monitor-content"
+                  src="./assets/images/acorn.png" />
+                <img
+                  id="space-portfolio-logo"
+                  class="monitor-content"
+                  src="./assets/images/acorn.png" />
+                <img
+                  id="blog-logo"
+                  class="monitor-content"
+                  src="./assets/images/kem-logo-no-bg-light.png" />
+              </div>
+            </div>
+
+            <!------------------ Interior Spacestation ----------------->
+            <div id="spacestation-interior-section">
+              <div class="spacestation-interior">
+                <div class="cyan-door spacestation-door">
+                  <div>
+                    <a href="https://blog.cognaite.com/" target="_blank">
+                      <img
+                        class="behind-door"
+                        src="./assets/images/kem-logo-no-bg-light.png" />
+                    </a>
+                  </div>
+                  <img
+                    class="door-img"
+                    src="./assets/images/space/spacestation-cyan-door.webp" />
+                </div>
+                <div class="red-door spacestation-door">
+                  <div>
+                    <a href="https://swiftswatch.com/about" target="_blank">
+                      <img
+                        class="behind-door"
+                        src="./assets/images/CephadexLogoSix.png" />
+                      <img
+                        class="behind-door"
+                        src="./assets/images/acorn.png" />
+                      <img
+                        class="behind-door"
+                        src="./assets/images/swift-swatch-logo-sm.png" />
+                    </a>
+                  </div>
+                  <img
+                    class="door-img"
+                    src="./assets/images/space/spacestation-red-door.webp" />
+                </div>
+                <div class="yellow-door spacestation-door">
+                  <div>
+                    <a href="https://blog.cognaite.com/" target="_blank">
+                      <img
+                        class="behind-door"
+                        src="./assets/images/browse_activity.svg" />
+                    </a>
+                  </div>
+                  <img
+                    class="door-img"
+                    src="./assets/images/space/spacestation-yellow-door.webp" />
+                </div>
+              </div>
+            </div>
+          </section>
+          <!------------------ Info Layer ----------------->
+
+          <section>
+            <div id="alien-info" class="info-container">
+              <div class="info-content">
+                <h2 class="info-content-text">...</h2>
+                <div
+                  id="info-close-button"
+                  class="info-close-button"
+                  aria-label="Close message">
+                  X
+                </div>
+                <button id="proceed-btn" class="btn">Proceed</button>
+              </div>
+            </div>
+            <div id="welcome-content" class="title-text">
+              <h1 id="welcome-heading">Welcome</h1>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Local JavaScript Files -->
+    <script type="module" src="./js/state.js"></script>
+    <script type="module" src="./js/utility.js"></script>
+    <script type="module" src="./js/elements.js"></script>
+    <script type="module" src="./js/data/clickables-data.js"></script>
+    <script type="module" src="./js/data/alien-info-mappings.js"></script>
+    <script type="module" src="./js/managers/display-manager.js"></script>
+    <script type="module" src="./js/managers/monitor-manager.js"></script>
+    <script type="module" src="./js/managers/space-scene-manager.js"></script>
+    <script type="module" src="./js/managers/alien-manager.js"></script>
+    <script type="module" src="./js/managers/intro-manager.js"></script>
+    <script
+      type="module"
+      src="./js/managers/projects-content-manager.js"></script>
+    <script type="module" src="./js/canvas-animations.js"></script>
+    <script type="module" src="./js/hover-interactions.js"></script>
+    <script type="module" src="./js/clickables.js"></script>
+    <script type="module" src="./js/engine.js"></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
