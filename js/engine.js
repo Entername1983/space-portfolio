@@ -3,9 +3,7 @@ import { AlienAssistantManager } from "./managers/alien-manager.js";
 import { DisplayManager } from "./managers/display-manager.js";
 import { IntroManager } from "./managers/intro-manager.js";
 import { MonitorManager } from "./managers/monitor-manager.js";
-import { ProjectsContentManager } from "./managers/projects-content-manager.js";
 import { SpaceSceneManager } from "./managers/space-scene-manager.js";
-
 export class Engine {
   constructor() {
     if (Engine.instance) {
@@ -17,7 +15,6 @@ export class Engine {
     this.monitorManager = new MonitorManager("");
     this.displayManager = new DisplayManager("");
     this.spaceSceneManager = new SpaceSceneManager("");
-    this.projectsContentManager = new ProjectsContentManager();
     Engine.instance = this;
     this.clickList = [];
     this.activeClick = null;
@@ -38,6 +35,7 @@ export class Engine {
         this.viewSpaceElement(element, target, data);
         break;
       case "DISPLAY_INTERACTION":
+        console.log("DSIPLAY_INTERACTION");
         await this.interactWithDisplay(element, target, data);
         break;
       case "PROJECT_INTERACTION":
@@ -62,7 +60,6 @@ export class Engine {
     }
   }
   addClickToList(element) {
-    // Storing the latest interactable item, excludes things like proceedBtn
     this.activeClick = element.id;
     this.clickList.push(this.activeClick);
     console.log(this.clickList);
@@ -104,7 +101,7 @@ export class Engine {
         this.handleViewProject(actionTargetId.targetId);
         break;
       case "MAIN_PROJECT_MENU":
-        this.projectsContentManager.returnToMainScreen();
+        this.displayManager.projectsContentManager.returnToMainScreen();
     }
   }
   handleDelegatedClick(event) {
@@ -117,7 +114,7 @@ export class Engine {
   handleViewProject(targetId) {
     this.addClickToList(targetId);
     this.monitorManager.show(`${targetId}-logo`);
-    this.projectsContentManager.show(`#${targetId}-content`);
+    this.displayManager.projectsContentManager.show(`#${targetId}-content`);
   }
   handleSpaceSceneInteraction(element, target, data, event) {
     this.spaceSceneManager.show(this.activeClick);

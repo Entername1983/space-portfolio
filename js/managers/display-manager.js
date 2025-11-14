@@ -1,3 +1,5 @@
+import { LogContentManager } from "./log-content-manager.js";
+import { ProjectsContentManager } from "./projects-content-manager.js";
 const DISPLAY_CONTENT_MAPPINGS = {
   "control-projects": "projects.html",
   "control-log": "log.html",
@@ -16,7 +18,10 @@ export class DisplayManager {
 
     this.displayIsOpen = false;
     this.DISPLAY_CONTENT_MAPPINGS = DISPLAY_CONTENT_MAPPINGS;
+    this.projectsContentManager = new ProjectsContentManager();
+    this.logContentManager = new LogContentManager();
   }
+
   isOpen() {
     return this.displayIsOpen;
   }
@@ -29,7 +34,29 @@ export class DisplayManager {
       templateString
     );
     this.displayContent();
+    this.sortToSpecialContent(element);
   }
+  // Switch here to activate extra content as needed
+  sortToSpecialContent(element) {
+    console.log("sorting to special");
+    console.log(element);
+
+    switch (element.id) {
+      case "control-bio":
+        break;
+      case "control-one":
+        break;
+      case "control-log":
+        console.log(" control log");
+        this.logContentManager.show();
+        break;
+      case "control-one":
+        break;
+      case "control-acorn":
+        break;
+    }
+  }
+
   resetAndCloseDisplay() {
     this.closeScreen();
     this.removeContent();
