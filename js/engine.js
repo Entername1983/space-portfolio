@@ -8,7 +8,6 @@ import { SpaceSceneManager } from "./managers/space-scene-manager.js";
 export class Engine {
   constructor() {
     if (Engine.instance) {
-      console.log("Instance already initialized");
       return Engine.instance;
     }
     this.introManager = new IntroManager();
@@ -24,7 +23,6 @@ export class Engine {
     initCanvas();
   }
   async initialize() {
-    console.log("initializing");
     await this.introManager.startIntro();
   }
 
@@ -67,11 +65,9 @@ export class Engine {
   }
   interactWithProjects(element, target, data) {
     this.addClickToList(element);
-    console.log("interacting with projects");
     this.monitorManager.show(target);
   }
   viewSpaceElement(element, target, data) {
-    console.log("viewing space element");
     this.addClickToList(element);
     this.monitorManager.show(target);
     this.alienAssistantManager.show(element.id);
@@ -81,21 +77,19 @@ export class Engine {
   async interactWithDisplay(element, target, data) {
     console.log(`active click ${this.activeClick} elementId ${element.id}`);
     this.monitorManager.show(data.monitorTargetId);
-    this.addClickToList(element);
     if (
       element.id.startsWith("control") &&
       this.activeClick == element.id &&
       this.displayManager.isOpen()
     ) {
-      console.log("resetting and closing display");
       this.displayManager.resetAndCloseDisplay();
       this.monitorManager.reInitialize();
     } else {
       await this.displayManager.show(element, target, data);
     }
+    this.addClickToList(element);
   }
   handleDelegatedInteraction(element, target, data, event) {
-    console.log("handling delegated interaction");
     const actionTargetId = this.extractActionAndTargetFromDelegatedClick(event);
     switch (actionTargetId.action) {
       case "PROJECT_VIEW":

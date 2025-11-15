@@ -11,11 +11,9 @@ const DISPLAY_CONTENT_MAPPINGS = {
 export class DisplayManager {
   constructor() {
     this.display = document.querySelector("#spaceship-display");
-    // this is the one to fill with content
     this.displayContentContainer = document.querySelector(
       "#display-content-container"
     );
-
     this.displayIsOpen = false;
     this.DISPLAY_CONTENT_MAPPINGS = DISPLAY_CONTENT_MAPPINGS;
     this.projectsContentManager = new ProjectsContentManager();
@@ -61,7 +59,7 @@ export class DisplayManager {
   resetAndCloseDisplay() {
     this.closeScreen();
     this.removeContent();
-    this.clearScreenContent();
+    // this.clearScreenContent();
     this.displayIsOpen = false;
   }
   openScreen() {

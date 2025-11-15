@@ -56,6 +56,8 @@
   background-color: rgba(171, 5, 212, 0.9);
 }
 
+/** Control buttons **/
+
 .lightspeed-button {
   position: absolute;
   bottom: 10%;
@@ -71,6 +73,69 @@
 .lightspeed-button:hover {
   background-color: rgba(245, 6, 6, 0.8);
 }
+
+.svg-control-tooltips {
+  position: absolute;
+  pointer-events: auto;
+  z-index: 100;
+}
+
+#lightspeed-btn-svg {
+  bottom: 14%;
+  left: 43.5%;
+  z-index: 200;
+  width: 5%;
+  height: 20%;
+}
+.line-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  overflow: visible;
+}
+#lightspeed-btn-svg .line-svg {
+  width: 100px;
+  height: 100px;
+}
+
+#lightspeed-btn-svg:hover .line {
+  stroke-dashoffset: 0;
+}
+#lightspeed-btn-svg #lightspeed-tag {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.4s;
+  z-index: 200;
+  color: var(--matrix-green);
+  position: absolute;
+  top: -400%;
+  left: -500%;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#lightspeed-btn-svg .line-svg .line {
+  stroke: var(--matrix-green);
+  stroke-width: 6;
+  fill: none;
+  transition: stroke-dashoffset 0.6s ease-in-out;
+}
+
+.line.combined-line {
+  stroke-dasharray: 442;
+  stroke-dashoffset: 442;
+  transition: stroke-dashoffset 0.8s ease-out;
+}
+#lightspeed-btn:hover + #lightspeed-btn-svg .line.combined-line {
+  stroke-dashoffset: 0;
+}
+#lightspeed-btn:hover + #lightspeed-btn-svg #lightspeed-tag {
+  visibility: visible;
+  opacity: 1;
+}
+
 .about-button {
   position: absolute;
   bottom: 17.5%;
@@ -176,13 +241,13 @@
 
 .display-content,
 .display-content {
-  display: none;
+  visibility: hidden;
   position: relative;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 2s ease-in-out, visibility 0s 2s;
 }
 .display-content.active {
-  display: block;
+  visibility: visible;
   opacity: 1;
 }
 

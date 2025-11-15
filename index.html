@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="./assets/css/one.css" />
     <link rel="stylesheet" href="./assets/css/bio.css" />
     <link rel="stylesheet" href="./assets/css/acorn.css" />
+    <link rel="stylesheet" href="./assets/css/control-buttons.css" />
   </head>
 
   <body>
@@ -170,7 +171,26 @@
                   id="display-content-container"
                   class="front-screen-content"></div>
               </div>
+
               <div id="lightspeed-btn" class="lightspeed-button"></div>
+              <svg id="lightspeed-btn-svg" class="svg-control-tooltips "
+                viewBox="0 0 168 315"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2)">
+                  <!-- <line x1="95.2001" y1="35.5418" x2="166.2" y2="66.5418" />
+                  <line x1="166.5" y1="66" x2="166.5" y2="318" />
+                  <line x1="139.354" y1="63.6464" x2="140.354" y2="64.6464" /> -->
+                  <path id="combined-line" 
+                    d="M 166.5 318 L 166.2 66.5418 L 95.2001 35.5418"
+                    stroke="var(--matrix-green)"
+                    stroke-width="2"
+                    fill="none"/>
+                </g>
+                <text id="lightspeed-tag" x="0" y="30" ">
+                  Light Speed
+                </text>
+              </svg>
               <div id="control-projects" class="projects-button"></div>
               <div id="control-log" class="captains-log-button"></div>
               <div id="control-acorn" class="acorn-button"></div>
@@ -301,6 +321,9 @@
               </div>
             </div>
           </section>
+          <!------------------ SVG Layer ----------------->
+
+          <section id="svg-hover-layer"></section>
           <!------------------ Info Layer ----------------->
 
           <section>

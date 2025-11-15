@@ -3,6 +3,7 @@
   --matrix-green-dark: rgba(0, 160, 65);
   --matrix-green: rgb(166, 238, 193);
   --dark-red: rgb(59, 2, 2);
+  --light-red:rgb(99, 25, 25);
 }
 button,
 a,
@@ -103,6 +104,9 @@ a {
 }
 a {
   color: var(--matrix-green-dark);
+}
+a:hover {
+  color: var(--matrix-green);
 }
 
 .btn {
