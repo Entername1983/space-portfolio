@@ -20,6 +20,7 @@ export class DisplayManager {
     this.DISPLAY_CONTENT_MAPPINGS = DISPLAY_CONTENT_MAPPINGS;
     this.projectsContentManager = new ProjectsContentManager();
     this.logContentManager = new LogContentManager();
+    this.TEMPLATES_PATH = "./templates/";
   }
 
   isOpen() {
@@ -90,7 +91,7 @@ export class DisplayManager {
     return templateString;
   }
   constructFetchPath(elementId) {
-    const path = "./templates/";
+    const path = this.TEMPLATES_PATH;
     return `${path}${this.DISPLAY_CONTENT_MAPPINGS[elementId]}`;
   }
 }

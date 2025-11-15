@@ -38,7 +38,6 @@
   padding-right: 20px;
 }
 .info-content-text {
-  font-size: 1.4rem;
   line-height: 2rem;
 }
 
@@ -50,7 +49,6 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
-  font-size: 22px;
   color: white;
   font-weight: bold;
   transition: all 0.2s ease;
@@ -66,9 +64,6 @@
 }
 
 @media (max-width: 700px) {
-  .title-text > h1 {
-    font-size: 20px;
-  }
   .info-container {
     position: absolute;
     border: none;
@@ -82,7 +77,6 @@
     left: 5vw;
   }
   .info-content-text {
-    font-size: 0.8rem;
     line-height: 1.2rem;
   }
   .info-content {

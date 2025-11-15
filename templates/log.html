@@ -1,4 +1,31 @@
 <div id="display-log" class="display-content">
-  <h3>Captain's log</h3>
-  <div id="log-content" class="log-content screen-content"></div>
+  <!-- <h3>Captain's log</h3> -->
+  <div id="display-log-header">
+    <div>
+      <p id="stardate"></p>
+      <h3 id="log-entry-title"></h3>
+    </div>
+    <div id="log-control">
+      <nav id="log-navigation">
+        <button
+          id="log-prev"
+          data-action="LOG_VIEW"
+          data-id="log-prev"
+          class="btn">
+          Prev
+        </button>
+        <button
+          id="log-next"
+          data-action="LOG_VIEW"
+          data-id="log-next"
+          class="active btn">
+          Next
+        </button>
+      </nav>
+      <a id="log-link" href="#" target="_blank">View source</a>
+    </div>
+  </div>
+  <div id="log-content-wrapper">
+    <div id="log-content" class="log-content"></div>
+  </div>
 </div>

@@ -1,7 +1,13 @@
 // This class is just responsible for taking elements and adding animations
 
 export class AnimationManager {
-  constructor() {}
+  constructor() {
+    if (AnimationManager.instance) {
+      console.log("instance already initialized");
+      return AnimationManager.instance;
+    }
+    AnimationManager.instance = this;
+  }
 
   hideElement(targetOrElement) {
     // Takes either a string that corresponds to an ID and fetches the element

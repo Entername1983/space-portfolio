@@ -18,7 +18,7 @@
 .body-scan-overlay {
   border-radius: 50px;
   overflow: hidden;
-  border: 2px solid rgb(59, 2, 2);
+  border: 2px solid var(--dark-red);
   aspect-ratio: 3 / 4.5;
   max-width: 300px;
   display: flex;

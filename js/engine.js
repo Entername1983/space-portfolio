@@ -4,6 +4,7 @@ import { DisplayManager } from "./managers/display-manager.js";
 import { IntroManager } from "./managers/intro-manager.js";
 import { MonitorManager } from "./managers/monitor-manager.js";
 import { SpaceSceneManager } from "./managers/space-scene-manager.js";
+
 export class Engine {
   constructor() {
     if (Engine.instance) {
@@ -95,16 +96,20 @@ export class Engine {
   }
   handleDelegatedInteraction(element, target, data, event) {
     console.log("handling delegated interaction");
-    const actionTargetId = this.handleDelegatedClick(event);
+    const actionTargetId = this.extractActionAndTargetFromDelegatedClick(event);
     switch (actionTargetId.action) {
-      case "VIEW_PROJECT":
+      case "PROJECT_VIEW":
         this.handleViewProject(actionTargetId.targetId);
         break;
       case "MAIN_PROJECT_MENU":
         this.displayManager.projectsContentManager.returnToMainScreen();
+        break;
+      case "LOG_VIEW":
+        this.handleViewLog(actionTargetId);
+        break;
     }
   }
-  handleDelegatedClick(event) {
+  extractActionAndTargetFromDelegatedClick(event) {
     const commandElement = event.target.closest("[data-action]");
     const action = commandElement.dataset.action;
     const targetId = commandElement.dataset.id;
@@ -121,6 +126,11 @@ export class Engine {
   }
   handleReturnToSpaceship(element, target, data, event) {
     this.spaceSceneManager.returnToSpaceship(this.activeClick);
+  }
+  handleViewLog(actionTargetId) {
+    this.displayManager.logContentManager.handleDelegatedInteraction(
+      actionTargetId
+    );
   }
   toggleLightSpeed(element, target, data, event) {
     if (!this.spaceSceneManager.lightspeedIsEnabeled()) {
