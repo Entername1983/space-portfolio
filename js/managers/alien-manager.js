@@ -18,8 +18,8 @@ export class AlienAssistantManager {
   createRevealTimeline() {
     const masterHoverTimeline = gsap.timeline({ paused: true });
     masterHoverTimeline
-      .to(".info-container", {
-        y: 300,
+      .to(this.info, {
+        x: "100vw",
         duration: 1,
         ease: "power4.out",
       })

@@ -20,3 +20,26 @@
   opacity: 1;
   visibility: visible;
 }
+
+#scene-controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  z-index: 200;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--light-red);
+  box-shadow: 0 0 20px 0px var(--light-red), 0 0 10px rgba(255, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  /* display: none;
+  opacity: 0; */
+  transition: opacity 1s ease-in-out;
+}
+#scene-controls.active {
+  display: block;
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.4);
+}

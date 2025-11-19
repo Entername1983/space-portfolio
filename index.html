@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="./assets/css/bio.css" />
     <link rel="stylesheet" href="./assets/css/acorn.css" />
     <link rel="stylesheet" href="./assets/css/control-buttons.css" />
+      <link rel="stylesheet" href="./assets/css/buttons.css" />
+
   </head>
 
   <body>
@@ -42,9 +44,34 @@
       <div id="wrapper" class="wrapper">
         <div id="fade-overlay"></div>
         <canvas id="starfield"></canvas>
-        <div id="back-btn" class="back-button">
-          <img src="./assets/images/space/escape-hatch.webp" />
-        </div>
+        <div id="scene-controls">
+          <a target="_blank" href="https://google.com" id="home-btn" class="button glow-effect small">
+              Exit
+              <svg class="glow-container">
+                <rect
+                  pathLength="100"
+                  stroke-linecap="round"
+                  class="glow-blur"></rect>
+                <rect
+                  pathLength="100"
+                  stroke-linecap="round"
+                  class="glow-line"></rect>
+              </svg>
+          </a>
+          <button id="back-btn" class="button glow-effect small red">
+              Back
+              <svg class="glow-container">
+                <rect
+                  pathLength="100"
+                  stroke-linecap="round"
+                  class="glow-blur"></rect>
+                <rect
+                  pathLength="100"
+                  stroke-linecap="round"
+                  class="glow-line"></rect>
+              </svg>
+          </button>
+          </div>
         <div id="space-scene-container">
           <div id="space-elements" class="active">
             <img
@@ -173,77 +200,87 @@
               </div>
 
               <div id="lightspeed-btn" class="lightspeed-button "></div>
-              <svg id="lightspeed-btn-svg" 
-                  class="svg-control-tooltips "
+              <!-- <svg id="lightspeed-btn-svg" 
+                  class="svg-control-tooltips"
                   viewBox="0 0 100 100"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"> -->
                   <!-- large veer left text coordinates 70 15 -->
-                  <polyline points="90 100 90 20 70 15" fill="none" />
+                  <!-- <polyline points="90 100 90 20 70 15" fill="none" />
                   <text class="svg-control-text" x="30" y="12" ">Light Speed</text>
+
+
+                  
+              </svg> -->
+              <svg id="lightspeed-btn-svg" 
+                class="svg-control-tooltips"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+
+
+                <polyline points="90 100 90 20 70 15"  /> 
+                <text class="svg-control-text" x="30" y="12">Light Speed</text>
               </svg>
 
               <div id="control-projects" class="projects-button "></div>
               <svg id="projects-btn-svg" 
-                  class="svg-control-tooltips "
+                  class="svg-control-tooltips"
                   viewBox="0 0 100 100"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                <!-- small veer right text coordinates 30 55 -->
                 <polyline points="10 100 10 60 30 55" fill="none" />
-                  <text class="svg-control-text" x="30" y="55" fill="white">
+                  <text class="svg-control-text" x="32" y="55" fill="white">
                     Projects
                   </text>
               </svg>
 
               <div id="control-one" class="one-button"></div>
-              <svg id="one-btn-svg" 
+                  <svg id="one-btn-svg" 
                     class="svg-control-tooltips"
                     viewBox="0 0 100 100"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                   <polyline points="10 100 10 20 30 15" fill="none" />
-                  <text class="svg-control-text" x="30" y="15" fill="white">One</text>
+                  <text class="svg-control-text" x="32" y="15" >One</text>
                 </svg>
    
               <div id="control-log" class="captains-log-button"></div>
               <svg id="log-btn-svg" 
-                    class="svg-control-tooltips "
+                    class="svg-control-tooltips"
                     viewBox="0 0 100 100"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
+                    
                   <!-- Large straight 50 20 -->
                   <polyline points="50 100 50 20" fill="none" />
                   <text class="svg-control-text" x="24" y="16" fill="white">Captain&apos;s Log</text>
               </svg>
 
-
-              <div id="control-acorn" class="acorn-button"></div>
-              <svg id="acorn-btn-svg" 
-                    class="svg-control-tooltips "
-                    viewBox="0 0 100 100"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                  <!-- Large straight 50 20 -->
-                  <polyline points="50 100 50 20" fill="none" />
-                  <text class="svg-control-text" x="33" y="16" fill="white">Acorn</text>
+              <div id="control-acorn" class="acorn-button" style="color: white"></div>
+              <svg
+                id="acorn-btn-svg"
+                class="svg-control-tooltips"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <!-- Large straight 50 20 -->
+                <polyline
+                  points="50 100 50 20"
+                  fill="none"/>
+                <text class="svg-control-text" x="33" y="16" fill="white">Acorn</text>
               </svg>
-   
-
-
-
               <div id="control-bio" class="about-button"></div>
               <svg id="bio-btn-svg" 
-                  class="svg-control-tooltips "
+                  class="svg-control-tooltips"
                   viewBox="0 0 100 100"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg">
-<!-- small veer left text coordinates 70 55 -->
+                  <!-- small veer left text coordinates 70 55 -->
                   <polyline points="90 100 90 60 70 55" fill="none" />
-                  <text class="svg-control-text" x="50" y="55" ">Bio</text>
+                  <text class="svg-control-text" x="54" y="55" ">Bio</text>
               </svg>
-
-
 
               <div id="spaceship-monitor" class="spaceship-monitor">
                 <div class="spaceship-content">testing</div>
@@ -375,25 +412,35 @@
           <section id="svg-hover-layer"></section>
           <!------------------ Info Layer ----------------->
 
-          <section>
             <div id="alien-info" class="info-container">
               <div class="info-content">
                 <h2 class="info-content-text">...</h2>
-                <div
-                  id="info-close-button"
-                  class="info-close-button"
-                  aria-label="Close message">
-                  X
+               
+                <div class="info-content-buttons">
+                <button id="proceed-btn" class="button glow-effect small">
+                  Proceed
+                  <svg class="glow-container">
+                    <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                    <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                  </svg>
+                </button>
+                <button id="info-close-button" class="button glow-effect red small">
+                  Close
+                  <svg class="glow-container">
+                    <rect pathLength="100" stroke-linecap="round" class="glow-blur red"></rect>
+                    <rect pathLength="100" stroke-linecap="round" class="glow-line red"></rect>
+                  </svg>
+                </button>
                 </div>
-                <button id="proceed-btn" class="btn">Proceed</button>
               </div>
             </div>
-            <div id="welcome-content" class="title-text">
+        
+        </div>    
+        <div id="welcome-content" class="title-text">
               <h1 id="welcome-heading">Welcome</h1>
             </div>
-          </section>
-        </div>
       </div>
+
     </main>
 
     <!-- Sanitizing the content coming from my blog -->

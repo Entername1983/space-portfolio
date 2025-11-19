@@ -8,6 +8,7 @@ export class SpaceSceneManager {
   constructor() {
     this.spaceSceneMappings = SPACE_SCENE_MAPPINGS;
     this.backBtn = document.querySelector("#back-btn");
+    this.sceneControls = document.querySelector("#scene-controls");
     this.spaceElements = document.querySelector("#space-elements");
     this.lightspeedIsOn = false;
     this.currentScene = "spaceship";
@@ -84,6 +85,12 @@ export class SpaceSceneManager {
   }
   hideBackBtn() {
     this.animationManager.hideElement(this.backBtn);
+  }
+  revealSceneControls() {
+    this.animationManager.revealElement(this.sceneControls);
+  }
+  hideSceneControls() {
+    this.animationManager.hideElement(this.sceneControls);
   }
 
   getElementQuadrant(element, container) {

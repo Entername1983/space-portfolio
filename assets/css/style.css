@@ -3,7 +3,8 @@
   --matrix-green-dark: rgba(0, 160, 65);
   --matrix-green: rgb(166, 238, 193);
   --dark-red: rgb(59, 2, 2);
-  --light-red:rgb(99, 25, 25);
+  --light-red: rgb(153, 31, 31);
+  --very-light-red: rgb(250, 89, 39);
 }
 button,
 a,
@@ -109,28 +110,6 @@ a:hover {
   color: var(--matrix-green);
 }
 
-.btn {
-  cursor: pointer;
-  background-color: black;
-  color: var(--matrix-green);
-  border: 1px solid var(--matrix-green);
-  border-radius: 4px;
-  padding: 2px 6px;
-}
-.btn:hover {
-  background-color: var(--matrix-green);
-  color: black;
-}
-
-#back-btn {
-  display: none;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-#back-btn.active {
-  display: block;
-  opacity: 1;
-}
 .wrapper {
   background-color: black;
   width: 100%;
@@ -355,91 +334,7 @@ a:hover {
   pointer-events: none;
   opacity: 1;
 }
-.btn {
-  cursor: pointer;
-}
-
-#info-container-section {
-  z-index: 50;
-  height: 100%;
-  width: 100%;
-}
-
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: true;
-}
-@keyframes rotate {
-  to {
-    --angle: 1turn;
-  }
-}
-
-.back-button {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  transform: translate(-50%, -50%);
-  z-index: 101;
-  display: none;
-  line-height: 0;
-  padding: 3px;
-  border-radius: 20px;
-  background: transparent;
-}
-.back-button::before {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 20px;
-  background: conic-gradient(
-    from var(--angle),
-    rgb(216, 27, 2),
-    rgb(71, 1, 1),
-    rgb(245, 5, 5)
-  );
-  z-index: -1;
-  animation: rotate 1s linear infinite;
-  animation-play-state: paused;
-}
-
-.back-button > img {
-  max-height: 80px;
-  display: block;
-}
-
-@media (max-width: 700px) {
-  .back-button > img {
-    max-height: 40px;
-  }
-  .back-button {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-  }
-}
-
-.back-button:hover::before,
-.back-button:focus-visible::before {
-  background: conic-gradient(
-    from var(--angle),
-    rgb(235, 113, 31),
-    rgb(71, 1, 1),
-    rgb(245, 5, 5)
-  );
-  animation-play-state: running;
-}
-
-.back-button:hover,
-.back-button:focus-visible {
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-@property --angle {
+. @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: true;
@@ -750,12 +645,23 @@ a:hover {
 
   h3 {
     font-size: 1.6rem;
+    margin-top: 6px;
+    margin-bottom: 6px;
   }
   button,
   a,
   p,
-  blockquote {
+  blockquote,
+  li {
     font-size: 1.2rem;
+  }
+  p {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  ul {
+    margin-top: 6px;
+    margin-bottom: 6px;
   }
 }
 @media (max-width: 600px) {
@@ -765,11 +671,43 @@ a:hover {
 
   h3 {
     font-size: 1.4rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
   button,
   blockquote,
   a,
-  p {
+  p,
+  li {
     font-size: 1rem;
+  }
+  p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  ul {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+.btn {
+  cursor: pointer;
+}
+
+#info-container-section {
+  z-index: 50;
+  height: 100%;
+  width: 100%;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: true;
+}
+@keyframes rotate {
+  to {
+    --angle: 1turn;
   }
 }
