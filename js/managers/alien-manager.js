@@ -72,7 +72,6 @@ export class AlienAssistantManager {
     console.log(`filling info for ${elementId}`);
     gsap.to(".info-content-text", {
       duration: 1,
-      text: "hi",
       text: ALIEN_INFO_MAPPINGS[elementId],
       ease: "none",
     });

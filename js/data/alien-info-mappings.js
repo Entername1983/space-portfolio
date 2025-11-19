@@ -32,6 +32,16 @@ export const ALIEN_INFO_MAPPINGS = {
   "acorn-button": "Building our Federation",
   "about-button": "Our captains bio",
   "one-button": "Not quite sure what these do...",
+  "home-btn": "Want to get out of here?",
+  "back-btn": "Return to our ship?",
+  "control-one": "Control one",
+  "control-acorn": "Project Acorn",
+  "control-bio":
+    "I've hacked the emperial network, let's see what they have on our captain",
+  "control-projects":
+    "I've kept a record of the captain's personal projects here",
+  "control-log": "Want to access the captain's log?",
+  "lightspeed-btn": "Click here if you want to go really really fast!",
 };
 
 export const complexSpaceElements = {

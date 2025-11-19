@@ -1,5 +1,6 @@
-import { Clickables } from "./clickables.js";
+import { Clickables, Hoverables } from "./clickables.js";
 import { CLICKABLES } from "./data/clickables-data.js";
+import { HOVERABLES } from "./data/hoverables-data.js";
 import { Engine } from "./engine.js";
 
 // GSAP plugins are loaded via CDN in HTML, register them
@@ -25,9 +26,19 @@ document.addEventListener("DOMContentLoaded", () => {
       item.data
     );
     clickableInstances[key] = instance;
+    const hoverableInstances = {};
+    HOVERABLES.forEach((item, index) => {
+      const key = `hoverables${index}`;
+      const instance = new Hoverables(
+        item.elementId,
+        item.action,
+        item.targetId,
+        item.data
+      );
+
+      hoverableInstances[key] = instance;
+    });
   });
-});
-document.addEventListener("DOMContentLoaded", () => {
   (function setGlowEffectRx() {
     const glowEffects = document.querySelectorAll(".glow-effect");
 

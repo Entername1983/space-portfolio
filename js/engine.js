@@ -56,6 +56,9 @@ export class Engine {
       case "TOGGLE_LIGHTSPEED":
         await this.toggleLightSpeed(element, target, data, event);
         break;
+      case "HOVER":
+        this.handleHoverInteractions(element, target, data, event);
+        break;
     }
   }
   addClickToList(element) {
@@ -134,5 +137,9 @@ export class Engine {
       this.spaceSceneManager.disengageLightspeed();
       this.monitorManager.reInitialize();
     }
+  }
+  handleHoverInteractions(element, target, data, event) {
+    console.log("handling hover interactions");
+    this.alienAssistantManager.show(element.id);
   }
 }
