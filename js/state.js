@@ -33,15 +33,12 @@ export const appState = {
   lightSpeedEnabled: false,
 
   toggleLightSpeed() {
-    console.log("toggling light speed in app state");
-    console.log(this.lightSpeedEnabled);
     this.lightSpeedEnabled = !this.lightSpeedEnabled;
   },
 
   setCurrentScene(scene) {
     if (this.SCENES[scene.toUpperCase()]) {
       this.currentScene = scene;
-      console.log("Scene changed to:", this.currentScene);
     } else {
       console.error(`Attempted to set invalid scene: ${scene}`);
     }

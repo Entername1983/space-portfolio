@@ -7,6 +7,7 @@ export class AlienAssistantManager {
     this.timeline = this.createRevealTimeline();
     this.autoHideTimeout = null;
     this.closeBtn = document.querySelector("#info-close-button");
+    this.proceedBtn = document.querySelector("#proceed-btn");
     this.attachCloseBtnListener();
   }
   attachCloseBtnListener() {
@@ -19,7 +20,7 @@ export class AlienAssistantManager {
     const masterHoverTimeline = gsap.timeline({ paused: true });
     masterHoverTimeline
       .to(this.info, {
-        x: "100vw",
+        x: "-50vw",
         duration: 1,
         ease: "power4.out",
       })
@@ -40,12 +41,16 @@ export class AlienAssistantManager {
     this.hideInfo();
     this.clearInfo();
   }
+  showWithoutProceedButton(elementId) {
+    this.show(elementId);
+    this.proceedBtn.classList.remove("active");
+  }
   show(elementId) {
+    this.proceedBtn.classList.add("active");
     if (this.autoHideTimeout) {
       clearTimeout(this.autoHideTimeout);
     }
     const DELAY_DURATION = 4000;
-    console.log(`Showing alien content for ${elementId}`);
     this.fillInfo(elementId);
     this.revealAlien();
     this.autoHideTimeout = setTimeout(() => {
@@ -69,7 +74,6 @@ export class AlienAssistantManager {
     });
   }
   fillInfo(elementId) {
-    console.log(`filling info for ${elementId}`);
     gsap.to(".info-content-text", {
       duration: 1,
       text: ALIEN_INFO_MAPPINGS[elementId],

@@ -42,6 +42,7 @@ export const ALIEN_INFO_MAPPINGS = {
     "I've kept a record of the captain's personal projects here",
   "control-log": "Want to access the captain's log?",
   "lightspeed-btn": "Click here if you want to go really really fast!",
+  "rotate-icon": "Turn things sideways",
 };
 
 export const complexSpaceElements = {

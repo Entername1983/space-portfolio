@@ -3,7 +3,6 @@
 export class AnimationManager {
   constructor() {
     if (AnimationManager.instance) {
-      console.log("instance already initialized");
       return AnimationManager.instance;
     }
     AnimationManager.instance = this;

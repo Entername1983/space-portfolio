@@ -65,12 +65,6 @@ export const DELEGATED_CLICKABLES = [
     targetId: "",
     data: {},
   },
-  {
-    elementId: "#display-content-container",
-    action: "DELEGATED_INTERACTION",
-    targetId: "",
-    data: {},
-  },
 ];
 
 export const DISPLAY_CLICKABLES = [
@@ -157,6 +151,12 @@ export const PROJECT_CLICKABLES = [
     elementId: "#li-blog",
     action: "PROJECT_INTERACTION",
     targetId: "blog-logo",
+    data: {},
+  },
+  {
+    elementId: "#li-space-portfolio",
+    action: "PROJECT_INTERACTION",
+    targetId: "monitor-spaceship",
     data: {},
   },
 ];

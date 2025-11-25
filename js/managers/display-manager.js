@@ -37,16 +37,12 @@ export class DisplayManager {
   }
   // Switch here to activate extra content as needed
   sortToSpecialContent(element) {
-    console.log("sorting to special");
-    console.log(element);
-
     switch (element.id) {
       case "control-bio":
         break;
       case "control-one":
         break;
       case "control-log":
-        console.log(" control log");
         this.logContentManager.show();
         break;
       case "control-one":
@@ -67,7 +63,6 @@ export class DisplayManager {
     this.display.classList.add("open");
   }
   closeScreen() {
-    console.log("closing screen");
     this.displayIsOpen = false;
     this.display.classList.remove("open");
   }

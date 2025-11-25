@@ -1,41 +1,58 @@
+/** Button Styling for Prev & Next **/
+
 #log-prev,
 #log-next {
   visibility: visible;
   opacity: 0.2;
   cursor: not-allowed;
+  border: 2px solid var(--light-red);
+  color: var(--light-red);
 }
-
+#log-prev:hover,
+#log-next:hover,
+#log-next:focus,
+#log-prev:focus {
+  background-color: var(--light-red);
+  color: black;
+}
 #log-prev.active,
 #log-next.active {
   visibility: visible;
   opacity: 1;
   cursor: pointer;
+  color: var(--matrix-green);
+  border-color: var(--matrix-green);
 }
+#log-prev.active:hover,
+#log-next.active:hover,
+#log-next.active:focus,
+#log-prev.active:focus {
+  color: black;
+  background-color: var(--matrix-green);
+}
+
 #display-log {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 10px;
 }
 #log-content-wrapper {
   position: relative;
   flex-grow: 1;
-  position: relative;
   overflow: hidden;
   height: 100%;
-  width: 100%;
+  padding-bottom: 20px;
 }
 #log-content {
   overflow-y: auto;
   padding-left: 10px;
   padding-right: 10px;
   height: 100%;
-  width: 100%;
   z-index: 100;
 }
 #log-content-wrapper::before {
   content: "";
-  box-shadow: inset 0 0 100px rgb(0, 0, 0);
+  box-shadow: inset 0 0 50px rgb(0, 0, 0);
   position: absolute;
   top: 0;
   left: 0;
@@ -71,11 +88,11 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-top: 20px;
 }
 
 #display-log-header > div {
@@ -83,8 +100,44 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: start;
+  gap: 4px;
+}
+#display-log-header > div > p {
+  font-size: 1.2rem;
 }
 
+@media (max-width: 1000px) {
+  #display-log-header {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
+  #display-log-header > div {
+    height: 100%;
+    gap: 4px;
+  }
+  #display-log-header > div > p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #display-log-header {
+    padding: 8px;
+    padding-top: 10px;
+  }
+
+  #display-log-header > div {
+    height: 100%;
+    gap: 2px;
+  }
+  #display-log-header > div > p {
+    font-size: 1rem;
+  }
+}
 #log-control {
   align-self: self-end;
 }
@@ -92,14 +145,10 @@
   align-self: self-end;
 }
 
-#display-log-header {
-  width: 100%;
+#log-navigation {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  gap: 4px;
 }
-
 .wp-block-quote {
   width: 100%;
   display: flex;

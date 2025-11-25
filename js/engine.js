@@ -2,9 +2,9 @@ import { initCanvas } from "./canvas-animations.js";
 import { AlienAssistantManager } from "./managers/alien-manager.js";
 import { DisplayManager } from "./managers/display-manager.js";
 import { IntroManager } from "./managers/intro-manager.js";
+import { LayoutManager } from "./managers/layout-manager.js";
 import { MonitorManager } from "./managers/monitor-manager.js";
 import { SpaceSceneManager } from "./managers/space-scene-manager.js";
-
 export class Engine {
   constructor() {
     if (Engine.instance) {
@@ -15,6 +15,7 @@ export class Engine {
     this.monitorManager = new MonitorManager("");
     this.displayManager = new DisplayManager("");
     this.spaceSceneManager = new SpaceSceneManager("");
+    this.layoutManager = new LayoutManager();
     Engine.instance = this;
     this.clickList = [];
     this.activeClick = null;
@@ -27,14 +28,11 @@ export class Engine {
   }
 
   async handleInteraction(element, actionType, target, data, event) {
-    console.log(this.clickList);
-
     switch (actionType) {
       case "VIEW_SPACE_ELEMENT":
         this.viewSpaceElement(element, target, data);
         break;
       case "DISPLAY_INTERACTION":
-        console.log("DSIPLAY_INTERACTION");
         await this.interactWithDisplay(element, target, data);
         break;
       case "PROJECT_INTERACTION":
@@ -64,7 +62,6 @@ export class Engine {
   addClickToList(element) {
     this.activeClick = element.id;
     this.clickList.push(this.activeClick);
-    console.log(this.clickList);
   }
   interactWithProjects(element, target, data) {
     this.addClickToList(element);
@@ -78,7 +75,6 @@ export class Engine {
   goToSpaceElement(target, data) {}
 
   async interactWithDisplay(element, target, data) {
-    console.log(`active click ${this.activeClick} elementId ${element.id}`);
     this.monitorManager.show(data.monitorTargetId);
     if (
       element.id.startsWith("control") &&
@@ -110,7 +106,6 @@ export class Engine {
     const commandElement = event.target.closest("[data-action]");
     const action = commandElement.dataset.action;
     const targetId = commandElement.dataset.id;
-    console.log(`Action: ${action}, Target: ${targetId}`);
     return { action: action, targetId: targetId };
   }
   handleViewProject(targetId) {
@@ -139,7 +134,6 @@ export class Engine {
     }
   }
   handleHoverInteractions(element, target, data, event) {
-    console.log("handling hover interactions");
-    this.alienAssistantManager.show(element.id);
+    this.alienAssistantManager.showWithoutProceedButton(element.id);
   }
 }

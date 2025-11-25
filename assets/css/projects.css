@@ -50,20 +50,17 @@
   top: 40px;
   left: 20px;
   display: none;
-  padding: 4px 8px;
-  background-color: black;
-  border: none;
+
   cursor: pointer;
-  font-family: "Press Start 2P", system-ui;
   z-index: 30;
   cursor: pointer;
 }
 
-#projects-back-button > #arrow-left-solid {
+/* #projects-back-button > #arrow-left-solid {
   fill: var(--matrix-green);
   height: 30px;
   width: 30px;
-}
+} */
 
 @media (max-width: 650px) {
   .screen-content > ul {

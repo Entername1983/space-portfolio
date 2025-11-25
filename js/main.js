@@ -14,7 +14,6 @@ gsap.registerPlugin(
 );
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("initializing");
   new Engine();
   const clickableInstances = {};
   CLICKABLES.forEach((item, index) => {

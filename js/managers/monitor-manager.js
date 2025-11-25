@@ -17,7 +17,6 @@ export class MonitorManager {
     this.animationManager.revealElement(this.defaultMonitorDisplay);
   }
   show(targetId) {
-    console.log(`showing ${targetId}`);
     this.clear();
     this.animationManager.revealElement(targetId);
   }

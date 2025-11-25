@@ -35,7 +35,6 @@ let textTween;
  * Used by the close button
  */
 export function killTextTween() {
-  console.log("killing tween");
   if (textTween) {
     textTween.kill();
   }
@@ -79,7 +78,6 @@ export function initHoverInteractions(elementMap) {
 
 // ... (The rest of the file, like setupDoorTimelines, is fine) ...
 export function setupDoorTimelines() {
-  console.log("setting up door timelines");
   const doors = document.querySelectorAll(
     ".red-door, .yellow-door, .cyan-door"
   );
@@ -95,7 +93,6 @@ export function setupDoorTimelines() {
     });
 
     door.addEventListener("mouseenter", () => {
-      console.log("mouse enter");
       doorTimeline.timeScale(1).play();
     });
     door.addEventListener("mouseleave", () => {

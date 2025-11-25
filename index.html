@@ -23,8 +23,8 @@
       rel="icon"
       type="image/x-icon"
       href="./assets/images/space/spaceship-2.webp" />
-    <link rel="stylesheet" href="./assets/css/alien-sidekick.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/alien-sidekick.css" />
     <link rel="stylesheet" href="./assets/css/space-backdrops.css" />
     <link rel="stylesheet" href="./assets/css/control-panel.css" />
     <link rel="stylesheet" href="./assets/css/space-station.css" />
@@ -34,44 +34,63 @@
     <link rel="stylesheet" href="./assets/css/bio.css" />
     <link rel="stylesheet" href="./assets/css/acorn.css" />
     <link rel="stylesheet" href="./assets/css/control-buttons.css" />
-      <link rel="stylesheet" href="./assets/css/buttons.css" />
-
+    <link rel="stylesheet" href="./assets/css/buttons.css" />
+    <link rel="stylesheet" href="./assets/css/portrait-mode.css" />
   </head>
 
-  <body>
+  <body data-orientation="landscape">
     <!------------------ Starfield Layer 1 ----------------->
     <main>
       <div id="wrapper" class="wrapper">
         <div id="fade-overlay"></div>
         <canvas id="starfield"></canvas>
         <div id="scene-controls">
-          <a target="_blank" href="https://google.com" id="home-btn" class="button glow-effect small">
-              Exit
-              <svg class="glow-container">
-                <rect
-                  pathLength="100"
-                  stroke-linecap="round"
-                  class="glow-blur"></rect>
-                <rect
-                  pathLength="100"
-                  stroke-linecap="round"
-                  class="glow-line"></rect>
+          <button id="mode-switcher" class="">
+            <svg
+              viewBox="0 0 24 24"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="7" y="3" width="10" height="18" rx="2" ry="2" />
+            </svg>
+            <span id="rotate-icon">
+              <svg viewBox="0 -960 960 960">
+                <path
+                  d="m550-30-56-57 73-73H320q-33 0-56.5-23.5T240-240v-407l80 80v327h247l-73-73 56-57 170 170L550-30Zm170-283-80-80v-327H393l73 73-56 57-170-170 170-170 56 57-73 73h247q33 0 56.5 23.5T720-720v407Z" />
               </svg>
+            </span>
+          </button>
+          <a
+            target="_blank"
+            href="https://google.com"
+            id="home-btn"
+            class="button glow-effect small">
+            Exit
+            <svg class="glow-container">
+              <rect
+                pathLength="100"
+                stroke-linecap="round"
+                class="glow-blur"></rect>
+              <rect
+                pathLength="100"
+                stroke-linecap="round"
+                class="glow-line"></rect>
+            </svg>
           </a>
           <button id="back-btn" class="button glow-effect small red">
-              Back
-              <svg class="glow-container">
-                <rect
-                  pathLength="100"
-                  stroke-linecap="round"
-                  class="glow-blur"></rect>
-                <rect
-                  pathLength="100"
-                  stroke-linecap="round"
-                  class="glow-line"></rect>
-              </svg>
+            Back
+            <svg class="glow-container">
+              <rect
+                pathLength="100"
+                stroke-linecap="round"
+                class="glow-blur"></rect>
+              <rect
+                pathLength="100"
+                stroke-linecap="round"
+                class="glow-line"></rect>
+            </svg>
           </button>
-          </div>
+        </div>
         <div id="space-scene-container">
           <div id="space-elements" class="active">
             <img
@@ -191,74 +210,69 @@
                   <div class="sweep"></div>
                 </div>
               </div>
-              <div class="spaceship-interior-background"></div>
-              <div class="spaceship-interior"></div>
+              <div id="spaceship-interior-background"></div>
+              <div id="spaceship-interior"></div>
               <div id="spaceship-display" class="spaceship-front-screen">
                 <div
                   id="display-content-container"
                   class="front-screen-content"></div>
               </div>
 
-              <div id="lightspeed-btn" class="lightspeed-button "></div>
-              <!-- <svg id="lightspeed-btn-svg" 
-                  class="svg-control-tooltips"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"> -->
-                  <!-- large veer left text coordinates 70 15 -->
-                  <!-- <polyline points="90 100 90 20 70 15" fill="none" />
-                  <text class="svg-control-text" x="30" y="12" ">Light Speed</text>
+              <div id="lightspeed-btn" class="lightspeed-button"></div>
 
-
-                  
-              </svg> -->
-              <svg id="lightspeed-btn-svg" 
+              <svg
+                id="lightspeed-btn-svg"
                 class="svg-control-tooltips"
                 viewBox="0 0 100 100"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
-
-
-                <polyline points="90 100 90 20 70 15"  /> 
+                <polyline points="90 100 90 20 70 15" />
                 <text class="svg-control-text" x="30" y="12">Light Speed</text>
               </svg>
 
-              <div id="control-projects" class="projects-button "></div>
-              <svg id="projects-btn-svg" 
-                  class="svg-control-tooltips"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-               <!-- small veer right text coordinates 30 55 -->
+              <div id="control-projects" class="projects-button"></div>
+              <svg
+                id="projects-btn-svg"
+                class="svg-control-tooltips"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <!-- small veer right text coordinates 30 55 -->
                 <polyline points="10 100 10 60 30 55" fill="none" />
-                  <text class="svg-control-text" x="32" y="55" fill="white">
-                    Projects
-                  </text>
+                <text class="svg-control-text" x="32" y="55" fill="white">
+                  Projects
+                </text>
               </svg>
 
               <div id="control-one" class="one-button"></div>
-                  <svg id="one-btn-svg" 
-                    class="svg-control-tooltips"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                  <polyline points="10 100 10 20 30 15" fill="none" />
-                  <text class="svg-control-text" x="32" y="15" >One</text>
-                </svg>
-   
-              <div id="control-log" class="captains-log-button"></div>
-              <svg id="log-btn-svg" 
-                    class="svg-control-tooltips"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    
-                  <!-- Large straight 50 20 -->
-                  <polyline points="50 100 50 20" fill="none" />
-                  <text class="svg-control-text" x="24" y="16" fill="white">Captain&apos;s Log</text>
+              <svg
+                id="one-btn-svg"
+                class="svg-control-tooltips"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <polyline points="10 100 10 20 30 15" fill="none" />
+                <text class="svg-control-text" x="32" y="15">Work</text>
               </svg>
 
-              <div id="control-acorn" class="acorn-button" style="color: white"></div>
+              <div id="control-log" class="captains-log-button"></div>
+              <svg
+                id="log-btn-svg"
+                class="svg-control-tooltips"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <!-- Large straight 50 20 -->
+                <polyline points="50 100 50 20" fill="none" />
+                <text class="svg-control-text" x="24" y="16" fill="white">
+                  Captain&apos;s Log
+                </text>
+              </svg>
+
+              <div
+                id="control-acorn"
+                class="acorn-button"
+                style="color: white"></div>
               <svg
                 id="acorn-btn-svg"
                 class="svg-control-tooltips"
@@ -266,20 +280,21 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <!-- Large straight 50 20 -->
-                <polyline
-                  points="50 100 50 20"
-                  fill="none"/>
-                <text class="svg-control-text" x="33" y="16" fill="white">Acorn</text>
+                <polyline points="50 100 50 20" fill="none" />
+                <text class="svg-control-text" x="33" y="16" fill="white">
+                  Acorn
+                </text>
               </svg>
               <div id="control-bio" class="about-button"></div>
-              <svg id="bio-btn-svg" 
-                  class="svg-control-tooltips"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <!-- small veer left text coordinates 70 55 -->
-                  <polyline points="90 100 90 60 70 55" fill="none" />
-                  <text class="svg-control-text" x="54" y="55" ">Bio</text>
+              <svg
+                id="bio-btn-svg"
+                class="svg-control-tooltips"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <!-- small veer left text coordinates 70 55 -->
+                <polyline points="90 100 90 60 70 55" fill="none" />
+                <text class="svg-control-text" x="54" y="55">Bio</text>
               </svg>
 
               <div id="spaceship-monitor" class="spaceship-monitor">
@@ -412,35 +427,47 @@
           <section id="svg-hover-layer"></section>
           <!------------------ Info Layer ----------------->
 
-            <div id="alien-info" class="info-container">
-              <div class="info-content">
-                <h2 class="info-content-text">...</h2>
-               
-                <div class="info-content-buttons">
+          <div id="alien-info" class="info-container">
+            <div class="info-content">
+              <h2 class="info-content-text">...</h2>
+
+              <div class="info-content-buttons">
                 <button id="proceed-btn" class="button glow-effect small">
                   Proceed
                   <svg class="glow-container">
-                    <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
-                    <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                    <rect
+                      pathLength="100"
+                      stroke-linecap="round"
+                      class="glow-blur"></rect>
+                    <rect
+                      pathLength="100"
+                      stroke-linecap="round"
+                      class="glow-line"></rect>
                   </svg>
                 </button>
-                <button id="info-close-button" class="button glow-effect red small">
+                <button
+                  id="info-close-button"
+                  class="button glow-effect red small">
                   Close
                   <svg class="glow-container">
-                    <rect pathLength="100" stroke-linecap="round" class="glow-blur red"></rect>
-                    <rect pathLength="100" stroke-linecap="round" class="glow-line red"></rect>
+                    <rect
+                      pathLength="100"
+                      stroke-linecap="round"
+                      class="glow-blur red"></rect>
+                    <rect
+                      pathLength="100"
+                      stroke-linecap="round"
+                      class="glow-line red"></rect>
                   </svg>
                 </button>
-                </div>
               </div>
             </div>
-        
-        </div>    
+          </div>
+        </div>
         <div id="welcome-content" class="title-text">
-              <h1 id="welcome-heading">Welcome</h1>
-            </div>
+          <h1 id="welcome-heading">Welcome</h1>
+        </div>
       </div>
-
     </main>
 
     <!-- Sanitizing the content coming from my blog -->
@@ -448,7 +475,6 @@
     <!-- Local JavaScript Files -->
     <script type="module" src="./js/state.js"></script>
     <script type="module" src="./js/utility.js"></script>
-    <script type="module" src="./js/elements.js"></script>
     <script type="module" src="./js/data/clickables-data.js"></script>
     <script type="module" src="./js/data/alien-info-mappings.js"></script>
     <script type="module" src="./js/managers/display-manager.js"></script>
@@ -460,7 +486,6 @@
       type="module"
       src="./js/managers/projects-content-manager.js"></script>
     <script type="module" src="./js/canvas-animations.js"></script>
-    <script type="module" src="./js/hover-interactions.js"></script>
     <script type="module" src="./js/clickables.js"></script>
     <script type="module" src="./js/engine.js"></script>
     <script type="module" src="./js/main.js"></script>

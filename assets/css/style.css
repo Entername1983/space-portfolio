@@ -58,7 +58,24 @@ h1 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 2.8rem;
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
 }
 
 @keyframes spin {
@@ -292,7 +309,7 @@ a:hover {
   pointer-events: none;
 }
 
-.spaceship-interior {
+#spaceship-interior {
   background-size: cover;
   background-position: center;
   display: none;
@@ -303,9 +320,6 @@ a:hover {
   width: 100%;
   height: 100%;
   pointer-events: none;
-}
-
-.spaceship-interior {
   opacity: 1;
   position: absolute;
   display: block;
@@ -320,7 +334,10 @@ a:hover {
   pointer-events: none;
 }
 
-.spaceship-interior-background {
+#spaceship-interior {
+}
+
+#spaceship-interior-background {
   position: absolute;
   display: block;
   top: 0;
@@ -334,7 +351,7 @@ a:hover {
   pointer-events: none;
   opacity: 1;
 }
-. @property --angle {
+@property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: true;
@@ -365,15 +382,19 @@ a:hover {
   bottom: -6px;
   background: conic-gradient(
     from var(--angle),
-    rgb(0, 17, 7),
-    rgb(0, 17, 7),
-    rgba(0, 160, 65),
-    rgb(0, 17, 7),
-    rgb(0, 17, 7)
+    rgb(0, 0, 0),
+    rgb(0, 49, 20),
+    rgb(0, 0, 0),
+    rgb(0, 0, 0),
+    rgb(0, 49, 20),
+    rgb(0, 0, 0),
+    rgb(0, 0, 0),
+    rgb(0, 0, 0),
+    rgb(0, 0, 0)
   );
   border-radius: inherit;
   z-index: -2;
-  animation: rotate 6s linear infinite;
+  animation: rotate 20s linear infinite;
 }
 .screen-content::after {
   content: "";
@@ -691,10 +712,6 @@ a:hover {
   }
 }
 
-.btn {
-  cursor: pointer;
-}
-
 #info-container-section {
   z-index: 50;
   height: 100%;
@@ -710,4 +727,32 @@ a:hover {
   to {
     --angle: 1turn;
   }
+}
+
+/** Slide Out Underline  **/
+
+.slide-underline {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  /* background-color: var(--light-red); */
+  background-color: var(--matrix-green);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+  z-index: 200;
+  opacity: 0.6;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.slide-underline:hover::after,
+.slide-underline:focus::after {
+  transform: translate3d(0, 0, 0);
 }

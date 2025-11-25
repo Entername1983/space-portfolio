@@ -20,7 +20,6 @@ export class ProjectsContentManager {
   }
   show(targetId) {
     this.hideMainMenu();
-    console.log(`content to show ${targetId}`);
     const element = document.querySelector(targetId);
     element.classList.add("active");
     progressiveTextDisplayAnimation(element);
@@ -28,7 +27,6 @@ export class ProjectsContentManager {
   }
 
   showBackButton() {
-    console.log("displaying back btn");
     const backBtn = document.querySelector("#projects-back-button");
     gsap.to(backBtn, {
       autoAlpha: 1,
@@ -43,7 +41,6 @@ export class ProjectsContentManager {
     });
   }
   clearContent() {
-    console.log("clearing content");
     const mainMenu = document.querySelector("#projects-content-container");
     for (const child of mainMenu.children) {
       child.classList.remove("active");

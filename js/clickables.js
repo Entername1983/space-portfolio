@@ -2,7 +2,6 @@ import { Engine } from "./engine.js";
 
 export class Clickables {
   constructor(elementId, actionType, target, data) {
-    console.log(elementId);
     this.element = document.querySelector(elementId);
     this.actionType = actionType;
     this.target = target;
@@ -22,7 +21,6 @@ export class Clickables {
 
 export class Hoverables {
   constructor(elementId, actionType, target, data) {
-    console.log(elementId);
     this.element = document.querySelector(elementId);
     this.actionType = actionType;
     this.target = target;

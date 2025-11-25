@@ -14,11 +14,13 @@
 }
 .info-container {
   position: absolute;
-  bottom: 10%;
+  bottom: 40%;
   /* top: -30vh; */
-  left: calc(50% - 125vw);
+  /* left: calc(50% - 125vw); */
+  right: calc(1% - 50vw);
+  /* right: 1%; */
   max-height: 50vw;
-  width: 50vw;
+  width: 20vw;
   padding: 2px;
   display: flex;
   z-index: 100;
@@ -82,4 +84,11 @@
     padding-right: 20px;
     min-height: 30px;
   }
+}
+
+#proceed-btn {
+  visibility: hidden;
+}
+#proceed-btn.active {
+  visibility: visible;
 }

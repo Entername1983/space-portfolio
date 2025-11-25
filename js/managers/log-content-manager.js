@@ -14,7 +14,6 @@ export class LogContentManager {
     await this.fetchLog();
   }
   async fetchLog() {
-    console.log("fetching log");
     const captainsLog = await fetch(this.testRssFeed).then((res) => res.text());
     await this.parseLogIntoArrayOfItems(captainsLog);
   }
@@ -45,7 +44,6 @@ export class LogContentManager {
 
       const rawDateString = pubDateNode.textContent;
       const dateObject = new Date(rawDateString);
-      console.log(dateObject);
       const cleanDateString = dateObject.toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
@@ -78,7 +76,6 @@ export class LogContentManager {
   }
 
   navigateTo(direction) {
-    console.log("navigating", direction);
     if (direction === "next" && this.logIndex < this.logEntries.length - 1) {
       this.logIndex++;
     } else if (direction === "prev" && this.logIndex > 0) {
@@ -90,8 +87,6 @@ export class LogContentManager {
   }
 
   renderNavigation() {
-    console.log("logIndex", this.logIndex);
-
     const prevBtn = document.querySelector("#log-prev");
     const nextBtn = document.querySelector("#log-next");
 
@@ -112,7 +107,6 @@ export class LogContentManager {
   }
 
   handleDelegatedInteraction(actionTargetId) {
-    console.log("handle delegated interaction in log", actionTargetId.targetId);
     switch (actionTargetId.targetId) {
       case "log-next":
         this.navigateTo("next");
