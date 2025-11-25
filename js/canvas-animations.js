@@ -121,6 +121,16 @@ export function initCanvas(interiorImagePath) {
 
   if (!starfieldCanvas) return;
 
+  // Clear existing stars and stop any animations
+  stars.forEach((star) => {
+    gsap.killTweensOf(star);
+  });
+  stars = [];
+  lightSpeedActive = false;
+
+  // Remove existing resize listener to avoid duplicates
+  window.removeEventListener("resize", setAllCanvasSizes);
+
   starfieldCtx = starfieldCanvas.getContext("2d");
 
   // Get wrapper dimensions for proper sizing

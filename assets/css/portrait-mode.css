@@ -7,14 +7,60 @@ body[data-orientation="portrait"] {
     width: 100vw;
   }
 
-  #starfield {
-    height: 100vh;
-    width: 100vw;
-  }
   #spaceship-interior-background {
     display: none;
   }
   #spaceship-interior {
     display: none;
+  }
+
+  #mobile-spaceship-interior {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 20%;
+    border-top: 1px solid var(--light-red);
+    box-shadow: inset 0 0 20px 0px var(--light-red),
+      0 0 10px rgba(255, 0, 0, 0.8);
+    background-color: black;
+  }
+  #spaceship-monitor {
+    border-radius: 10px;
+    bottom: 5%;
+    left: 73%;
+    width: 20vw;
+    height: 20vw;
+    border: 1px solid var(--light-red);
+
+    box-shadow: inset 0 0 10px 0px var(--light-red),
+      0 0 10px rgba(255, 0, 0, 0.8);
+  }
+
+  #radar-container {
+    z-index: 300;
+    border-radius: 100px;
+    position: absolute;
+    bottom: 4.5%;
+    left: 6%;
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--light-red);
+
+    box-shadow: inset 0 0 10px 0px var(--light-red),
+      0 0 10px rgba(255, 0, 0, 0.8);
+  }
+  .control-btn {
+  }
+  #control-one {
+  }
+  #control-log {
+  }
+  #control-bio {
+  }
+  #control-acorn {
+  }
+  #control-projects {
+  }
+  #lightspeed-btn {
   }
 }

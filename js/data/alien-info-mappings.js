@@ -27,10 +27,10 @@ export const ALIEN_INFO_MAPPINGS = {
     "Ah stars, it&apos; what we&apos;re all made of.  Makes me feel small and meaningless and yet part of something bigger",
   "infected-station-space-scene":
     "Euuh, that guy doesn't look too friendly... let&apos;s give this one a miss?",
-  "projects-button": "Click here to display our projects",
+  "control-projects": "Click here to display our projects",
   "captains-log-button": "Captain&apos;s log",
-  "acorn-button": "Building our Federation",
-  "about-button": "Our captains bio",
+  "control-acorn": "Building our Federation",
+  "control-bio": "Our captains bio",
   "one-button": "Not quite sure what these do...",
   "home-btn": "Want to get out of here?",
   "back-btn": "Return to our ship?",
@@ -47,7 +47,7 @@ export const ALIEN_INFO_MAPPINGS = {
 
 export const complexSpaceElements = {
   lightspeedButton: {
-    selector: ".lightspeed-button",
+    selector: "#lightspeed-btn",
     sceneText: {
       default: "Lightspeed!",
       spaceship: "Lightspeed!",

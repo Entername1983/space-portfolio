@@ -1,3 +1,5 @@
+import { initCanvas } from "../canvas-animations.js";
+
 export class LayoutManager {
   constructor() {
     this.orientationBtn = document.querySelector("#mode-switcher");
@@ -9,16 +11,19 @@ export class LayoutManager {
       if (isPortrait) {
         console.log("changing to lanscape");
 
-        // Switch back to portrait
+        // Switch back to landscape
         this.rootElement.removeAttribute("data-orientation");
         this.orientationBtn.classList.remove("portrait");
       } else {
         console.log("changing to portrait");
 
-        // Switch to landscape
+        // Switch to portrait
         this.rootElement.setAttribute("data-orientation", "portrait");
         this.orientationBtn.classList.add("portrait");
       }
+      
+      // Reinitialize canvas with new dimensions
+      initCanvas();
     });
   }
 }

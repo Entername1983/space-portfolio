@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="./assets/css/portrait-mode.css" />
   </head>
 
-  <body data-orientation="landscape">
+  <body data-orientation="portrait">
     <!------------------ Starfield Layer 1 ----------------->
     <main>
       <div id="wrapper" class="wrapper">
@@ -205,20 +205,21 @@
           <section id="interior-sections">
             <!------------------ Interior Spaceship ----------------->
             <div id="spaceship-interior-section">
-              <div class="radar-container">
+              <div id="radar-container" class="radar-container">
                 <div class="radar">
                   <div class="sweep"></div>
                 </div>
               </div>
               <div id="spaceship-interior-background"></div>
               <div id="spaceship-interior"></div>
+              <div id="mobile-spaceship-interior"></div>
               <div id="spaceship-display" class="spaceship-front-screen">
                 <div
                   id="display-content-container"
                   class="front-screen-content"></div>
               </div>
 
-              <div id="lightspeed-btn" class="lightspeed-button"></div>
+              <div id="lightspeed-btn" class="control-btn"></div>
 
               <svg
                 id="lightspeed-btn-svg"
@@ -230,7 +231,7 @@
                 <text class="svg-control-text" x="30" y="12">Light Speed</text>
               </svg>
 
-              <div id="control-projects" class="projects-button"></div>
+              <div id="control-projects" class="control-btn"></div>
               <svg
                 id="projects-btn-svg"
                 class="svg-control-tooltips"
@@ -244,7 +245,7 @@
                 </text>
               </svg>
 
-              <div id="control-one" class="one-button"></div>
+              <div id="control-one" class="control-btn"></div>
               <svg
                 id="one-btn-svg"
                 class="svg-control-tooltips"
@@ -255,7 +256,7 @@
                 <text class="svg-control-text" x="32" y="15">Work</text>
               </svg>
 
-              <div id="control-log" class="captains-log-button"></div>
+              <div id="control-log" class="control-btn"></div>
               <svg
                 id="log-btn-svg"
                 class="svg-control-tooltips"
@@ -269,10 +270,7 @@
                 </text>
               </svg>
 
-              <div
-                id="control-acorn"
-                class="acorn-button"
-                style="color: white"></div>
+              <div id="control-acorn" class="control-btn"></div>
               <svg
                 id="acorn-btn-svg"
                 class="svg-control-tooltips"
@@ -285,7 +283,7 @@
                   Acorn
                 </text>
               </svg>
-              <div id="control-bio" class="about-button"></div>
+              <div id="control-bio" class="control-btn"></div>
               <svg
                 id="bio-btn-svg"
                 class="svg-control-tooltips"
