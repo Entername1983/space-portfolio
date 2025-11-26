@@ -2,9 +2,10 @@ body[data-orientation="portrait"] {
   background-color: black;
 
   .wrapper {
-    aspect-ratio: none;
-    height: 100svh;
+    aspect-ratio: auto;
+    height: 100dvh;
     width: 100vw;
+    max-width: 500px;
   }
 
   #spaceship-interior-background {
@@ -18,10 +19,8 @@ body[data-orientation="portrait"] {
     position: absolute;
     bottom: 0;
     width: 100vw;
+    max-width: 500px;
     height: 160px;
-    /* border-top: 1px solid var(--light-red);
-    box-shadow: inset 0 0 20px 0px var(--light-red),
-      0 0 10px rgba(255, 0, 0, 0.8); */
     background-color: black;
   }
   #mobile-control-pannel {
@@ -29,6 +28,7 @@ body[data-orientation="portrait"] {
     bottom: 0;
     width: 100vw;
     height: 160px;
+    max-width: 500px;
     display: grid;
     grid-template-columns: 30% 40% 30%;
     z-index: 400;
@@ -156,9 +156,11 @@ body[data-orientation="portrait"] {
     display: block;
     top: 0;
     left: 0;
-    height: calc(100svh - 160px);
+    height: calc(100dvh - 160px);
     max-height: 0;
     width: 100vw;
+    max-width: 500px;
+
     opacity: 1;
     background-color: black;
     z-index: 38;
@@ -179,13 +181,15 @@ body[data-orientation="portrait"] {
     padding-right: 20px;
     width: auto;
     max-width: 300px;
-    height: calc(100svh - 250px);
+    height: calc(100dvh - 250px);
   }
   #mobile-spaceship-overlay {
     position: absolute;
     bottom: 160px;
     width: 100vw;
-    height: calc(100svh - 160px);
+    max-width: 500px;
+
+    height: calc(100dvh - 160px);
     z-index: 300;
   }
   #mobile-spaceship-overlay > svg {
@@ -201,5 +205,18 @@ body[data-orientation="portrait"] {
   }
   #mobile-spaceship-overlay-mask {
     fill: rgb(0, 0, 0);
+  }
+
+  #scene-controls {
+    top: auto;
+    bottom: 130px;
+    left: 20px;
+    padding: 1px;
+    border: 1px solid var(--dark-red);
+    box-shadow: 0 0 10px 0px var(--dark-red), 0 0 5px rgba(255, 0, 0, 0.8);
+  }
+  #mode-switcher {
+    height: 40px;
+    width: 40px;
   }
 }

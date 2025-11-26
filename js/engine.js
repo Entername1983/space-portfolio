@@ -28,6 +28,7 @@ export class Engine {
   }
 
   async handleInteraction(element, actionType, target, data, event) {
+    console.log("element", element);
     switch (actionType) {
       case "VIEW_SPACE_ELEMENT":
         this.viewSpaceElement(element, target, data);
