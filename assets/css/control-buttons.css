@@ -315,3 +315,6 @@
 .one-button:hover {
   background-color: rgba(250, 132, 21, 0.8);
 }
+.control-btn > svg {
+  display: none;
+}

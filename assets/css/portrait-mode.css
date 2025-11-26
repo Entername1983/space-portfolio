@@ -18,49 +18,188 @@ body[data-orientation="portrait"] {
     position: absolute;
     bottom: 0;
     width: 100vw;
-    height: 20%;
-    border-top: 1px solid var(--light-red);
+    height: 160px;
+    /* border-top: 1px solid var(--light-red);
     box-shadow: inset 0 0 20px 0px var(--light-red),
-      0 0 10px rgba(255, 0, 0, 0.8);
+      0 0 10px rgba(255, 0, 0, 0.8); */
     background-color: black;
   }
-  #spaceship-monitor {
-    border-radius: 10px;
-    bottom: 5%;
-    left: 73%;
-    width: 20vw;
-    height: 20vw;
-    border: 1px solid var(--light-red);
+  #mobile-control-pannel {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 160px;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    z-index: 400;
+  }
 
+  #spaceship-monitor {
+    position: relative;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--light-red);
     box-shadow: inset 0 0 10px 0px var(--light-red),
       0 0 10px rgba(255, 0, 0, 0.8);
+    align-self: center;
+    bottom: auto;
+    left: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #radar-container {
     z-index: 300;
     border-radius: 100px;
-    position: absolute;
-    bottom: 4.5%;
-    left: 6%;
-    width: 20%;
+    position: relative;
+    width: 80px;
+    bottom: auto;
+    left: auto;
     aspect-ratio: 1 / 1;
     border: 1px solid var(--light-red);
-
     box-shadow: inset 0 0 10px 0px var(--light-red),
       0 0 10px rgba(255, 0, 0, 0.8);
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #control-btn-pannel {
+    position: relative;
+    margin: auto;
+    width: 150px;
+    height: 100%;
+    anchor-name: --control-pannel;
   }
   .control-btn {
+    border: 1px solid grey;
+    box-shadow: inset 0 0 2px 0px var(--matrix-green-dark),
+      0 0 4px rgba(16, 34, 0, 0.8);
+    border-radius: 6px;
+    background-color: rgb(0, 0, 0);
   }
   #control-one {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 10px);
+    left: anchor(left);
+    width: 150px;
+    height: 40px;
+    transform: translate(0, 0);
+    background-color: rgb(0, 0, 0);
   }
   #control-log {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 110px);
+    right: anchor(right);
+    transform: translate(0, 0);
+    width: 67.5px;
+    left: auto;
+    height: 40px;
+    aspect-ratio: auto;
+    background-color: rgb(0, 0, 0);
   }
   #control-bio {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 60px);
+    left: anchor(left);
+    width: 40px;
+    transform: translate(0, 0);
+    background-color: rgb(0, 0, 0);
   }
   #control-acorn {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 60px);
+    left: calc(anchor(left) + 55px);
+    right: auto;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    transform: translate(0, 0);
+    background-color: rgb(0, 0, 0);
   }
   #control-projects {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 60px);
+    left: auto;
+    right: anchor(right);
+    transform: translate(0, 0);
+    width: 40px;
+    background-color: rgb(0, 0, 0);
   }
   #lightspeed-btn {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 110px);
+    left: anchor(left);
+    transform: translate(0, 0);
+    width: 67.5px;
+    right: auto;
+    height: 40px;
+    aspect-ratio: auto;
+    background-color: rgb(0, 0, 0);
+  }
+  .control-btn > svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    stroke: rgb(95, 110, 96);
+    width: 100%;
+    height: 40px;
+    stroke-width: 2px;
+  }
+
+  .control-btn:hover > svg {
+    stroke: rgb(1, 139, 1);
+  }
+
+  #spaceship-display {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 160px);
+    max-height: 0;
+    width: 100vw;
+    opacity: 1;
+    background-color: black;
+    z-index: 38;
+    overflow: hidden;
+    aspect-ratio: auto;
+    clip-path: none;
+
+    /* clip-path: polygon(12% 0, 88% 0, 100% 16%, 88% 74%, 13% 74%, 0 18%); */
+  }
+  #spaceship-display.open {
+    padding-top: 56px;
+    max-height: 100%;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #display-content-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto;
+    max-width: 300px;
+    height: calc(100vh - 250px);
+  }
+  #mobile-spaceship-overlay {
+    position: absolute;
+    bottom: 160px;
+    width: 100vw;
+    height: calc(100vh - 160px);
+    z-index: 300;
+  }
+  #mobile-spaceship-overlay > svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  #mobile-spaceship-overlay-outline {
+    stroke-width: 1px;
+    stroke: rgb(168, 98, 98);
+  }
+  #mobile-spaceship-overlay-mask {
+    fill: rgb(0, 0, 0);
   }
 }

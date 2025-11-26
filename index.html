@@ -205,22 +205,129 @@
           <section id="interior-sections">
             <!------------------ Interior Spaceship ----------------->
             <div id="spaceship-interior-section">
-              <div id="radar-container" class="radar-container">
-                <div class="radar">
-                  <div class="sweep"></div>
-                </div>
-              </div>
               <div id="spaceship-interior-background"></div>
               <div id="spaceship-interior"></div>
+              <div id="mobile-spaceship-overlay">
+                <svg
+                  id="mobile-spaceship-overlay-mask"
+                  viewBox="0 0 383 694"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none">
+                  <path
+                    d="M383 694H0V0H383V694ZM44.4775 40L9 62.875L48.9746 647.459L85.4512 684.059H300.315L335.793 646.95L375.768 63.3838L340.29 40H261.34L248.848 58.2998H135.92L123.428 40H44.4775Z" />
+                </svg>
+                <svg
+                  id="mobile-spaceship-overlay-outline"
+                  viewBox="0 0 383 694"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none">
+                  <path
+                    d="M135.92 59.2998H248.848L261.34 41H340.29L375.768 64.3838L335.793 647.95L300.315 685.059H85.4512L48.9746 648.459L9 63.875L44.4775 41H123.428L135.92 59.2998ZM10.0381 64.3955L49.9463 648.018L85.8672 684.059H299.888L334.819 647.521L374.729 64.8965L339.989 42H261.868L249.674 59.8643L249.376 60.2998H135.392L135.094 59.8643L122.899 42H44.7725L10.0381 64.3955Z" />
+                </svg>
+              </div>
               <div id="mobile-spaceship-interior"></div>
               <div id="spaceship-display" class="spaceship-front-screen">
-                <div
-                  id="display-content-container"
-                  class="front-screen-content"></div>
+                <div id="display-content-container"></div>
               </div>
 
-              <div id="lightspeed-btn" class="control-btn"></div>
-
+              <div id="mobile-control-pannel">
+                <div id="radar-container" class="radar-container">
+                  <div class="radar">
+                    <div class="sweep"></div>
+                  </div>
+                </div>
+                <div id="control-btn-pannel"></div>
+                <div id="spaceship-monitor" class="spaceship-monitor">
+                  <div class="spaceship-content">testing</div>
+                  <img
+                    class="monitor-content"
+                    id="monitor-satellite"
+                    src="./assets/images/space/satellite.webp" />
+                  <img
+                    class="monitor-content"
+                    id="monitor-space-whale"
+                    src="./assets/images/space/spacewhale.webp" />
+                  <img
+                    class="monitor-content"
+                    id="monitor-asteroid"
+                    src="./assets/images/space/asteroid-1.webp" />
+                  <img
+                    id="monitor-space-station"
+                    class="monitor-content"
+                    src="./assets/images/space/spaceship-1.webp" />
+                  <img
+                    id="monitor-star"
+                    class="monitor-content"
+                    src="./assets/images/space/star-1.webp" />
+                  <img
+                    id="monitor-red-planet"
+                    class="monitor-content"
+                    src="./assets/images/space/planet-1.webp" />
+                  <img
+                    id="monitor-black-hole"
+                    class="monitor-content"
+                    src="./assets/images/space/black-hole.webp" />
+                  <img
+                    id="headshot-image"
+                    class="headshot-image monitor-content"
+                    src="./assets/images/space/capitains_portrait.png" />
+                  <img
+                    id="monitor-lightspeed"
+                    class="headshot-image monitor-content"
+                    src="./assets/images/space/lightspeed-monitor.webp" />
+                  <img
+                    id="monitor-spaceship"
+                    class="spaceship-2 active monitor-content"
+                    src="./assets/images/space/spaceship-2.webp" />
+                  <img
+                    id="cephadex-logo"
+                    class="monitor-content"
+                    src="./assets/images/CephadexLogoSix.png" />
+                  <img
+                    id="swift-swatch-logo"
+                    class="monitor-content"
+                    src="./assets/images/swift-swatch-logo-sm.png" />
+                  <img
+                    id="cognaite-logo"
+                    class="monitor-content"
+                    src="./assets/images/starter-logo.svg" />
+                  <img
+                    id="chair-the-fed-logo"
+                    class="monitor-content"
+                    src="./assets/images/chair-the-fed.png" />
+                  <img
+                    id="ai-story-tellers-logo"
+                    class="monitor-content"
+                    src="./assets/images/aistorytellers.png" />
+                  <img
+                    id="acorn-logo"
+                    class="monitor-content"
+                    src="./assets/images/acorn.png" />
+                  <img
+                    id="space-portfolio-logo"
+                    class="monitor-content"
+                    src="./assets/images/acorn.png" />
+                  <img
+                    id="blog-logo"
+                    class="monitor-content"
+                    src="./assets/images/kem-logo-no-bg-light.png" />
+                </div>
+              </div>
+              <div id="lightspeed-btn" class="control-btn">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M76.7861 76H22.2139L49.5 28.0107L76.7861 76Z"
+                    fill="none" />
+                  <line x1="14.8181" y1="57.5343" x2="78.8181" y2="32.5343" />
+                  <line x1="16.8214" y1="72.533" x2="84.8214" y2="46.533" />
+                  <line x1="14.8191" y1="65.5339" x2="81.8191" y2="39.5339" />
+                  <path
+                    d="M48.5 17.5C54.0461 17.5 58.5 21.776 58.5 27C58.5 32.224 54.0461 36.5 48.5 36.5C42.9539 36.5 38.5 32.224 38.5 27C38.5 21.776 42.9539 17.5 48.5 17.5Z"
+                    fill="none" />
+                </svg>
+              </div>
               <svg
                 id="lightspeed-btn-svg"
                 class="svg-control-tooltips"
@@ -231,7 +338,25 @@
                 <text class="svg-control-text" x="30" y="12">Light Speed</text>
               </svg>
 
-              <div id="control-projects" class="control-btn"></div>
+              <div id="control-projects" class="control-btn">
+                <svg
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1_98)">
+                    <line x1="82.3084" y1="49.3935" x2="45.3084" y2="78.3935" />
+                    <path d="M28 48L57 26" />
+                    <path d="M79 52L64 37" />
+                    <path d="M76 55L64 43" />
+                    <path d="M82 50L64 31" />
+                    <path
+                      d="M25.5 49.5L40.5 65M28 47.5L45.5 65M22 51.5L36 66" />
+                    <circle cx="53.5" cy="52.5" r="1" />
+                    <circle cx="56.5" cy="46.5" r="1" />
+                    <circle cx="49.5" cy="46.5" r="1" />
+                  </g>
+                </svg>
+              </div>
               <svg
                 id="projects-btn-svg"
                 class="svg-control-tooltips"
@@ -245,7 +370,23 @@
                 </text>
               </svg>
 
-              <div id="control-one" class="control-btn"></div>
+              <div id="control-one" class="control-btn">
+                <svg
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="51.5" cy="49.5" r="23" />
+                  <line x1="24.7078" y1="67.5942" x2="49.7078" y2="49.5942" />
+                  <line x1="24.7078" y1="67.5942" x2="49.7078" y2="49.5942" />
+                  <path
+                    d="M30 67.5942L55 49.5942M36 67.5942L61 49.5942M41 67.5942L66 49.5942" />
+                  <line x1="17" y1="49.5" x2="75" y2="49.5" />
+                  <circle cx="78.5" cy="45.5" r="1" />
+                  <circle cx="75.5" cy="37.5" r="1" />
+                  <circle cx="27.5" cy="60.5" r="1" />
+                  <circle cx="25.5" cy="44.5" r="1" />
+                </svg>
+              </div>
               <svg
                 id="one-btn-svg"
                 class="svg-control-tooltips"
@@ -256,7 +397,20 @@
                 <text class="svg-control-text" x="32" y="15">Work</text>
               </svg>
 
-              <div id="control-log" class="control-btn"></div>
+              <div id="control-log" class="control-btn">
+                <svg
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line x1="50.5" y1="10" x2="50.5" y2="78" />
+                  <path d="M50.5 31L72 13" />
+                  <path d="M60 59L39 45" />
+                  <path d="M62 52L40 36" />
+                  <line x1="29.697" y1="78.6023" x2="50.697" y2="62.6023" />
+                  <circle cx="56.5" cy="20.5" r="1" />
+                  <circle cx="45.5" cy="71.5" r="1" />
+                </svg>
+              </div>
               <svg
                 id="log-btn-svg"
                 class="svg-control-tooltips"
@@ -270,7 +424,25 @@
                 </text>
               </svg>
 
-              <div id="control-acorn" class="control-btn"></div>
+              <div id="control-acorn" class="control-btn">
+                <svg
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line x1="49.5" y1="79" x2="49.5" y2="29" />
+                  <line x1="27" y1="28.5" x2="73" y2="28.5" />
+                  <circle cx="49.5" cy="22.5" r="1" />
+                  <circle cx="49.5" cy="14.5" r="1" />
+                  <line x1="49.5812" y1="78.7269" x2="64.5812" y2="55.7269" />
+                  <line
+                    y1="-0.5"
+                    x2="27.4591"
+                    y2="-0.5"
+                    transform="matrix(-0.546268 -0.837611 -0.837611 0.546268 49 79)"
+                    stroke="black" />
+                  <path d="M21.4302 33.5L37.7874 17" />
+                </svg>
+              </div>
               <svg
                 id="acorn-btn-svg"
                 class="svg-control-tooltips"
@@ -283,7 +455,22 @@
                   Acorn
                 </text>
               </svg>
-              <div id="control-bio" class="control-btn"></div>
+              <div id="control-bio" class="control-btn">
+                <svg
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line x1="35.5" y1="79" x2="35.5" y2="29" />
+                  <line x1="35.4082" y1="28.7113" x2="64.4082" y2="69.7113" />
+                  <circle cx="49.5" cy="38.5" r="1" />
+                  <circle cx="53.5" cy="31.5" r="1" />
+                  <circle cx="57.5" cy="24.5" r="1" />
+                  <circle cx="57.5" cy="24.5" r="1" />
+                  <circle cx="57.5" cy="24.5" r="1" />
+                  <path d="M35.1893 78.5L71.6894 5" />
+                  <line x1="36.5543" y1="93.7735" x2="67.5543" y2="32.7735" />
+                </svg>
+              </div>
               <svg
                 id="bio-btn-svg"
                 class="svg-control-tooltips"
@@ -294,82 +481,6 @@
                 <polyline points="90 100 90 60 70 55" fill="none" />
                 <text class="svg-control-text" x="54" y="55">Bio</text>
               </svg>
-
-              <div id="spaceship-monitor" class="spaceship-monitor">
-                <div class="spaceship-content">testing</div>
-                <img
-                  class="monitor-content"
-                  id="monitor-satellite"
-                  src="./assets/images/space/satellite.webp" />
-                <img
-                  class="monitor-content"
-                  id="monitor-space-whale"
-                  src="./assets/images/space/spacewhale.webp" />
-                <img
-                  class="monitor-content"
-                  id="monitor-asteroid"
-                  src="./assets/images/space/asteroid-1.webp" />
-                <img
-                  id="monitor-space-station"
-                  class="monitor-content"
-                  src="./assets/images/space/spaceship-1.webp" />
-                <img
-                  id="monitor-star"
-                  class="monitor-content"
-                  src="./assets/images/space/star-1.webp" />
-                <img
-                  id="monitor-red-planet"
-                  class="monitor-content"
-                  src="./assets/images/space/planet-1.webp" />
-                <img
-                  id="monitor-black-hole"
-                  class="monitor-content"
-                  src="./assets/images/space/black-hole.webp" />
-                <img
-                  id="headshot-image"
-                  class="headshot-image monitor-content"
-                  src="./assets/images/space/capitains_portrait.png" />
-                <img
-                  id="monitor-lightspeed"
-                  class="headshot-image monitor-content"
-                  src="./assets/images/space/lightspeed-monitor.webp" />
-                <img
-                  id="monitor-spaceship"
-                  class="spaceship-2 active monitor-content"
-                  src="./assets/images/space/spaceship-2.webp" />
-                <img
-                  id="cephadex-logo"
-                  class="monitor-content"
-                  src="./assets/images/CephadexLogoSix.png" />
-                <img
-                  id="swift-swatch-logo"
-                  class="monitor-content"
-                  src="./assets/images/swift-swatch-logo-sm.png" />
-                <img
-                  id="cognaite-logo"
-                  class="monitor-content"
-                  src="./assets/images/starter-logo.svg" />
-                <img
-                  id="chair-the-fed-logo"
-                  class="monitor-content"
-                  src="./assets/images/chair-the-fed.png" />
-                <img
-                  id="ai-story-tellers-logo"
-                  class="monitor-content"
-                  src="./assets/images/aistorytellers.png" />
-                <img
-                  id="acorn-logo"
-                  class="monitor-content"
-                  src="./assets/images/acorn.png" />
-                <img
-                  id="space-portfolio-logo"
-                  class="monitor-content"
-                  src="./assets/images/acorn.png" />
-                <img
-                  id="blog-logo"
-                  class="monitor-content"
-                  src="./assets/images/kem-logo-no-bg-light.png" />
-              </div>
             </div>
 
             <!------------------ Interior Spacestation ----------------->

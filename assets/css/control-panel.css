@@ -64,7 +64,7 @@
   pointer-events: auto;
 }
 
-.front-screen-content {
+#display-content-container {
   margin-top: 2%;
   margin-left: auto;
   margin-right: auto;

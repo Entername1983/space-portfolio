@@ -56,12 +56,6 @@
   cursor: pointer;
 }
 
-/* #projects-back-button > #arrow-left-solid {
-  fill: var(--matrix-green);
-  height: 30px;
-  width: 30px;
-} */
-
 @media (max-width: 650px) {
   .screen-content > ul {
     margin-left: 0px;
