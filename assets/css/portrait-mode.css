@@ -3,8 +3,9 @@ body[data-orientation="portrait"] {
 
   .wrapper {
     aspect-ratio: none;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
+    max-width: 500px;
   }
 
   #spaceship-interior-background {
@@ -18,6 +19,8 @@ body[data-orientation="portrait"] {
     position: absolute;
     bottom: 0;
     width: 100vw;
+    max-width: 500px;
+
     height: 160px;
     /* border-top: 1px solid var(--light-red);
     box-shadow: inset 0 0 20px 0px var(--light-red),
@@ -28,6 +31,8 @@ body[data-orientation="portrait"] {
     position: absolute;
     bottom: 0;
     width: 100vw;
+    max-width: 500px;
+
     height: 160px;
     display: grid;
     grid-template-columns: 30% 40% 30%;
@@ -156,9 +161,11 @@ body[data-orientation="portrait"] {
     display: block;
     top: 0;
     left: 0;
-    height: calc(100vh - 160px);
+    height: calc(100dvh - 160px);
     max-height: 0;
     width: 100vw;
+    max-width: 500px;
+
     opacity: 1;
     background-color: black;
     z-index: 38;
@@ -179,13 +186,14 @@ body[data-orientation="portrait"] {
     padding-right: 20px;
     width: auto;
     max-width: 300px;
-    height: calc(100vh - 250px);
+    height: calc(100dvh - 250px);
   }
   #mobile-spaceship-overlay {
     position: absolute;
     bottom: 160px;
     width: 100vw;
-    height: calc(100vh - 160px);
+    max-width: 500px;
+    height: calc(100dvh - 160px);
     z-index: 300;
   }
   #mobile-spaceship-overlay > svg {
