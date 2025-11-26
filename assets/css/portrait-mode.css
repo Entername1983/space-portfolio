@@ -3,7 +3,7 @@ body[data-orientation="portrait"] {
 
   .wrapper {
     aspect-ratio: none;
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
   }
 
@@ -156,7 +156,7 @@ body[data-orientation="portrait"] {
     display: block;
     top: 0;
     left: 0;
-    height: calc(100vh - 160px);
+    height: calc(100svh - 160px);
     max-height: 0;
     width: 100vw;
     opacity: 1;
@@ -179,13 +179,13 @@ body[data-orientation="portrait"] {
     padding-right: 20px;
     width: auto;
     max-width: 300px;
-    height: calc(100vh - 250px);
+    height: calc(100svh - 250px);
   }
   #mobile-spaceship-overlay {
     position: absolute;
     bottom: 160px;
     width: 100vw;
-    height: calc(100vh - 160px);
+    height: calc(100svh - 160px);
     z-index: 300;
   }
   #mobile-spaceship-overlay > svg {
