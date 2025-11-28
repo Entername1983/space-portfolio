@@ -39,11 +39,16 @@
   </head>
 
   <body data-orientation="portrait">
-    <!------------------ Starfield Layer 1 ----------------->
     <main>
+      <!------------------ WRAPPER ----------------->
       <div id="wrapper" class="wrapper">
+        <!------------------ FADE OVERLAY ----------------->
         <div id="fade-overlay"></div>
+
+        <!------------------ STARFIELD ----------------->
         <canvas id="starfield"></canvas>
+
+        <!------------------ SCENE CONTROLS ----------------->
         <div id="scene-controls">
           <button id="mode-switcher" class="">
             <svg
@@ -91,6 +96,8 @@
             </svg>
           </button>
         </div>
+
+        <!------------------ SPACE SCENE CONTAINER  ----------------->
         <div id="space-scene-container">
           <div id="space-elements" class="active">
             <img
@@ -207,24 +214,221 @@
             <div id="spaceship-interior-section">
               <div id="spaceship-interior-background"></div>
               <div id="spaceship-interior"></div>
+
+              <!----------------- MOBILE OVERLAY ----------------->
               <div id="mobile-spaceship-overlay">
                 <svg
                   id="mobile-spaceship-overlay-mask"
-                  viewBox="0 0 383 694"
-                  fill="none"
+                  viewBox="0 0 400 850"
                   xmlns="http://www.w3.org/2000/svg"
+                  fill="black"
                   preserveAspectRatio="none">
                   <path
-                    d="M383 694H0V0H383V694ZM44.4775 40L9 62.875L48.9746 647.459L85.4512 684.059H300.315L335.793 646.95L375.768 63.3838L340.29 40H261.34L248.848 58.2998H135.92L123.428 40H44.4775Z" />
+                    fill="black"
+                    mobile-spaceship-overlay-mask
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    stroke="black"
+                    d="M400 700H0V0H400V700ZM46.4517 40.3458L9.39905 63.4188L51.1488 653.056L89.2443 689.972H313.645L350.698 652.543L392.446 63.9313L355.395 40.3458H272.94L259.894 58.8038H141.953L128.906 40.3458H46.4517Z" />
+                  <path stroke="black" d="M0 700H400V850H0V700Z" fill="black" />
+
+                  <!----------------- INNER SVG BLUR ----------------->
+                  <g clip-path="url(#clip0_11_91)">
+                    <g filter="url(#filter0_f_11_91)">
+                      <path
+                        d="M128.98 41.5L141.682 59.5752L141.98 60H260.52L260.818 59.5752L273.52 41.5H355.704L391.96 65.0176L350.029 652.556L313.586 689H88.9102L51.9697 652.553L12.4971 89.4297V89.417L12.4951 89.4043L10.0537 64.0166L45.7881 41.5H128.98Z"
+                        stroke-width="2"
+                        fill="none" />
+                    </g>
+                    <g filter="url(#filter1_f_11_91)">
+                      <path
+                        d="M128.413 43.5029L141.146 61.2334L141.595 61.8584H263.405L263.854 61.2334L276.587 43.5029H357.816L393.343 65.7598L351.337 648.681L315.316 684.497H90.708L53.6592 649.161L11.6572 65.2676L47.1689 43.5029H128.413Z"
+                        stroke-width="3"
+                        fill="none" />
+                    </g>
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_f_11_91"
+                      x="5"
+                      y="36.5"
+                      width="392"
+                      height="657.5"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="BackgroundImageFix"
+                        result="shape" />
+                      <feGaussianBlur
+                        stdDeviation="2"
+                        result="effect1_foregroundBlur_11_91" />
+                    </filter>
+                    <filter
+                      id="filter1_f_11_91"
+                      x="-5"
+                      y="27"
+                      width="415"
+                      height="674"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="BackgroundImageFix"
+                        result="shape" />
+                      <feGaussianBlur
+                        stdDeviation="7"
+                        result="effect1_foregroundBlur_11_91" />
+                    </filter>
+                    <clipPath id="clip0_11_91">
+                      <rect width="400" height="850" fill="white" />
+                    </clipPath>
+                  </defs>
                 </svg>
+
+                <!----------------- DECORATIVE SVG BLURS ----------------->
                 <svg
-                  id="mobile-spaceship-overlay-outline"
-                  viewBox="0 0 383 694"
+                  id="mobile-side-decoration"
+                  viewBox="0 0 400 850"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none">
-                  <path
-                    d="M135.92 59.2998H248.848L261.34 41H340.29L375.768 64.3838L335.793 647.95L300.315 685.059H85.4512L48.9746 648.459L9 63.875L44.4775 41H123.428L135.92 59.2998ZM10.0381 64.3955L49.9463 648.018L85.8672 684.059H299.888L334.819 647.521L374.729 64.8965L339.989 42H261.868L249.674 59.8643L249.376 60.2998H135.392L135.094 59.8643L122.899 42H44.7725L10.0381 64.3955Z" />
+                  <g clip-path="url(#clip0_13_28)">
+                    <!--- RIGHT SIDE VECTOR --->
+                    <path
+                      class="vector"
+                      d="M401 656L381.5 635.5V586.5L368 572.5V523.5L391.5 498.5V410.5L377.5 396.5V352L396.5 333.5V291L386.5 280V238L396.5 228V185L401.5 179" />
+                    <path
+                      class="side-vector-animation right"
+                      d="M401 656L381.5 635.5V586.5L368 572.5V523.5L391.5 498.5V410.5L377.5 396.5V352L396.5 333.5V291L386.5 280V238L396.5 228V185L401.5 179" />
+                    <!--- LEFT SIDE VECTOR --->
+                    <path
+                      class="vector"
+                      d="M-2.5 656L17 635.5V586.5L30.5 572.5V523.5L7 498.5V410.5L21 396.5V352L2 333.5V291L12 280V238L2 228V185L-3 179" />
+                    <path
+                      class="side-vector-animation left"
+                      d="M-2.5 656L17 635.5V586.5L30.5 572.5V523.5L7 498.5V410.5L21 396.5V352L2 333.5V291L12 280V238L2 228V185L-3 179" />
+                    <!---- TOP VECTOR --->
+                    <path
+                      class="vector"
+                      d="M0 22.5L14.5 32H45L67 17H98L112.5 26H160.5L174 35H224.5L238.5 25.5H286.5L301 16H332L354 32H384.5L399.5 22" />
+                    <path
+                      class="top-vector-animation"
+                      d="M0 22.5L14.5 32H45L67 17H98L112.5 26H160.5L174 35H224.5L238.5 25.5H286.5L301 16H332L354 32H384.5L399.5 22" />
+                    <!---- BOTTOM VECTOR UPPER --->
+                    <path
+                      class="vector"
+                      d="M-1 685L12.5 693.5V704.5L27.5 714.5H47.5L61 705.5H99L120.5 718.5H142.743L171.5 700.5H226.5L255.5 718.5H277.5L298.5 705H337L351 714.5H370.5L385 705.5V694.5L399 686L400 685.5" />
+                    <path
+                      class="bottom-vector-animation upper"
+                      d="M-1 685L12.5 693.5V704.5L27.5 714.5H47.5L61 705.5H99L120.5 718.5H142.743L171.5 700.5H226.5L255.5 718.5H277.5L298.5 705H337L351 714.5H370.5L385 705.5V694.5L399 686L400 685.5" />
+                    <!---- BOTTOM VECTOR LOWER --->
+                    <path
+                      class="vector"
+                      d="M0 811L13.5 819.5V830.5L28.5 840.5H48.5L62 831.5H100L121.5 844.5H143.743L172.5 826.5H227.5L256.5 844.5H278.5L299.5 831H338L352 840.5H371.5L386 831.5V820.5L400 812L401 811.5" />
+                    <path
+                      class="bottom-vector-animation lower"
+                      d="M0 811L13.5 819.5V830.5L28.5 840.5H48.5L62 831.5H100L121.5 844.5H143.743L172.5 826.5H227.5L256.5 844.5H278.5L299.5 831H338L352 840.5H371.5L386 831.5V820.5L400 812L401 811.5" />
+                  </g>
+                  <defs>
+                    <filter
+                      id="right_blur_filter"
+                      x="361.5"
+                      y="192.054"
+                      width="43.4004"
+                      height="486.674"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="BackgroundImageFix"
+                        result="shape" />
+                      <feGaussianBlur
+                        stdDeviation="4"
+                        result="effect1_foregroundBlur_11_226" />
+                    </filter>
+                    <filter
+                      id="left_blur_filter"
+                      x="-5.10303"
+                      y="192.054"
+                      width="43.4004"
+                      height="486.674"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="BackgroundImageFix"
+                        result="shape" />
+                      <feGaussianBlur
+                        stdDeviation="4"
+                        result="effect1_foregroundBlur_11_226" />
+                    </filter>
+                    <filter
+                      id="bottom_blur_upper"
+                      x="-10.793"
+                      y="676.727"
+                      width="421.569"
+                      height="54.6621"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="BackgroundImageFix"
+                        result="shape" />
+                      <feGaussianBlur
+                        stdDeviation="4.5"
+                        result="effect1_foregroundBlur_11_226" />
+                    </filter>
+                    <filter
+                      id="bottom_blur_lower"
+                      x="-9.79297"
+                      y="798.727"
+                      width="421.569"
+                      height="54.6621"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="BackgroundImageFix"
+                        result="shape" />
+                      <feGaussianBlur
+                        stdDeviation="4.5"
+                        result="effect1_foregroundBlur_11_226" />
+                    </filter>
+                    <filter
+                      id="top_blur"
+                      x="-5.81738"
+                      y="6.5"
+                      width="410.663"
+                      height="29.8984"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="BackgroundImageFix"
+                        result="shape" />
+                      <feGaussianBlur
+                        stdDeviation="4"
+                        result="effect1_foregroundBlur_11_226" />
+                    </filter>
+                    <clipPath id="clip0_13_28">
+                      <rect width="400" height="850" fill="white" />
+                    </clipPath>
+                  </defs>
                 </svg>
               </div>
               <div id="mobile-spaceship-interior"></div>
@@ -537,7 +741,7 @@
           <!------------------ Info Layer ----------------->
 
           <div id="alien-info" class="info-container">
-            <div class="info-content">
+            <div id="info-content" class="info-content">
               <h2 class="info-content-text">...</h2>
 
               <div class="info-content-buttons">

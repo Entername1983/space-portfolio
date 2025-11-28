@@ -12,7 +12,7 @@
     max-height: 15vh;
   }
 }
-.info-container {
+#alien-info {
   position: absolute;
   bottom: 40%;
   /* top: -30vh; */
@@ -62,7 +62,7 @@
 }
 
 @media (max-width: 700px) {
-  .info-container {
+  #alien-info {
     position: absolute;
     border: none;
     top: auto;
