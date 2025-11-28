@@ -1,8 +1,72 @@
+@keyframes electrical-pulse {
+  0% {
+    stroke-dashoffset: 1062;
+    opacity: 0.9;
+  }
+  49% {
+    stroke-dashoffset: 530;
+    opacity: 0.9;
+  }
+  49.5% {
+    stroke-dashoffset: -1046;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -1046;
+    opacity: 0;
+  }
+}
+
+@keyframes electrical-pulse-bottom {
+  0% {
+    stroke-dashoffset: 457;
+    opacity: 0;
+  }
+  1% {
+    stroke-dashoffset: 457;
+    opacity: 0.9;
+  }
+  49% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  49.5% {
+    stroke-dashoffset: -457;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -457;
+    opacity: 0;
+  }
+}
+@keyframes electrical-pulse-top {
+  0% {
+    stroke-dashoffset: 426;
+    opacity: 0;
+  }
+  1% {
+    stroke-dashoffset: 426;
+    opacity: 0.9;
+  }
+  49% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  49.5% {
+    stroke-dashoffset: -426;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -426;
+    opacity: 0;
+  }
+}
+
 body[data-orientation="portrait"] {
   background-color: black;
 
   .wrapper {
-    aspect-ratio: none;
+    aspect-ratio: auto;
     height: 100dvh;
     width: 100vw;
     max-width: 500px;
@@ -190,18 +254,11 @@ body[data-orientation="portrait"] {
   }
   #mobile-spaceship-overlay {
     position: absolute;
-    bottom: 160px;
+    bottom: 0;
     width: 100vw;
     max-width: 500px;
-    height: calc(100dvh - 160px);
+    height: calc(100dvh);
     z-index: 300;
-  }
-  #mobile-spaceship-overlay > svg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
   }
   #mobile-spaceship-overlay-outline {
     stroke-width: 1px;
@@ -209,5 +266,81 @@ body[data-orientation="portrait"] {
   }
   #mobile-spaceship-overlay-mask {
     fill: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    stroke: var(--light-red);
+  }
+  #mobile-side-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    stroke: var(--light-red);
+  }
+  #alien-info {
+    bottom: 10px;
+    right: auto;
+    left: 0;
+  }
+  .info-content-buttons {
+    justify-content: start;
+  }
+  #proceed-btn {
+    order: 1;
+  }
+
+  #info-close-button {
+    order: -1;
+  }
+
+  .vector {
+    stroke: #b45b38;
+    stroke-width: 2;
+    filter: drop-shadow(0 0 4px red) drop-shadow(0 0 8px red);
+  }
+  .side-vector-animation,
+  .bottom-vector-animation,
+  .top-vector-animation {
+    stroke: #f72d1f;
+    stroke-width: 2;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 10px rgb(122, 18, 0))
+      drop-shadow(0 0 10px rgb(133, 15, 0));
+  }
+
+  .side-vector-animation {
+    stroke-dasharray: 10 1036;
+    stroke-dashoffset: 1000;
+    animation: electrical-pulse 4s linear infinite;
+  }
+  .side-vector-animation.left {
+    animation-delay: 0s;
+  }
+  .side-vector-animation.right {
+    animation-delay: -1.5s;
+  }
+
+  .bottom-vector-animation {
+    stroke-dasharray: 10 457;
+    stroke-dashoffset: 457;
+    animation: electrical-pulse-bottom 4s linear infinite;
+  }
+
+  .bottom-vector-animation.upper {
+    animation-delay: -0.5s;
+  }
+
+  .bottom-vector-animation.lower {
+    animation-delay: -2.5s;
+  }
+
+  .top-vector-animation {
+    stroke-dasharray: 10 426;
+    stroke-dashoffset: 426;
+    animation: electrical-pulse-top 4s linear infinite;
   }
 }
