@@ -84,11 +84,11 @@ body[data-orientation="portrait"] {
     bottom: 0;
     width: 100vw;
     max-width: 500px;
-<<<<<<< HEAD
-=======
 
->>>>>>> saved-animation-work
     height: 160px;
+    /* border-top: 1px solid var(--light-red);
+    box-shadow: inset 0 0 20px 0px var(--light-red),
+      0 0 10px rgba(255, 0, 0, 0.8); */
     background-color: black;
   }
   #mobile-control-pannel {
@@ -98,7 +98,6 @@ body[data-orientation="portrait"] {
     max-width: 500px;
 
     height: 160px;
-    max-width: 500px;
     display: grid;
     grid-template-columns: 30% 40% 30%;
     z-index: 400;
@@ -233,7 +232,7 @@ body[data-orientation="portrait"] {
 
     opacity: 1;
     background-color: black;
-    z-index: 38;
+    z-index: 29;
     overflow: hidden;
     aspect-ratio: auto;
     clip-path: none;
@@ -255,23 +254,11 @@ body[data-orientation="portrait"] {
   }
   #mobile-spaceship-overlay {
     position: absolute;
-<<<<<<< HEAD
-    bottom: 160px;
-    width: 100vw;
-    max-width: 500px;
-
-    height: calc(100dvh - 160px);
-    z-index: 300;
-  }
-  #mobile-spaceship-overlay > svg {
-    position: absolute;
-=======
->>>>>>> saved-animation-work
     bottom: 0;
     width: 100vw;
     max-width: 500px;
     height: calc(100dvh);
-    z-index: 300;
+    z-index: 30;
   }
   #mobile-spaceship-overlay-outline {
     stroke-width: 1px;
@@ -318,7 +305,7 @@ body[data-orientation="portrait"] {
   .side-vector-animation,
   .bottom-vector-animation,
   .top-vector-animation {
-    stroke: #f72d1f;
+    stroke: #fa5e53;
     stroke-width: 2;
     stroke-linecap: round;
     filter: drop-shadow(0 0 10px rgb(122, 18, 0))
@@ -355,18 +342,5 @@ body[data-orientation="portrait"] {
     stroke-dasharray: 10 426;
     stroke-dashoffset: 426;
     animation: electrical-pulse-top 4s linear infinite;
-  }
-
-  #scene-controls {
-    top: auto;
-    bottom: 130px;
-    left: 20px;
-    padding: 1px;
-    border: 1px solid var(--dark-red);
-    box-shadow: 0 0 10px 0px var(--dark-red), 0 0 5px rgba(255, 0, 0, 0.8);
-  }
-  #mode-switcher {
-    height: 40px;
-    width: 40px;
   }
 }
