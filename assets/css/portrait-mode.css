@@ -86,11 +86,7 @@ body[data-orientation="portrait"] {
     bottom: 0;
     width: 100vw;
     max-width: 500px;
-
-    height: 160px;
-    /* border-top: 1px solid var(--light-red);
-    box-shadow: inset 0 0 20px 0px var(--light-red),
-      0 0 10px rgba(255, 0, 0, 0.8); */
+    height: 18dvh;
     background-color: black;
   }
   #mobile-control-pannel {
@@ -98,8 +94,7 @@ body[data-orientation="portrait"] {
     bottom: 0;
     width: 100vw;
     max-width: 500px;
-
-    height: 160px;
+    height: 18dvh;
     display: grid;
     grid-template-columns: 30% 40% 30%;
     z-index: 400;
@@ -141,15 +136,73 @@ body[data-orientation="portrait"] {
     width: 150px;
     height: 100%;
     anchor-name: --control-pannel;
+    border: 1px dashed yellow;
+    opacity: 0;
+  }
+
+  #control-pannel-buttons {
+    position: absolute;
+
+    position-anchor: --control-pannel;
+    top: anchor(top);
+    right: anchor(c);
+    height: 18dvh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      ". center-buttons-0 ."
+      ". center-buttons-1 .";
+    z-index: 40;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .control-btn {
+    position: relative;
     border: 1px solid grey;
     box-shadow: inset 0 0 2px 0px var(--matrix-green-dark),
       0 0 4px rgba(16, 34, 0, 0.8);
     border-radius: 6px;
     background-color: rgb(0, 0, 0);
+    border-radius: 0;
   }
-  #control-one {
+  .row-one-wrapper {
+    grid-area: center-buttons-0;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    padding-bottom: 2px;
+  }
+  .row-two-wrapper {
+    padding-top: 2px;
+
+    grid-area: center-buttons-1;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+  }
+  #control-one,
+  #control-log,
+  #control-bio,
+  #control-acorn,
+  #control-projects,
+  #lightspeed-btn {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    height: 36px;
+    width: 36px;
+    transform: translate(0, 0);
+    background-color: rgb(17, 0, 0);
+    border: 1px solid var(--dark-red);
+    border-radius: 2px;
+    box-shadow: inset 0 0 2px 0px var(--light-red), 0 0 2px rgba(255, 0, 0, 0.8);
+  }
+
+  /* #control-one {
     position-anchor: --control-pannel;
     bottom: calc(anchor(bottom) + 10px);
     left: anchor(left);
@@ -206,7 +259,7 @@ body[data-orientation="portrait"] {
     height: 40px;
     aspect-ratio: auto;
     background-color: rgb(0, 0, 0);
-  }
+  } */
   .control-btn > svg {
     display: block;
     position: absolute;
