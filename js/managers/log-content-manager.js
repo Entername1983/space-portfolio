@@ -14,7 +14,7 @@ export class LogContentManager {
     await this.fetchLog();
   }
   async fetchLog() {
-    const captainsLog = await fetch(this.testRssFeed).then((res) => res.text());
+    const captainsLog = await fetch(this.rssFeed).then((res) => res.text());
     await this.parseLogIntoArrayOfItems(captainsLog);
   }
 

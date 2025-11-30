@@ -13,7 +13,6 @@
   display: flex;
   align-items: center;
   padding: 10px;
-
   flex-direction: column;
 }
 .bio-right-section {
@@ -34,6 +33,16 @@
   align-items: center;
   justify-content: center;
 }
+
+.space-between-row {
+  display: flex;
+  justify-content: space-between;
+}
+#display-bio > h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+
 @media (max-width: 1000px) {
   .body-scan-overlay {
     border-radius: 20px;

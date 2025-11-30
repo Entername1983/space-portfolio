@@ -360,7 +360,7 @@ a:hover {
   z-index: 1;
 }
 
-.screen-content::before {
+/* .screen-content::before {
   content: "";
   position: absolute;
   top: -6px;
@@ -382,7 +382,7 @@ a:hover {
   border-radius: inherit;
   z-index: -2;
   animation: rotate 20s linear infinite;
-}
+} */
 .screen-content::after {
   content: "";
   position: absolute;

@@ -421,4 +421,50 @@ body[data-orientation="portrait"] {
   .svg-control-tooltips {
     display: none;
   }
+
+  .bio-content.screen-content {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .body-scan-overlay {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .body-scan-overlay {
+    max-height: 20dvh;
+  }
+  .full-body-image {
+    height: 22dvh;
+    transform: translate(0, -10%);
+  }
+  .bio-content .top-section {
+    padding-top: 10px;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+  }
+  .bio-content .bottom-section {
+    padding-top: 10px;
+
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+  }
+  .bio-last-row {
+    display: flex;
+    justify-content: space-around;
+  }
+  .space-between-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .space-between-grid-row > ul {
+    padding-left: 0px;
+  }
 }

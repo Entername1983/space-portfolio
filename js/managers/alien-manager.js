@@ -21,12 +21,12 @@ export class AlienAssistantManager {
   createRevealTimeline() {
     const masterHoverTimeline = gsap.timeline({ paused: true });
     masterHoverTimeline
-      // .to(this.info, {
-      //   transform: "translate(0%, 0%)",
+      .to(this.info, {
+        transform: "translate(0%, 0%)",
 
-      //   duration: 1,
-      //   ease: "power4.out",
-      // })
+        duration: 1,
+        ease: "power4.out",
+      })
       .to(
         this.alien,
         {
