@@ -69,7 +69,8 @@
             target="_blank"
             href="https://google.com"
             id="home-btn"
-            class="button glow-effect small">
+            class="button glow-effect small"
+            style="display: none">
             Exit
             <svg class="glow-container">
               <rect
@@ -99,6 +100,7 @@
 
         <!------------------ SPACE SCENE CONTAINER  ----------------->
         <div id="space-scene-container">
+          <!------------------ SPACE ELEMENTS  ----------------->
           <div id="space-elements" class="active">
             <img
               id="space-whale"
@@ -134,31 +136,53 @@
               class="alien-sidekick space-element active"
               src="./assets/images/space/alien-sidekick.webp" />
           </div>
+
+          <!------------------ SPACE VIDEOS  ----------------->
           <div id="space-video-scenes">
-            <video
-              id="star-space-scene"
-              class="space-scene-video"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              loading="lazy"
-              width="1920"
-              height="1080"
-              src="./assets/images/space/videos/Sun_Surface.mp4"></video>
-            <video
-              class="space-scene-video"
-              id="black-hole-space-scene"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              loading="lazy"
-              width="1920"
-              height="1080"
-              src="./assets/images/space/videos/Spinning_Black_Hole.mp4"></video>
+            <div id="star-space-scene" class="space-scene-video">
+              <video
+                class="landscape"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                loading="lazy"
+                width="1920"
+                height="1080"
+                src="./assets/images/space/videos/Sun_Surface.mp4"></video>
+              <video
+                class="portrait"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                loading="lazy"
+                src="./assets/images/space/videos/Sun_Surface_Portrait.mp4"></video>
+            </div>
+            <div id="black-hole-space-scene" class="space-scene-video">
+              <video
+                class="landscape"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                loading="lazy"
+                width="1920"
+                height="1080"
+                src="./assets/images/space/videos/Spinning_Black_Hole.mp4"></video>
+              <video
+                class="portrait"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                loading="lazy"
+                src="./assets/images/space/videos/Sideways_Black_Hole_Video.mp4"></video>
+            </div>
             <video
               class="space-scene-video"
               id="space-whale-space-scene"
@@ -183,18 +207,53 @@
               width="1920"
               height="1080"
               src="./assets/images/space/videos/Alien_Infected_Satellite_Video_Ready.mp4"></video>
-            <video
-              class="space-scene-video"
-              id="red-planet-space-scene"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              loading="lazy"
-              width="1920"
-              height="1080"
-              src="./assets/images/space/videos/Alien_Landscape_Video_Generation.mp4"></video>
+
+            <div class="space-scene-video" id="red-planet-space-scene">
+              <video
+                class="landscape"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                loading="lazy"
+                width="1920"
+                height="1080"
+                src="./assets/images/space/videos/Alien_Landscape_Video_Generation.mp4"></video>
+              <video
+                class="portrait"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                loading="lazy"
+                src="./assets/images/space/videos/Alien_Landscape_Video_Generation_Portrait.mp4"></video>
+            </div>
+
+            <div class="space-scene-video" id="derelict-space-station">
+              <video
+                class="landscape"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                loading="lazy"
+                width="1920"
+                height="1080"
+                src="./assets/images/space/videos/Red_Planet_Crater_Impact_Video.mp4"></video>
+              <video
+                class="portrait"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                loading="lazy"
+                src="./assets/images/space/videos/Red_Planet_Crater_Impact_Video.mp4"></video>
+            </div>
+
             <video
               class="space-scene-video"
               id="red-planet-crater-space-scene"
@@ -208,317 +267,375 @@
               height="1080"
               src="./assets/images/space/videos/Red_Planet_Crater_Video_Generated.mp4"></video>
           </div>
-          <!------------------ Interior Layer 3----------------->
-          <section id="interior-sections">
-            <!------------------ Interior Spaceship ----------------->
-            <div id="spaceship-interior-section">
-              <div id="spaceship-interior-background"></div>
-              <div id="spaceship-interior"></div>
+        </div>
 
-              <!----------------- MOBILE OVERLAY ----------------->
-              <div id="mobile-spaceship-overlay">
-                <svg
-                  id="mobile-spaceship-overlay-mask"
-                  viewBox="0 0 400 850"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="black"
-                  preserveAspectRatio="none">
-                  <path
-                    fill="black"
-                    mobile-spaceship-overlay-mask
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    stroke="black"
-                    d="M400 700H0V0H400V700ZM46.4517 40.3458L9.39905 63.4188L51.1488 653.056L89.2443 689.972H313.645L350.698 652.543L392.446 63.9313L355.395 40.3458H272.94L259.894 58.8038H141.953L128.906 40.3458H46.4517Z" />
-                  <path stroke="black" d="M0 700H400V850H0V700Z" fill="black" />
-
-                  <!----------------- INNER SVG BLUR ----------------->
-                  <g clip-path="url(#clip0_11_91)">
-                    <g filter="url(#filter0_f_11_91)">
-                      <path
-                        d="M128.98 41.5L141.682 59.5752L141.98 60H260.52L260.818 59.5752L273.52 41.5H355.704L391.96 65.0176L350.029 652.556L313.586 689H88.9102L51.9697 652.553L12.4971 89.4297V89.417L12.4951 89.4043L10.0537 64.0166L45.7881 41.5H128.98Z"
-                        stroke-width="2"
-                        fill="none" />
-                    </g>
-                    <g filter="url(#filter1_f_11_91)">
-                      <path
-                        d="M128.413 43.5029L141.146 61.2334L141.595 61.8584H263.405L263.854 61.2334L276.587 43.5029H357.816L393.343 65.7598L351.337 648.681L315.316 684.497H90.708L53.6592 649.161L11.6572 65.2676L47.1689 43.5029H128.413Z"
-                        stroke-width="3"
-                        fill="none" />
-                    </g>
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_f_11_91"
-                      x="5"
-                      y="36.5"
-                      width="392"
-                      height="657.5"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="BackgroundImageFix"
-                        result="shape" />
-                      <feGaussianBlur
-                        stdDeviation="2"
-                        result="effect1_foregroundBlur_11_91" />
-                    </filter>
-                    <filter
-                      id="filter1_f_11_91"
-                      x="-5"
-                      y="27"
-                      width="415"
-                      height="674"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="BackgroundImageFix"
-                        result="shape" />
-                      <feGaussianBlur
-                        stdDeviation="7"
-                        result="effect1_foregroundBlur_11_91" />
-                    </filter>
-                    <clipPath id="clip0_11_91">
-                      <rect width="400" height="850" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
-                <!----------------- DECORATIVE SVG BLURS ----------------->
-                <svg
-                  id="mobile-side-decoration"
-                  viewBox="0 0 400 850"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="none">
-                  <g clip-path="url(#clip0_13_28)">
-                    <!--- RIGHT SIDE VECTOR --->
-                    <path
-                      class="vector"
-                      d="M401 656L381.5 635.5V586.5L368 572.5V523.5L391.5 498.5V410.5L377.5 396.5V352L396.5 333.5V291L386.5 280V238L396.5 228V185L401.5 179" />
-                    <path
-                      class="side-vector-animation right"
-                      d="M401 656L381.5 635.5V586.5L368 572.5V523.5L391.5 498.5V410.5L377.5 396.5V352L396.5 333.5V291L386.5 280V238L396.5 228V185L401.5 179" />
-                    <!--- LEFT SIDE VECTOR --->
-                    <path
-                      class="vector"
-                      d="M-2.5 656L17 635.5V586.5L30.5 572.5V523.5L7 498.5V410.5L21 396.5V352L2 333.5V291L12 280V238L2 228V185L-3 179" />
-                    <path
-                      class="side-vector-animation left"
-                      d="M-2.5 656L17 635.5V586.5L30.5 572.5V523.5L7 498.5V410.5L21 396.5V352L2 333.5V291L12 280V238L2 228V185L-3 179" />
-                    <!---- TOP VECTOR --->
-                    <path
-                      class="vector"
-                      d="M0 22.5L14.5 32H45L67 17H98L112.5 26H160.5L174 35H224.5L238.5 25.5H286.5L301 16H332L354 32H384.5L399.5 22" />
-                    <path
-                      class="top-vector-animation"
-                      d="M0 22.5L14.5 32H45L67 17H98L112.5 26H160.5L174 35H224.5L238.5 25.5H286.5L301 16H332L354 32H384.5L399.5 22" />
-                    <!---- BOTTOM VECTOR UPPER --->
-                    <path
-                      class="vector"
-                      d="M-1 685L12.5 693.5V704.5L27.5 714.5H47.5L61 705.5H99L120.5 718.5H142.743L171.5 700.5H226.5L255.5 718.5H277.5L298.5 705H337L351 714.5H370.5L385 705.5V694.5L399 686L400 685.5" />
-                    <path
-                      class="bottom-vector-animation upper"
-                      d="M-1 685L12.5 693.5V704.5L27.5 714.5H47.5L61 705.5H99L120.5 718.5H142.743L171.5 700.5H226.5L255.5 718.5H277.5L298.5 705H337L351 714.5H370.5L385 705.5V694.5L399 686L400 685.5" />
-                    <!---- BOTTOM VECTOR LOWER --->
-                    <path
-                      class="vector"
-                      d="M0 811L13.5 819.5V830.5L28.5 840.5H48.5L62 831.5H100L121.5 844.5H143.743L172.5 826.5H227.5L256.5 844.5H278.5L299.5 831H338L352 840.5H371.5L386 831.5V820.5L400 812L401 811.5" />
-                    <path
-                      class="bottom-vector-animation lower"
-                      d="M0 811L13.5 819.5V830.5L28.5 840.5H48.5L62 831.5H100L121.5 844.5H143.743L172.5 826.5H227.5L256.5 844.5H278.5L299.5 831H338L352 840.5H371.5L386 831.5V820.5L400 812L401 811.5" />
-                  </g>
-                  <defs>
-                    <filter
-                      id="right_blur_filter"
-                      x="361.5"
-                      y="192.054"
-                      width="43.4004"
-                      height="486.674"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="BackgroundImageFix"
-                        result="shape" />
-                      <feGaussianBlur
-                        stdDeviation="4"
-                        result="effect1_foregroundBlur_11_226" />
-                    </filter>
-                    <filter
-                      id="left_blur_filter"
-                      x="-5.10303"
-                      y="192.054"
-                      width="43.4004"
-                      height="486.674"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="BackgroundImageFix"
-                        result="shape" />
-                      <feGaussianBlur
-                        stdDeviation="4"
-                        result="effect1_foregroundBlur_11_226" />
-                    </filter>
-                    <filter
-                      id="bottom_blur_upper"
-                      x="-10.793"
-                      y="676.727"
-                      width="421.569"
-                      height="54.6621"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="BackgroundImageFix"
-                        result="shape" />
-                      <feGaussianBlur
-                        stdDeviation="4.5"
-                        result="effect1_foregroundBlur_11_226" />
-                    </filter>
-                    <filter
-                      id="bottom_blur_lower"
-                      x="-9.79297"
-                      y="798.727"
-                      width="421.569"
-                      height="54.6621"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="BackgroundImageFix"
-                        result="shape" />
-                      <feGaussianBlur
-                        stdDeviation="4.5"
-                        result="effect1_foregroundBlur_11_226" />
-                    </filter>
-                    <filter
-                      id="top_blur"
-                      x="-5.81738"
-                      y="6.5"
-                      width="410.663"
-                      height="29.8984"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="BackgroundImageFix"
-                        result="shape" />
-                      <feGaussianBlur
-                        stdDeviation="4"
-                        result="effect1_foregroundBlur_11_226" />
-                    </filter>
-                    <clipPath id="clip0_13_28">
-                      <rect width="400" height="850" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </div>
-              <div id="mobile-spaceship-interior"></div>
-              <div id="spaceship-display" class="spaceship-front-screen">
-                <div id="display-content-container"></div>
-              </div>
-
-              <div id="mobile-control-pannel">
-                <div id="radar-container" class="radar-container">
-                  <div class="radar">
-                    <div class="sweep"></div>
+        <!------------------ INTERIOR SECTIONS----------------->
+        <section id="interior-sections">
+          <!------------------ SPACESHIP ----------------->
+          <div id="spaceship-interior-section">
+            <div id="alien-info" class="info-container">
+              <div id="alien-message-container">
+                <div id="info-content" class="info-content">
+                  <p class="info-content-text">...</p>
+                  <!-- <p class="info-content-text">
+                Chuck Norris does not sleep. He waits.
+              </p>
+              <p class="info-content-text">
+                When Chuck Norris does a pushup, he’s pushing the Earth down.
+                When the Boogeyman goes to sleep every night he checks his
+                closet for Chuck Norris.
+              </p> -->
+                  <div id="alien-img-container">
+                    <img
+                      id="alien-sidekick-2"
+                      class="alien-sidekick-2"
+                      src="./assets/images/space/alien-sidekick.webp" />
                   </div>
                 </div>
-                <div id="control-btn-pannel"></div>
-                <div id="spaceship-monitor" class="spaceship-monitor">
-                  <div class="spaceship-content">testing</div>
-                  <img
-                    class="monitor-content"
-                    id="monitor-satellite"
-                    src="./assets/images/space/satellite.webp" />
-                  <img
-                    class="monitor-content"
-                    id="monitor-space-whale"
-                    src="./assets/images/space/spacewhale.webp" />
-                  <img
-                    class="monitor-content"
-                    id="monitor-asteroid"
-                    src="./assets/images/space/asteroid-1.webp" />
-                  <img
-                    id="monitor-space-station"
-                    class="monitor-content"
-                    src="./assets/images/space/spaceship-1.webp" />
-                  <img
-                    id="monitor-star"
-                    class="monitor-content"
-                    src="./assets/images/space/star-1.webp" />
-                  <img
-                    id="monitor-red-planet"
-                    class="monitor-content"
-                    src="./assets/images/space/planet-1.webp" />
-                  <img
-                    id="monitor-black-hole"
-                    class="monitor-content"
-                    src="./assets/images/space/black-hole.webp" />
-                  <img
-                    id="headshot-image"
-                    class="headshot-image monitor-content"
-                    src="./assets/images/space/capitains_portrait.png" />
-                  <img
-                    id="monitor-lightspeed"
-                    class="headshot-image monitor-content"
-                    src="./assets/images/space/lightspeed-monitor.webp" />
-                  <img
-                    id="monitor-spaceship"
-                    class="spaceship-2 active monitor-content"
-                    src="./assets/images/space/spaceship-2.webp" />
-                  <img
-                    id="cephadex-logo"
-                    class="monitor-content"
-                    src="./assets/images/CephadexLogoSix.png" />
-                  <img
-                    id="swift-swatch-logo"
-                    class="monitor-content"
-                    src="./assets/images/swift-swatch-logo-sm.png" />
-                  <img
-                    id="cognaite-logo"
-                    class="monitor-content"
-                    src="./assets/images/starter-logo.svg" />
-                  <img
-                    id="chair-the-fed-logo"
-                    class="monitor-content"
-                    src="./assets/images/chair-the-fed.png" />
-                  <img
-                    id="ai-story-tellers-logo"
-                    class="monitor-content"
-                    src="./assets/images/aistorytellers.png" />
-                  <img
-                    id="acorn-logo"
-                    class="monitor-content"
-                    src="./assets/images/acorn.png" />
-                  <img
-                    id="space-portfolio-logo"
-                    class="monitor-content"
-                    src="./assets/images/acorn.png" />
-                  <img
-                    id="blog-logo"
-                    class="monitor-content"
-                    src="./assets/images/kem-logo-no-bg-light.png" />
+
+                <div class="info-content-buttons">
+                  <button id="proceed-btn" class="button glow-effect small">
+                    Proceed
+                    <svg class="glow-container">
+                      <rect
+                        pathLength="100"
+                        stroke-linecap="round"
+                        class="glow-blur"></rect>
+                      <rect
+                        pathLength="100"
+                        stroke-linecap="round"
+                        class="glow-line"></rect>
+                    </svg>
+                  </button>
+                  <button
+                    id="info-close-button"
+                    class="button glow-effect red small">
+                    Close
+                    <svg class="glow-container">
+                      <rect
+                        pathLength="100"
+                        stroke-linecap="round"
+                        class="glow-blur red"></rect>
+                      <rect
+                        pathLength="100"
+                        stroke-linecap="round"
+                        class="glow-line red"></rect>
+                    </svg>
+                  </button>
                 </div>
               </div>
+            </div>
+            <div id="spaceship-interior-background"></div>
+            <div id="spaceship-interior"></div>
+
+            <!----------------- MOBILE OVERLAY ----------------->
+            <div id="mobile-spaceship-overlay">
+              <svg
+                id="mobile-spaceship-overlay-mask"
+                viewBox="0 0 400 850"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="black"
+                preserveAspectRatio="none">
+                <path
+                  fill="black"
+                  mobile-spaceship-overlay-mask
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  stroke="black"
+                  d="M400 700H0V0H400V700ZM46.4517 40.3458L9.39905 63.4188L51.1488 653.056L89.2443 689.972H313.645L350.698 652.543L392.446 63.9313L355.395 40.3458H272.94L259.894 58.8038H141.953L128.906 40.3458H46.4517Z" />
+                <path stroke="black" d="M0 700H400V850H0V700Z" fill="black" />
+
+                <!----------------- INNER SVG BLUR ----------------->
+                <g clip-path="url(#clip0_11_91)">
+                  <g filter="url(#filter0_f_11_91)">
+                    <path
+                      d="M128.98 41.5L141.682 59.5752L141.98 60H260.52L260.818 59.5752L273.52 41.5H355.704L391.96 65.0176L350.029 652.556L313.586 689H88.9102L51.9697 652.553L12.4971 89.4297V89.417L12.4951 89.4043L10.0537 64.0166L45.7881 41.5H128.98Z"
+                      stroke-width="2"
+                      fill="none" />
+                  </g>
+                  <g filter="url(#filter1_f_11_91)">
+                    <path
+                      d="M128.413 43.5029L141.146 61.2334L141.595 61.8584H263.405L263.854 61.2334L276.587 43.5029H357.816L393.343 65.7598L351.337 648.681L315.316 684.497H90.708L53.6592 649.161L11.6572 65.2676L47.1689 43.5029H128.413Z"
+                      stroke-width="3"
+                      fill="none" />
+                  </g>
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_f_11_91"
+                    x="5"
+                    y="36.5"
+                    width="392"
+                    height="657.5"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape" />
+                    <feGaussianBlur
+                      stdDeviation="2"
+                      result="effect1_foregroundBlur_11_91" />
+                  </filter>
+                  <filter
+                    id="filter1_f_11_91"
+                    x="-5"
+                    y="27"
+                    width="415"
+                    height="674"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape" />
+                    <feGaussianBlur
+                      stdDeviation="7"
+                      result="effect1_foregroundBlur_11_91" />
+                  </filter>
+                  <clipPath id="clip0_11_91">
+                    <rect width="400" height="850" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <!----------------- DECORATIVE SVG BLURS ----------------->
+              <svg
+                id="mobile-side-decoration"
+                viewBox="0 0 400 850"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none">
+                <g clip-path="url(#clip0_13_28)">
+                  <!--- RIGHT SIDE VECTOR --->
+                  <path
+                    class="vector"
+                    d="M401 656L381.5 635.5V586.5L368 572.5V523.5L391.5 498.5V410.5L377.5 396.5V352L396.5 333.5V291L386.5 280V238L396.5 228V185L401.5 179" />
+                  <path
+                    class="side-vector-animation right"
+                    d="M401 656L381.5 635.5V586.5L368 572.5V523.5L391.5 498.5V410.5L377.5 396.5V352L396.5 333.5V291L386.5 280V238L396.5 228V185L401.5 179" />
+                  <!--- LEFT SIDE VECTOR --->
+                  <path
+                    class="vector"
+                    d="M-2.5 656L17 635.5V586.5L30.5 572.5V523.5L7 498.5V410.5L21 396.5V352L2 333.5V291L12 280V238L2 228V185L-3 179" />
+                  <path
+                    class="side-vector-animation left"
+                    d="M-2.5 656L17 635.5V586.5L30.5 572.5V523.5L7 498.5V410.5L21 396.5V352L2 333.5V291L12 280V238L2 228V185L-3 179" />
+                  <!---- TOP VECTOR --->
+                  <path
+                    class="vector"
+                    d="M0 22.5L14.5 32H45L67 17H98L112.5 26H160.5L174 35H224.5L238.5 25.5H286.5L301 16H332L354 32H384.5L399.5 22" />
+                  <path
+                    class="top-vector-animation"
+                    d="M0 22.5L14.5 32H45L67 17H98L112.5 26H160.5L174 35H224.5L238.5 25.5H286.5L301 16H332L354 32H384.5L399.5 22" />
+                  <!---- BOTTOM VECTOR UPPER --->
+                  <path
+                    class="vector"
+                    d="M-1 685L12.5 693.5V704.5L27.5 714.5H47.5L61 705.5H99L120.5 718.5H142.743L171.5 700.5H226.5L255.5 718.5H277.5L298.5 705H337L351 714.5H370.5L385 705.5V694.5L399 686L400 685.5" />
+                  <path
+                    class="bottom-vector-animation upper"
+                    d="M-1 685L12.5 693.5V704.5L27.5 714.5H47.5L61 705.5H99L120.5 718.5H142.743L171.5 700.5H226.5L255.5 718.5H277.5L298.5 705H337L351 714.5H370.5L385 705.5V694.5L399 686L400 685.5" />
+                  <!---- BOTTOM VECTOR LOWER --->
+                  <path
+                    class="vector"
+                    d="M0 811L13.5 819.5V830.5L28.5 840.5H48.5L62 831.5H100L121.5 844.5H143.743L172.5 826.5H227.5L256.5 844.5H278.5L299.5 831H338L352 840.5H371.5L386 831.5V820.5L400 812L401 811.5" />
+                  <path
+                    class="bottom-vector-animation lower"
+                    d="M0 811L13.5 819.5V830.5L28.5 840.5H48.5L62 831.5H100L121.5 844.5H143.743L172.5 826.5H227.5L256.5 844.5H278.5L299.5 831H338L352 840.5H371.5L386 831.5V820.5L400 812L401 811.5" />
+                </g>
+                <defs>
+                  <filter
+                    id="right_blur_filter"
+                    x="361.5"
+                    y="192.054"
+                    width="43.4004"
+                    height="486.674"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape" />
+                    <feGaussianBlur
+                      stdDeviation="4"
+                      result="effect1_foregroundBlur_11_226" />
+                  </filter>
+                  <filter
+                    id="left_blur_filter"
+                    x="-5.10303"
+                    y="192.054"
+                    width="43.4004"
+                    height="486.674"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape" />
+                    <feGaussianBlur
+                      stdDeviation="4"
+                      result="effect1_foregroundBlur_11_226" />
+                  </filter>
+                  <filter
+                    id="bottom_blur_upper"
+                    x="-10.793"
+                    y="676.727"
+                    width="421.569"
+                    height="54.6621"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape" />
+                    <feGaussianBlur
+                      stdDeviation="4.5"
+                      result="effect1_foregroundBlur_11_226" />
+                  </filter>
+                  <filter
+                    id="bottom_blur_lower"
+                    x="-9.79297"
+                    y="798.727"
+                    width="421.569"
+                    height="54.6621"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape" />
+                    <feGaussianBlur
+                      stdDeviation="4.5"
+                      result="effect1_foregroundBlur_11_226" />
+                  </filter>
+                  <filter
+                    id="top_blur"
+                    x="-5.81738"
+                    y="6.5"
+                    width="410.663"
+                    height="29.8984"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape" />
+                    <feGaussianBlur
+                      stdDeviation="4"
+                      result="effect1_foregroundBlur_11_226" />
+                  </filter>
+                  <clipPath id="clip0_13_28">
+                    <rect width="400" height="850" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div id="mobile-spaceship-interior"></div>
+            <div id="spaceship-display" class="spaceship-front-screen">
+              <div id="display-content-container"></div>
+            </div>
+
+            <!----------------- CONTROL PANNEL ----------------->
+            <div id="mobile-control-pannel">
+              <div id="radar-container">
+                <div class="radar">
+                  <div class="sweep"></div>
+                </div>
+              </div>
+              <div id="control-btn-pannel"></div>
+              <div id="spaceship-monitor">
+                <div id="spaceship-content">testing</div>
+                <img
+                  class="monitor-content"
+                  id="monitor-satellite"
+                  src="./assets/images/space/satellite.webp" />
+                <img
+                  class="monitor-content"
+                  id="monitor-space-whale"
+                  src="./assets/images/space/spacewhale.webp" />
+                <img
+                  class="monitor-content"
+                  id="monitor-asteroid"
+                  src="./assets/images/space/asteroid-1.webp" />
+                <img
+                  id="monitor-space-station"
+                  class="monitor-content"
+                  src="./assets/images/space/spaceship-1.webp" />
+                <img
+                  id="monitor-star"
+                  class="monitor-content"
+                  src="./assets/images/space/star-1.webp" />
+                <img
+                  id="monitor-red-planet"
+                  class="monitor-content"
+                  src="./assets/images/space/planet-1.webp" />
+                <img
+                  id="monitor-black-hole"
+                  class="monitor-content"
+                  src="./assets/images/space/black-hole.webp" />
+                <img
+                  id="headshot-image"
+                  class="headshot-image monitor-content"
+                  src="./assets/images/space/capitains_portrait.png" />
+                <img
+                  id="monitor-lightspeed"
+                  class="headshot-image monitor-content"
+                  src="./assets/images/space/lightspeed-monitor.webp" />
+                <img
+                  id="monitor-spaceship"
+                  class="spaceship-2 active monitor-content"
+                  src="./assets/images/space/spaceship-2.webp" />
+                <img
+                  id="cephadex-logo"
+                  class="monitor-content"
+                  src="./assets/images/CephadexLogoSix.png" />
+                <img
+                  id="swift-swatch-logo"
+                  class="monitor-content"
+                  src="./assets/images/swift-swatch-logo-sm.png" />
+                <img
+                  id="cognaite-logo"
+                  class="monitor-content"
+                  src="./assets/images/starter-logo.svg" />
+                <img
+                  id="chair-the-fed-logo"
+                  class="monitor-content"
+                  src="./assets/images/chair-the-fed.png" />
+                <img
+                  id="ai-story-tellers-logo"
+                  class="monitor-content"
+                  src="./assets/images/aistorytellers.png" />
+                <img
+                  id="acorn-logo"
+                  class="monitor-content"
+                  src="./assets/images/acorn.png" />
+                <img
+                  id="space-portfolio-logo"
+                  class="monitor-content"
+                  src="./assets/images/acorn.png" />
+                <img
+                  id="blog-logo"
+                  class="monitor-content"
+                  src="./assets/images/kem-logo-no-bg-light.png" />
+              </div>
+            </div>
+
+            <!----------------- CONTROL BUTTONS----------------->
+            <div id="control-pannel-buttons">
               <div id="lightspeed-btn" class="control-btn">
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -541,7 +658,6 @@
                 <polyline points="90 100 90 20 70 15" />
                 <text class="svg-control-text" x="30" y="12">Light Speed</text>
               </svg>
-
               <div id="control-projects" class="control-btn">
                 <svg
                   viewBox="0 0 100 100"
@@ -573,7 +689,6 @@
                   Projects
                 </text>
               </svg>
-
               <div id="control-one" class="control-btn">
                 <svg
                   viewBox="0 0 100 100"
@@ -600,7 +715,6 @@
                 <polyline points="10 100 10 20 30 15" fill="none" />
                 <text class="svg-control-text" x="32" y="15">Work</text>
               </svg>
-
               <div id="control-log" class="control-btn">
                 <svg
                   viewBox="0 0 100 100"
@@ -627,7 +741,6 @@
                   Captain&apos;s Log
                 </text>
               </svg>
-
               <div id="control-acorn" class="control-btn">
                 <svg
                   viewBox="0 0 100 100"
@@ -686,97 +799,59 @@
                 <text class="svg-control-text" x="54" y="55">Bio</text>
               </svg>
             </div>
+          </div>
 
-            <!------------------ Interior Spacestation ----------------->
-            <div id="spacestation-interior-section">
-              <div class="spacestation-interior">
-                <div class="cyan-door spacestation-door">
-                  <div>
-                    <a href="https://blog.cognaite.com/" target="_blank">
-                      <img
-                        class="behind-door"
-                        src="./assets/images/kem-logo-no-bg-light.png" />
-                    </a>
-                  </div>
-                  <img
-                    class="door-img"
-                    src="./assets/images/space/spacestation-cyan-door.webp" />
+          <!------------------ SPACESTATION ----------------->
+          <div id="spacestation-interior-section">
+            <div class="spacestation-interior">
+              <div class="cyan-door spacestation-door">
+                <div>
+                  <a href="https://blog.cognaite.com/" target="_blank">
+                    <img
+                      class="behind-door"
+                      src="./assets/images/kem-logo-no-bg-light.png" />
+                  </a>
                 </div>
-                <div class="red-door spacestation-door">
-                  <div>
-                    <a href="https://swiftswatch.com/about" target="_blank">
-                      <img
-                        class="behind-door"
-                        src="./assets/images/CephadexLogoSix.png" />
-                      <img
-                        class="behind-door"
-                        src="./assets/images/acorn.png" />
-                      <img
-                        class="behind-door"
-                        src="./assets/images/swift-swatch-logo-sm.png" />
-                    </a>
-                  </div>
-                  <img
-                    class="door-img"
-                    src="./assets/images/space/spacestation-red-door.webp" />
-                </div>
-                <div class="yellow-door spacestation-door">
-                  <div>
-                    <a href="https://blog.cognaite.com/" target="_blank">
-                      <img
-                        class="behind-door"
-                        src="./assets/images/browse_activity.svg" />
-                    </a>
-                  </div>
-                  <img
-                    class="door-img"
-                    src="./assets/images/space/spacestation-yellow-door.webp" />
-                </div>
+                <img
+                  class="door-img"
+                  src="./assets/images/space/spacestation-cyan-door.webp" />
               </div>
-            </div>
-          </section>
-          <!------------------ SVG Layer ----------------->
-
-          <section id="svg-hover-layer"></section>
-          <!------------------ Info Layer ----------------->
-
-          <div id="alien-info" class="info-container">
-            <div id="info-content" class="info-content">
-              <h2 class="info-content-text">...</h2>
-
-              <div class="info-content-buttons">
-                <button id="proceed-btn" class="button glow-effect small">
-                  Proceed
-                  <svg class="glow-container">
-                    <rect
-                      pathLength="100"
-                      stroke-linecap="round"
-                      class="glow-blur"></rect>
-                    <rect
-                      pathLength="100"
-                      stroke-linecap="round"
-                      class="glow-line"></rect>
-                  </svg>
-                </button>
-                <button
-                  id="info-close-button"
-                  class="button glow-effect red small">
-                  Close
-                  <svg class="glow-container">
-                    <rect
-                      pathLength="100"
-                      stroke-linecap="round"
-                      class="glow-blur red"></rect>
-                    <rect
-                      pathLength="100"
-                      stroke-linecap="round"
-                      class="glow-line red"></rect>
-                  </svg>
-                </button>
+              <div class="red-door spacestation-door">
+                <div>
+                  <a href="https://swiftswatch.com/about" target="_blank">
+                    <img
+                      class="behind-door"
+                      src="./assets/images/CephadexLogoSix.png" />
+                    <img class="behind-door" src="./assets/images/acorn.png" />
+                    <img
+                      class="behind-door"
+                      src="./assets/images/swift-swatch-logo-sm.png" />
+                  </a>
+                </div>
+                <img
+                  class="door-img"
+                  src="./assets/images/space/spacestation-red-door.webp" />
+              </div>
+              <div class="yellow-door spacestation-door">
+                <div>
+                  <a href="https://blog.cognaite.com/" target="_blank">
+                    <img
+                      class="behind-door"
+                      src="./assets/images/browse_activity.svg" />
+                  </a>
+                </div>
+                <img
+                  class="door-img"
+                  src="./assets/images/space/spacestation-yellow-door.webp" />
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <!------------------ SVG Layer ----------------->
+        <section id="svg-hover-layer"></section>
+        <!------------------ Info Layer ----------------->
+
         <div id="welcome-content" class="title-text">
           <h1 id="welcome-heading">Welcome</h1>
         </div>
@@ -785,7 +860,7 @@
 
     <!-- Sanitizing the content coming from my blog -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
-    <!-- Local JavaScript Files -->
+    <!-- Local JS -->
     <script type="module" src="./js/state.js"></script>
     <script type="module" src="./js/utility.js"></script>
     <script type="module" src="./js/data/clickables-data.js"></script>

@@ -41,6 +41,7 @@ export class SpaceSceneManager {
     this.updateCurrentBackdrop("default");
   }
   changeSpaceshipBackdrop(backdrop) {
+    console.log("revealing backdrop", backdrop);
     this.reavealBackdrop(backdrop);
     this.hideSpaceElements();
     this.revealBackBtn();

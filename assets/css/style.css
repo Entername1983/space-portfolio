@@ -130,8 +130,8 @@ a:hover {
 .wrapper {
   background-color: black;
   width: 100%;
-  max-width: calc(100vh * 16 / 9);
-  max-height: 100vh;
+  max-width: calc(100dvh * 16 / 9);
+  max-height: 100dvh;
   margin: auto;
   aspect-ratio: 16 / 9;
   position: relative;
@@ -303,7 +303,7 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 40;
+  z-index: 42;
   width: 100%;
   height: 100%;
   pointer-events: none;

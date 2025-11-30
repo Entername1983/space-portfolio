@@ -8,6 +8,8 @@ export class AlienAssistantManager {
     this.autoHideTimeout = null;
     this.closeBtn = document.querySelector("#info-close-button");
     this.proceedBtn = document.querySelector("#proceed-btn");
+    this.rootElement = document.body;
+    this.orientation = "portrait";
     this.attachCloseBtnListener();
   }
   attachCloseBtnListener() {
@@ -19,13 +21,14 @@ export class AlienAssistantManager {
   createRevealTimeline() {
     const masterHoverTimeline = gsap.timeline({ paused: true });
     masterHoverTimeline
-      .to(this.info, {
-        x: "-50vw",
-        duration: 1,
-        ease: "power4.out",
-      })
+      // .to(this.info, {
+      //   transform: "translate(0%, 0%)",
+
+      //   duration: 1,
+      //   ease: "power4.out",
+      // })
       .to(
-        ".alien-sidekick",
+        this.alien,
         {
           y: -200,
           duration: 1,
@@ -37,9 +40,9 @@ export class AlienAssistantManager {
   }
 
   clear() {
+    this.clearInfo();
     this.hideAlien();
     this.hideInfo();
-    this.clearInfo();
   }
   showWithoutProceedButton(elementId) {
     this.show(elementId);

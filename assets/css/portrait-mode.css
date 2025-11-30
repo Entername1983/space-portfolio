@@ -61,7 +61,9 @@
     opacity: 0;
   }
 }
-
+#mobile-spaceship-overlay-mask {
+  display: none;
+}
 body[data-orientation="portrait"] {
   background-color: black;
 
@@ -221,6 +223,7 @@ body[data-orientation="portrait"] {
   }
 
   #spaceship-display {
+    padding-top: 0px;
     position: absolute;
     display: block;
     top: 0;
@@ -229,23 +232,19 @@ body[data-orientation="portrait"] {
     max-height: 0;
     width: 100vw;
     max-width: 500px;
-
     opacity: 1;
-    background-color: black;
-    z-index: 29;
+    z-index: 20;
     overflow: hidden;
     aspect-ratio: auto;
     clip-path: none;
-
-    /* clip-path: polygon(12% 0, 88% 0, 100% 16%, 88% 74%, 13% 74%, 0 18%); */
   }
   #spaceship-display.open {
-    padding-top: 56px;
     max-height: 100%;
     opacity: 1;
     pointer-events: auto;
   }
   #display-content-container {
+    padding-top: 8dvh;
     padding-left: 20px;
     padding-right: 20px;
     width: auto;
@@ -265,6 +264,7 @@ body[data-orientation="portrait"] {
     stroke: rgb(168, 98, 98);
   }
   #mobile-spaceship-overlay-mask {
+    display: block;
     fill: rgb(0, 0, 0);
     position: absolute;
     bottom: 0;
@@ -282,21 +282,53 @@ body[data-orientation="portrait"] {
     stroke: var(--light-red);
   }
   #alien-info {
-    bottom: 10px;
+    top: 20dvh;
     right: auto;
     left: 0;
-  }
-  .info-content-buttons {
-    justify-content: start;
-  }
-  #proceed-btn {
-    order: 1;
+    bottom: auto;
+    width: auto;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+    z-index: 30;
+    background-color: rgba(0, 0, 0, 1);
+    transform: translate(-200%, 0%);
+    padding: 4px;
+    pointer-events: auto;
   }
 
-  #info-close-button {
-    order: -1;
+  #alien-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  #alien-message-container {
+    display: flex;
+    flex-direction: column;
+  }
+  #alien-sidekick {
+    display: none;
+  }
+  #alien-sidekick-2 {
+    width: 100%;
+    max-width: 100px;
+  }
+
+  .info-content {
+    padding-left: 60px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 0;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .info-content-text {
+    width: 180px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
   .vector {
     stroke: #b45b38;
     stroke-width: 2;
@@ -342,5 +374,51 @@ body[data-orientation="portrait"] {
     stroke-dasharray: 10 426;
     stroke-dashoffset: 426;
     animation: electrical-pulse-top 4s linear infinite;
+  }
+
+  .space-scene-video {
+    /* width: auto; */
+  }
+  #space-whale-space-scene,
+  #infected-satellite-space-scene {
+    transform: rotate(-90deg) translate(0, -20%);
+    top: 0;
+    left: 0;
+    width: 100dvh;
+  }
+
+  #star-space-scene .landscape,
+  #black-hole-space-scene .landscape {
+    display: none;
+  }
+  #black-hole-space-scene .portrait {
+    transform: rotate(-90deg) translate(-26%, -39%);
+  }
+  #red-planet-space-scene .portrait,
+  #star-space-scene .portrait,
+  #black-hole-space-scene .portrait {
+    display: block;
+    height: 100%;
+    margin-left: 10px;
+  }
+  #black-hole-space-scene .portrait {
+    height: 56%;
+  }
+  #red-planet-space-scene .landscape {
+    display: none;
+  }
+
+  #derelict-space-station .portrait {
+    display: block;
+    height: 100%;
+    margin-left: 10px;
+  }
+
+  #derelict-space-station .landscape {
+    display: none;
+  }
+
+  .svg-control-tooltips {
+    display: none;
   }
 }

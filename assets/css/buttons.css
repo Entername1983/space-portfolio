@@ -71,7 +71,7 @@
 .glow-blur.red {
   stroke: var(--very-light-red);
 }
-/** Small Varient **/
+/** Small Variant **/
 
 .button.red:hover {
   color: var(--very-light-red);
@@ -208,7 +208,7 @@
   height: calc(100% - var(--container-offset) + var(--glow-offset));
   x: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
   y: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
-  /* rx: 1.25rem; */
+  rx: 0.8rem;
   fill: transparent;
   stroke: black;
   stroke-width: 5px;

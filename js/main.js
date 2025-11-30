@@ -25,19 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
       item.data
     );
     clickableInstances[key] = instance;
-    const hoverableInstances = {};
-    HOVERABLES.forEach((item, index) => {
-      const key = `hoverables${index}`;
-      const instance = new Hoverables(
-        item.elementId,
-        item.action,
-        item.targetId,
-        item.data
-      );
-
-      hoverableInstances[key] = instance;
-    });
   });
+  console.log("Clickable Instances", clickableInstances);
+  const hoverableInstances = {};
+  HOVERABLES.forEach((item, index) => {
+    const key = `hoverables${index}`;
+    const instance = new Hoverables(
+      item.elementId,
+      item.action,
+      item.targetId,
+      item.data
+    );
+
+    hoverableInstances[key] = instance;
+  });
+
   (function setGlowEffectRx() {
     const glowEffects = document.querySelectorAll(".glow-effect");
 

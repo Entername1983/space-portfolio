@@ -7,7 +7,7 @@
   }
 }
 
-.spaceship-monitor {
+#spaceship-monitor {
   position: absolute;
   bottom: 2%;
   left: 61%;
@@ -20,16 +20,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 4px;
 }
-.spaceship-content {
+#spaceship-content {
   color: var(--matrix-green);
   padding: 14px;
   display: none;
 }
 
-.spaceship-monitor > img {
+#spaceship-monitor > img {
   pointer-events: auto;
-  max-height: 7vw;
   opacity: 0.8;
 }
 .spaceship-2 {
@@ -148,6 +148,7 @@ ul > li::before {
 
 .monitor-content {
   display: none;
+  max-width: 100%;
 }
 .monitor-content.active {
   display: block;

@@ -24,6 +24,10 @@ export class Engine {
     initCanvas();
   }
   async initialize() {
+    document.addEventListener(
+      "layoutChanged",
+      this.handleLayoutChange.bind(this)
+    );
     await this.introManager.startIntro();
   }
 
@@ -53,12 +57,19 @@ export class Engine {
         await this.handleReturnToSpaceship(element, target, data, event);
         break;
       case "TOGGLE_LIGHTSPEED":
+        console.log("toggling lightspeed");
         await this.toggleLightSpeed(element, target, data, event);
         break;
       case "HOVER":
         this.handleHoverInteractions(element, target, data, event);
         break;
     }
+  }
+  handleLayoutChange(event) {
+    const newOrientation = event.detail.orientation;
+    console.log(`Engine detected layout change to: ${newOrientation}`);
+
+    this.alienAssistantManager.updateOrientation(newOrientation);
   }
   addClickToList(element) {
     this.activeClick = element.id;
