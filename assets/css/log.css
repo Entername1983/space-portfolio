@@ -38,17 +38,16 @@
 }
 #log-content-wrapper {
   position: relative;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   overflow: hidden;
   height: 100%;
 }
 #log-content {
   overflow-y: auto;
   padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-
-  height: 90%;
+  padding-left: 14px;
+  padding-right: 14px;
+  height: 93%;
   z-index: 100;
 }
 #log-content-wrapper::before {

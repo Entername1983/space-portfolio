@@ -281,7 +281,7 @@ body[data-orientation="portrait"] {
     display: block;
     top: 0;
     left: 0;
-    height: calc(100dvh - 160px);
+    height: calc(100dvh);
     max-height: 0;
     width: 100vw;
     max-width: 500px;
@@ -298,11 +298,21 @@ body[data-orientation="portrait"] {
   }
   #display-content-container {
     padding-top: 8dvh;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
     width: auto;
-    max-width: 300px;
-    height: calc(100dvh - 250px);
+    max-width: 360px;
+    height: calc(100dvh - 150px);
+    @media (max-width: 500px) {
+      max-width: 320px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media (max-width: 400px) {
+      max-width: 300px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
   #mobile-spaceship-overlay {
     position: absolute;
@@ -476,9 +486,15 @@ body[data-orientation="portrait"] {
   }
 
   .bio-content.screen-content {
+    color: var(--extra-dark-green);
+    font-size: 1.2rem;
     flex-direction: column;
     padding-left: 20px;
     padding-right: 20px;
+    @media (max-height: 600px) {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
   }
   .body-scan-overlay {
     width: 50%;
@@ -496,14 +512,12 @@ body[data-orientation="portrait"] {
     transform: translate(0, -10%);
   }
   .bio-content .top-section {
-    padding-top: 10px;
     display: flex;
     gap: 4px;
     flex-direction: column;
   }
   .bio-content .bottom-section {
-    padding-top: 10px;
-
+    padding-top: 4px;
     display: flex;
     gap: 4px;
     flex-direction: column;
@@ -511,6 +525,9 @@ body[data-orientation="portrait"] {
   .bio-last-row {
     display: flex;
     justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
   }
   .space-between-grid-row {
     display: grid;
@@ -519,5 +536,42 @@ body[data-orientation="portrait"] {
   }
   .space-between-grid-row > ul {
     padding-left: 0px;
+  }
+  /** SPACE ELEMENTS **/
+
+  #space-whale {
+    max-height: 10%;
+    max-width: none;
+  }
+
+  #space-station {
+    max-height: 10%;
+    max-width: none;
+  }
+  #space-whale {
+    max-height: 10%;
+    max-width: none;
+  }
+  #red-planet {
+    max-width: none;
+    max-height: 40dvh;
+    bottom: -10%;
+    left: -20%;
+  }
+  #star {
+    max-height: 10%;
+    max-width: none;
+  }
+  #asteroid > img {
+    max-height: 10dvh;
+    max-width: none;
+  }
+  #satellite > img {
+    max-height: 10dvh;
+    max-width: none;
+  }
+  #space-black-hole {
+    max-height: 10%;
+    max-width: none;
   }
 }

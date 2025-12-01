@@ -2,6 +2,7 @@
 :root {
   --matrix-green-dark: rgba(0, 160, 65);
   --matrix-green: rgb(166, 238, 193);
+  --extra-dark-green: rgb(0, 78, 12);
   --dark-red: rgb(59, 2, 2);
   --light-red: rgb(153, 31, 31);
   --very-light-red: rgb(250, 89, 39);
@@ -250,7 +251,7 @@ a:hover {
   bottom: 35%;
   left: 30%;
   transform: translate(-50%, -50%);
-  max-width: 12vw;
+  max-width: 12%;
 }
 #space-whale.animated {
   animation: pulse 10s linear infinite alternate;
