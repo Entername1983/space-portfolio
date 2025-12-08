@@ -10,7 +10,7 @@ gsap.registerPlugin(
   ScrollTrigger,
   ScrollToPlugin,
   DrawSVGPlugin,
-  MorphSVGPlugin
+  MorphSVGPlugin,
 );
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       item.elementId,
       item.action,
       item.targetId,
-      item.data
+      item.data,
     );
     clickableInstances[key] = instance;
   });
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       item.elementId,
       item.action,
       item.targetId,
-      item.data
+      item.data,
     );
 
     hoverableInstances[key] = instance;
