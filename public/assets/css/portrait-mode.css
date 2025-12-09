@@ -1,0 +1,591 @@
+@keyframes electrical-pulse {
+  0% {
+    stroke-dashoffset: 1062;
+    opacity: 0.9;
+  }
+  49% {
+    stroke-dashoffset: 530;
+    opacity: 0.9;
+  }
+  49.5% {
+    stroke-dashoffset: -1046;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -1046;
+    opacity: 0;
+  }
+}
+
+@keyframes electrical-pulse-bottom {
+  0% {
+    stroke-dashoffset: 457;
+    opacity: 0;
+  }
+  1% {
+    stroke-dashoffset: 457;
+    opacity: 0.9;
+  }
+  49% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  49.5% {
+    stroke-dashoffset: -457;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -457;
+    opacity: 0;
+  }
+}
+@keyframes electrical-pulse-top {
+  0% {
+    stroke-dashoffset: 426;
+    opacity: 0;
+  }
+  1% {
+    stroke-dashoffset: 426;
+    opacity: 0.9;
+  }
+  49% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  49.5% {
+    stroke-dashoffset: -426;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -426;
+    opacity: 0;
+  }
+}
+@keyframes alien-lang-pulse {
+  0%,
+  50%,
+  100% {
+    stroke: var(--dark-red);
+    stroke-width: 2px;
+    /* Changed 0px to 0.5px for smoother interpolation */
+    filter: drop-shadow(0 0 0.5px rgb(122, 18, 0))
+      drop-shadow(0 0 0.5px rgb(133, 15, 0));
+  }
+  20%,
+  70% {
+    stroke: var(--light-red);
+    stroke-width: 4px;
+    filter: drop-shadow(0 0 4px rgb(122, 18, 0))
+      drop-shadow(0 0 4px rgb(133, 15, 0));
+  }
+}
+
+/* .control-btn > svg {
+    display: block;
+    stroke: var (--light-red);
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    filter: drop-shadow(0 0 5px rgb(122, 18, 0))
+      drop-shadow(0 0 5px rgb(133, 15, 0));
+  } */
+
+#mobile-spaceship-overlay-mask {
+  display: none;
+}
+body[data-orientation="portrait"] {
+  background-color: black;
+
+  .wrapper {
+    aspect-ratio: auto;
+    height: 100dvh;
+    width: 100vw;
+    max-width: 500px;
+  }
+
+  #spaceship-interior-background {
+    display: none;
+  }
+  #spaceship-interior {
+    display: none;
+  }
+
+  #mobile-spaceship-interior {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    max-width: 500px;
+    height: 18dvh;
+    background-color: black;
+  }
+  #mobile-control-pannel {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    max-width: 500px;
+    height: 18dvh;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    z-index: 400;
+  }
+
+  #spaceship-monitor {
+    position: relative;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--light-red);
+    box-shadow: inset 0 0 10px 0px var(--light-red),
+      0 0 10px rgba(255, 0, 0, 0.8);
+    align-self: center;
+    bottom: auto;
+    left: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #radar-container {
+    z-index: 300;
+    border-radius: 100px;
+    position: relative;
+    width: 80px;
+    bottom: auto;
+    left: auto;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--light-red);
+    box-shadow: inset 0 0 10px 0px var(--light-red),
+      0 0 10px rgba(255, 0, 0, 0.8);
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #control-btn-pannel {
+    position: relative;
+    margin: auto;
+    width: 150px;
+    height: 100%;
+    anchor-name: --control-pannel;
+    border: 1px dashed yellow;
+    opacity: 0;
+  }
+
+  #control-pannel-buttons {
+    position: absolute;
+    position-anchor: --control-pannel;
+    top: anchor(top);
+    height: 15dvh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      ". center-buttons-0 ."
+      ". center-buttons-1 .";
+    z-index: 40;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .control-btn {
+    position: relative;
+    border: 1px solid grey;
+    box-shadow: inset 0 0 2px 0px var(--matrix-green-dark),
+      0 0 4px rgba(16, 34, 0, 0.8);
+    border-radius: 6px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0;
+    padding: 0.4rem;
+  }
+  .control-btn > svg {
+    display: block;
+    stroke: var(--light-red);
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    filter: drop-shadow(0 0 3px rgb(122, 18, 0))
+      drop-shadow(0 0 3px rgb(133, 15, 0));
+    animation: alien-lang-pulse 20s infinite ease-in-out;
+  }
+
+  .control-btn:hover > svg {
+    stroke: rgb(1, 139, 1);
+    animation: pause;
+    filter: drop-shadow(0 0 3px rgb(75, 122, 0))
+      drop-shadow(0 0 3px rgb(75, 133, 0));
+  }
+
+  .row-one-wrapper {
+    grid-area: center-buttons-0;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    padding-bottom: 2px;
+  }
+  .row-two-wrapper {
+    padding-top: 2px;
+    grid-area: center-buttons-1;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+  }
+  #control-one,
+  #control-log,
+  #control-bio,
+  #control-acorn,
+  #control-projects,
+  #lightspeed-btn {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    height: 40px;
+    width: 40px;
+    transform: translate(0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 4px 0 black;
+    @media (max-aspect-ratio: 1.2/2) {
+      height: 30px;
+      width: 30px;
+    }
+  }
+  #control-one > svg {
+    animation-delay: 1s;
+  }
+
+  #control-bio > svg {
+    animation-delay: 2s;
+  }
+
+  #control-acorn > svg {
+    animation-delay: 3s;
+  }
+
+  #control-projects > svg {
+    animation-delay: 4s;
+  }
+  #lightspeed-btn > svg {
+    animation-delay: 5s;
+  }
+
+  /* #control-one {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 10px);
+    left: anchor(left);
+    width: 150px;
+    height: 40px;
+    transform: translate(0, 0);
+    background-color: rgb(0, 0, 0);
+  }
+  #control-log {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 110px);
+    right: anchor(right);
+    transform: translate(0, 0);
+    width: 67.5px;
+    left: auto;
+    height: 40px;
+    aspect-ratio: auto;
+    background-color: rgb(0, 0, 0);
+  }
+  #control-bio {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 60px);
+    left: anchor(left);
+    width: 40px;
+    transform: translate(0, 0);
+    background-color: rgb(0, 0, 0);
+  }
+  #control-acorn {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 60px);
+    left: calc(anchor(left) + 55px);
+    right: auto;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    transform: translate(0, 0);
+    background-color: rgb(0, 0, 0);
+  }
+  #control-projects {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 60px);
+    left: auto;
+    right: anchor(right);
+    transform: translate(0, 0);
+    width: 40px;
+    background-color: rgb(0, 0, 0);
+  }
+  #lightspeed-btn {
+    position-anchor: --control-pannel;
+    bottom: calc(anchor(bottom) + 110px);
+    left: anchor(left);
+    transform: translate(0, 0);
+    width: 67.5px;
+    right: auto;
+    height: 40px;
+    aspect-ratio: auto;
+    background-color: rgb(0, 0, 0);
+  } */
+
+  #mobile-spaceship-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    max-width: 500px;
+    height: calc(100dvh);
+    z-index: 30;
+  }
+  #mobile-spaceship-overlay-outline {
+    stroke-width: 1px;
+    stroke: rgb(168, 98, 98);
+  }
+  #mobile-spaceship-overlay-mask {
+    display: block;
+    fill: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    stroke: var(--light-red);
+  }
+  #mobile-side-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    stroke: var(--light-red);
+  }
+  #alien-info {
+    top: 20dvh;
+    right: auto;
+    left: 0;
+    bottom: auto;
+    width: auto;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+    z-index: 30;
+    background-color: rgba(0, 0, 0, 1);
+    transform: translate(-200%, 0%);
+    padding: 4px;
+    pointer-events: auto;
+  }
+
+  #alien-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #alien-message-container {
+    display: flex;
+    flex-direction: column;
+  }
+  #alien-sidekick {
+    display: none;
+  }
+  #alien-sidekick-2 {
+    width: 100%;
+    max-width: 100px;
+  }
+
+  .info-content {
+    padding-left: 60px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 0;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .info-content-text {
+    width: 180px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .vector {
+    stroke: #b45b38;
+    stroke-width: 2;
+    filter: drop-shadow(0 0 4px red) drop-shadow(0 0 8px red);
+  }
+  .side-vector-animation,
+  .bottom-vector-animation,
+  .top-vector-animation {
+    stroke: #fa5e53;
+    stroke-width: 2;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 10px rgb(122, 18, 0))
+      drop-shadow(0 0 10px rgb(133, 15, 0));
+  }
+
+  .side-vector-animation {
+    stroke-dasharray: 10 1036;
+    stroke-dashoffset: 1000;
+    animation: electrical-pulse 4s linear infinite;
+  }
+  .side-vector-animation.left {
+    animation-delay: 0s;
+  }
+  .side-vector-animation.right {
+    animation-delay: -1.5s;
+  }
+
+  .bottom-vector-animation {
+    stroke-dasharray: 10 457;
+    stroke-dashoffset: 457;
+    animation: electrical-pulse-bottom 4s linear infinite;
+  }
+
+  .bottom-vector-animation.upper {
+    animation-delay: -0.5s;
+  }
+
+  .bottom-vector-animation.lower {
+    animation-delay: -2.5s;
+  }
+
+  .top-vector-animation {
+    stroke-dasharray: 10 426;
+    stroke-dashoffset: 426;
+    animation: electrical-pulse-top 4s linear infinite;
+  }
+
+  .space-scene-video {
+    /* width: auto; */
+  }
+  #space-whale-space-scene,
+  #infected-satellite-space-scene {
+    transform: rotate(-90deg) translate(0, -20%);
+    top: 0;
+    left: 0;
+    width: 100dvh;
+  }
+
+  #star-space-scene .landscape,
+  #black-hole-space-scene .landscape {
+    display: none;
+  }
+  #black-hole-space-scene .portrait {
+    transform: rotate(-90deg) translate(-26%, -39%);
+  }
+  #red-planet-space-scene .portrait,
+  #star-space-scene .portrait,
+  #black-hole-space-scene .portrait {
+    display: block;
+    height: 100%;
+    margin-left: 10px;
+  }
+  #black-hole-space-scene .portrait {
+    height: 56%;
+  }
+  #red-planet-space-scene .landscape {
+    display: none;
+  }
+
+  #derelict-space-station .portrait {
+    display: block;
+    height: 100%;
+    margin-left: 10px;
+  }
+
+  #derelict-space-station .landscape {
+    display: none;
+  }
+
+  .svg-control-tooltips {
+    display: none;
+  }
+
+  .bio-content.screen-content {
+    color: var(--extra-dark-green);
+    font-size: 1.2rem;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    @media (max-height: 600px) {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
+  }
+  .body-scan-overlay {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .body-scan-overlay {
+    max-height: 20dvh;
+  }
+  .full-body-image {
+    height: 22dvh;
+    transform: translate(0, -10%);
+  }
+  .bio-content .top-section {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+  }
+  .bio-content .bottom-section {
+    padding-top: 4px;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+  }
+  .bio-last-row {
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
+  }
+  .space-between-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .space-between-grid-row > ul {
+    padding-left: 0px;
+  }
+  /** SPACE ELEMENTS **/
+
+  #space-whale {
+    max-height: 10%;
+    max-width: none;
+  }
+
+  #space-station {
+    max-height: 10%;
+    max-width: none;
+  }
+  #space-whale {
+    max-height: 10%;
+    max-width: none;
+  }
+  #red-planet {
+    max-width: none;
+    max-height: 40dvh;
+    bottom: -10%;
+    left: -20%;
+  }
+  #star {
+    max-height: 10%;
+    max-width: none;
+  }
+  #asteroid > img {
+    max-height: 10dvh;
+    max-width: none;
+  }
+  #satellite > img {
+    max-height: 10dvh;
+    max-width: none;
+  }
+  #space-black-hole {
+    max-height: 10%;
+    max-width: none;
+  }
+}
