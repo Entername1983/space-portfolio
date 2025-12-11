@@ -12,7 +12,7 @@ export class AnimationManager {
     AnimationManager.instance = this;
   }
 
-  hideElement(targetOrElement: TIDOrClass) {
+  hideElement(targetOrElement: TIDOrClass | HTMLElement | Element) {
     // Takes either a string that corresponds to an ID and fetches the element
     // Or takes the element itself
     let element = null;

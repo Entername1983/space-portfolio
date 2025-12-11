@@ -61,7 +61,7 @@ export class SpaceSceneManager {
     this.hideBackBtn();
     this.showSpaceElements();
     this.updateCurrentScene("spaceship");
-    this.updateCurrentBackdrop("default");
+    this.updateCurrentBackdrop("#default");
   }
   changeSpaceshipBackdrop(backdrop: TElementId) {
     console.log("revealing backdrop", backdrop);
@@ -84,44 +84,68 @@ export class SpaceSceneManager {
     }
     this.animationManager.revealElement(this.spaceElements);
   }
-  updateCurrentScene(scene) {
+  updateCurrentScene(scene: string) {
     this.currentScene = scene;
   }
   updateCurrentBackdrop(backdrop: TElementId) {
     this.currentBackdrop = backdrop;
   }
   returnCurrentScene() {
-    this.currentScene();
+    return this.currentScene;
   }
   returnCurrentBackdrop() {
-    this.currentBackdrop();
+    return this.currentBackdrop;
   }
   hideSpaceElements() {
+    if (this.spaceElements == null) {
+      console.error(`spaceElements missing`);
+      return;
+    }
     this.animationManager.hideElement(this.spaceElements);
   }
   showSpaceElements() {
+    if (this.spaceElements == null) {
+      console.error(`spaceElements missing`);
+      return;
+    }
     this.animationManager.revealElement(this.spaceElements);
   }
-  reavealBackdrop(backdrop) {
+  reavealBackdrop(backdrop: TElementId) {
     this.animationManager.revealElement(backdrop);
   }
-  hideBackdrop(backdrop) {
+  hideBackdrop(backdrop: TElementId) {
     this.animationManager.hideElement(backdrop);
   }
   revealBackBtn() {
+    if (this.backBtn == null) {
+      console.error(`backBtn missing`);
+      return;
+    }
     this.animationManager.revealElement(this.backBtn);
   }
   hideBackBtn() {
+    if (this.backBtn == null) {
+      console.error(`backBtn missing`);
+      return;
+    }
     this.animationManager.hideElement(this.backBtn);
   }
   revealSceneControls() {
+    if (this.sceneControls == null) {
+      console.error(`sceneControls missing`);
+      return;
+    }
     this.animationManager.revealElement(this.sceneControls);
   }
   hideSceneControls() {
+    if (this.sceneControls == null) {
+      console.error(`sceneControls missing`);
+      return;
+    }
     this.animationManager.hideElement(this.sceneControls);
   }
 
-  getElementQuadrant(element, container) {
+  getElementQuadrant(element: HTMLElement, container: HTMLElement) {
     const containerRect = container.getBoundingClientRect();
     const elementRect = element.getBoundingClientRect();
     // Calculate container center
