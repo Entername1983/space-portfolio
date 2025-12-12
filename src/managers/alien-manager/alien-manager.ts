@@ -1,6 +1,9 @@
 import gsap, { type Timeline } from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
 import { ALIEN_INFO_MAPPINGS } from "../../data/alien-info-mappings";
+import type { TElementId } from "../../data/types";
 
+gsap.registerPlugin(TextPlugin);
 export class AlienAssistantManager {
   public static instance: AlienAssistantManager | null = null;
 
@@ -61,11 +64,19 @@ export class AlienAssistantManager {
     this.hideAlien();
     this.hideInfo();
   }
-  showWithoutProceedButton(elementId) {
+  showWithoutProceedButton(elementId: TElementId) {
     this.show(elementId);
+    if (this.proceedBtn == null) {
+      console.error(`proceedBtn missing`);
+      return;
+    }
     this.proceedBtn.classList.remove("active");
   }
-  show(elementId) {
+  show(elementId: TElementId) {
+    if (this.proceedBtn == null) {
+      console.error(`proceedBtn missing`);
+      return;
+    }
     this.proceedBtn.classList.add("active");
     if (this.autoHideTimeout) {
       clearTimeout(this.autoHideTimeout);
@@ -93,7 +104,13 @@ export class AlienAssistantManager {
       ease: "none",
     });
   }
-  fillInfo(elementId) {
+  updateOrientation(newOrientation: "portrait" | "landscape") {
+    console.log("updating alien orientation to", newOrientation);
+    console.log("yet to be implemented");
+  }
+  fillInfo(elementId: TElementId) {
+    console.log("Element ID:", elementId);
+    console.log("Alien Info Mappings:", ALIEN_INFO_MAPPINGS[elementId]);
     gsap.to(".info-content-text", {
       duration: 1,
       text: ALIEN_INFO_MAPPINGS[elementId],

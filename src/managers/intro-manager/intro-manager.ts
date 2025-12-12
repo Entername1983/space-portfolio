@@ -1,4 +1,5 @@
-import { default as gsap, default as SplitText } from "gsap";
+import { gsap } from "gsap";
+import SplitText from "gsap/dist/SplitText";
 export class IntroManager {
   public static instance: IntroManager | null = null;
 

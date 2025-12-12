@@ -84,38 +84,42 @@ export class Engine {
 
     this.alienAssistantManager.updateOrientation(newOrientation);
   }
-  addClickToList(clickable: IClickable) {
-    this.activeClick = clickable.elementId;
+  addClickToList(elementId: TElementId) {
+    this.activeClick = elementId;
     this.clickList.push(this.activeClick);
   }
   interactWithProjects(clickable: IClickable) {
-    this.addClickToList(element);
-    this.monitorManager.show(target);
+    this.addClickToList(clickable.elementId);
+    this.monitorManager.show(clickable.elementId);
   }
   viewSpaceElement(clickable: IClickable) {
-    this.addClickToList(element);
-    this.monitorManager.show(target);
-    this.alienAssistantManager.show(element.id);
+    this.addClickToList(clickable.elementId);
+    this.monitorManager.show(clickable.elementId);
+    this.alienAssistantManager.show(clickable.elementId);
   }
-  goToSpaceElement(target, data) {}
+  goToSpaceElement(clickable: IClickable) {}
 
   async interactWithDisplay(clickable: IClickable) {
     console.log("interacting with display");
-    this.monitorManager.show(data.monitorTargetId);
+    this.monitorManager.show(clickable.elementId);
     if (
-      element.id.startsWith("control") &&
-      this.activeClick == element.id &&
+      clickable.elementId.startsWith("control") &&
+      this.activeClick == clickable.elementId &&
       this.displayManager.isOpen()
     ) {
       this.displayManager.resetAndCloseDisplay();
       this.monitorManager.reInitialize();
     } else {
-      await this.displayManager.show(element, target, data);
+      await this.displayManager.show(clickable);
     }
-    this.addClickToList(element);
+    this.addClickToList(clickable.elementId);
   }
   handleDelegatedInteraction(clickable: IClickable, event: Event) {
     const actionTargetId = this.extractActionAndTargetFromDelegatedClick(event);
+    if (actionTargetId == null) {
+      console.error(`missing actionTargetId`);
+      return;
+    }
     switch (actionTargetId.action) {
       case "PROJECT_VIEW":
         this.handleViewProject(actionTargetId.targetId);
@@ -129,20 +133,45 @@ export class Engine {
     }
   }
   extractActionAndTargetFromDelegatedClick(event: Event) {
+    if (event.target == null) {
+      console.error(`missing event target`);
+      return;
+    }
+    if (!(event.target instanceof HTMLElement)) {
+      console.error(`event target is not an HTMLElement`);
+      return;
+    }
     const commandElement = event.target.closest("[data-action]");
+    if (commandElement == null) {
+      console.error(`missing command element`);
+      return;
+    }
+    if (!(commandElement instanceof HTMLElement)) {
+      console.error(`command element is not an HTMLElement`);
+      return;
+    }
     const action = commandElement.dataset.action;
     const targetId = commandElement.dataset.id;
     return { action: action, targetId: targetId };
   }
-  handleViewProject(targetId) {
-    this.addClickToList(targetId);
-    this.monitorManager.show(`${targetId}-logo`);
-    this.displayManager.projectsContentManager.show(`${targetId}-content`);
+  handleViewProject(projectName: string) {
+    console.log("viewing project:", projectName);
+    this.addClickToList(`#${projectName}`);
+    this.monitorManager.show(`#${projectName}-logo`);
+    this.displayManager.projectsContentManager.show(`#${projectName}-content`);
   }
   handleSpaceSceneInteraction(clickable: IClickable, event: MouseEvent) {
+    if (this.activeClick == null) {
+      console.error(`activeClick is null`);
+      return;
+    }
     this.spaceSceneManager.show(this.activeClick);
   }
   handleReturnToSpaceship(clickable: IClickable, event: MouseEvent) {
+    if (this.activeClick == null) {
+      console.error(`activeClick is null`);
+      return;
+    }
     this.spaceSceneManager.returnToSpaceship(this.activeClick);
   }
   handleViewLog(actionTargetId) {
@@ -153,14 +182,14 @@ export class Engine {
   toggleLightSpeed(clickable: IClickable, event: MouseEvent) {
     if (!this.spaceSceneManager.lightspeedIsEnabeled()) {
       this.spaceSceneManager.engageLightspeed();
-      this.monitorManager.show(target);
+      this.monitorManager.show(clickable.elementId);
     } else {
       this.spaceSceneManager.disengageLightspeed();
       this.monitorManager.reInitialize();
     }
   }
   handleHoverInteractions(clicklable: IClickable, event: MouseEvent) {
-    this.alienAssistantManager.showWithoutProceedButton(element.id);
+    this.alienAssistantManager.showWithoutProceedButton(clicklable.elementId);
   }
   handleProceedToDestination(clickable: IClickable, event: MouseEvent) {
     console.log("not yet implmeneted");

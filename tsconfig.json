@@ -41,21 +41,5 @@
     "moduleDetection": "force",
     "skipLibCheck": true
   },
-  "include": [
-    "js/**/*",
-    "src/managers",
-    "src/canvas-animations.ts",
-    "src/clickables.ts",
-    "src/engine.ts",
-    "src/main.ts",
-    "src/state.ts",
-    "src/utility.ts",
-    "src/data",
-    "src/canvas-animations.js",
-    "src/clickables.js",
-    "src/engine.js",
-    "src/main.js",
-    "src/state.js",
-    "src/utility.js"
-  ]
+  "include": ["src/**/*"]
 }

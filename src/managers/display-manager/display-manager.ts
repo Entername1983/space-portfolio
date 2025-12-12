@@ -19,8 +19,8 @@ export class DisplayManager {
   private displayContentContainer!: HTMLElement | null;
   private displayIsOpen!: boolean;
   private DISPLAY_CONTENT_MAPPINGS!: Record<TElementId, string>;
-  private projectsContentManager!: ProjectsContentManager;
-  private logContentManager!: LogContentManager;
+  public projectsContentManager!: ProjectsContentManager;
+  public logContentManager!: LogContentManager;
   private TEMPLATES_PATH!: string;
 
   constructor() {
@@ -68,8 +68,6 @@ export class DisplayManager {
         break;
       case "#control-log":
         this.logContentManager.show();
-        break;
-      case "#control-one":
         break;
       case "#control-acorn":
         break;

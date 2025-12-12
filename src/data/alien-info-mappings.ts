@@ -1,45 +1,45 @@
-export const ALIEN_INFO_MAPPINGS = {
-  "space-black-hole":
+export const ALIEN_INFO_MAPPINGS: Record<string, string> = {
+  "#space-black-hole":
     "Exploring a black hole MIGHT be a bad idea, are you sure you want to proceed?",
-  asteroid:
+  "#asteroid":
     "Wow, an asteroid just crash landed on that planet!  Want to check out the crash site?",
-  star: "Need a little heat?",
-  "space-whale":
+  "#star": "Need a little heat?",
+  "#space-whale":
     "Holy moly!  A space whale!  It looks friendly - shall we try talk to them?",
-  satellite:
+  "#satellite":
     "There might be something interesting on that abandoned satellite.",
-  spaceship: "That's our spaceship, pretty slick!",
+  "#spaceship": "That's our spaceship, pretty slick!",
   "space-station":
     "That space station looks inhabited, might be a good place to trade.",
-  "red-planet":
+  "#red-planet":
     "That planet doesn't look inhabited - but you never know. Shall we prepare for landing?",
-  ".cyan-door":
+  "#cyan-door":
     "Want to know more about the creator of this station?  Go through this door",
-  ".red-door": "You&apos;ll find some information about other projects here",
-  ".yellow-door":
+  "#red-door": "You&apos;ll find some information about other projects here",
+  "#yellow-door":
     "This is the information center, check out the captains log here",
-  "back-button": "Go back?",
-  "space-whale-space-scenen":
+  "#back-button": "Go back?",
+  "#space-whale-space-scene":
     "Wow, I never dreamed I'd see a space whale up close - truly majestic creatures!",
-  "black-hole-space-scene":
+  "#black-hole-space-scene":
     "I&apos;ve always been fascinated by black holes, some say each block hole creates a new universe!",
-  "star-space-scene":
+  "#star-space-scene":
     "Ah stars, it&apos; what we&apos;re all made of.  Makes me feel small and meaningless and yet part of something bigger",
-  "infected-station-space-scene":
+  "#infected-station-space-scene":
     "Euuh, that guy doesn't look too friendly... let&apos;s give this one a miss?",
-  "captains-log-button": "Captain&apos;s log",
-  "control-acorn": "Building our Federation",
-  "one-button": "Not quite sure what these do...",
-  "home-btn": "Want to get out of here?",
-  "back-btn": "Return to our ship?",
-  "control-one": "Control one",
-  "control-bio":
+  "#captains-log-button": "Captain&apos;s log",
+  "#control-acorn": "Building our Federation",
+  "#one-button": "Not quite sure what these do...",
+  "#home-btn": "Want to get out of here?",
+  "#back-btn": "Return to our ship?",
+  "#control-one": "Control one",
+  "#control-bio":
     "I've hacked the emperial network, let's see what they have on our captain",
-  "control-projects":
+  "#control-projects":
     "I've kept a record of the captain's personal projects here",
-  "control-log": "Want to access the captain's log?",
-  "lightspeed-btn": "Click here if you want to go really really fast!",
-  "rotate-icon": "Turn things sideways",
+  "#control-log": "Want to access the captain's log?",
+  "#lightspeed-btn": "Click here if you want to go really really fast!",
+  "#rotate-icon": "Turn things sideways",
 };
 
 export const complexSpaceElements = {
