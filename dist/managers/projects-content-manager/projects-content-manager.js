@@ -19,6 +19,10 @@ export class ProjectsContentManager {
     show(targetId) {
         this.hideMainMenu();
         const element = document.querySelector(targetId);
+        if (element == null) {
+            console.error(`element not found for projects content manager: ${targetId}`);
+            return;
+        }
         element.classList.add("active");
         progressiveTextDisplayAnimation(element);
         this.showBackButton();
@@ -39,8 +43,14 @@ export class ProjectsContentManager {
     }
     clearContent() {
         const mainMenu = document.querySelector("#projects-content-container");
+        if (mainMenu == null) {
+            console.error(`mainMenu not found for projects content manager`);
+            return;
+        }
         for (const child of mainMenu.children) {
             child.classList.remove("active");
+            if (!(child instanceof HTMLElement))
+                continue;
             child.style.display = "none";
             child.style.opacity = "0";
         }

@@ -1,13 +1,32 @@
 import { AnimationManager } from "../animation-manager/animation-manager";
 
 export class LogContentManager {
+  public static instance: LogContentManager | null = null;
+  private rssFeed!: string;
+  private testRssFeed!: string;
+  private logEntries!: Array<{
+    title: string | null;
+    link: string | null;
+    category: string | null;
+    description: string | null;
+    htmlContent: string | null;
+    date: string;
+  }>;
+  private logIndex!: number[];
+  private animationManager!: AnimationManager;
+
   constructor() {
+    if (LogContentManager.instance) {
+      return LogContentManager.instance;
+    }
+
     this.rssFeed = "https://blog.cognaite.com/feed/";
     this.testRssFeed = "../templates/log-test-feed.xml";
     this.logEntries = [];
     this.logIndex = [0];
     this.initialize();
     this.animationManager = new AnimationManager();
+    LogContentManager.instance = this;
   }
 
   async initialize() {
@@ -18,7 +37,7 @@ export class LogContentManager {
     await this.parseLogIntoArrayOfItems(captainsLog);
   }
 
-  async parseLogIntoArrayOfItems(captainsLog) {
+  async parseLogIntoArrayOfItems(captainsLog: unknown) {
     if (captainsLog == null) {
       console.error("No log received");
       return;
@@ -41,7 +60,10 @@ export class LogContentManager {
       const fullHtmlContent = contentNode ? contentNode.textContent : "";
 
       const imageStrippedHtml = fullHtmlContent.replaceAll(/<img[^>]*>/g, "");
-
+      if (!pubDateNode) {
+        console.error("No publication date found for log entry");
+        return;
+      }
       const rawDateString = pubDateNode.textContent;
       const dateObject = new Date(rawDateString);
       const cleanDateString = dateObject.toLocaleDateString("en-US", {
@@ -102,11 +124,11 @@ export class LogContentManager {
     }
   }
 
-  sanitizeHTML(htmlContent) {
+  sanitizeHTML(htmlContent: string) {
     return DOMPurify.sanitize(htmlContent);
   }
 
-  handleDelegatedInteraction(actionTargetId) {
+  handleDelegatedInteraction(actionTargetId: { targetId: string }) {
     switch (actionTargetId.targetId) {
       case "log-next":
         this.navigateTo("next");

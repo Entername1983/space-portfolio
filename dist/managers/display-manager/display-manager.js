@@ -55,8 +55,6 @@ export class DisplayManager {
             case "#control-log":
                 this.logContentManager.show();
                 break;
-            case "#control-one":
-                break;
             case "#control-acorn":
                 break;
         }

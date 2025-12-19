@@ -8,6 +8,7 @@ export class LayoutManager {
         }
         this.orientationBtn = document.querySelector("#mode-switcher");
         this.rootElement = document.body;
+        LayoutManager.instance = this;
         if (this.orientationBtn != null) {
             this.orientationBtn.addEventListener("click", () => {
                 const isPortrait = this.rootElement.getAttribute("data-orientation") === "portrait";

@@ -12,7 +12,7 @@ export class AnimationManager {
         // Or takes the element itself
         let element = null;
         if (typeof targetOrElement === "string") {
-            element = document.querySelector(`#${targetOrElement}`);
+            element = document.querySelector(`${targetOrElement}`);
         }
         else {
             element = targetOrElement;
@@ -26,7 +26,7 @@ export class AnimationManager {
     revealElement(targetOrElement) {
         let element = null;
         if (typeof targetOrElement === "string") {
-            element = document.querySelector(`#${targetOrElement}`);
+            element = document.querySelector(`${targetOrElement}`);
         }
         else {
             element = targetOrElement;

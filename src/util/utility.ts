@@ -9,8 +9,10 @@ export function generateCorruptedText(length) {
 }
 
 export function progressiveTextDisplayAnimation(contentElement) {
+  console.log("Starting progressive text display animation");
+  console.log("contentElement:", contentElement);
   // Show the container
-  contentElement.style.display = "block";
+  // contentElement.style.display = "block";
 
   // Find all text elements to animate
   const textElements = contentElement.querySelectorAll("p, a, li");

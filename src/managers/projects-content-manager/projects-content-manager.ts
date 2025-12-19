@@ -16,12 +16,14 @@ export class ProjectsContentManager {
     const mainMenu = document.querySelector("#projects-main-menu");
     gsap.to(mainMenu, {
       autoAlpha: 1,
-      display: "block",
+      display: "flex",
     });
   }
   show(targetId: TElementId) {
+    console.log("Showing project content:", targetId);
     this.hideMainMenu();
     const element = document.querySelector(targetId);
+    console.log("ELEMENT HERE", element);
     if (element == null) {
       console.error(
         `element not found for projects content manager: ${targetId}`
@@ -56,8 +58,8 @@ export class ProjectsContentManager {
     for (const child of mainMenu.children) {
       child.classList.remove("active");
       if (!(child instanceof HTMLElement)) continue;
-      child.style.display = "none";
-      child.style.opacity = "0";
+      // child.style.display = "none";
+      // child.style.opacity = "0";
     }
   }
 

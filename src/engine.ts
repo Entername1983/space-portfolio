@@ -87,23 +87,26 @@ export class Engine {
   addClickToList(elementId: TElementId) {
     this.activeClick = elementId;
     this.clickList.push(this.activeClick);
+    console.log("click list:", this.clickList);
   }
   interactWithProjects(clickable: IClickable) {
     this.addClickToList(clickable.elementId);
-    this.monitorManager.show(clickable.elementId);
+    this.displayClickableOnMonitor(clickable);
   }
   viewSpaceElement(clickable: IClickable) {
     this.addClickToList(clickable.elementId);
-    this.monitorManager.show(clickable.elementId);
+    this.displayClickableOnMonitor(clickable);
+
     this.alienAssistantManager.show(clickable.elementId);
   }
   goToSpaceElement(clickable: IClickable) {}
 
   async interactWithDisplay(clickable: IClickable) {
     console.log("interacting with display");
-    this.monitorManager.show(clickable.elementId);
+    this.displayClickableOnMonitor(clickable);
+
     if (
-      clickable.elementId.startsWith("control") &&
+      clickable.elementId.startsWith("#control") &&
       this.activeClick == clickable.elementId &&
       this.displayManager.isOpen()
     ) {
@@ -122,6 +125,10 @@ export class Engine {
     }
     switch (actionTargetId.action) {
       case "PROJECT_VIEW":
+        if (actionTargetId.targetId == null) {
+          console.error(`missing targetId for project view`);
+          return;
+        }
         this.handleViewProject(actionTargetId.targetId);
         break;
       case "MAIN_PROJECT_MENU":
@@ -155,9 +162,12 @@ export class Engine {
     return { action: action, targetId: targetId };
   }
   handleViewProject(projectName: string) {
+    const element = document.querySelector(`#${projectName}-content`);
+    console.log("element123:", element);
     console.log("viewing project:", projectName);
     this.addClickToList(`#${projectName}`);
     this.monitorManager.show(`#${projectName}-logo`);
+
     this.displayManager.projectsContentManager.show(`#${projectName}-content`);
   }
   handleSpaceSceneInteraction(clickable: IClickable, event: MouseEvent) {
@@ -182,7 +192,11 @@ export class Engine {
   toggleLightSpeed(clickable: IClickable, event: MouseEvent) {
     if (!this.spaceSceneManager.lightspeedIsEnabeled()) {
       this.spaceSceneManager.engageLightspeed();
-      this.monitorManager.show(clickable.elementId);
+      if (clickable.targetId == null) {
+        console.error(`missing targetId for display interaction`);
+        return;
+      }
+      this.displayClickableOnMonitor(clickable);
     } else {
       this.spaceSceneManager.disengageLightspeed();
       this.monitorManager.reInitialize();
@@ -193,5 +207,13 @@ export class Engine {
   }
   handleProceedToDestination(clickable: IClickable, event: MouseEvent) {
     console.log("not yet implmeneted");
+  }
+  displayClickableOnMonitor(clickable: IClickable) {
+    if (clickable.data.monitorTargetId == null) {
+      console.error(`missing targetId for display interaction`);
+      console.log("clickable:", clickable);
+      return;
+    }
+    this.monitorManager.show(clickable.data.monitorTargetId);
   }
 }

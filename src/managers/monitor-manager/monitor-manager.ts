@@ -39,6 +39,7 @@ export class MonitorManager {
     this.animationManager.revealElement(defaultMonitorDisplayID);
   }
   show(targetId: TIDOrClass) {
+    console.log(`Showing monitor target: ${targetId}`);
     this.clear();
     this.animationManager.revealElement(targetId);
   }

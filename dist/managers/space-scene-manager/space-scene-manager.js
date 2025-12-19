@@ -54,7 +54,7 @@ export class SpaceSceneManager {
         this.hideBackBtn();
         this.showSpaceElements();
         this.updateCurrentScene("spaceship");
-        this.updateCurrentBackdrop("default");
+        this.updateCurrentBackdrop("#default");
     }
     changeSpaceshipBackdrop(backdrop) {
         console.log("revealing backdrop", backdrop);
@@ -83,15 +83,23 @@ export class SpaceSceneManager {
         this.currentBackdrop = backdrop;
     }
     returnCurrentScene() {
-        this.currentScene();
+        return this.currentScene;
     }
     returnCurrentBackdrop() {
-        this.currentBackdrop();
+        return this.currentBackdrop;
     }
     hideSpaceElements() {
+        if (this.spaceElements == null) {
+            console.error(`spaceElements missing`);
+            return;
+        }
         this.animationManager.hideElement(this.spaceElements);
     }
     showSpaceElements() {
+        if (this.spaceElements == null) {
+            console.error(`spaceElements missing`);
+            return;
+        }
         this.animationManager.revealElement(this.spaceElements);
     }
     reavealBackdrop(backdrop) {
@@ -101,15 +109,31 @@ export class SpaceSceneManager {
         this.animationManager.hideElement(backdrop);
     }
     revealBackBtn() {
+        if (this.backBtn == null) {
+            console.error(`backBtn missing`);
+            return;
+        }
         this.animationManager.revealElement(this.backBtn);
     }
     hideBackBtn() {
+        if (this.backBtn == null) {
+            console.error(`backBtn missing`);
+            return;
+        }
         this.animationManager.hideElement(this.backBtn);
     }
     revealSceneControls() {
+        if (this.sceneControls == null) {
+            console.error(`sceneControls missing`);
+            return;
+        }
         this.animationManager.revealElement(this.sceneControls);
     }
     hideSceneControls() {
+        if (this.sceneControls == null) {
+            console.error(`sceneControls missing`);
+            return;
+        }
         this.animationManager.hideElement(this.sceneControls);
     }
     getElementQuadrant(element, container) {

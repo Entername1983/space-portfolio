@@ -1,12 +1,22 @@
 import { AnimationManager } from "../animation-manager/animation-manager";
 export class LogContentManager {
+    static instance = null;
+    rssFeed;
+    testRssFeed;
+    logEntries;
+    logIndex;
+    animationManager;
     constructor() {
+        if (LogContentManager.instance) {
+            return LogContentManager.instance;
+        }
         this.rssFeed = "https://blog.cognaite.com/feed/";
         this.testRssFeed = "../templates/log-test-feed.xml";
         this.logEntries = [];
         this.logIndex = [0];
         this.initialize();
         this.animationManager = new AnimationManager();
+        LogContentManager.instance = this;
     }
     async initialize() {
         await this.fetchLog();
@@ -33,6 +43,10 @@ export class LogContentManager {
             const contentNode = item.getElementsByTagNameNS(contentNamespace, "encoded")[0];
             const fullHtmlContent = contentNode ? contentNode.textContent : "";
             const imageStrippedHtml = fullHtmlContent.replaceAll(/<img[^>]*>/g, "");
+            if (!pubDateNode) {
+                console.error("No publication date found for log entry");
+                return;
+            }
             const rawDateString = pubDateNode.textContent;
             const dateObject = new Date(rawDateString);
             const cleanDateString = dateObject.toLocaleDateString("en-US", {

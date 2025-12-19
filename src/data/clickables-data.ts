@@ -5,43 +5,57 @@ export const MONITOR_CLICKABLES: IClickable[] = [
     elementId: "#space-black-hole",
     action: "VIEW_SPACE_ELEMENT",
     targetId: "#monitor-black-hole",
-    data: {},
+    data: {
+      monitorTargetId: "#monitor-black-hole",
+    },
   },
   {
     elementId: "#space-station",
     action: "VIEW_SPACE_ELEMENT",
     targetId: "#monitor-space-station",
-    data: {},
+    data: {
+      monitorTargetId: "#monitor-space-station",
+    },
   },
   {
     elementId: "#star",
     action: "VIEW_SPACE_ELEMENT",
     targetId: "#monitor-star",
-    data: {},
+    data: {
+      monitorTargetId: "#monitor-star",
+    },
   },
   {
     elementId: "#satellite",
     action: "VIEW_SPACE_ELEMENT",
     targetId: "#monitor-satellite",
-    data: {},
+    data: {
+      monitorTargetId: "#monitor-satellite",
+    },
   },
   {
     elementId: "#space-whale",
     action: "VIEW_SPACE_ELEMENT",
     targetId: "#monitor-space-whale",
-    data: {},
+    data: {
+      monitorTargetId: "#monitor-space-whale",
+    },
   },
   {
     elementId: "#red-planet",
     action: "VIEW_SPACE_ELEMENT",
     targetId: "#monitor-red-planet",
-    data: {},
+    data: {
+      monitorTargetId: "#monitor-red-planet",
+    },
   },
   {
     elementId: "#asteroid",
     action: "VIEW_SPACE_ELEMENT",
     targetId: "#monitor-asteroid",
-    data: {},
+    data: {
+      monitorTargetId: "#monitor-asteroid",
+    },
   },
 ];
 
@@ -75,7 +89,7 @@ export const DISPLAY_CLICKABLES: IClickable[] = [
     action: "DISPLAY_INTERACTION",
     targetId: null,
     data: {
-      monitorTargetId: "monitor-spaceship",
+      monitorTargetId: "#monitor-spaceship",
     },
   },
   {
@@ -83,32 +97,32 @@ export const DISPLAY_CLICKABLES: IClickable[] = [
     action: "DISPLAY_INTERACTION",
     targetId: null,
     data: {
-      monitorTargetId: "headshot-image",
+      monitorTargetId: "#headshot-image",
     },
   },
   {
     elementId: "#control-log",
     action: "DISPLAY_INTERACTION",
     targetId: null,
-    data: { monitorTargetId: "monitor-spaceship" },
+    data: { monitorTargetId: "#monitor-spaceship" },
   },
   {
     elementId: "#control-acorn",
     action: "DISPLAY_INTERACTION",
     targetId: null,
-    data: { monitorTargetId: "monitor-spaceship" },
+    data: { monitorTargetId: "#monitor-spaceship" },
   },
   {
     elementId: "#control-one",
     action: "DISPLAY_INTERACTION",
     targetId: null,
-    data: { monitorTargetId: "monitor-spaceship" },
+    data: { monitorTargetId: "#monitor-spaceship" },
   },
   {
     elementId: "#lightspeed-btn",
     action: "TOGGLE_LIGHTSPEED",
     targetId: "#monitor-lightspeed",
-    data: { monitorTargetId: "monitor-spaceship" },
+    data: { monitorTargetId: "#monitor-lightspeed" },
   },
 ];
 
@@ -117,102 +131,114 @@ export const PROJECT_CLICKABLES: IClickable[] = [
     elementId: "#li-swift-swatch",
     action: "PROJECT_INTERACTION",
     targetId: "#swift-swatch-logo",
-    data: {},
+    data: {
+      monitorTargetId: "#swift-swatch-logo",
+    },
   },
   {
     elementId: "#li-cephadex",
     action: "PROJECT_INTERACTION",
     targetId: "#cephadex-logo",
-    data: {},
+    data: {
+      monitorTargetId: "#cephadex-logo",
+    },
   },
   {
     elementId: "#li-cognaite",
     action: "PROJECT_INTERACTION",
     targetId: "#cognaite-logo",
-    data: {},
+    data: {
+      monitorTargetId: "#cognaite-logo",
+    },
   },
   {
     elementId: "#li-chair-the-fed",
     action: "PROJECT_INTERACTION",
     targetId: "#chair-the-fed-logo",
-    data: {},
+    data: {
+      monitorTargetId: "#chair-the-fed-logo",
+    },
   },
   {
     elementId: "#li-ai-story-tellers",
     action: "PROJECT_INTERACTION",
     targetId: "#ai-story-tellers-logo",
-    data: {},
+    data: {
+      monitorTargetId: "#ai-story-tellers-logo",
+    },
   },
   {
     elementId: "#li-acorn",
     action: "PROJECT_INTERACTION",
     targetId: "#acorn-logo",
-    data: {},
+    data: {
+      monitorTargetId: "#acorn-logo",
+    },
   },
   {
     elementId: "#li-blog",
     action: "PROJECT_INTERACTION",
     targetId: "#blog-logo",
-    data: {},
+    data: { monitorTargetId: "#blog-logo" },
   },
   {
     elementId: "#li-space-portfolio",
     action: "PROJECT_INTERACTION",
     targetId: "#monitor-spaceship",
-    data: {},
+    data: { monitorTargetId: "#monitor-spaceship" },
   },
 ];
 
-export const ALIEN_SIDEKICK_CLICKABLES: IClickable[] = [
-  {
-    elementId: "#space-black-hole",
-    action: "VIEW_SPACE_ELEMENT",
-    targetId: "#monitor-black-hole",
-    data: { message: null },
-  },
-  {
-    elementId: "#space-black-hole",
-    action: "VIEW_SPACE_ELEMENT",
-    targetId: "#monitor-black-hole",
-    data: { message: null },
-  },
-  {
-    elementId: "#space-black-hole",
-    action: "VIEW_SPACE_ELEMENT",
-    targetId: "#monitor-black-hole",
-    data: { message: null },
-  },
-  {
-    elementId: "#space-black-hole",
-    action: "VIEW_SPACE_ELEMENT",
-    targetId: "#monitor-black-hole",
-    data: { message: null },
-  },
-  {
-    elementId: "#space-black-hole",
-    action: "VIEW_SPACE_ELEMENT",
-    targetId: "#monitor-black-hole",
-    data: { message: null },
-  },
-  {
-    elementId: "#space-black-hole",
-    action: "VIEW_SPACE_ELEMENT",
-    targetId: "#monitor-black-hole",
-    data: { message: null },
-  },
-  {
-    elementId: "#space-black-hole",
-    action: "VIEW_SPACE_ELEMENT",
-    targetId: "#monitor-black-hole",
-    data: { message: null },
-  },
-  {
-    elementId: "#space-black-hole",
-    action: "VIEW_SPACE_ELEMENT",
-    targetId: "#monitor-black-hole",
-    data: { message: null },
-  },
-];
+// export const ALIEN_SIDEKICK_CLICKABLES: IClickable[] = [
+//   {
+//     elementId: "#space-black-hole",
+//     action: "VIEW_SPACE_ELEMENT",
+//     targetId: "#monitor-black-hole",
+//     data: { message: null, monitorTargetId: "#monitor-black-hole" },
+//   },
+//   {
+//     elementId: "#space-black-hole",
+//     action: "VIEW_SPACE_ELEMENT",
+//     targetId: "#monitor-black-hole",
+//     data: { message: null, monitorTargetId: "#monitor-black-hole" },
+//   },
+//   {
+//     elementId: "#space-black-hole",
+//     action: "VIEW_SPACE_ELEMENT",
+//     targetId: "#monitor-black-hole",
+//     data: { message: null },
+//   },
+//   {
+//     elementId: "#space-black-hole",
+//     action: "VIEW_SPACE_ELEMENT",
+//     targetId: "#monitor-black-hole",
+//     data: { message: null },
+//   },
+//   {
+//     elementId: "#space-black-hole",
+//     action: "VIEW_SPACE_ELEMENT",
+//     targetId: "#monitor-black-hole",
+//     data: { message: null },
+//   },
+//   {
+//     elementId: "#space-black-hole",
+//     action: "VIEW_SPACE_ELEMENT",
+//     targetId: "#monitor-black-hole",
+//     data: { message: null },
+//   },
+//   {
+//     elementId: "#space-black-hole",
+//     action: "VIEW_SPACE_ELEMENT",
+//     targetId: "#monitor-black-hole",
+//     data: { message: null },
+//   },
+//   {
+//     elementId: "#space-black-hole",
+//     action: "VIEW_SPACE_ELEMENT",
+//     targetId: "#monitor-black-hole",
+//     data: { message: null },
+//   },
+// ];
 
 export const CLICKABLES = [
   ...DISPLAY_CLICKABLES,

@@ -34,6 +34,7 @@ export class MonitorManager {
         this.animationManager.revealElement(defaultMonitorDisplayID);
     }
     show(targetId) {
+        console.log(`Showing monitor target: ${targetId}`);
         this.clear();
         this.animationManager.revealElement(targetId);
     }

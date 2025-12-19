@@ -4,3 +4,5 @@ TS Watch
   npx tsc -w
 - TS compile
   npx tsc
+
+- npm run dev
