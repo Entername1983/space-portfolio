@@ -6,6 +6,23 @@ import { IntroManager } from "./managers/intro-manager/intro-manager";
 import { LayoutManager } from "./managers/layout-manager/layout-manager";
 import { MonitorManager } from "./managers/monitor-manager/monitor-manager";
 import { SpaceSceneManager } from "./managers/space-scene-manager/space-scene-manager";
+import { state } from "./managers/state-manager/state-manager";
+// TODO: Change the singleton pattern to the following structure:
+// private static instance: Engine | null = null;
+
+//   // 1. Private constructor: No one outside this class can call 'new Engine()'
+//   private constructor() {
+//     // Initialization logic here
+//     console.log("Engine initialized once");
+//   }
+
+//   // 2. Controlled access point
+//   public static getInstance(): Engine {
+//     if (!Engine.instance) {
+//       Engine.instance = new Engine();
+//     }
+//     return Engine.instance;
+//   }
 
 export class Engine {
   public static instance: Engine | null = null;
@@ -16,8 +33,6 @@ export class Engine {
   private displayManager!: DisplayManager;
   private spaceSceneManager!: SpaceSceneManager;
   private layoutManager!: LayoutManager;
-  private clickList!: TElementId[];
-  private activeClick!: TElementId | null;
 
   constructor() {
     if (Engine.instance) {
@@ -30,22 +45,25 @@ export class Engine {
     this.spaceSceneManager = new SpaceSceneManager();
     this.layoutManager = new LayoutManager();
     Engine.instance = this;
-    this.clickList = [];
-    this.activeClick = null;
 
     this.initialize();
     initCanvas();
+    this.startIntro();
   }
-  async initialize() {
+  initialize() {
+    this.layoutManager.checkOrientation();
     document.addEventListener(
       "layoutChanged",
       this.handleLayoutChange.bind(this)
     );
+  }
+  async startIntro() {
     await this.introManager.startIntro();
   }
 
   async handleInteraction(clickable: IClickable, event: MouseEvent) {
     console.log("element", clickable);
+    console.log("STATE", state);
     switch (clickable.action) {
       case "VIEW_SPACE_ELEMENT":
         this.viewSpaceElement(clickable);
@@ -85,9 +103,9 @@ export class Engine {
     this.alienAssistantManager.updateOrientation(newOrientation);
   }
   addClickToList(elementId: TElementId) {
-    this.activeClick = elementId;
-    this.clickList.push(this.activeClick);
-    console.log("click list:", this.clickList);
+    state.activeClick = elementId;
+    state.clickList.push(state.activeClick);
+    console.log("click list:", state.clickList);
   }
   interactWithProjects(clickable: IClickable) {
     this.addClickToList(clickable.elementId);
@@ -107,7 +125,7 @@ export class Engine {
 
     if (
       clickable.elementId.startsWith("#control") &&
-      this.activeClick == clickable.elementId &&
+      state.activeClick == clickable.elementId &&
       this.displayManager.isOpen()
     ) {
       this.displayManager.resetAndCloseDisplay();
@@ -118,6 +136,8 @@ export class Engine {
     this.addClickToList(clickable.elementId);
   }
   handleDelegatedInteraction(clickable: IClickable, event: Event) {
+    /** This is used to handle interactions of elements that are not initially loaded
+     * in the DOM, using data target instead of standard clickable format **/
     const actionTargetId = this.extractActionAndTargetFromDelegatedClick(event);
     if (actionTargetId == null) {
       console.error(`missing actionTargetId`);
@@ -171,18 +191,18 @@ export class Engine {
     this.displayManager.projectsContentManager.show(`#${projectName}-content`);
   }
   handleSpaceSceneInteraction(clickable: IClickable, event: MouseEvent) {
-    if (this.activeClick == null) {
+    if (state.activeClick == null) {
       console.error(`activeClick is null`);
       return;
     }
-    this.spaceSceneManager.show(this.activeClick);
+    this.spaceSceneManager.show(state.activeClick);
   }
   handleReturnToSpaceship(clickable: IClickable, event: MouseEvent) {
-    if (this.activeClick == null) {
+    if (state.activeClick == null) {
       console.error(`activeClick is null`);
       return;
     }
-    this.spaceSceneManager.returnToSpaceship(this.activeClick);
+    this.spaceSceneManager.returnToSpaceship(state.activeClick);
   }
   handleViewLog(actionTargetId) {
     this.displayManager.logContentManager.handleDelegatedInteraction(

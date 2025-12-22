@@ -2,7 +2,7 @@ import gsap, { type Timeline } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { ALIEN_INFO_MAPPINGS } from "../../data/alien-info-mappings";
 import type { TElementId } from "../../data/types";
-
+import { state } from "../state-manager/state-manager.js";
 gsap.registerPlugin(TextPlugin);
 export class AlienAssistantManager {
   public static instance: AlienAssistantManager | null = null;
@@ -15,6 +15,10 @@ export class AlienAssistantManager {
   private proceedBtn!: HTMLElement | null;
   private rootElement!: HTMLElement;
   private orientation!: "portrait" | "landscape";
+  private silenceBtn!: HTMLElement | null;
+  private mainSilenceSwitch!: HTMLInputElement | null;
+  private unsiliencedIcon!: HTMLElement | null;
+  private silencedIcon!: HTMLElement | null;
 
   constructor() {
     if (AlienAssistantManager.instance) {
@@ -26,9 +30,14 @@ export class AlienAssistantManager {
     this.autoHideTimeout = null;
     this.closeBtn = document.querySelector("#info-close-button");
     this.proceedBtn = document.querySelector("#proceed-btn");
+    this.silenceBtn = document.querySelector("#silence-btn");
+    this.mainSilenceSwitch = document.querySelector("#alien-silence-switch");
+    this.unsiliencedIcon = document.querySelector(".unsilenced");
+    this.silencedIcon = document.querySelector(".silenced");
     this.rootElement = document.body;
     this.orientation = "portrait";
     this.attachCloseBtnListener();
+    this.attachSilenceBtnListeners();
     AlienAssistantManager.instance = this;
   }
   attachCloseBtnListener() {
@@ -37,7 +46,43 @@ export class AlienAssistantManager {
       this.clear();
     });
   }
+  attachSilenceBtnListeners() {
+    if (this.silenceBtn == null) return;
+    this.silenceBtn.addEventListener("click", () => {
+      if (state.silencedAlien) {
+        console.log("silence btn clicked - unmuting alien");
+        if (this.mainSilenceSwitch !== null)
+          this.mainSilenceSwitch.checked = false;
+      } else {
+        if (this.mainSilenceSwitch !== null)
+          this.mainSilenceSwitch.checked = true;
+      }
+      this.toggleSilenceAlien();
+    });
+    if (this.mainSilenceSwitch == null) return;
+    this.mainSilenceSwitch.addEventListener("change", (event: Event) => {
+      console.log("main silence switch changed");
+      const target = event.target as HTMLInputElement;
 
+      const isChecked = target.checked;
+      this.toggleSilenceAlien();
+    });
+  }
+
+  toggleSilenceAlien() {
+    state.silencedAlien = !state.silencedAlien;
+    if (state.silencedAlien === true) {
+      this.silencedIcon?.classList.add("active");
+      this.unsiliencedIcon?.classList.remove("active");
+    } else {
+      this.silencedIcon?.classList.remove("active");
+      this.unsiliencedIcon?.classList.add("active");
+    }
+    console.log("Toggling alien silence to", state.silencedAlien);
+  }
+  isAlienSilenced(): boolean {
+    return state.silencedAlien;
+  }
   createRevealTimeline(): gsap.Timeline {
     const masterHoverTimeline = gsap.timeline({ paused: true });
     masterHoverTimeline
