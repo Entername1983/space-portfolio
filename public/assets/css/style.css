@@ -1,12 +1,16 @@
 /** **/
 :root {
-  --matrix-green-dark: rgba(0, 160, 65);
-  --matrix-green: rgb(166, 238, 193);
-  --extra-dark-green: rgb(1, 143, 22);
-  --dark-red: rgb(59, 2, 2);
-  --light-red: rgb(153, 31, 31);
-  --very-light-red: rgb(250, 89, 39);
+  --matrix-green-dark: oklch(0.6157 0.17656 148.3635);
+  --matrix-green: oklch(0.8895 0.095 156.46);
+  --extra-dark-green: oklch(0.5641 0.1852 143.54);
+  --dark-red: oklch(0.2244 0.0876 28.18);
+  --light-red: oklch(0.4472 0.158 26.44);
+  --very-light-red: oklch(0.6738 0.2055 36.68);
 }
+/* https://codepen.io/kevinpowell/pen/wBMbozY 
+
+Use this as an example to build relative colros from this base
+*/
 button,
 a,
 blockquote {
@@ -752,7 +756,7 @@ a:hover {
   position: relative;
   display: inline-block;
   width: 28px;
-  height: 14px;
+  height: 16px;
 }
 
 /* Hide default HTML checkbox */
@@ -770,29 +774,27 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: transparent;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  border: 1px solid var(--light-red);
-  box-shadow: 0 0 4px rgba(255, 0, 0, 0.8);
+  /* border: 1px solid var(--light-red); */
+  box-shadow: 0 0 4px from var(--light-red) / l c h 0.8;
+  background-color: oklch(from var(--light-red) 90% calc(c / 0.5) h);
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 10px;
-  width: 10px;
-  left: 1px;
-  bottom: 1px;
+  height: 16px;
+  width: 16px;
+  left: -1px;
+  top: 0px;
   background-color: var(--light-red);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: transparent;
-  border: 1px solid var(--matrix-green);
-  box-shadow: 0 0 4px rgba(94, 168, 71, 0.8);
+  background-color: oklch(from var(--matrix-green) 50% c h);
 }
 
 input:focus + .slider {
@@ -800,9 +802,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -ms-transform: translateX(14px);
-  transform: translateX(14px);
-  background-color: var(--matrix-green-dark);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+  background-color: oklch(from var(--matrix-green) 93% c h);
 }
 
 /* Rounded sliders */
@@ -824,8 +826,9 @@ input:checked + .slider:before {
 
 .silenced,
 .unsilenced {
-  max-height: 20px;
-  max-width: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: none;
 }
 

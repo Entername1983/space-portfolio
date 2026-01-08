@@ -27,7 +27,8 @@
   border: 1px solid var(--light-red);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 20px 0px var(--light-red), 0 0 10px rgba(255, 0, 0, 0.8);
+  box-shadow: 0 0 20px 0px var(--light-red),
+    0 0 10px oklch(from var(--light-red) / l c h 0.8);
 }
 
 .info-content > h2 {

@@ -99,7 +99,6 @@ export class Engine {
   handleLayoutChange(event: CustomEvent) {
     const newOrientation = event.detail.orientation;
     console.log(`Engine detected layout change to: ${newOrientation}`);
-
     this.alienAssistantManager.updateOrientation(newOrientation);
   }
   addClickToList(elementId: TElementId) {
@@ -114,7 +113,10 @@ export class Engine {
   viewSpaceElement(clickable: IClickable) {
     this.addClickToList(clickable.elementId);
     this.displayClickableOnMonitor(clickable);
-
+    if (state.silencedAlien === true && state.activeClick != null) {
+      this.spaceSceneManager.show(state.activeClick);
+      return;
+    }
     this.alienAssistantManager.show(clickable.elementId);
   }
   goToSpaceElement(clickable: IClickable) {}
@@ -223,6 +225,9 @@ export class Engine {
     }
   }
   handleHoverInteractions(clicklable: IClickable, event: MouseEvent) {
+    if (state.silencedAlien === true) {
+      return;
+    }
     this.alienAssistantManager.showWithoutProceedButton(clicklable.elementId);
   }
   handleProceedToDestination(clickable: IClickable, event: MouseEvent) {

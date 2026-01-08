@@ -49,5 +49,11 @@ const CONTROL_HOVERABLES: IClickable[] = [
     targetId: null,
     data: {},
   },
+  {
+    elementId: "#back-btn",
+    action: "HOVER",
+    targetId: null,
+    data: {},
+  },
 ];
 export const HOVERABLES = [...CONTROL_HOVERABLES];

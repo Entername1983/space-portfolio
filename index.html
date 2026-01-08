@@ -51,7 +51,78 @@
 
         <!------------------ SCENE CONTROLS ----------------->
         <div id="scene-controls">
-          <button id="mode-switcher" class="">
+          <div class="scene-control-row">
+            <!-- rectangular div, circle with icon/img absolute positioned, wrap in label so it can all be clickable -->
+            <label>
+              <div class="scene-control-icon">
+                <img
+                  class="silenced"
+                  src="/assets/images/alien-sidekick-mute-sm.webp"
+                  alt="silenced icon" />
+                <img
+                  class="unsilenced active"
+                  src="/assets/images/alien-sidekick-sm.webp"
+                  alt="Unsilenced icon" />
+              </div>
+              <div>Silence</div>
+              <div class="switch">
+                <input type="checkbox" id="alien-silence-switch" checked />
+                <span class="slider round"></span>
+              </div>
+            </label>
+          </div>
+          <div class="scene-control-row">
+            <!-- rectangular div, circle with icon/img absolute positioned, wrap in label so it can all be clickable -->
+            <label>
+              <div class="scene-control-icon">
+                <svg
+                  width="41"
+                  height="40"
+                  viewBox="0 0 41 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_36_589)">
+                    <path
+                      d="M14.2408 5.83936C15.3478 5.13857 16.4872 4.60778 17.6589 4.24698C18.8306 3.88618 20.0346 3.69538 21.2709 3.67458C25.2153 3.60821 28.5953 4.99318 31.4107 7.82949C34.2262 10.6658 35.6689 14.1609 35.7388 18.3147L35.7443 18.6401L38.52 15.6167L41.0365 18.179L34.0971 25.7375L26.9073 18.4168L29.3361 15.7713L32.212 18.6996L32.2065 18.3741C32.1543 15.2742 31.0724 12.6568 28.9607 10.5218C26.8489 8.38686 24.3065 7.34438 21.3335 7.39441C20.5682 7.40729 19.8191 7.51291 19.0864 7.71129C18.3536 7.90966 17.6371 8.20078 16.9369 8.58465L14.2408 5.83936ZM2.18276 18.9258L9.12217 11.3673L16.3119 18.6881L13.8832 21.3335L11.0072 18.4052L11.0127 18.7307C11.0649 21.8306 12.1468 24.448 14.2586 26.583C16.3703 28.718 18.9127 29.7604 21.8857 29.7104C22.651 29.6975 23.4001 29.5919 24.1328 29.3935C24.8656 29.1952 25.5821 28.904 26.2823 28.5202L28.9785 31.2655C27.8714 31.9662 26.732 32.497 25.5603 32.8578C24.3886 33.2186 23.1846 33.4094 21.9483 33.4302C18.0039 33.4966 14.624 32.1116 11.8085 29.2753C8.993 26.439 7.55032 22.944 7.48042 18.7902L7.47494 18.4647L4.69918 21.4881L2.18276 18.9258Z" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_36_589">
+                      <rect
+                        width="39.1628"
+                        height="40.2785"
+                        fill="white"
+                        transform="translate(40.2728) rotate(89.036)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div>Rotate</div>
+              <div class="switch">
+                <input type="checkbox" id="alien-silence-switch" checked />
+                <span class="slider round"></span>
+              </div>
+            </label>
+          </div>
+          <div class="scene-control-row">
+            <!-- rectangular div, circle with icon/img absolute positioned, wrap in label so it can all be clickable -->
+            <button>
+              <div class="scene-control-icon">
+                <svg
+                  width="35"
+                  height="39"
+                  viewBox="0 0 35 39"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11.4115 21.125L19.5782 30.225L17.5 32.5L5.83337 19.5L17.5 6.5L19.5782 8.775L11.4115 17.875H29.1667V21.125H11.4115Z" />
+                </svg>
+              </div>
+              <div>Back</div>
+              <div><div class="red-circle-for-btn"></div></div>
+            </button>
+          </div>
+
+          <!-- <button id="mode-switcher" class="">
             <svg
               viewBox="0 0 24 24"
               stroke-width="1"
@@ -65,7 +136,7 @@
                   d="m550-30-56-57 73-73H320q-33 0-56.5-23.5T240-240v-407l80 80v327h247l-73-73 56-57 170 170L550-30Zm170-283-80-80v-327H393l73 73-56 57-170-170 170-170 56 57-73 73h247q33 0 56.5 23.5T720-720v407Z" />
               </svg>
             </span>
-          </button>
+          </button> -->
           <!-- <a
             target="_blank"
             href="https://google.com"
@@ -84,21 +155,8 @@
                 class="glow-line"></rect>
             </svg>
           </a> -->
-          <button id="back-btn" class="button glow-effect small red">
-            Back
-            <svg class="glow-container">
-              <rect
-                pathLength="100"
-                stroke-linecap="round"
-                class="glow-blur"></rect>
-              <rect
-                pathLength="100"
-                stroke-linecap="round"
-                class="glow-line"></rect>
-            </svg>
-          </button>
 
-          <div id="main-silence-btn">
+          <!-- <div id="main-silence-btn">
             <span>
               <img
                 class="silenced"
@@ -113,7 +171,29 @@
               <input type="checkbox" id="alien-silence-switch" checked />
               <span class="slider round"></span>
             </label>
-          </div>
+          </div> -->
+          <!--    <button id="back-btn" class="button glow-effect small red">
+            <svg
+              id="back-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              >
+              <path
+                d="M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z" />
+            </svg>
+            <svg class="glow-container">
+              <rect
+                pathLength="100"
+                stroke-linecap="round"
+                class="glow-blur"></rect>
+              <rect
+                pathLength="100"
+                stroke-linecap="round"
+                class="glow-line"></rect>
+            </svg>
+          </button> -->
         </div>
 
         <!------------------ SPACE SCENE CONTAINER  ----------------->

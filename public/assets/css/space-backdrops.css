@@ -29,36 +29,99 @@
   left: 10px;
   z-index: 200;
   background: rgba(0, 0, 0, 0.8);
-  padding: 10px;
+  padding: 16px 10px 16px 16px;
   border-radius: 10px;
   border: 1px solid var(--light-red);
   box-shadow: 0 0 20px 0px var(--light-red), 0 0 10px rgba(255, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   transition: opacity 1s ease-in-out;
-  gap: 10px;
+  gap: 20px;
 }
+
 #scene-controls.active {
-  display: block;
+  display: flex;
   opacity: 0.8;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.scene-control-row {
+  padding: 2px;
+  padding-left: 30px;
+  display: flex;
+  align-items: start;
+}
+.scene-control-row > label,
+.scene-control-row > button {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  cursor: pointer;
+  border: 1px solid var(--light-red);
+  border-radius: 4px;
+  padding-left: 16px;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--light-red);
+  text-transform: uppercase;
+  outline: 1px solid var(--light-red);
+  outline-offset: 1px;
+  box-shadow: 0 0 8px 0px var(--light-red),
+    0 0 8px 0px oklch(from var(--light-red) l c h / 0.8);
+
+  .scene-control-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 46px;
+    width: 46px;
+    border-radius: 300px;
+    border: var(--light-red), solid 1px;
+    transform: translate(-75%, -20%);
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2px;
+
+    svg {
+      fill: var(--light-red);
+    }
+  }
+  .red-circle-for-btn {
+    height: 16px;
+    width: 16px;
+    background-color: var(--light-red);
+    border-radius: 300px;
+  }
+}
+.scene-control-row > label:hover,
+.scene-control-row > button:hover {
+  color: var(--matrix-green);
+
+  .red-circle-for-btn {
+    background-color: var(--matrix-green);
+  }
+    .scene-control-icon {
+          border: var(--matrix-green), solid 1px;
+
+      svg {
+        fill: var(--matrix-green);
+      }
 }
 
 @media (max-width: 1000px) {
   #scene-controls {
     padding: 6px;
   }
-  #scene-controls.active {
-  }
 }
-
 @media (max-width: 600px) {
   #scene-controls {
     padding: 2px;
-  }
-  #scene-controls.active {
   }
 }
 
@@ -66,12 +129,13 @@
 
 #mode-switcher {
   position: relative;
-  width: 56px;
+  width: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #mode-switcher > svg {
+  size: 70%;
   fill: none;
   stroke: var(--matrix-green-dark);
   transition: transform 0.5s ease-in-out;

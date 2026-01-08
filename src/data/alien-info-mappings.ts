@@ -18,7 +18,6 @@ export const ALIEN_INFO_MAPPINGS: Record<string, string> = {
   "#red-door": "You&apos;ll find some information about other projects here",
   "#yellow-door":
     "This is the information center, check out the captains log here",
-  "#back-button": "Go back?",
   "#space-whale-space-scene":
     "Wow, I never dreamed I'd see a space whale up close - truly majestic creatures!",
   "#black-hole-space-scene":

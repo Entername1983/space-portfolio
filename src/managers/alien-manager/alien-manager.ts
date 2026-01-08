@@ -49,14 +49,14 @@ export class AlienAssistantManager {
   attachSilenceBtnListeners() {
     if (this.silenceBtn == null) return;
     this.silenceBtn.addEventListener("click", () => {
-      if (state.silencedAlien) {
-        console.log("silence btn clicked - unmuting alien");
-        if (this.mainSilenceSwitch !== null)
+      if (state.silencedAlien == false) {
+        if (this.mainSilenceSwitch !== null) {
+          console.log("syncing main silence switch to off");
           this.mainSilenceSwitch.checked = false;
-      } else {
-        if (this.mainSilenceSwitch !== null)
-          this.mainSilenceSwitch.checked = true;
+        }
       }
+      this.clear();
+
       this.toggleSilenceAlien();
     });
     if (this.mainSilenceSwitch == null) return;

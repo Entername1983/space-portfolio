@@ -588,4 +588,10 @@ body[data-orientation="portrait"] {
     max-height: 10%;
     max-width: none;
   }
+  #scene-controls {
+    top: 5px;
+    left: 5px;
+    padding: 6px;
+    gap: 6px;
+  }
 }
