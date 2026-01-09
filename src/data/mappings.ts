@@ -35,8 +35,8 @@ export const SPACE_SCENE_MAPPINGS: Record<TElementId, ISceneDetails> = {
     backdrop: "#infected-satellite-space-scene",
   },
   "#space-station": {
-    scene: "space-station",
-    backdrop: "#spacestation-interior-section",
+    scene: "spaceship",
+    backdrop: "#derelict-space-station",
   },
 };
 

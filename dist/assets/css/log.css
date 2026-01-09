@@ -1,0 +1,167 @@
+/** Button Styling for Prev & Next **/
+
+#log-prev,
+#log-next {
+  visibility: visible;
+  opacity: 0.2;
+  cursor: not-allowed;
+  border: 2px solid var(--light-red);
+  color: var(--light-red);
+}
+#log-prev:hover,
+#log-next:hover,
+#log-next:focus,
+#log-prev:focus {
+  background-color: var(--light-red);
+  color: black;
+}
+#log-prev.active,
+#log-next.active {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+  color: var(--matrix-green);
+  border-color: var(--matrix-green);
+}
+#log-prev.active:hover,
+#log-next.active:hover,
+#log-next.active:focus,
+#log-prev.active:focus {
+  color: black;
+  background-color: var(--matrix-green);
+}
+
+#display-log {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#log-content-wrapper {
+  position: relative;
+  /* flex-grow: 1; */
+  overflow: hidden;
+  height: 100%;
+}
+#log-content {
+  overflow-y: auto;
+  padding-top: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  height: 93%;
+  z-index: 100;
+}
+#log-content-wrapper::before {
+  content: "";
+  box-shadow: inset 0 0 50px rgb(0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+#log-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+#log-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#log-content::-webkit-scrollbar-thumb {
+  background: rgba(166, 238, 193, 0.3);
+  border-radius: 4px;
+}
+
+#log-content::-webkit-scrollbar-thumb:hover {
+  background: var(--matrix-green);
+}
+
+#stardate,
+#log-entry-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#display-log-header {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+#display-log-header > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 4px;
+}
+#display-log-header > div > p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1000px) {
+  #display-log-header {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
+  #display-log-header > div {
+    height: 100%;
+    gap: 4px;
+  }
+  #display-log-header > div > p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #display-log-header {
+    padding: 8px;
+    padding-top: 10px;
+  }
+
+  #display-log-header > div {
+    height: 100%;
+    gap: 2px;
+  }
+  #display-log-header > div > p {
+    font-size: 1rem;
+  }
+}
+#log-control {
+  align-self: self-end;
+}
+#log-control a {
+  align-self: self-end;
+}
+
+#log-navigation {
+  display: flex;
+  gap: 4px;
+}
+.wp-block-quote {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wp-block-verse {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#log-content > h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1.8rem;
+}

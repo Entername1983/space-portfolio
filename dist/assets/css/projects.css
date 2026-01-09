@@ -1,0 +1,106 @@
+.projects-list.active {
+  padding-inline-start: 0px;
+}
+
+#projects-content-container .content {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+#projects-content-container .content.active {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 1;
+}
+#projects-content-container .content {
+  padding: 20px 10px;
+  border-radius: 10px;
+  display: none;
+  font-family: "Orbitron", monospace;
+  color: var(--matrix-green);
+  text-shadow: 0 0 5px var(--matrix-green);
+  background: rgba(0, 0, 0, 0.9);
+  animation: terminalFlicker 0.1s infinite linear alternate;
+}
+#projects-content-container .content a {
+  color: var(--matrix-green);
+  text-decoration: underline;
+  text-shadow: 0 0 5px var(--matrix-green);
+}
+
+#projects-content-container .content a:hover {
+  text-shadow: 0 0 10px var(--matrix-green);
+  background: rgba(0, 160, 65, 0.1);
+}
+#projects-back-button {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  display: none;
+
+  cursor: pointer;
+  z-index: 30;
+  cursor: pointer;
+}
+#display-projects {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#projects-content-container {
+}
+#projects-main-menu {
+  display: flex;
+  height: 100%;
+  padding-top: 2rem;
+  gap: 3rem;
+  justify-content: start;
+}
+#projects-main-menu li {
+  font-size: 1.6rem;
+}
+.projects-screenshot-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px var(--light-red), inset 0 0 40px var(--dark-red);
+  overflow: hidden;
+}
+.projects-screenshot {
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: opacity(50%);
+}
+.projects-screenshot:hover {
+  filter: opacity(100%);
+}
+@media (max-width: 650px) {
+  .screen-content > ul {
+    margin-left: 0px;
+  }
+
+  /* .screen-content {
+    line-height: 1em;
+  }
+  .screen-content > ul {
+    line-height: 1em;
+  }
+  .screen-content > ul > li {
+    line-height: 1em;
+  } */
+  .cephadex-content,
+  .swift-swatch-content,
+  .cognaite-content,
+  .chair-the-fed-content,
+  .ai-story-tellers-content {
+    border: 1px dotted var(--matrix-green);
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: none;
+  }
+}

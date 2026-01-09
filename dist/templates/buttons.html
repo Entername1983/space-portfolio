@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Space Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/EaselPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/space/spaceship-2.webp" />
+    <link rel="stylesheet" href="./assets/css/alien-sidekick.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/space-backdrops.css" />
+    <link rel="stylesheet" href="./assets/css/control-panel.css" />
+    <link rel="stylesheet" href="./assets/css/space-station.css" />
+    <link rel="stylesheet" href="./assets/css/projects.css" />
+    <link rel="stylesheet" href="./assets/css/log.css" />
+    <link rel="stylesheet" href="./assets/css/one.css" />
+    <link rel="stylesheet" href="./assets/css/bio.css" />
+    <link rel="stylesheet" href="./assets/css/acorn.css" />
+    <link rel="stylesheet" href="./assets/css/control-buttons.css" />
+    <link rel="stylesheet" href="./assets/css/buttons.css" />
+  </head>
+
+  <body style="background-color: black">
+    <button id="" class="button glow-effect">
+      Back
+      <svg class="glow-container">
+        <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+        <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+      </svg>
+    </button>
+    <button id="" class="button glow-effect small">
+      Proceed
+      <svg class="glow-container">
+        <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+        <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+      </svg>
+    </button>
+    <button id="" class="button glow-effect red">
+      Confirm
+      <svg class="glow-container">
+        <rect
+          pathLength="100"
+          stroke-linecap="round"
+          class="glow-blur red"></rect>
+        <rect
+          pathLength="100"
+          stroke-linecap="round"
+          class="glow-line red"></rect>
+      </svg>
+    </button>
+
+    <svg xmlns="http://www.w3.org/2000/svg"></svg>
+    <div id="control-acorn"></div>
+    <svg
+      id="acorn-btn-svg"
+      class="svg-control-tooltips"
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter
+          id="glowFilter"
+          filterUnits="userSpaceOnUse"
+          x="-5000%"
+          y="-50000%"
+          width="20000%"
+          height="200000%">
+          <feFlood
+            result="flood"
+            flood-color="white"
+            flood-opacity="1"></feFlood>
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="2.5"
+            result="blurredGlow" />
+
+          <feMerge>
+            <feMergeNode in="blurredGlow" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      <!-- Large straight 50 20 -->
+      <polyline
+        points="50 100 50 20"
+        fill="none"
+        stroke="white"
+        filter="url(#glowFilter)" />
+      <text class="svg-control-text" x="33" y="16" fill="white">Acorn</text>
+    </svg>
+  </body>
+</html>

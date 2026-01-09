@@ -4,6 +4,7 @@ import { HOVERABLES } from "./data/hoverables-data";
 import { Engine } from "./engine";
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("starting");
   new Engine();
   const clickableInstances: Record<string, Clickables> = {};
   CLICKABLES.forEach((item, index) => {

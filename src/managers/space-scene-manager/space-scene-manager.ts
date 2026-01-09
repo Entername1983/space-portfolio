@@ -39,16 +39,23 @@ export class SpaceSceneManager {
     return this.lightspeedIsOn;
   }
   show(activeClick: TElementId) {
+    console.log("showing space scene for", activeClick);
     const scene = SPACE_SCENE_MAPPINGS[activeClick];
     if (scene == null) {
       console.error(`invalid activeClick for scene selection ${activeClick}`);
       return;
     }
+    console.log("scene to show", scene);
     this.updateCurrentScene(scene.scene);
     this.updateCurrentBackdrop(scene.backdrop);
     switch (scene.scene) {
       case "spaceship":
         this.changeSpaceshipBackdrop(scene.backdrop);
+        break;
+
+      default:
+        console.error(`unhandled scene type ${scene.scene}`);
+        break;
     }
   }
   returnToSpaceship(activeClick: TElementId) {
@@ -111,6 +118,7 @@ export class SpaceSceneManager {
     this.animationManager.revealElement(this.spaceElements);
   }
   reavealBackdrop(backdrop: TElementId) {
+    console.log("revealing backdrop:", backdrop);
     this.animationManager.revealElement(backdrop);
   }
   hideBackdrop(backdrop: TElementId) {

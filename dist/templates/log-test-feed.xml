@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Kevin McCarthy&#039;s Site</title>
+	<atom:link href="https://blog.cognaite.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://blog.cognaite.com</link>
+	<description></description>
+	<lastBuildDate>Fri, 14 Nov 2025 17:52:22 +0000</lastBuildDate>
+	<language>en-NZ</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.8.3</generator>
+
+<image>
+	<url>https://blog.cognaite.com/wp-content/uploads/2025/11/cropped-kem-logo-no-bg-light-32x32.png</url>
+	<title>Kevin McCarthy&#039;s Site</title>
+	<link>https://blog.cognaite.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Infinity VS Nihility</title>
+		<link>https://blog.cognaite.com/2025/11/04/infinity-vs-nihility/</link>
+					<comments>https://blog.cognaite.com/2025/11/04/infinity-vs-nihility/#respond</comments>
+		
+		<dc:creator><![CDATA[balooski]]></dc:creator>
+		<pubDate>Mon, 03 Nov 2025 11:30:23 +0000</pubDate>
+				<category><![CDATA[Musings]]></category>
+		<guid isPermaLink="false">https://blog.cognaite.com/?p=79</guid>
+
+					<description><![CDATA[Since my teenage years I have occasionally tried to visualize/imagine the concepts of infinity and nihility (nothingness). I would often do this as a mental exercise during nights where my mind would race and I would struggle to sleep. Of course actually understanding these concepts is an impossible task &#8211; but the attempt is one [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-full is-resized"><img fetchpriority="high" decoding="async" width="1024" height="1024" src="https://blog.cognaite.com/wp-content/uploads/2025/11/infinityVSoblivion.webp" alt="" class="wp-image-120" style="width:300px" srcset="https://blog.cognaite.com/wp-content/uploads/2025/11/infinityVSoblivion.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/11/infinityVSoblivion-300x300.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/11/infinityVSoblivion-150x150.webp 150w, https://blog.cognaite.com/wp-content/uploads/2025/11/infinityVSoblivion-768x768.webp 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Since my teenage years I have occasionally tried to visualize/imagine the concepts of infinity and nihility (nothingness). I would often do this as a mental exercise during nights where my mind would race and I would struggle to sleep.</p>
+
+
+
+<p>Of course actually understanding these concepts is an impossible task &#8211; but the attempt is one I enjoy to this day. I find that thinking about these extreme concepts can help me with understanding of more banal topics. I recently realized that I could come much closer to grasping infininity than nihility.</p>
+
+
+
+<p>When thinking on macroscropic scales, I can visualize our universe, visualize something containing our universe and imagine this process going on forever (or do the same thing on infinitely small scales). What I find much more difficult is imagining there is some sort of boundary (in whatever dimension that might be) and then beyond that nothing. Not dark space, not just the absence of things, not just the absence of atoms or subatomic particles, but true oblivion. When we try and picture nothingness we picture a void, but even a void isn&#8217;t appropriate as this true nihility isn&#8217;t defined by the absence of anything &#8211; it is the absence of everything including itself.</p>
+
+
+
+<p>To my mind the universe (taking it to mean everything that is, not just our actual universe) must be either infinite or finite. If it is finite then there would be boundaries past which there is nothing. I am more and more convinced that it cannot be the case and that the only thing that makes sense is an infinite universe in and of all dimensions.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://blog.cognaite.com/2025/11/04/infinity-vs-nihility/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Sora 2 release</title>
+		<link>https://blog.cognaite.com/2025/10/11/sora-2-release/</link>
+					<comments>https://blog.cognaite.com/2025/10/11/sora-2-release/#respond</comments>
+		
+		<dc:creator><![CDATA[balooski]]></dc:creator>
+		<pubDate>Fri, 10 Oct 2025 13:58:16 +0000</pubDate>
+				<category><![CDATA[AI]]></category>
+		<category><![CDATA[Technology]]></category>
+		<guid isPermaLink="false">https://blog.cognaite.com/?p=57</guid>
+
+					<description><![CDATA[Over the last week there has been a lot of hype around the release of Sora 2 &#8211; an AI generated tool that allows you to create videos from prompts and post them to their AI version of tiktok. As part of the announcement they released a 2 minute long video made with Sora. After [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Over the last week there has been a lot of hype around the <a href="https://openai.com/index/sora-2/" data-type="link" data-id="https://openai.com/index/sora-2/">release of Sora 2</a> &#8211; an AI generated tool that allows you to create videos from prompts and post them to their AI version of tiktok.  As part of the announcement they released a 2 minute long video made with Sora.   After about how groundbreaking this was, the video left me disappointed and lowered my expectations on the potential for AI video to live up to their promise.</p>
+
+
+
+<h2 class="wp-block-heading">The problem of consistency</h2>
+
+
+
+<p>The video consists of short segments stitched together, each one no more than ten seconds.  There is no consistency throughout any segment longer than that.   It looks like they generated dozens of videos with the same prompt and then used ones that were the most similar to make it look like they are the same.  </p>
+
+
+
+<p>Below I take a look at some of the issues which I believe point to major limitations in the uses of the technology.</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-full"><img decoding="async" width="400" height="224" data-id="135" src="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-orchestra-1-sm.png" alt="" class="wp-image-135" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-orchestra-1-sm.png 400w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-orchestra-1-sm-300x168.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></figure>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="400" height="225" data-id="136" src="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-orchestra-2-sm.png" alt="" class="wp-image-136" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-orchestra-2-sm.png 400w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-orchestra-2-sm-300x169.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></figure>
+</figure>
+
+
+
+<p>Ostensibly the claymotion style orchestra a reflection of the models being painted, but they look nothing alike.  Was Sora not able to generate a video of an orchestra without a bald conductor?  The only similarities between both scenes are that they both show an orchestra.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="400" height="225" src="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-dragon-sm.png" alt="" class="wp-image-127" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-dragon-sm.png 400w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-dragon-sm-300x169.png 300w" sizes="auto, (max-width: 400px) 100vw, 400px" /></figure>
+
+
+
+<p>This looks exactly like a scene from Game of Thrones or one of the offshoot shows.  Maybe there aren&#8217;t enough high quality videos of dragons to make anything truly creative, but surely there are legitimate copyright issues here.  </p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="575" data-id="128" src="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-5-1024x575.webp" alt="" class="wp-image-128" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-5-1024x575.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-5-300x169.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-5-768x432.webp 768w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-5.webp 1146w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="569" data-id="129" src="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-2-1024x569.webp" alt="" class="wp-image-129" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-2-1024x569.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-2-300x167.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-2-768x427.webp 768w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-2.webp 1150w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="572" data-id="130" src="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1-1024x572.webp" alt="" class="wp-image-130" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1-1024x572.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1-300x168.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1-768x429.webp 768w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1.webp 1147w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+</figure>
+
+
+
+<p>In the first image here we can see that this is supposedly a duck race with human jockeys, but in the second picture it looks more like a regular horse and in the third the ducks (which look nothing like those in the first picture) have lost their riders.  </p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-3 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="575" data-id="132" src="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-4-1024x575.webp" alt="" class="wp-image-132" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-4-1024x575.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-4-300x168.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-4-768x431.webp 768w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-4.webp 1147w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="572" data-id="133" src="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1-1-1024x572.webp" alt="" class="wp-image-133" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1-1-1024x572.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1-1-300x168.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1-1-768x429.webp 768w, https://blog.cognaite.com/wp-content/uploads/2025/10/sora-stadium-1-1.webp 1147w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+</figure>
+
+
+
+<p>Once again in the stadium there is no consistency.  In the scene with Sam Altman what should be a circular race course is more like a regular olympic swimming pool.  </p>
+
+
+
+<p>Of course these individual scenes on their own (apart from the dragon one which completely lacks creativity) are quite impressive, but watching the video in its entirety, it looks like somebody trying to trick us into believing they painted a masterpiece by using a collage of masterpieces of wildly different styles.  </p>
+
+
+
+<p>So why does this matter?  Am I just being too negative on AI?  Expecting too much?  <br>I don&#8217;t think so.  In fact I&#8217;ve been quite excited about the technology and made a lot of use of it since the release of GPT3.5.  I&#8217;ve also been interested in what can be done with image generation and video.  I first setup Stable Diffusion locally almost three years ago, and at the time found that while the results were impressive the biggest limitation was there was no way to ensure consistency between renders.  </p>
+
+
+
+<p>More recently when looking for image generation tools to help with logo creation and other branding efforts for side projects I have run into the same limitations.  The fact that after three years and billions of dollars no one has figured out how to ensure consistency makes me believe this may be a problem that can only be solved with custom trained models &#8211; which would be so expensive today that it would exclude a lot of use cases.  </p>
+
+
+
+<p>And I keep in mind that this is the best OpenAI can produce with virtually limitless resources and more expertise on their own than anyone else. </p>
+
+
+
+<h2 class="wp-block-heading">The bigger picture</h2>
+
+
+
+<p>When chat GPT 3.5 first starting making waves, Sam Altman talked about how AI could save the world, doing anything from ending poverty to solving the climate crisis.  And yet now OpenAI is in same business as TikTok, delivering us short term dopamine hits while allowing our brains to rot.  One has to wonder how a company with a leader who had such lofty goals is using its technology for such basic and societally harmful level of entertainment (without even going into the topic of deepfakes and copyright issues, though it does say something about the socio-political climate in the U.S that OpenAI doesn&#8217;t consider this a risk).  Google, the only other company with a competitive video generation model, doesn&#8217;t seem to be going down this route.  </p>
+
+
+
+<p>In the last few months the warnings of <a href="https://www.bloomberg.com/news/articles/2025-10-09/why-experts-are-warning-the-ai-boom-could-be-a-bubble?embedded-checkout=true" data-type="link" data-id="https://www.bloomberg.com/news/articles/2025-10-09/why-experts-are-warning-the-ai-boom-could-be-a-bubble?embedded-checkout=true">the AI bubble have been getting louder</a>.  There is growing concern that the relatively short lived lives of GPU&#8217;s (3-5 years) means that the capital expenditure of firms is unsustainable without astronomical increases in revenue (think $500 billion &#8211; $1trillion / year).  Whether the numbers are correct or not, these AI firms are definitely in need of either revenue or ways to keep attracting more investment for future revenue.  Within this context Sora looks like a troubling sign for the AI sector in a sudden desperate search for ways to monetize their technology.<br><br>I have no doubt that AI over the long run can and will lead to huge gains in productivity &#8211; but the expectations of change have been unreleastic.  Silicon Valley has convinced itself that businesses and society can change at the same speed as technology, but this has never been the case.  Even for businesses, changing systems and processes takes time &#8211; sometimes decades or more.  I still have to call my doctor or dentist for an appointment 40 years after the invention of the internet, how long until they have an AI assistant answer the phone?</p>
+
+
+
+<p></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://blog.cognaite.com/2025/10/11/sora-2-release/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Baloo</title>
+		<link>https://blog.cognaite.com/2025/10/09/baloo/</link>
+					<comments>https://blog.cognaite.com/2025/10/09/baloo/#respond</comments>
+		
+		<dc:creator><![CDATA[balooski]]></dc:creator>
+		<pubDate>Wed, 08 Oct 2025 19:07:20 +0000</pubDate>
+				<category><![CDATA[Baloo]]></category>
+		<guid isPermaLink="false">https://blog.cognaite.com/?p=25</guid>
+
+					<description><![CDATA[The beginning Found on the streets of Lurin, Lima &#8211; Baloo and his siblings were rescued by two sisters who ran their own animal rescue. Though he lost his first family he quickly became the center of ours. As a lockdown puppy we were able to spend 24/7 with him during his first year with [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p class="has-text-align-center">&#8220;Woof woof, woof woof woof!&#8221; &#8211; Baloo</p>
+</blockquote>
+</blockquote>
+
+
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="1279" height="959" src="https://blog.cognaite.com/wp-content/uploads/2025/10/baloo-field.webp" alt="" class="wp-image-117" style="width:600px" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/baloo-field.webp 1279w, https://blog.cognaite.com/wp-content/uploads/2025/10/baloo-field-300x225.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/baloo-field-1024x768.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/10/baloo-field-768x576.webp 768w" sizes="auto, (max-width: 1279px) 100vw, 1279px" /></figure>
+
+
+
+<h2 class="wp-block-heading">The beginning</h2>
+
+
+
+<p>Found on the streets of Lurin, Lima &#8211; Baloo and his siblings were rescued by two sisters who ran their own animal rescue. Though he lost his first family he quickly became the center of ours. As a lockdown puppy we were able to spend 24/7 with him during his first year with us. His playfulness and energy would keep us busy and bring joy on those dull and dreary pandemic days.</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-4 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="719" height="959" data-id="103" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20200915_123257_01.webp" alt="" class="wp-image-103" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20200915_123257_01.webp 719w, https://blog.cognaite.com/wp-content/uploads/2025/10/20200915_123257_01-225x300.webp 225w" sizes="auto, (max-width: 719px) 100vw, 719px" /></figure>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="719" height="959" data-id="104" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20200915_123416.webp" alt="" class="wp-image-104" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20200915_123416.webp 719w, https://blog.cognaite.com/wp-content/uploads/2025/10/20200915_123416-225x300.webp 225w" sizes="auto, (max-width: 719px) 100vw, 719px" /></figure>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="719" height="959" data-id="105" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20200921_173118.webp" alt="" class="wp-image-105" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20200921_173118.webp 719w, https://blog.cognaite.com/wp-content/uploads/2025/10/20200921_173118-225x300.webp 225w" sizes="auto, (max-width: 719px) 100vw, 719px" /></figure>
+</figure>
+
+
+
+<p>Since had never seen either of his parents we had no idea what he would end up looking like or what size he would be.  He was tiny when we arrived but we were soon to learn that he wouldn&#8217;t stay like that for long!</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="719" height="959" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20201013_100720.webp" alt="" class="wp-image-110" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20201013_100720.webp 719w, https://blog.cognaite.com/wp-content/uploads/2025/10/20201013_100720-225x300.webp 225w" sizes="auto, (max-width: 719px) 100vw, 719px" /></figure>
+
+
+
+<p>He definitely got a bit of cabin fever the first few months.  The strict lockdown in Lima combined with the fact that we were advised he shouldn&#8217;t interact with other dogs until getting vaccinated meant we were his only play partners. </p>
+
+
+
+<h2 class="wp-block-heading">Growing up</h2>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20201225_134912-1024x768.webp" alt="" class="wp-image-109" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20201225_134912-1024x768.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/10/20201225_134912-300x225.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/20201225_134912-768x576.webp 768w, https://blog.cognaite.com/wp-content/uploads/2025/10/20201225_134912.webp 1279w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>He finally got the opportunity to go on some adventures!</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-5 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="719" height="959" data-id="108" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-10.webp" alt="" class="wp-image-108" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-10.webp 719w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-10-225x300.webp 225w" sizes="auto, (max-width: 719px) 100vw, 719px" /></figure>
+</figure>
+
+
+
+<p>Some of the other dogs weren&#8217;t as well behaved as Baloo, he got attacked while in a doggy park. It was heartbreaking &#8211; luckily the vets were very good and he recovered quickly.</p>
+
+
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="719" height="959" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20201222_090636.webp" alt="" class="wp-image-111" style="width:840px;height:auto" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20201222_090636.webp 719w, https://blog.cognaite.com/wp-content/uploads/2025/10/20201222_090636-225x300.webp 225w" sizes="auto, (max-width: 719px) 100vw, 719px" /></figure>
+
+
+
+<p>We took him into the high Andes, reaching an altitude of 4000m.  No problem for this little guy!</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-2.jpg" alt="" class="wp-image-44"/></figure>
+
+
+
+<h2 class="wp-block-heading">Move to Ireland</h2>
+
+
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="1279" height="959" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-12.webp" alt="" class="wp-image-107" style="width:600px" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-12.webp 1279w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-12-300x225.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-12-1024x768.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-12-768x576.webp 768w" sizes="auto, (max-width: 1279px) 100vw, 1279px" /></figure>
+
+
+
+<p>He was very brave for his first trip accross the world. Lima &#8211; Amsterdam, then Amsterdam to Dublin, followed by a late night drive to Limerick. Apart from being hungry, thirsty and I am sure quite confused he came off the plane as healthy as ever.</p>
+
+
+
+<h2 class="wp-block-heading">Life in Ireland</h2>
+
+
+
+<p>Though I am sure he missed his runs through the Malecon of Miraflores and hikes in the Andes, Baloo  appreciated the abundant greenery in Ireland, if not the cause of it. As it never rains in Lima the change in climate was a shock to him. He also underwent major surgery for a torn cruciate ligament which meant he could barely walk or play for the better part of three months. Three years later, and although he is no longer 100% organic, he is back to his young self and can run as well as he ever could.</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="600" data-id="112" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-7.webp" alt="" class="wp-image-112" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-7.webp 800w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-7-300x225.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-7-768x576.webp 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /></figure>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="600" data-id="113" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-6.webp" alt="" class="wp-image-113" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-6.webp 800w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-6-300x225.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-6-768x576.webp 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /></figure>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="600" data-id="114" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-5.webp" alt="" class="wp-image-114" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-5.webp 800w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-5-300x225.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-5-768x576.webp 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /></figure>
+</figure>
+
+
+
+<h2 class="wp-block-heading">Welcoming a new member of the family</h2>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-18-1024x768.webp" alt="" class="wp-image-116" srcset="https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-18-1024x768.webp 1024w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-18-300x225.webp 300w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-18-768x576.webp 768w, https://blog.cognaite.com/wp-content/uploads/2025/10/20241229_132410-18.webp 1279w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>He could sense something was different with Silvana when she started showing. Little did he know this would be the of him being the center of attention.  </p>
+
+
+
+<p></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://blog.cognaite.com/2025/10/09/baloo/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>A song for my son</title>
+		<link>https://blog.cognaite.com/2025/06/01/a-song-for-my-son/</link>
+					<comments>https://blog.cognaite.com/2025/06/01/a-song-for-my-son/#respond</comments>
+		
+		<dc:creator><![CDATA[balooski]]></dc:creator>
+		<pubDate>Sat, 31 May 2025 15:39:37 +0000</pubDate>
+				<category><![CDATA[Parenthood]]></category>
+		<guid isPermaLink="false">https://blog.cognaite.com/?p=76</guid>
+
+					<description><![CDATA[I&#8217;m a terrible singer and a less than mediocre poet but during one of the many late nights rocking my little boy to sleep I came up with something to sing to him. Hey little boy, hey little guy, Why oh why do you cry cry cry? Hey little boy, hey little guy, My oh [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>I&#8217;m a terrible singer and a less than mediocre poet but during one of the many late nights rocking my little boy to sleep I came up with something to sing to him.</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<pre class="wp-block-verse has-text-align-center">Hey little boy, hey little guy,
+Why oh why do you cry cry cry?
+Hey little boy, hey little guy,
+My oh my you look so fly!
+
+Hey little guy, hey little boy,
+Aren't you shaped just like a toy!
+Hey little guy, hey little boy,
+Please tell me that its not a ploy!
+
+Hey little boy, hey little guy,
+What's that look its oh so sly!
+Hey little boy, hey little guy,
+Some day your gonna rule the sky!
+
+Hey little guy, hey little boy,
+Aren't you lookin' a bit too coy,
+Hey little guy, hey little boy,
+Oi oi oi, you're a bundle of joy!</pre>
+</blockquote>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://blog.cognaite.com/2025/06/01/a-song-for-my-son/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -52,6 +52,7 @@ export class Engine {
   }
   initialize() {
     this.layoutManager.checkOrientation();
+    this.alienAssistantManager.checkStoredAlienSilencePreference();
     document.addEventListener(
       "layoutChanged",
       this.handleLayoutChange.bind(this)
@@ -111,9 +112,14 @@ export class Engine {
     this.displayClickableOnMonitor(clickable);
   }
   viewSpaceElement(clickable: IClickable) {
+    console.log("viewing space element");
     this.addClickToList(clickable.elementId);
     this.displayClickableOnMonitor(clickable);
+    console.log("-------");
+    console.log(state.silencedAlien);
+    console.log(state.activeClick);
     if (state.silencedAlien === true && state.activeClick != null) {
+      console.log("showing space scene manager");
       this.spaceSceneManager.show(state.activeClick);
       return;
     }

@@ -19,6 +19,7 @@ export class AlienAssistantManager {
   private mainSilenceSwitch!: HTMLInputElement | null;
   private unsiliencedIcon!: HTMLElement | null;
   private silencedIcon!: HTMLElement | null;
+  private onOffSwitch!: HTMLElement | null;
 
   constructor() {
     if (AlienAssistantManager.instance) {
@@ -32,6 +33,7 @@ export class AlienAssistantManager {
     this.proceedBtn = document.querySelector("#proceed-btn");
     this.silenceBtn = document.querySelector("#silence-btn");
     this.mainSilenceSwitch = document.querySelector("#alien-silence-switch");
+    this.onOffSwitch = document.querySelector("#silence-on-off-switch");
     this.unsiliencedIcon = document.querySelector(".unsilenced");
     this.silencedIcon = document.querySelector(".silenced");
     this.rootElement = document.body;
@@ -68,17 +70,45 @@ export class AlienAssistantManager {
       this.toggleSilenceAlien();
     });
   }
-
+  // TODO: Refactor this mess
   toggleSilenceAlien() {
     state.silencedAlien = !state.silencedAlien;
+    const onSpan = this.onOffSwitch?.querySelector("span:first-child");
+    const offSpan = this.onOffSwitch?.querySelector("span:last-child");
     if (state.silencedAlien === true) {
       this.silencedIcon?.classList.add("active");
       this.unsiliencedIcon?.classList.remove("active");
+      onSpan?.classList.remove("active");
+      offSpan?.classList.add("active");
+      localStorage.setItem("alien", JSON.stringify({ muted: true }));
     } else {
       this.silencedIcon?.classList.remove("active");
       this.unsiliencedIcon?.classList.add("active");
+      onSpan?.classList.add("active");
+      offSpan?.classList.remove("active");
+      localStorage.setItem("alien", JSON.stringify({ muted: false }));
     }
     console.log("Toggling alien silence to", state.silencedAlien);
+  }
+
+  checkStoredAlienSilencePreference() {
+    const storedPreference = localStorage.getItem("alien");
+    console.log("Stored alien preference:", storedPreference);
+    if (storedPreference != null) {
+      try {
+        const parsedPreference = JSON.parse(storedPreference);
+        if (parsedPreference.muted === true) {
+          state.silencedAlien = false;
+          this.mainSilenceSwitch.checked = false;
+        } else {
+          state.silencedAlien = true;
+          this.mainSilenceSwitch.checked = true;
+        }
+        this.toggleSilenceAlien();
+      } catch (error) {
+        console.error("Error parsing stored alien preference:", error);
+      }
+    }
   }
   isAlienSilenced(): boolean {
     return state.silencedAlien;

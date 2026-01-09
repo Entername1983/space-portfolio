@@ -45,28 +45,6 @@
   }
 }
 
-/** Back button **/
-#back-btn {
-  display: none;
-  opacity: 0;
-  padding: 2px 4px;
-  transition: opacity 2s ease-in-out;
-}
-#back-btn.active {
-  display: flex;
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.4);
-  align-items: center;
-  justify-content: center;
-}
-#back-btn.active:hover {
-  opacity: 1;
-  background-color: black;
-}
-#back-icon {
-  transform: rotate(180deg);
-  fill: var(--matrix-green-dark);
-}
 /** Red Variant **/
 .button.red {
   color: var(--light-red);

@@ -52,7 +52,6 @@
         <!------------------ SCENE CONTROLS ----------------->
         <div id="scene-controls">
           <div class="scene-control-row">
-            <!-- rectangular div, circle with icon/img absolute positioned, wrap in label so it can all be clickable -->
             <label>
               <div class="scene-control-icon">
                 <img
@@ -64,7 +63,10 @@
                   src="/assets/images/alien-sidekick-sm.webp"
                   alt="Unsilenced icon" />
               </div>
-              <div>Silence</div>
+              <div id="silence-on-off-switch" class="scene-control-label">
+                <span class="text-active active">Active</span>
+                <span class="text-muted">Muted</span>
+              </div>
               <div class="switch">
                 <input type="checkbox" id="alien-silence-switch" checked />
                 <span class="slider round"></span>
@@ -72,10 +74,10 @@
             </label>
           </div>
           <div class="scene-control-row">
-            <!-- rectangular div, circle with icon/img absolute positioned, wrap in label so it can all be clickable -->
-            <label>
+            <button id="mode-switcher">
               <div class="scene-control-icon">
                 <svg
+                  class="rotate-icon"
                   width="41"
                   height="40"
                   viewBox="0 0 41 40"
@@ -96,17 +98,13 @@
                   </defs>
                 </svg>
               </div>
-              <div>Rotate</div>
-              <div class="switch">
-                <input type="checkbox" id="alien-silence-switch" checked />
-                <span class="slider round"></span>
-              </div>
-            </label>
+              <div class="scene-control-label">Rotate</div>
+              <div><div class="red-circle-for-btn"></div></div>
+            </button>
           </div>
-          <div class="scene-control-row">
-            <!-- rectangular div, circle with icon/img absolute positioned, wrap in label so it can all be clickable -->
+          <div id="back-btn" class="scene-control-row">
             <button>
-              <div class="scene-control-icon">
+              <div class="scene-control-icon back-icon">
                 <svg
                   width="35"
                   height="39"
@@ -117,83 +115,10 @@
                     d="M11.4115 21.125L19.5782 30.225L17.5 32.5L5.83337 19.5L17.5 6.5L19.5782 8.775L11.4115 17.875H29.1667V21.125H11.4115Z" />
                 </svg>
               </div>
-              <div>Back</div>
+              <div class="scene-control-label">Back</div>
               <div><div class="red-circle-for-btn"></div></div>
             </button>
           </div>
-
-          <!-- <button id="mode-switcher" class="">
-            <svg
-              viewBox="0 0 24 24"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round">
-              <rect x="7" y="3" width="10" height="18" rx="2" ry="2" />
-            </svg>
-            <span id="rotate-icon">
-              <svg viewBox="0 -960 960 960">
-                <path
-                  d="m550-30-56-57 73-73H320q-33 0-56.5-23.5T240-240v-407l80 80v327h247l-73-73 56-57 170 170L550-30Zm170-283-80-80v-327H393l73 73-56 57-170-170 170-170 56 57-73 73h247q33 0 56.5 23.5T720-720v407Z" />
-              </svg>
-            </span>
-          </button> -->
-          <!-- <a
-            target="_blank"
-            href="https://google.com"
-            id="home-btn"
-            class="button glow-effect small"
-            style="display: none">
-            Exit
-            <svg class="glow-container">
-              <rect
-                pathLength="100"
-                stroke-linecap="round"
-                class="glow-blur"></rect>
-              <rect
-                pathLength="100"
-                stroke-linecap="round"
-                class="glow-line"></rect>
-            </svg>
-          </a> -->
-
-          <!-- <div id="main-silence-btn">
-            <span>
-              <img
-                class="silenced"
-                src="/assets/images/alien-sidekick-mute-sm.webp"
-                alt="silenced icon" />
-              <img
-                class="unsilenced active"
-                src="/assets/images/alien-sidekick-sm.webp"
-                alt="Unsilenced icon" />
-            </span>
-            <label class="switch">
-              <input type="checkbox" id="alien-silence-switch" checked />
-              <span class="slider round"></span>
-            </label>
-          </div> -->
-          <!--    <button id="back-btn" class="button glow-effect small red">
-            <svg
-              id="back-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z" />
-            </svg>
-            <svg class="glow-container">
-              <rect
-                pathLength="100"
-                stroke-linecap="round"
-                class="glow-blur"></rect>
-              <rect
-                pathLength="100"
-                stroke-linecap="round"
-                class="glow-line"></rect>
-            </svg>
-          </button> -->
         </div>
 
         <!------------------ SPACE SCENE CONTAINER  ----------------->
@@ -246,8 +171,6 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                width="1920"
-                height="1080"
                 src="./assets/images/space/videos/Sun_Surface.mp4"></video>
               <video
                 class="portrait"
@@ -268,8 +191,6 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                width="1920"
-                height="1080"
                 src="./assets/images/space/videos/Spinning_Black_Hole.mp4"></video>
               <video
                 class="portrait"
@@ -290,8 +211,6 @@
               playsinline
               preload="metadata"
               loading="lazy"
-              width="1920"
-              height="1080"
               src="./assets/images/space/videos/space_whale_video.mp4"></video>
             <video
               class="space-scene-video"
@@ -302,8 +221,6 @@
               playsinline
               preload="metadata"
               loading="lazy"
-              width="1920"
-              height="1080"
               src="./assets/images/space/videos/Alien_Infected_Satellite_Video_Ready.mp4"></video>
 
             <div class="space-scene-video" id="red-planet-space-scene">
@@ -315,8 +232,6 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                width="1920"
-                height="1080"
                 src="./assets/images/space/videos/Alien_Landscape_Video_Generation.mp4"></video>
               <video
                 class="portrait"
@@ -338,9 +253,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                width="1920"
-                height="1080"
-                src="./assets/images/space/videos/Red_Planet_Crater_Impact_Video.mp4"></video>
+                src="./assets/images/space/videos/Derelict_Space_Station_Video.mp4"></video>
               <video
                 class="portrait"
                 autoplay
@@ -349,7 +262,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                src="./assets/images/space/videos/Red_Planet_Crater_Impact_Video.mp4"></video>
+                src="./assets/images/space/videos/Derelict_Space_Station_Video.mp4"></video>
             </div>
 
             <video
@@ -361,8 +274,6 @@
               playsinline
               preload="metadata"
               loading="lazy"
-              width="1920"
-              height="1080"
               src="./assets/images/space/videos/Red_Planet_Crater_Video_Generated.mp4"></video>
           </div>
         </div>
@@ -970,29 +881,13 @@
         <!------------------ Info Layer ----------------->
 
         <div id="welcome-content" class="title-text">
-          <h1 id="welcome-heading">Welcome</h1>
+          <h1 id="welcome-heading">欢迎光临</h1>
         </div>
       </div>
     </main>
 
     <!-- Sanitizing the content coming from my blog -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
-    <!-- Local JS -->
-    <!-- <script type="module" src="./js/state.js"></script>
-    <script type="module" src="./js/utility.js"></script>
-    <script type="module" src="./js/data/clickables-data.js"></script>
-    <script type="module" src="./js/data/alien-info-mappings.js"></script>
-    <script type="module" src="./js/managers/display-manager.js"></script>
-    <script type="module" src="./js/managers/monitor-manager.js"></script>
-    <script type="module" src="./js/managers/space-scene-manager.js"></script>
-    <script type="module" src="./js/managers/alien-manager.js"></script>
-    <script type="module" src="./js/managers/intro-manager.js"></script>
-    <script
-      type="module"
-      src="./js/managers/projects-content-manager.js"></script>
-    <script type="module" src="./js/canvas-animations.js"></script>
-    <script type="module" src="./js/clickables.js"></script>
-    <script type="module" src="./js/engine.js"></script> -->
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
