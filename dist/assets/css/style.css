@@ -217,7 +217,7 @@ a:hover {
 }
 #asteroid .end {
   display: none;
-  opacity: 0;
+  opacity: 1;
 }
 #asteroid .initial:hover,
 #asteroid .end:hover {
