@@ -4,12 +4,34 @@
     <meta charset="utf-8" />
     <title>Space Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta
+      name="description"
+      content="My portfolio presented in a fun space themed environment" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap"
       rel="stylesheet" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://space-portfolio.cognaite.com/" />
+    <meta property="og:title" content="Kevin McCarthy's Portfolio" />
+    <meta
+      property="og:description"
+      content="My portfolio presented in a fun space themed environment" />
+    <meta
+      property="og:image"
+      content="https://space-portfolio.cognaite.com/assets/images/space/spaceship-2.webp" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://space-portfolio.cognaite.com/" />
+    <meta name="twitter:title" content="Kevin McCarthy's Portfolio" />
+    <meta
+      name="twitter:description"
+      content="My portfolio presented in a fun space themed environment" />
+    <meta
+      name="twitter:image"
+      content="https://space-portfolio.cognaite.com/assets/images/space/spaceship-2.webp" />
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/EaselPlugin.min.js"></script>
@@ -19,24 +41,23 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./assets/images/space/spaceship-2.webp" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/alien-sidekick.css" />
-    <link rel="stylesheet" href="./assets/css/space-backdrops.css" />
-    <link rel="stylesheet" href="./assets/css/control-panel.css" />
-    <link rel="stylesheet" href="./assets/css/space-station.css" />
-    <link rel="stylesheet" href="./assets/css/projects.css" />
-    <link rel="stylesheet" href="./assets/css/log.css" />
-    <link rel="stylesheet" href="./assets/css/one.css" />
-    <link rel="stylesheet" href="./assets/css/bio.css" />
-    <link rel="stylesheet" href="./assets/css/acorn.css" />
-    <link rel="stylesheet" href="./assets/css/control-buttons.css" />
-    <link rel="stylesheet" href="./assets/css/buttons.css" />
-    <link rel="stylesheet" href="./assets/css/portrait-mode.css" />
-    <link rel="stylesheet" href="./assets/css/display.css" />
+
+    <link rel="icon" type="image/x-icon" href="./public/favico.webp" />
+
+    <link rel="stylesheet" href="./src/assets/css/style.css" />
+    <link rel="stylesheet" href="./src/assets/css/alien-sidekick.css" />
+    <link rel="stylesheet" href="./src/assets/css/space-backdrops.css" />
+    <link rel="stylesheet" href="./src/assets/css/control-panel.css" />
+    <link rel="stylesheet" href="./src/assets/css/space-station.css" />
+    <link rel="stylesheet" href="./src/assets/css/projects.css" />
+    <link rel="stylesheet" href="./src/assets/css/log.css" />
+    <link rel="stylesheet" href="./src/assets/css/one.css" />
+    <link rel="stylesheet" href="./src/assets/css/bio.css" />
+    <link rel="stylesheet" href="./src/assets/css/acorn.css" />
+    <link rel="stylesheet" href="./src/assets/css/control-buttons.css" />
+    <link rel="stylesheet" href="./src/assets/css/buttons.css" />
+    <link rel="stylesheet" href="./src/assets/css/portrait-mode.css" />
+    <link rel="stylesheet" href="./src/assets/css/display.css" />
   </head>
 
   <body data-orientation="portrait">
@@ -56,11 +77,11 @@
               <div class="scene-control-icon">
                 <img
                   class="silenced"
-                  src="/assets/images/alien-sidekick-mute-sm.webp"
+                  src="./src/assets/images/alien-sidekick-mute-sm.webp"
                   alt="silenced icon" />
                 <img
                   class="unsilenced active"
-                  src="/assets/images/alien-sidekick-sm.webp"
+                  src="./src/assets/images/alien-sidekick-sm.webp"
                   alt="Unsilenced icon" />
               </div>
               <div id="silence-on-off-switch" class="scene-control-label">
@@ -128,36 +149,38 @@
             <img
               id="space-whale"
               class="space-element active animated"
-              src="./assets/images/space/spacewhale.webp" />
+              src="./src/assets/images/space/spacewhale.webp" />
             <img
               id="star"
               class="space-element active animated"
-              src="./assets/images/space/star-1.webp" />
+              src="./src/assets/images/space/star-1.webp" />
             <img
               id="red-planet"
               class="space-element active"
-              src="./assets/images/space/planet-1.webp" />
+              src="./src/assets/images/space/planet-1.webp" />
             <div id="satellite" class="space-element active">
-              <img src="./assets/images/space/satellite.webp" />
+              <img src="./src/assets/images/space/satellite.webp" />
             </div>
             <img
               id="space-station"
               class="space-element active animated"
-              src="./assets/images/space/spaceship-1.webp" />
+              src="./src/assets/images/space/spaceship-1.webp" />
             <img
               id="space-black-hole"
               class="space-element active"
-              src="./assets/images/space/black-hole.webp" />
+              src="./src/assets/images/space/black-hole.webp" />
             <div id="asteroid" class="space-element active">
               <img
                 class="initial active"
-                src="./assets/images/space/asteroid-1.webp" />
-              <img class="end" src="./assets/images/space/asteroid-2.webp" />
+                src="./src/assets/images/space/asteroid-1.webp" />
+              <img
+                class="end"
+                src="./src/assets/images/space/asteroid-2.webp" />
             </div>
             <img
               id="alien-sidekick"
               class="alien-sidekick space-element active"
-              src="./assets/images/space/alien-sidekick.webp" />
+              src="./src/assets/images/space/alien-sidekick.webp" />
           </div>
 
           <!------------------ SPACE VIDEOS  ----------------->
@@ -171,7 +194,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                src="./assets/images/space/videos/Sun_Surface.mp4"></video>
+                src="./src/assets/images/space/videos/Sun_Surface.mp4"></video>
               <video
                 class="portrait"
                 autoplay
@@ -180,7 +203,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                src="./assets/images/space/videos/Sun_Surface_Portrait.mp4"></video>
+                src="./src/assets/images/space/videos/Sun_Surface_Portrait.mp4"></video>
             </div>
             <div id="black-hole-space-scene" class="space-scene-video">
               <video
@@ -191,7 +214,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                src="./assets/images/space/videos/Spinning_Black_Hole.mp4"></video>
+                src="./src/assets/images/space/videos/Spinning_Black_Hole.mp4"></video>
               <video
                 class="portrait"
                 autoplay
@@ -200,7 +223,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                src="./assets/images/space/videos/Sideways_Black_Hole_Video.mp4"></video>
+                src="./src/assets/images/space/videos/Sideways_Black_Hole_Video.mp4"></video>
             </div>
             <video
               class="space-scene-video"
@@ -211,7 +234,7 @@
               playsinline
               preload="metadata"
               loading="lazy"
-              src="./assets/images/space/videos/space_whale_video.mp4"></video>
+              src="./src/assets/images/space/videos/space_whale_video.mp4"></video>
             <video
               class="space-scene-video"
               id="infected-satellite-space-scene"
@@ -221,7 +244,7 @@
               playsinline
               preload="metadata"
               loading="lazy"
-              src="./assets/images/space/videos/Alien_Infected_Satellite_Video_Ready.mp4"></video>
+              src="./src/assets/images/space/videos/Alien_Infected_Satellite_Video_Ready.mp4"></video>
 
             <div class="space-scene-video" id="red-planet-space-scene">
               <video
@@ -232,7 +255,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                src="./assets/images/space/videos/Alien_Landscape_Video_Generation.mp4"></video>
+                src="./src/assets/images/space/videos/Alien_Landscape_Video_Generation.mp4"></video>
               <video
                 class="portrait"
                 autoplay
@@ -241,7 +264,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                src="./assets/images/space/videos/Alien_Landscape_Video_Generation_Portrait.mp4"></video>
+                src="./src/assets/images/space/videos/Alien_Landscape_Video_Generation_Portrait.mp4"></video>
             </div>
 
             <div class="space-scene-video" id="derelict-space-station">
@@ -253,7 +276,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                src="./assets/images/space/videos/Derelict_Space_Station_Video.mp4"></video>
+                src="./src/assets/images/space/videos/Derelict_Space_Station_Video.mp4"></video>
               <video
                 class="portrait"
                 autoplay
@@ -262,7 +285,7 @@
                 playsinline
                 preload="metadata"
                 loading="lazy"
-                src="./assets/images/space/videos/Derelict_Space_Station_Video.mp4"></video>
+                src="./src/assets/images/space/videos/Derelict_Space_Station_Video.mp4"></video>
             </div>
 
             <video
@@ -274,7 +297,7 @@
               playsinline
               preload="metadata"
               loading="lazy"
-              src="./assets/images/space/videos/Red_Planet_Crater_Video_Generated.mp4"></video>
+              src="./src/assets/images/space/videos/Red_Planet_Crater_Video_Generated.mp4"></video>
           </div>
         </div>
 
@@ -298,7 +321,7 @@
                     <img
                       id="alien-sidekick-2"
                       class="alien-sidekick-2"
-                      src="./assets/images/space/alien-sidekick.webp" />
+                      src="./src/assets/images/space/alien-sidekick.webp" />
                   </div>
                 </div>
 
@@ -584,75 +607,75 @@
                 <img
                   class="monitor-content"
                   id="monitor-satellite"
-                  src="./assets/images/space/satellite.webp" />
+                  src="./src/assets/images/space/satellite.webp" />
                 <img
                   class="monitor-content"
                   id="monitor-space-whale"
-                  src="./assets/images/space/spacewhale.webp" />
+                  src="./src/assets/images/space/spacewhale.webp" />
                 <img
                   class="monitor-content"
                   id="monitor-asteroid"
-                  src="./assets/images/space/asteroid-1.webp" />
+                  src="./src/assets/images/space/asteroid-1.webp" />
                 <img
                   id="monitor-space-station"
                   class="monitor-content"
-                  src="./assets/images/space/spaceship-1.webp" />
+                  src="./src/assets/images/space/spaceship-1.webp" />
                 <img
                   id="monitor-star"
                   class="monitor-content"
-                  src="./assets/images/space/star-1.webp" />
+                  src="./src/assets/images/space/star-1.webp" />
                 <img
                   id="monitor-red-planet"
                   class="monitor-content"
-                  src="./assets/images/space/planet-1.webp" />
+                  src="./src/assets/images/space/planet-1.webp" />
                 <img
                   id="monitor-black-hole"
                   class="monitor-content"
-                  src="./assets/images/space/black-hole.webp" />
+                  src="./src/assets/images/space/black-hole.webp" />
                 <img
                   id="headshot-image"
                   class="headshot-image monitor-content"
-                  src="./assets/images/space/capitains_portrait.png" />
+                  src="./src/assets/images/space/capitains_portrait.png" />
                 <img
                   id="monitor-lightspeed"
                   class="headshot-image monitor-content"
-                  src="./assets/images/space/lightspeed-monitor.webp" />
+                  src="./src/assets/images/space/lightspeed-monitor.webp" />
                 <img
                   id="monitor-spaceship"
                   class="spaceship-2 active monitor-content"
-                  src="./assets/images/space/spaceship-2.webp" />
+                  src="./src/assets/images/space/spaceship-2.webp" />
                 <img
                   id="cephadex-logo"
                   class="monitor-content"
-                  src="./assets/images/CephadexLogoSix.png" />
+                  src="./src/assets/images/CephadexLogoSix.png" />
                 <img
                   id="swift-swatch-logo"
                   class="monitor-content"
-                  src="./assets/images/swift-swatch-logo-sm.png" />
+                  src="./src/assets/images/swift-swatch-logo-sm.png" />
                 <img
                   id="cognaite-logo"
                   class="monitor-content"
-                  src="./assets/images/starter-logo.svg" />
+                  src="./src/assets/images/starter-logo.svg" />
                 <img
                   id="chair-the-fed-logo"
                   class="monitor-content"
-                  src="./assets/images/chair-the-fed.png" />
+                  src="./src/assets/images/chair-the-fed.png" />
                 <img
                   id="ai-story-tellers-logo"
                   class="monitor-content"
-                  src="./assets/images/aistorytellers.png" />
+                  src="./src/assets/images/aistorytellers.png" />
                 <img
                   id="acorn-logo"
                   class="monitor-content"
-                  src="./assets/images/acorn.png" />
+                  src="./src/assets/images/acorn.png" />
                 <img
                   id="space-portfolio-logo"
                   class="monitor-content"
-                  src="./assets/images/acorn.png" />
+                  src="./src/assets/images/acorn.png" />
                 <img
                   id="blog-logo"
                   class="monitor-content"
-                  src="./assets/images/kem-logo-no-bg-light.png" />
+                  src="./src/assets/images/kem-logo-no-bg-light.png" />
               </div>
             </div>
 
@@ -837,40 +860,42 @@
                   <a href="https://blog.cognaite.com/" target="_blank">
                     <img
                       class="behind-door"
-                      src="./assets/images/kem-logo-no-bg-light.png" />
+                      src="./src/assets/images/kem-logo-no-bg-light.png" />
                   </a>
                 </div>
                 <img
                   class="door-img"
-                  src="./assets/images/space/spacestation-cyan-door.webp" />
+                  src="./src/assets/images/space/spacestation-cyan-door.webp" />
               </div>
               <div class="red-door spacestation-door">
                 <div>
                   <a href="https://swiftswatch.com/about" target="_blank">
                     <img
                       class="behind-door"
-                      src="./assets/images/CephadexLogoSix.png" />
-                    <img class="behind-door" src="./assets/images/acorn.png" />
+                      src="./src/assets/images/CephadexLogoSix.png" />
                     <img
                       class="behind-door"
-                      src="./assets/images/swift-swatch-logo-sm.png" />
+                      src="./src/assets/images/acorn.png" />
+                    <img
+                      class="behind-door"
+                      src="./src/assets/images/swift-swatch-logo-sm.png" />
                   </a>
                 </div>
                 <img
                   class="door-img"
-                  src="./assets/images/space/spacestation-red-door.webp" />
+                  src="./src/assets/images/space/spacestation-red-door.webp" />
               </div>
               <div class="yellow-door spacestation-door">
                 <div>
                   <a href="https://blog.cognaite.com/" target="_blank">
                     <img
                       class="behind-door"
-                      src="./assets/images/browse_activity.svg" />
+                      src="./src/assets/images/browse_activity.svg" />
                   </a>
                 </div>
                 <img
                   class="door-img"
-                  src="./assets/images/space/spacestation-yellow-door.webp" />
+                  src="./src/assets/images/space/spacestation-yellow-door.webp" />
               </div>
             </div>
           </div>

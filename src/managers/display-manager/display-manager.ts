@@ -36,7 +36,7 @@ export class DisplayManager {
     this.DISPLAY_CONTENT_MAPPINGS = DISPLAY_CONTENT_MAPPINGS;
     this.projectsContentManager = new ProjectsContentManager();
     this.logContentManager = new LogContentManager();
-    this.TEMPLATES_PATH = "./templates/";
+    this.TEMPLATES_PATH = "./src/templates/";
   }
 
   isOpen() {
