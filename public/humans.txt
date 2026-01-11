@@ -1,0 +1,12 @@
+/* TEAM */
+Developer: Kevin McCarthy
+Site: https://space-portfolio.cognaite.com
+Location: Ireland
+
+/* SITE TECHNOLOGY */
+Vite, TypeScript, HTML, Pure CSS
+
+/* LEGAL */
+All code and assets are PROPRIETARY. 
+Copyright © 2026 Kevin McCarthy. 
+Unauthorized use, reproduction, or distribution is strictly prohibited.

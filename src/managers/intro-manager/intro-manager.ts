@@ -53,7 +53,7 @@ export class IntroManager {
       y: -1200,
       x: -2000,
       autoAlpha: 1,
-      duration: 60,
+      duration: 120,
       repeat: -1,
     });
   }

@@ -101,6 +101,9 @@ body[data-orientation="portrait"] {
     height: 100dvh;
     width: 100vw;
     max-width: 500px;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   #spaceship-interior-background {

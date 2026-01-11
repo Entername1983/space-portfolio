@@ -1,13 +1,12 @@
-Since you are working with Vite, remember to place this file in your public/ folder. When you run your build, Vite will copy it directly to the root of your dist/ directory so search engines can find it at yourdomain.com/robots.txt.
-
-Here is a standard, "safe" sample that works for most projects:
-
-Plaintext
 
 # General rules for all search engines
 User-agent: *
 Allow: /
+User-agent: GPTBot
+Disallow: /
 
+User-agent: CCBot
+Disallow: /
 # Block access to specific folders (e.g., your templates or scratchpad)
 Disallow: /templates/
 Disallow: /scratchpad.html

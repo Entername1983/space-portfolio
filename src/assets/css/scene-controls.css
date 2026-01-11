@@ -1,0 +1,280 @@
+@keyframes arrow-nudge {
+  0% {
+    transform: translate(5%, 0%);
+  }
+  50% {
+    transform: translate(-5%, 0%);
+  }
+  100% {
+    transform: translate(5%, 0%);
+  }
+}
+/** ---------------------------------- Back button ------------------------------ **/
+#back-btn {
+  margin-top: -20px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  pointer-events: none;
+  transition: max-height 2s ease-out, opacity 0.3s ease, margin 0.3s ease;
+}
+#back-btn.active {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  overflow: visible;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  max-height: 100px;
+  pointer-events: auto;
+}
+#back-btn.active:hover {
+  opacity: 1;
+  background-color: black;
+}
+#back-icon {
+  transform: rotate(180deg);
+  fill: var(--matrix-green-dark);
+}
+/* ---------------------------------- Mode Switcher ------------------------------ */
+#mode-switcher > svg {
+  size: 70%;
+  fill: none;
+  stroke: var(--matrix-green-dark);
+  transition: transform 0.5s ease-in-out;
+  transform: rotate(90deg);
+}
+#mode-switcher.portrait > svg {
+  transform: rotate(0deg);
+}
+
+#mode-switcher:hover > svg {
+  stroke: var(--matrix-green);
+}
+#rotate-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#rotate-icon svg {
+  height: 28px;
+  width: 28px;
+  transform: rotate(90deg);
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+#mode-switcher.portrait #rotate-icon svg {
+  transform: rotate(0deg);
+}
+#rotate-icon path {
+  stroke: var(--matrix-green);
+  fill: var(--matrix-green);
+}
+#mode-switcher:hover #rotate-icon svg {
+  opacity: 1;
+}
+/* ---------------------------------- Silence Switcher ------------------------------ */
+/* 
+Using the following technique to maintain size with text change
+https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_when_showing_a/ */
+
+#silence-on-off-switch {
+  display: grid;
+  grid-template-areas: "stack";
+  .text-active {
+    grid-area: stack;
+  }
+  .text-muted {
+    grid-area: stack;
+  }
+}
+.scene-control-label > span {
+  opacity: 0;
+}
+.scene-control-label > span.active {
+  opacity: 1;
+}
+
+/* ---------------------------------- Scene Controls Container ------------------------------ */
+#scene-controls {
+  position: absolute;
+  display: grid;
+
+  top: 5px;
+  left: 5px;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 16px 16px 16px 16px;
+  max-width: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--light-red);
+  box-shadow: 0 0 20px 0px var(--light-red), 0 0 10px rgba(255, 0, 0, 0.8);
+
+  overflow: hidden;
+  transition: transform 0.3s ease, max-width 0.4s ease,
+    grid-template-rows 0.4s ease, opacity 1s ease-in-out;
+}
+#scene-controls:hover {
+  max-width: 300px;
+}
+#scene-controls.active {
+  display: flex;
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.scene-control-row {
+  padding: 2px;
+  padding-left: 30px;
+  display: flex;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+#scene-controls .scene-control-row:nth-child(2) {
+  margin-bottom: 0px;
+}
+
+#scene-controls:has(.scene-control-row.active) .scene-control-row:nth-child(2) {
+  margin-bottom: 20px;
+}
+#scene-controls .scene-control-row > label,
+#scene-controls .scene-control-row > button {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding-left: 20px;
+  gap: 6px;
+  font-size: 12px;
+  color: transparent;
+  text-transform: uppercase;
+  outline: 1px solid transparent;
+  outline-offset: 1px;
+
+  .scene-control-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 46px;
+    width: 46px;
+    border-radius: 300px;
+    border: var(--light-red), solid 1px;
+    transform: translate(-75%, -20%);
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2px;
+
+    svg {
+      fill: var(--light-red);
+      transition: transform 0.3s ease, fill 0.3s ease;
+    }
+  }
+  .red-circle-for-btn {
+    height: 16px;
+    width: 16px;
+    background-color: var(--light-red);
+    border-radius: 300px;
+  }
+}
+
+#scene-controls:hover .scene-control-row > label,
+#scene-controls:hover .scene-control-row > button {
+  border: 1px solid var(--light-red);
+  color: var(--light-red);
+  outline: 1px solid var(--light-red);
+  outline-offset: 1px;
+  box-shadow: 0 0 8px 0px var(--light-red),
+    0 0 8px 0px oklch(from var(--light-red) l c h / 0.8);
+}
+
+#scene-controls:hover .scene-control-row > label:hover,
+#scene-controls:hover .scene-control-row > button:hover {
+  color: var(--matrix-green);
+  .red-circle-for-btn {
+    background-color: var(--matrix-green);
+  }
+  .scene-control-icon {
+    border: var(--matrix-green), solid 1px;
+    svg {
+      fill: var(--matrix-green);
+    }
+    svg.rotate-icon {
+      transform: rotate(90deg);
+    }
+  }
+  .scene-control-icon.back-icon {
+    svg {
+      animation: arrow-nudge 0.8s ease-in-out infinite;
+    }
+  }
+}
+
+/* ---------------------------------- Portrait Mode Adjustments ------------------------------ */
+
+body[data-orientation="portrait"] {
+  #scene-controls .scene-control-row > label,
+  #scene-controls .scene-control-row > button {
+    padding: 4px 4px;
+    border: 1px solid transparent;
+    color: transparent;
+    outline: 1px solid transparent;
+    box-shadow: none;
+
+    .scene-control-icon {
+      height: 30px;
+      width: 30px;
+      padding-right: 0px;
+    }
+    .scene-control-label {
+      display: none;
+    }
+    #silence-on-off-switch {
+      display: none;
+    }
+    .scene-control-label > span {
+      display: none;
+    }
+    .scene-control-label > span.active {
+      display: none;
+    }
+    .slider.round {
+      display: none;
+    }
+  }
+
+  #scene-controls {
+    max-width: 38px;
+    padding: 10px 8px 10px 0px;
+    .scene-control-row > label,
+    .scene-control-row > button {
+      justify-content: flex-end;
+    }
+  }
+  #scene-controls:hover {
+    max-width: 38px;
+  }
+
+  /* .switch {
+    width: 14px;
+    height: 8px;
+  }
+  .slider:before {
+    height: 8px;
+    width: 8px;
+  } */
+}
