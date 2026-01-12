@@ -26,10 +26,10 @@
   padding: 2px;
   /* display: flex; */
   z-index: 100;
-  border: 1px solid var(--light-red);
+  border: 1px solid var(--red-800);
   border-radius: 10px;
-  box-shadow: 0 0 20px 0px var(--light-red),
-    0 0 10px oklch(from var(--light-red) / l c h 0.8);
+  box-shadow: 0 0 20px 0px var(--red-800),
+    0 0 10px oklch(from var(--red-800) / l c h 0.8);
   top: 20dvh;
   right: auto;
   left: 100px;

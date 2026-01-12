@@ -73,7 +73,7 @@
   height: 30%;
 }
 .svg-control-text {
-  fill: var(--matrix-green);
+  fill: var(--green-100);
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s 0.3s;
@@ -84,12 +84,12 @@
   text-rendering: geometricPrecision;
 }
 .svg-control-tooltips > polyline {
-  stroke: var(--matrix-green);
+  stroke: var(--green-100);
   stroke-width: 1;
   fill: none;
   transition: stroke-dashoffset 0.6s ease-in-out;
-  filter: drop-shadow(0 0 2px var(--matrix-green))
-    drop-shadow(0 0 4px var(--matrix-green));
+  filter: drop-shadow(0 0 2px var(--green-100))
+    drop-shadow(0 0 4px var(--green-100));
 }
 
 /**Log Button Hover **/

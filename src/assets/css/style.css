@@ -1,13 +1,3 @@
-/** **/
-:root {
-  --matrix-green-dark: oklch(0.6157 0.17656 148.3635);
-  --matrix-green: oklch(0.8895 0.095 156.46);
-  --extra-dark-green: oklch(0.5641 0.1852 143.54);
-  --dark-red: oklch(0.2244 0.0876 28.18);
-  --light-red: oklch(0.4472 0.158 26.44);
-  --very-light-red: oklch(0.6738 0.2055 36.68);
-}
-
 /* https://codepen.io/kevinpowell/pen/wBMbozY 
 
 Use this as an example to build relative colros from this base
@@ -16,8 +6,11 @@ button,
 a,
 blockquote {
   all: unset;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
-
+svg {
+  transition: fill 1s ease, stroke 1s ease;
+}
 html,
 body {
   height: 100%;
@@ -127,23 +120,28 @@ a {
   cursor: pointer;
 }
 a {
-  color: var(--matrix-green-dark);
+  color: var(--green-700);
 }
 a:hover {
-  color: var(--matrix-green);
+  color: var(--green-100);
 }
-
+/*TODO: Make starfield adjust on resize*/
 .wrapper {
+  /* max-height: 100dvh; */
+  /* width: 100%; */
+
   background-color: black;
-  width: 100%;
   max-width: calc(100dvh * 16 / 9);
-  max-height: 100dvh;
   margin: auto;
   aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
 }
 
+#space-scene-container {
+  height: 100%;
+  width: 100%;
+}
 #fade-overlay {
   content: "";
   position: absolute;
@@ -194,10 +192,10 @@ a:hover {
 }
 
 #space-black-hole {
-  bottom: 12%;
+  bottom: 22%;
   left: 72%;
   transform: translate(-50%, -50%) rotate(10deg);
-  max-height: 12vw;
+  max-height: 12%;
   opacity: 0.3;
 }
 #space-black-hole:hover {
@@ -210,7 +208,8 @@ a:hover {
   opacity: 0.8;
 }
 #asteroid > img {
-  max-width: 8vw;
+  width: 8vw;
+  max-width: 120px;
 }
 #asteroid .initial {
   display: block;
@@ -231,7 +230,7 @@ a:hover {
 #star {
   top: 4%;
   left: 20%;
-  max-width: 8vw;
+  max-width: 8%;
   opacity: 0.2;
 }
 #star.animated {
@@ -244,7 +243,7 @@ a:hover {
 #red-planet {
   bottom: -20%;
   left: -20%;
-  max-width: 40vw;
+  max-width: 40%;
   z-index: 30;
   transform: rotate(0deg);
   opacity: 0.4;
@@ -271,7 +270,8 @@ a:hover {
   z-index: 30;
 }
 #satellite > img {
-  max-height: 8vw;
+  height: 10dvh;
+  max-height: 120px;
   animation: spin 30s linear infinite;
   opacity: 1;
 }
@@ -281,9 +281,9 @@ a:hover {
 }
 #space-station {
   top: 20%;
-  right: 10%;
+  right: 12%;
   transform: translate(-50%, -50%) rotate(15deg);
-  max-height: 10vw;
+  max-height: 10%;
 }
 #space-station.animated {
   animation: pulse 10s linear infinite alternate;
@@ -358,7 +358,7 @@ a:hover {
 
 .screen-content {
   position: relative; /* Required for absolute positioning */
-  border: 2px dotted var(--matrix-green);
+  border: 2px dotted var(--green-100);
   /* height: 100%; */
   padding: 10px;
   background: black;
@@ -736,8 +736,8 @@ a:hover {
   left: 0;
   width: 100%;
   height: 1px;
-  /* background-color: var(--light-red); */
-  background-color: var(--matrix-green);
+  /* background-color: var(--red-800); */
+  background-color: var(--green-100);
   opacity: 0;
   transition: opacity 300ms, transform 300ms;
   z-index: 200;
@@ -777,9 +777,9 @@ a:hover {
   bottom: 0;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  /* border: 1px solid var(--light-red); */
-  box-shadow: 0 0 4px from var(--light-red) / l c h 0.8;
-  background-color: oklch(from var(--light-red) 90% calc(c / 0.5) h);
+  /* border: 1px solid var(--red-800); */
+  box-shadow: 0 0 4px from var(--red-800) / l c h 0.8;
+  background-color: oklch(from var(--red-800) 90% calc(c / 0.5) h);
 }
 
 .slider:before {
@@ -789,23 +789,23 @@ a:hover {
   width: 16px;
   left: -1px;
   top: 0px;
-  background-color: var(--light-red);
+  background-color: var(--red-800);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: oklch(from var(--matrix-green) 50% c h);
+  background-color: oklch(from var(--green-100) 60% c h);
 }
 
-input:focus + .slider {
-  /* box-shadow: 0 0 1px var(--matrix-green); */
-}
+/* input:focus + .slider {
+  box-shadow: 0 0 1px var(--green-100);
+} */
 
 input:checked + .slider:before {
   -ms-transform: translateX(12px);
   transform: translateX(12px);
-  background-color: oklch(from var(--matrix-green) 93% c h);
+  background-color: oklch(from var(--green-100) 93% c h);
 }
 
 /* Rounded sliders */

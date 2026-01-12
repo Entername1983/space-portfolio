@@ -32,8 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 4px 0px var(--extra-dark-green),
-    0 0 4px var(--extra-dark-green);
+  box-shadow: inset 0 0 4px 0px var(--green-800), 0 0 4px var(--green-800);
 }
 .flag-icon {
   filter: opacity(0.5);

@@ -3,12 +3,16 @@ to all content, specific styles can be found in their appropriate stylesheet (bi
 
 /******** MAIN DISPLAY DIV *****
 Toggle it to increase the max-height and thus open the spaceship display
+
+spaceship display needs to be larger than the actual screen space to ensure it fills the area correctly.
+
+
 **/
 
 #spaceship-display {
   position: absolute;
   display: block;
-  top: 2%;
+  top: 0;
   left: 14%;
   max-height: 0;
   width: 72%;
@@ -17,7 +21,7 @@ Toggle it to increase the max-height and thus open the spaceship display
   z-index: 38;
   overflow: hidden;
   aspect-ratio: 1 / 0.8;
-  clip-path: polygon(12% 0, 88% 0, 100% 16%, 88% 74%, 13% 74%, 0 18%);
+  clip-path: polygon(12% 0, 88% 0, 100% 16%, 88% 76%, 10% 76%, 0 18%);
   transition: max-height 0.7s ease-in-out, opacity 0.4s ease-in-out;
 }
 #spaceship-display.open {
@@ -37,18 +41,20 @@ Content gets fetched and placed within this wrapper
 #display-content-container {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 4%;
   display: flex;
   flex-direction: column;
-  width: 75%;
-  height: 68%;
+  width: 76%;
+  height: 66.5%;
+  max-height: 66.5%;
   z-index: 39;
-  color: var(--extra-dark-green);
+  color: var(--green-800);
   pointer-events: auto;
   background-color: black;
+  overflow: auto;
 }
 
 .display-title {
-  padding-top: 20px;
   font-size: 2.8rem;
   text-align: center;
   animation: terminalFlicker 0.1s infinite linear alternate;
@@ -126,3 +132,130 @@ body[data-orientation="portrait"] {
     padding-left: 0;
   }
 }
+#display-close-btn {
+  border: 1px dashed var(--red-800);
+  border-radius: 100px;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  bottom: 25.5%;
+  right: 50%;
+  z-index: 400;
+  transform: translate(50%, 0%);
+  fill: var(--red-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease, fill 0.3s ease;
+}
+
+#display-close-btn:hover {
+  fill: var(--green-100);
+  border: 1px dashed var(--green-100);
+}
+
+/**  Adapted from https://codepen.io/NeilSchulz/pen/ZYOzJWq 
+ **/
+
+/* @property --gradient_rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+#display-close-btn {
+  --gradient_rotate: 0deg;
+
+  --border_width: 0.5rem;
+
+  --metal_01: oklch(0.6157 0.17656 148.3635);
+  --metal_02: oklch(0.8895 0.095 156.46);
+  --metal_03: oklch(0.5641 0.1852 143.54);
+  --metal_04: oklch(0.2 0.1852 143.54);
+  --metal_05: oklch(0.1 0.1852 143.54);
+  --metal_06: oklch(0.9.1852 143.54);
+
+  position: absolute;
+  bottom: 25%;
+  right: 50%;
+  z-index: 400;
+  transform: translate(50%, 0%);
+  cursor: pointer;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  background: linear-gradient(
+        0deg,
+        rgb(010 010 110 / 1) 10%,
+        rgb(040 040 150 / 1)
+      )
+      padding-box,
+    conic-gradient(
+        from var(--gradient_rotate),
+        rgb(from var(--metal_01) r g b / 0.5),
+        rgb(from var(--metal_01) r g b / 0),
+        rgb(from var(--metal_06) r g b / 0),
+        rgb(from var(--metal_06) r g b / 1),
+        rgb(from var(--metal_04) r g b / 0.5),
+        rgb(from var(--metal_04) r g b / 0),
+        rgb(from var(--metal_04) r g b / 1),
+        rgb(from var(--metal_01) r g b / 0.5)
+      )
+      border-box;
+
+  border-radius: 100%;
+  border: var(--border_width) solid transparent;
+  animation: button_gradient_rotate 12s linear infinite;
+}
+
+#display-close-btn > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#display-close-btn::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--border_width));
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(
+        from var(--gradient_rotate),
+        rgb(from var(--metal_03) r g b / 1),
+        rgb(from var(--metal_01) r g b / 1),
+        rgb(from var(--metal_01) r g b / 1),
+        rgb(from var(--metal_06) r g b / 1),
+        rgb(from var(--metal_02) r g b / 1),
+        rgb(from var(--metal_05) r g b / 1),
+        rgb(from var(--metal_04) r g b / 1),
+        rgb(from var(--metal_03) r g b / 1)
+      )
+      padding-box,
+    conic-gradient(
+        from 0deg,
+        rgb(from var(--metal_03) r g b / 1),
+        rgb(from var(--metal_01) r g b / 1),
+        rgb(from var(--metal_01) r g b / 1),
+        rgb(from var(--metal_06) r g b / 1),
+        rgb(from var(--metal_02) r g b / 1),
+        rgb(from var(--metal_05) r g b / 1),
+        rgb(from var(--metal_04) r g b / 1),
+        rgb(from var(--metal_03) r g b / 1)
+      )
+      border-box;
+  animation: button_gradient_rotate 8s linear infinite reverse;
+  border: 0.25rem solid transparent;
+}
+
+@keyframes button_gradient_rotate {
+  from {
+    --gradient_rotate: 0deg;
+  }
+  to {
+    --gradient_rotate: 360deg;
+  }
+} */

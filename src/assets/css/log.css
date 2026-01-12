@@ -5,14 +5,14 @@
   visibility: visible;
   opacity: 0.2;
   cursor: not-allowed;
-  border: 2px solid var(--light-red);
-  color: var(--light-red);
+  border: 2px solid var(--red-800);
+  color: var(--red-800);
 }
 #log-prev:hover,
 #log-next:hover,
 #log-next:focus,
 #log-prev:focus {
-  background-color: var(--light-red);
+  background-color: var(--red-800);
   color: black;
 }
 #log-prev.active,
@@ -20,15 +20,15 @@
   visibility: visible;
   opacity: 1;
   cursor: pointer;
-  color: var(--matrix-green);
-  border-color: var(--matrix-green);
+  color: from(var(--green-200) alpha(95%));
+  border-color: from(var(--green-200) alpha(95%));
 }
 #log-prev.active:hover,
 #log-next.active:hover,
 #log-next.active:focus,
 #log-prev.active:focus {
   color: black;
-  background-color: var(--matrix-green);
+  background-color: var(--green-200);
 }
 
 #display-log {
@@ -75,7 +75,7 @@
 }
 
 #log-content::-webkit-scrollbar-thumb:hover {
-  background: var(--matrix-green);
+  background: var(--green-100);
 }
 
 #stardate,

@@ -35,13 +35,13 @@
 }
 #back-icon {
   transform: rotate(180deg);
-  fill: var(--matrix-green-dark);
+  fill: var(--green-700);
 }
 /* ---------------------------------- Mode Switcher ------------------------------ */
 #mode-switcher > svg {
   size: 70%;
   fill: none;
-  stroke: var(--matrix-green-dark);
+  stroke: var(--green-700);
   transition: transform 0.5s ease-in-out;
   transform: rotate(90deg);
 }
@@ -50,7 +50,7 @@
 }
 
 #mode-switcher:hover > svg {
-  stroke: var(--matrix-green);
+  stroke: var(--green-100);
 }
 .rotate-icon {
   position: absolute;
@@ -74,8 +74,8 @@
   transform: rotate(0deg);
 }
 #rotate-icon path {
-  stroke: var(--matrix-green);
-  fill: var(--matrix-green);
+  stroke: var(--green-100);
+  fill: var(--green-100);
 }
 #mode-switcher:hover #rotate-icon svg {
   opacity: 1;
@@ -114,8 +114,8 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
   padding: 16px 16px 16px 16px;
   max-width: 40px;
   border-radius: 10px;
-  border: 1px solid var(--light-red);
-  box-shadow: 0 0 20px 0px var(--light-red), 0 0 10px rgba(255, 0, 0, 0.8);
+  border: 1px solid var(--red-800);
+  box-shadow: 0 0 20px 0px var(--red-800), 0 0 10px rgba(255, 0, 0, 0.8);
 
   overflow: hidden;
   transition: transform 0.3s ease, max-width 0.4s ease,
@@ -171,7 +171,7 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
     height: 46px;
     width: 46px;
     border-radius: 300px;
-    border: var(--light-red), solid 1px;
+    border: var(--red-800), solid 1px;
     transform: translate(-75%, -20%);
     background-color: black;
     overflow: hidden;
@@ -181,38 +181,38 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
     padding-right: 2px;
 
     svg {
-      fill: var(--light-red);
+      fill: var(--red-800);
       transition: transform 0.3s ease, fill 0.3s ease;
     }
   }
   .red-circle-for-btn {
     height: 16px;
     width: 16px;
-    background-color: var(--light-red);
+    background-color: var(--red-800);
     border-radius: 300px;
   }
 }
 
 #scene-controls:hover .scene-control-row > label,
 #scene-controls:hover .scene-control-row > button {
-  border: 1px solid var(--light-red);
-  color: var(--light-red);
-  outline: 1px solid var(--light-red);
+  border: 1px solid var(--red-800);
+  color: var(--red-800);
+  outline: 1px solid var(--red-800);
   outline-offset: 1px;
-  box-shadow: 0 0 8px 0px var(--light-red),
-    0 0 8px 0px oklch(from var(--light-red) l c h / 0.8);
+  box-shadow: 0 0 8px 0px var(--red-800),
+    0 0 8px 0px oklch(from var(--red-800) l c h / 0.8);
 }
 
 #scene-controls:hover .scene-control-row > label:hover,
 #scene-controls:hover .scene-control-row > button:hover {
-  color: var(--matrix-green);
+  color: var(--green-100);
   .red-circle-for-btn {
-    background-color: var(--matrix-green);
+    background-color: var(--green-100);
   }
   .scene-control-icon {
-    border: var(--matrix-green), solid 1px;
+    border: var(--green-100), solid 1px;
     svg {
-      fill: var(--matrix-green);
+      fill: var(--green-100);
     }
     svg.rotate-icon {
       transform: rotate(90deg);
