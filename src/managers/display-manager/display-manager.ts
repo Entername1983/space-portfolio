@@ -22,6 +22,7 @@ export class DisplayManager {
   public projectsContentManager!: ProjectsContentManager;
   public logContentManager!: LogContentManager;
   private TEMPLATES_PATH!: string;
+  private closeDisplayBtn!: HTMLElement | null;
 
   constructor() {
     if (DisplayManager.instance) {
@@ -37,6 +38,7 @@ export class DisplayManager {
     this.projectsContentManager = new ProjectsContentManager();
     this.logContentManager = new LogContentManager();
     this.TEMPLATES_PATH = "./src/templates/";
+    this.closeDisplayBtn = document.querySelector("#display-close-btn");
   }
 
   isOpen() {
@@ -58,7 +60,26 @@ export class DisplayManager {
     );
     this.displayContent();
     this.sortToSpecialContent(clickable);
+    // delay by 1 s
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    this.showCloseDisplayBtn();
   }
+
+  showCloseDisplayBtn() {
+    if (this.closeDisplayBtn == null) {
+      console.error(`closeDisplayBtn is null`);
+      return;
+    }
+    this.closeDisplayBtn.classList.add("active");
+  }
+  hideBackBtn() {
+    if (this.closeDisplayBtn == null) {
+      console.error(`closeDisplayBtn is null`);
+      return;
+    }
+    this.closeDisplayBtn.classList.remove("active");
+  }
+
   // Switch here to activate extra content as needed
   sortToSpecialContent(clickable: IClickable) {
     switch (clickable.elementId) {
@@ -75,6 +96,8 @@ export class DisplayManager {
   }
 
   resetAndCloseDisplay() {
+    this.hideBackBtn();
+
     this.closeScreen();
     this.removeContent();
     // this.clearScreenContent();

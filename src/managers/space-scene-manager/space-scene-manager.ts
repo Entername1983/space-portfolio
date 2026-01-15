@@ -58,6 +58,22 @@ export class SpaceSceneManager {
         break;
     }
   }
+  checkIfActiveClickHasSceneMapping(activeClick: TElementId) {
+    const scene = SPACE_SCENE_MAPPINGS[activeClick];
+    return scene != null;
+  }
+  findLastValidSceneElement = (
+    elements: TElementId[]
+  ): TElementId | undefined => {
+    while (elements.length > 0) {
+      const lastElement = elements.pop();
+      if (lastElement && lastElement in SPACE_SCENE_MAPPINGS) {
+        return lastElement;
+      }
+    }
+
+    return undefined;
+  };
   returnToSpaceship(activeClick: TElementId) {
     const scene = SPACE_SCENE_MAPPINGS[activeClick];
     if (scene == null) {

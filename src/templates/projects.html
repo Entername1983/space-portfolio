@@ -1,5 +1,37 @@
 <div id="display-projects" class="front-screen-projects display-content">
-  <h3 class="display-title">Projects</h3>
+  <h3 id="display-title" class="display-title">Projects</h3>
+  <!--- Left Arrow SVG --->
+  <button
+    id="project-left-arrow"
+    data-action="PROJECT_NAVIGATION"
+    data-id="previous">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+      <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
+    </svg>
+  </button>
+  <!--- Right Arrow SVG --->
+  <button
+    id="project-right-arrow"
+    data-action="PROJECT_NAVIGATION"
+    data-id="next">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+      <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+    </svg>
+  </button>
+  <button
+    id="projects-back-button"
+    data-action="MAIN_PROJECT_MENU"
+    data-id="ai-story-tellers"
+    class="button glow-effect small">
+    Back
+    <!-- <svg
+      id="arrow-left-solid"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24">
+      <polygon
+        points="1 13 1 11 2 11 2 10 3 10 3 9 4 9 4 8 5 8 5 7 6 7 6 6 7 6 7 5 8 5 8 4 9 4 9 3 10 3 10 2 11 2 11 1 12 1 12 2 13 2 13 3 14 3 14 4 13 4 13 5 12 5 12 6 11 6 11 7 10 7 10 8 9 8 9 9 8 9 8 10 23 10 23 14 8 14 8 15 9 15 9 16 10 16 10 17 11 17 11 18 12 18 12 19 13 19 13 20 14 20 14 21 13 21 13 22 12 22 12 23 11 23 11 22 10 22 10 21 9 21 9 20 8 20 8 19 7 19 7 18 6 18 6 17 5 17 5 16 4 16 4 15 3 15 3 14 2 14 2 13 1 13" />
+    </svg> -->
+  </button>
   <div id="projects-content-container" class="projects-content screen-content">
     <ul id="projects-main-menu">
       <li
@@ -58,176 +90,112 @@
         Neverending AI Story
       </li>
     </ul>
-    <div id="cephadex-content" class="cephadex-content content">
-      <h3>Cephadex</h3>
-            <div class="projects-screenshot-container">
-
-      <img
-        class="projects-screenshot"
-        alt="Cephadex screenshot"
-        src="../src/assets/images/screenshots/cephadex-screenshot.webp" /></div>
-
-      <p>Status: Online</p>
-      <p>
+    <div
+      id="project-content"
+      class="project-content"
+      data-action="PROJECT_VIEW"
+      data-id="project-content">
+      <p
+        id="project-description"
+        data-action="PROJECT_VIEW"
+        data-id="project-description">
         Description: An educational platform allowing for the creation of
         flashcards, quizzes, games, & tests
       </p>
-      <p>
-        Tech: Python (FastAPI), TypeScript, React, Redux, VPS, Docker, Redis,
-        Postgres
+      <div
+        class="projects-screenshot-container"
+        data-action="PROJECT_VIEW"
+        data-id="project-screenshot-container">
+        <img
+          id="project-screenshot"
+          class="projects-screenshot"
+          alt="Cephadex screenshot"
+          data-action="PROJECT_VIEW"
+          data-id="project-screenshot"
+          src="../src/assets/images/screenshots/cephadex-screenshot.webp" />
+      </div>
+
+      <p
+        id="project-status"
+        data-action="PROJECT_VIEW"
+        data-id="project-status">
+        Status: Online
       </p>
-      <div class="links-section">
+
+      <div
+        id="project-link"
+        class="links-section"
+        data-action="PROJECT_VIEW"
+        data-id="project-link">
         <a href="https://cephadex.com" target="_blank">Access here</a>
       </div>
-    </div>
-    <div id="swift-swatch-content" class="swift-swatch-content content">
-      <h3>Swift Swatch</h3>
-      <div class="projects-screenshot-container">
-        <img
-          class="projects-screenshot"
-          alt="Swift Swatch screenshot"
-          src="../src/assets/images/screenshots/swift-swatch-screenshot.webp" />
-          </div>
-        <p>Status: Online</p>
-        <p>
-          Description: A UI designer allowing for the quick development of mock
-          ups
-        </p>
-        <p>
-          Tech: Python (FastAPI), TypeScript, React, Redux, VPS, Docker, Redis,
-          Postgres
-        </p>
-        <div class="links-section">
-          <a href="https://swiftswatch.com" target="_blank">Access here</a>
-        </div>
-      </div>
-      <div id="cognaite-content" class="cognaite-content content">
-        <h3>Cognaite</h3>
-        <div class="projects-screenshot-container">
-          <img
-            class="projects-screenshot"
-            alt="Cognaite screenshot"
-            src="../src/assets/images/screenshots/starter-repo-screenshot.webp" />
-        </div>
-        <p>Status: Online</p>
-        <p>Description: A starter template on which to build projects</p>
-        <p>
-          Tech: Python (FastAPI), TypeScript, React, Redux, VPS, Docker, Redis,
-          Postgres
-        </p>
 
-        <div class="links-section">
-          <a href="https://cognaite.com" target="_blank">Access here</a>
-          <a href="https://github.com/Entername1983/Starter" target="_blank"
-            >View code</a
-          >
-        </div>
-      </div>
-      <div id="chair-the-fed-content" class="chair-the-fed-content content">
-        <h3>Chair the Fed</h3>
-        <div class="projects-screenshot-container">
-          <img
-            class="projects-screenshot"
-            alt="Chair the Fed screenshot"
-            src="../src/assets/images/screenshots/chair-the-fed-screenshot.webp" />
-        </div>
-        <p>Status: Online</p>
-        <p>Description: A monetary policy simulation game</p>
-        <p>Tech: Javascript, CSS, HTML</p>
-        <div class="links-section">
-          <a
-            href="https://entername1983.github.io/Chair-the-Fed/"
-            target="_blank"
-            >Access here</a
-          >
-          <a
-            href="https://github.com/Entername1983/Chair-the-Fed"
-            target="_blank"
-            >View code</a
-          >
-        </div>
+      <div
+        id="project-repo"
+        class="repo-section"
+        data-action="PROJECT_VIEW"
+        data-id="project-repo">
+        <a href="https://cephadex.com" target="_blank">Project Repo</a>
       </div>
       <div
-        id="ai-story-tellers-content"
-        class="ai-story-tellers-content content">
-        <h3>Neverending AI Story</h3>
-        <div class="projects-screenshot-container">
-          <img
-            class="projects-screenshot"
-            alt="Neverending AI Story screenshot"
-            src="../src/assets/images/screenshots/ai-echoes-screenshot.webp" />
+        id="project-feature-container"
+        class="feature-container"
+        data-action="PROJECT_VIEW"
+        data-id="project-feature-container">
+        <div class="feature-button-container">
+          <div class="empty-row"></div>
+          <button id="tech-btn" class="active">Tech</button>
+          <div class="empty-row"></div>
+          <button id="feat-btn" class="">Feature</button>
+          <div class="empty-row"></div>
+          <button id="misc-btn">Notes</button>
+          <div class="empty-row"></div>
         </div>
-        <p>Status: Offline</p>
-        <p>
-          Description: A never ending story in the form of the game of exquisite
-          cadavre told by many different AIs
-        </p>
-        <p>
-          Tech: Python (FastAPI), TypeScript, React, Redux, VPS, Docker, Redis,
-          Postgres
-        </p>
-        <div class="links-section">
-          <a href="https://github.com/Entername1983/aiechoes" target="_blank"
-            >View code</a
-          >
-        </div>
-      </div>
-      <div id="space-portfolio-content" class="space-portfolio-content content">
-        <h3>Space Themed Portfolio</h3>
-        <div class="projects-screenshot-container">
-          <img
-            class="projects-screenshot"
-            alt="space portfolio screenshot"
-            src="../src/assets/images/screenshots/space-portfolio-screenshot.webp" />
-        </div>
-        <p>Status: Online</p>
-
-        <p>
-          Description: This doubles as my portfolio as well as my attempt to go
-          back to basics and build something from scratch. It's been a great
-          excercise as it has strengthened my knowledge of webdev since I was
-          previously mostly using React, which abastracted away a lot. It also
-          gave me a much greater appreciation of Typescript!
-        </p>
-        <p>Tech: Javascript, HTML, CSS</p>
-        <div class="links-section">
-          <a href="https://space-portfolio.cognaite.com" target="_blank"
-            >Access here</a
-          >
-        </div>
-      </div>
-      <div id="blog-content" class="space-portfolio-content content">
-        <h3>Personal blog</h3>
-              <div class="projects-screenshot-container">
-
-        <img
-          class="projects-screenshot"
-          alt="Personal blog screenshot"
-          src="../src/assets/images/screenshots/blog-screenshot.webp" /></div>
-
-        <p>Status: Online</p>
-        <p>
-          Description: My personal blog, where I write about various topics.
-        </p>
-        <p>Tech: WordPress, HTML, CSS, PHP</p>
-        <div class="links-section">
-          <a href="https://blog.cognaite.com" target="_blank">Access here</a>
+        <div
+          class="feature-content-container"
+          data-action="PROJECT_VIEW"
+          data-id="project-feature-container">
+          <span
+            id="project-tech-content"
+            class="tech-content"
+            data-action="PROJECT_VIEW"
+            data-id="project-tech-content">
+            <ul>
+              <li>FastAPI backend with RESTful API</li>
+              <li>React frontend with Redux for state management</li>
+              <li>PostgreSQL database for data storage</li>
+              <li>Redis for caching and session management</li>
+              <li>Deployed on VPS using Docker containers</li>
+            </ul>
+          </span>
+          <span
+            id="project-features-content"
+            class="feature-content active"
+            data-action="PROJECT_VIEW"
+            data-id="project-feature-content">
+            <ul>
+              <li>FastAPI backend with RESTful API</li>
+              <li>React frontend with Redux for state management</li>
+              <li>PostgreSQL database for data storage</li>
+              <li>Redis for caching and session management</li>
+              <li>Deployed on VPS using Docker containers</li>
+            </ul>
+          </span>
+          <span
+            id="project-notes-content"
+            class="notes-content"
+            data-action="PROJECT_VIEW"
+            data-id="project-notes-content">
+            <ul>
+              <li>FastAPI backend with RESTful API</li>
+              <li>React frontend with Redux for state management</li>
+              <li>PostgreSQL database for data storage</li>
+              <li>Redis for caching and session management</li>
+              <li>Deployed on VPS using Docker containers</li>
+            </ul>
+          </span>
         </div>
       </div>
     </div>
-    <button
-      id="projects-back-button"
-      data-action="MAIN_PROJECT_MENU"
-      data-id="ai-story-tellers"
-      class="button glow-effect small">
-      Back
-      <!-- <svg
-      id="arrow-left-solid"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24">
-      <polygon
-        points="1 13 1 11 2 11 2 10 3 10 3 9 4 9 4 8 5 8 5 7 6 7 6 6 7 6 7 5 8 5 8 4 9 4 9 3 10 3 10 2 11 2 11 1 12 1 12 2 13 2 13 3 14 3 14 4 13 4 13 5 12 5 12 6 11 6 11 7 10 7 10 8 9 8 9 9 8 9 8 10 23 10 23 14 8 14 8 15 9 15 9 16 10 16 10 17 11 17 11 18 12 18 12 19 13 19 13 20 14 20 14 21 13 21 13 22 12 22 12 23 11 23 11 22 10 22 10 21 9 21 9 20 8 20 8 19 7 19 7 18 6 18 6 17 5 17 5 16 4 16 4 15 3 15 3 14 2 14 2 13 1 13" />
-    </svg> -->
-    </button>
   </div>
 </div>

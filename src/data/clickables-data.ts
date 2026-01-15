@@ -124,6 +124,12 @@ export const DISPLAY_CLICKABLES: IClickable[] = [
     targetId: "#monitor-lightspeed",
     data: { monitorTargetId: "#monitor-lightspeed" },
   },
+  {
+    elementId: "#display-close-btn",
+    action: "CLOSE_DISPLAY",
+    targetId: null,
+    data: {},
+  },
 ];
 
 export const PROJECT_CLICKABLES: IClickable[] = [

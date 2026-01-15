@@ -35,13 +35,13 @@
 }
 #back-icon {
   transform: rotate(180deg);
-  fill: var(--green-700);
+  fill: var(--green-100);
 }
 /* ---------------------------------- Mode Switcher ------------------------------ */
 #mode-switcher > svg {
   size: 70%;
   fill: none;
-  stroke: var(--green-700);
+  stroke: var(--green-100);
   transition: transform 0.5s ease-in-out;
   transform: rotate(90deg);
 }

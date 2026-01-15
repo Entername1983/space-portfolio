@@ -96,11 +96,7 @@ ul > li::before {
   color: var(--green-100);
 }
 
-.cephadex-content p,
-.swift-swatch-content p,
-.cognaite-content p,
-.chair-the-fed-content p,
-.ai-story-tellers-content p {
+.cephproject-content p {
   margin: 5px 0;
   line-height: 1.4;
 }

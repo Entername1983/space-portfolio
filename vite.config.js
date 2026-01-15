@@ -1,19 +1,23 @@
 import { defineConfig } from "vite";
 
-export default defineConfig({
-  base: "",
-  esbuild: {
-    drop: ["console", "debugger"],
-  },
-  css: {
-    devSourcemap: true,
-    postcss: {
-      map: true,
+export default defineConfig(({ command }) => {
+  const isProduction = command === "build";
+
+  return {
+    base: "",
+    esbuild: {
+      drop: isProduction ? ["console", "debugger"] : [],
     },
-  },
-  build: {
-    outDir: "dist",
-    sourcemap: true,
-    legalComments: "none",
-  },
+    css: {
+      devSourcemap: true,
+      postcss: {
+        map: true,
+      },
+    },
+    build: {
+      outDir: "dist",
+      sourcemap: true,
+      legalComments: "none",
+    },
+  };
 });

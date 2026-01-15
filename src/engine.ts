@@ -92,6 +92,10 @@ export class Engine {
         console.log("toggling lightspeed");
         await this.toggleLightSpeed(clickable, event);
         break;
+      case "CLOSE_DISPLAY":
+        this.displayManager.resetAndCloseDisplay();
+        this.monitorManager.reInitialize();
+        break;
       case "HOVER":
         this.handleHoverInteractions(clickable, event);
         break;
@@ -144,6 +148,7 @@ export class Engine {
     this.addClickToList(clickable.elementId);
   }
   handleDelegatedInteraction(clickable: IClickable, event: Event) {
+    console.log("------------Event-------------", event);
     /** This is used to handle interactions of elements that are not initially loaded
      * in the DOM, using data target instead of standard clickable format **/
     const actionTargetId = this.extractActionAndTargetFromDelegatedClick(event);
@@ -165,14 +170,26 @@ export class Engine {
       case "LOG_VIEW":
         this.handleViewLog(actionTargetId);
         break;
+      case "PROJECT_NAVIGATION":
+        this.displayManager.projectsContentManager.handleProjectNavigation(
+          actionTargetId
+        );
+        break;
+      default:
+        console.error(
+          `unhandled action for delegated interaction: ${actionTargetId.action}`
+        );
+        break;
     }
   }
   extractActionAndTargetFromDelegatedClick(event: Event) {
+    // const commandElement2 = event.target.closest("[data-action]");
+    // console.log("commandElement2", commandElement2);
     if (event.target == null) {
       console.error(`missing event target`);
       return;
     }
-    if (!(event.target instanceof HTMLElement)) {
+    if (!(event.target instanceof Element)) {
       console.error(`event target is not an HTMLElement`);
       return;
     }
@@ -190,13 +207,9 @@ export class Engine {
     return { action: action, targetId: targetId };
   }
   handleViewProject(projectName: string) {
-    const element = document.querySelector(`#${projectName}-content`);
-    console.log("element123:", element);
-    console.log("viewing project:", projectName);
     this.addClickToList(`#${projectName}`);
     this.monitorManager.show(`#${projectName}-logo`);
-
-    this.displayManager.projectsContentManager.show(`#${projectName}-content`);
+    this.displayManager.projectsContentManager.show(projectName);
   }
   handleSpaceSceneInteraction(clickable: IClickable, event: MouseEvent) {
     if (state.activeClick == null) {
@@ -210,7 +223,22 @@ export class Engine {
       console.error(`activeClick is null`);
       return;
     }
-    this.spaceSceneManager.returnToSpaceship(state.activeClick);
+    if (
+      this.spaceSceneManager.checkIfActiveClickHasSceneMapping(
+        state.activeClick
+      ) === true
+    ) {
+      this.spaceSceneManager.returnToSpaceship(state.activeClick);
+    } else {
+      const lastValidElement = this.spaceSceneManager.findLastValidSceneElement(
+        state.clickList
+      );
+      if (lastValidElement == null) {
+        console.error(`no valid scene element found in click list`);
+        return;
+      }
+      this.spaceSceneManager.returnToSpaceship(lastValidElement);
+    }
   }
   handleViewLog(actionTargetId) {
     this.displayManager.logContentManager.handleDelegatedInteraction(

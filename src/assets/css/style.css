@@ -33,7 +33,22 @@ body {
   padding: 0;
   overflow: hidden;
 }
+#body::-webkit-scrollbar {
+  width: 4px;
+}
 
+#body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#body::-webkit-scrollbar-thumb {
+  background: rgba(166, 238, 193, 0.3);
+  border-radius: 4px;
+}
+
+#body::-webkit-scrollbar-thumb:hover {
+  background: var(--green-100);
+}
 main {
   position: relative;
   min-height: 100vh;
@@ -120,7 +135,7 @@ a {
   cursor: pointer;
 }
 a {
-  color: var(--green-700);
+  color: var(--green-100);
 }
 a:hover {
   color: var(--green-100);

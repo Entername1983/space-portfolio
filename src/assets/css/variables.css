@@ -1,11 +1,6 @@
 /** **/
+
 :root {
-  /* --matrix-green-dark: oklch(0.6157 0.17656 148.3635);
-  --matrix-green: oklch(0.8895 0.095 156.46);
-  --extra-dark-green: oklch(0.5641 0.1852 143.54);
-  --dark-red: oklch(0.2244 0.0876 28.18);
-  --light-red: oklch(0.4472 0.158 26.44);
-  --very-light-red: oklch(0.6738 0.2055 36.68); */
   --red-100: oklch(0.97 0.02 26);
   --red-200: oklch(0.92 0.05 26);
   --red-300: oklch(0.86 0.1 26);
