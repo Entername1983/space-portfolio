@@ -65,17 +65,6 @@
   animation: glow-visibility ease-in-out var(--animation-speed);
 }
 
-@keyframes glow-visibility {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  25%,
-  75% {
-    opacity: 1;
-  }
-}
-
 .glow-effect[data-glow-animation="false"] {
   --glow-line-length: 50px;
 }

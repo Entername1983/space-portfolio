@@ -1,0 +1,142 @@
+@keyframes glow-visibility {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes terminalFlicker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes electrical-pulse {
+  0% {
+    stroke-dashoffset: 1062;
+    opacity: 0.9;
+  }
+  49% {
+    stroke-dashoffset: 530;
+    opacity: 0.9;
+  }
+  49.5% {
+    stroke-dashoffset: -1046;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -1046;
+    opacity: 0;
+  }
+}
+
+@keyframes electrical-pulse-bottom {
+  0% {
+    stroke-dashoffset: 457;
+    opacity: 0;
+  }
+  1% {
+    stroke-dashoffset: 457;
+    opacity: 0.9;
+  }
+  49% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  49.5% {
+    stroke-dashoffset: -457;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -457;
+    opacity: 0;
+  }
+}
+@keyframes electrical-pulse-top {
+  0% {
+    stroke-dashoffset: 426;
+    opacity: 0;
+  }
+  1% {
+    stroke-dashoffset: 426;
+    opacity: 0.9;
+  }
+  49% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  49.5% {
+    stroke-dashoffset: -426;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -426;
+    opacity: 0;
+  }
+}
+@keyframes alien-lang-pulse {
+  0%,
+  50%,
+  100% {
+    stroke: var(--red-900);
+    stroke-width: 2px;
+    /* Changed 0px to 0.5px for smoother interpolation */
+    filter: drop-shadow(0 0 0.5px rgb(122, 18, 0))
+      drop-shadow(0 0 0.5px rgb(133, 15, 0));
+  }
+  20%,
+  70% {
+    stroke: var(--red-800);
+    stroke-width: 4px;
+    filter: drop-shadow(0 0 4px rgb(122, 18, 0))
+      drop-shadow(0 0 4px rgb(133, 15, 0));
+  }
+}
+@keyframes pulse {
+  from {
+    transform: opacity(0);
+  }
+  to {
+    transform: opacity(0.4);
+  }
+}
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 15px 5px rgba(252, 4, 177, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px 10px rgba(223, 6, 24, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px 5px rgba(250, 130, 93, 0.4);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

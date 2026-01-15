@@ -1,5 +1,5 @@
 <div id="display-projects" class="front-screen-projects display-content">
-  <h3 id="display-title" class="display-title">Projects</h3>
+  <h3 id="display-title" class="display-title active">Projects</h3>
   <!--- Left Arrow SVG --->
   <button
     id="project-left-arrow"
@@ -95,13 +95,15 @@
       class="project-content"
       data-action="PROJECT_VIEW"
       data-id="project-content">
-      <p
-        id="project-description"
-        data-action="PROJECT_VIEW"
-        data-id="project-description">
-        Description: An educational platform allowing for the creation of
-        flashcards, quizzes, games, & tests
-      </p>
+      <div>
+        <p
+          id="project-description"
+          data-action="PROJECT_VIEW"
+          data-id="project-description">
+          Description: An educational platform allowing for the creation of
+          flashcards, quizzes, games, & tests
+        </p>
+      </div>
       <div
         class="projects-screenshot-container"
         data-action="PROJECT_VIEW"
@@ -115,11 +117,14 @@
           src="../src/assets/images/screenshots/cephadex-screenshot.webp" />
       </div>
 
-      <p
-        id="project-status"
-        data-action="PROJECT_VIEW"
-        data-id="project-status">
-        Status: Online
+      <p>
+        Status:
+        <span
+          id="project-status"
+          data-action="PROJECT_VIEW"
+          data-id="project-status">
+          Online</span
+        >
       </p>
 
       <div

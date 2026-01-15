@@ -1,5 +1,6 @@
 import PROJECTS, { type TProjectKey } from "../../data/projects";
 import type { IProject, IProjectList } from "../../data/types";
+import { fetchElementByID } from "../../util/utility";
 type TValidElements = Element[];
 export class ProjectsContentManager {
   private PROJECTS: IProjectList;
@@ -8,7 +9,7 @@ export class ProjectsContentManager {
     this.PROJECTS = PROJECTS;
   }
   hideMainMenu() {
-    const mainMenu = document.querySelector("#projects-main-menu");
+    const mainMenu = fetchElementByID("#projects-main-menu");
     gsap.to(mainMenu, {
       autoAlpha: 0,
       display: "none",
@@ -17,7 +18,7 @@ export class ProjectsContentManager {
   }
 
   revealMainMenu() {
-    const mainMenu = document.querySelector("#projects-main-menu");
+    const mainMenu = fetchElementByID("#projects-main-menu");
     gsap.to(mainMenu, {
       autoAlpha: 1,
       display: "flex",
@@ -30,6 +31,8 @@ export class ProjectsContentManager {
      * Load data to appropriate elements in the project content container
      * **/
     const projectToLoad = this.PROJECTS[targetId];
+
+    this.hideTitleAndProjectContent();
     if (projectToLoad == null) {
       console.error(
         `project not found for projects content manager: ${targetId}`
@@ -39,66 +42,26 @@ export class ProjectsContentManager {
     console.log("Showing project content:", targetId);
     this.hideMainMenu();
     this.loadProjectContent(projectToLoad);
-
-    // const element = document.querySelector(targetId);
-    // console.log("ELEMENT HERE", element);
-    // if (element == null) {
-    //   console.error(
-    //     `element not found for projects content manager: ${targetId}`
-    //   );
-    //   return;
-    // }
-    // element.classList.add("active");
-    // progressiveTextDisplayAnimation(element);
+    this.revealTitleAndProjectContent();
     this.showBackButton();
     this.showArrowButtons();
   }
   loadProjectContent(project: IProject) {
     console.log("Loading project content for:", project.id);
-    const projectContentContainer = document.querySelector(
+    const projectContentContainer = fetchElementByID(
       "#projects-content-container"
     );
-    if (projectContentContainer == null) {
-      console.error(
-        `projectContentContainer not found for projects content manager`
-      );
-      return;
-    }
-    const projectName = document.querySelector("#display-title");
-    const projectDescription = projectContentContainer.querySelector(
-      "#project-description"
-    );
-    const projectScreenshot = projectContentContainer.querySelector(
-      "#project-screenshot"
-    );
-    const projectStatus =
-      projectContentContainer.querySelector("#project-status");
-    const projectLink = projectContentContainer.querySelector("#project-link");
-    const projectGithub =
-      projectContentContainer.querySelector("#project-repo");
-    const projectTechContent = projectContentContainer.querySelector(
-      "#project-tech-content"
-    );
-    const projectFeaturesContent = projectContentContainer.querySelector(
+    const projectName = fetchElementByID("#display-title");
+    const projectDescription = fetchElementByID("#project-description");
+    const projectScreenshot = fetchElementByID("#project-screenshot");
+    const projectStatus = fetchElementByID("#project-status");
+    const projectLink = fetchElementByID("#project-link");
+    const projectGithub = fetchElementByID("#project-repo");
+    const projectTechContent = fetchElementByID("#project-tech-content");
+    const projectFeaturesContent = fetchElementByID(
       "#project-features-content"
     );
-    const projectNotesContent = projectContentContainer.querySelector(
-      "#project-notes-content"
-    );
-    if (
-      projectName == null ||
-      projectDescription == null ||
-      projectScreenshot == null ||
-      projectStatus == null ||
-      projectLink == null ||
-      projectGithub == null ||
-      projectTechContent == null ||
-      projectFeaturesContent == null ||
-      projectNotesContent == null
-    ) {
-      console.error(`one or more project content elements missing`);
-      return;
-    }
+    const projectNotesContent = fetchElementByID("#project-notes-content");
     this.changeMainTitleTo(project.name, project.id);
     projectDescription.textContent = project.description;
     (projectScreenshot as HTMLImageElement).src = project.screenshotUrl;
@@ -134,12 +97,9 @@ export class ProjectsContentManager {
   }
 
   showArrowButtons() {
-    const leftArrow = document.querySelector("#project-left-arrow");
-    const rightArrow = document.querySelector("#project-right-arrow");
+    const leftArrow = fetchElementByID("#project-left-arrow");
+    const rightArrow = fetchElementByID("#project-right-arrow");
     [leftArrow, rightArrow].forEach((arrow) => {
-      if (arrow == null) {
-        return;
-      }
       arrow.classList.add("active");
     });
   }
@@ -152,15 +112,20 @@ export class ProjectsContentManager {
     //   return;
     // }
     console.log("Handling project navigation:", actionTargetId);
-    if (actionTargetId.targetId === "next") {
-      this.navigateToNextProject();
-    } else if (actionTargetId.targetId === "previous") {
-      this.navigateToPreviousProject();
-    } else {
-      console.error(
-        `invalid targetId for project navigation: ${actionTargetId.targetId}`
-      );
-    }
+    this.hideTitleAndProjectContent();
+    setTimeout(() => {
+      if (actionTargetId.targetId === "next") {
+        this.navigateToNextProject();
+      } else if (actionTargetId.targetId === "previous") {
+        this.navigateToPreviousProject();
+      } else {
+        console.error(
+          `invalid targetId for project navigation: ${actionTargetId.targetId}`
+        );
+      }
+
+      this.revealTitleAndProjectContent();
+    }, 400);
   }
   navigateToNextProject() {
     console.log("navigating to next project");
@@ -196,11 +161,7 @@ export class ProjectsContentManager {
   }
   getDisplayTitleData(): string | undefined {
     /** Returns the data-title attribute of the display title element **/
-    const displayTitle = document.querySelector("#display-title");
-    if (displayTitle == null) {
-      console.error(`display title not found`);
-      return;
-    }
+    const displayTitle = fetchElementByID("#display-title");
     const displayTitleData = displayTitle.getAttribute("data-title");
     if (displayTitleData === "Projects") {
       return;
@@ -213,35 +174,28 @@ export class ProjectsContentManager {
     return displayTitleData;
   }
   hideArrowButtons() {
-    const leftArrow = document.querySelector("#project-left-arrow");
-    const rightArrow = document.querySelector("#project-right-arrow");
+    const leftArrow = fetchElementByID("#project-left-arrow");
+    const rightArrow = fetchElementByID("#project-right-arrow");
     [leftArrow, rightArrow].forEach((arrow) => {
-      if (arrow == null) {
-        return;
-      }
       arrow.classList.remove("active");
     });
   }
   showBackButton() {
-    const backBtn = document.querySelector("#projects-back-button");
+    const backBtn = fetchElementByID("#projects-back-button");
     gsap.to(backBtn, {
       autoAlpha: 1,
       display: "block",
     });
   }
   hideBackBtn() {
-    const backBtn = document.querySelector("#projects-back-button");
+    const backBtn = fetchElementByID("#projects-back-button");
     gsap.to(backBtn, {
       autoAlpha: 0,
       display: "none",
     });
   }
   clearContent() {
-    const mainMenu = document.querySelector("#projects-content-container");
-    if (mainMenu == null) {
-      console.error(`mainMenu not found for projects content manager`);
-      return;
-    }
+    const mainMenu = fetchElementByID("#projects-content-container");
     for (const child of mainMenu.children) {
       child.classList.remove("active");
       if (!(child instanceof HTMLElement)) continue;
@@ -252,15 +206,22 @@ export class ProjectsContentManager {
   // Goes back to the projects main menu
 
   changeMainTitleTo(newTitle: string, titleData: string = "display-title") {
-    const displayTitle = document.querySelector("#display-title");
-    if (displayTitle == null) {
-      console.error(`display title not found`);
-      return;
-    }
+    const displayTitle = fetchElementByID("#display-title");
     displayTitle.textContent = newTitle;
     displayTitle.setAttribute("data-title", titleData);
   }
-
+  hideTitleAndProjectContent() {
+    const titleElement = fetchElementByID("#display-title");
+    const projectContentElement = fetchElementByID("#project-content");
+    titleElement.classList.remove("active");
+    projectContentElement.classList.remove("active");
+  }
+  revealTitleAndProjectContent() {
+    const titleElement = fetchElementByID("#display-title");
+    const projectContentElement = fetchElementByID("#project-content");
+    titleElement.classList.add("active");
+    projectContentElement.classList.add("active");
+  }
   returnToMainScreen() {
     this.changeMainTitleTo("Projects");
     this.clearContent();

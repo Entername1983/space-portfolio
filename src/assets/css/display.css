@@ -54,10 +54,14 @@ Content gets fetched and placed within this wrapper
   overflow: auto;
 }
 
-.display-title {
+#display-title {
   font-size: 2.8rem;
   text-align: center;
-  animation: terminalFlicker 0.1s infinite linear alternate;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+#display-title.active {
+  opacity: 1;
 }
 
 body[data-orientation="portrait"] {

@@ -1,3 +1,5 @@
+import type { TElementId } from "../data/types";
+
 export function generateCorruptedText(length) {
   const chars =
     "!@#$%^&*()0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -6,6 +8,14 @@ export function generateCorruptedText(length) {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   return result;
+}
+
+export function fetchElementByID(id: TElementId): Element {
+  const element = document.querySelector(id);
+  if (element == null) {
+    throw new Error(`Element not found for ID: ${id}`);
+  }
+  return element;
 }
 
 export function progressiveTextDisplayAnimation(contentElement) {

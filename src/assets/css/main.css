@@ -17,6 +17,8 @@
 /* Variables */
 @import "./variables.css";
 
+/* Animations */
+@import "./animations.css";
 /* Component Specific */
 @import "./alien-sidekick.css";
 @import "./space-backdrops.css";

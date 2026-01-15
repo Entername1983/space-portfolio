@@ -71,9 +71,9 @@ export class SpaceSceneManager {
         return lastElement;
       }
     }
-
     return undefined;
   };
+
   returnToSpaceship(activeClick: TElementId) {
     const scene = SPACE_SCENE_MAPPINGS[activeClick];
     if (scene == null) {
