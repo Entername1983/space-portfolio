@@ -49,13 +49,6 @@
   width: 100%;
 }
 
-.screen-content {
-  border: 2px dotted var(--green-100);
-  height: 100%;
-  padding: 10px;
-  border-radius: 10px;
-}
-
 .screen-content > ul {
   display: flex;
   flex-direction: column;

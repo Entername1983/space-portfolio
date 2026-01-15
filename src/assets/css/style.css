@@ -19,7 +19,11 @@ body {
   box-sizing: border-box;
   font-size: 62.5%;
 }
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   background-color: black;
   font-family: "Orbitron", sans-serif;
@@ -50,13 +54,11 @@ body {
   background: var(--green-100);
 }
 html {
-  /* This prevents the "layout shift" when a scrollbar appears 
-     by reserving space for it ahead of time */
   scrollbar-gutter: stable;
 }
 * {
-  scrollbar-width: thin; /* Options: auto, thin, none */
-  scrollbar-color: rgba(166, 238, 193, 0.3) transparent; /* thumb track */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(166, 238, 193, 0.3) transparent;
 }
 
 main {
@@ -343,51 +345,6 @@ a:hover {
   to {
     --angle: 1turn;
   }
-}
-
-.screen-content {
-  position: relative; /* Required for absolute positioning */
-  border: 2px dotted var(--green-100);
-  /* height: 100%; */
-  padding: 10px;
-  background: black;
-  margin: 5px;
-  z-index: 1;
-}
-
-/* .screen-content::before {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  background: conic-gradient(
-    from var(--angle),
-    rgb(0, 0, 0),
-    rgb(0, 49, 20),
-    rgb(0, 0, 0),
-    rgb(0, 0, 0),
-    rgb(0, 49, 20),
-    rgb(0, 0, 0),
-    rgb(0, 0, 0),
-    rgb(0, 0, 0),
-    rgb(0, 0, 0)
-  );
-  border-radius: inherit;
-  z-index: -2;
-  animation: rotate 20s linear infinite;
-} */
-.screen-content::after {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  background: black;
-  z-index: -1;
-  border-radius: inherit;
 }
 
 /** ------------------------ ALIEN SIDEKICK ------------------------------**/

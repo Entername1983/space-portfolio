@@ -1,0 +1,209 @@
+<div id="display-projects" class="front-screen-projects display-content">
+  <h3 id="display-title" class="display-title active">Projects</h3>
+  <!--- Left Arrow SVG --->
+  <button
+    id="project-left-arrow"
+    data-action="PROJECT_NAVIGATION"
+    data-id="previous">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+      <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
+    </svg>
+  </button>
+  <!--- Right Arrow SVG --->
+  <button
+    id="project-right-arrow"
+    data-action="PROJECT_NAVIGATION"
+    data-id="next">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+      <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+    </svg>
+  </button>
+  <button
+    id="projects-back-button"
+    data-action="MAIN_PROJECT_MENU"
+    data-id="ai-story-tellers"
+    class="button glow-effect small">
+    Back
+    <!-- <svg
+      id="arrow-left-solid"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24">
+      <polygon
+        points="1 13 1 11 2 11 2 10 3 10 3 9 4 9 4 8 5 8 5 7 6 7 6 6 7 6 7 5 8 5 8 4 9 4 9 3 10 3 10 2 11 2 11 1 12 1 12 2 13 2 13 3 14 3 14 4 13 4 13 5 12 5 12 6 11 6 11 7 10 7 10 8 9 8 9 9 8 9 8 10 23 10 23 14 8 14 8 15 9 15 9 16 10 16 10 17 11 17 11 18 12 18 12 19 13 19 13 20 14 20 14 21 13 21 13 22 12 22 12 23 11 23 11 22 10 22 10 21 9 21 9 20 8 20 8 19 7 19 7 18 6 18 6 17 5 17 5 16 4 16 4 15 3 15 3 14 2 14 2 13 1 13" />
+    </svg> -->
+  </button>
+  <div id="projects-content-container" class="projects-content screen-content">
+    <ul id="projects-main-menu">
+      <li
+        id="li-cephadex"
+        role="button"
+        class="slide-underline"
+        data-action="PROJECT_VIEW"
+        data-id="cephadex">
+        Cephadex - Ed-tech platform
+      </li>
+      <li
+        id="li-swift-swatch"
+        role="button"
+        class="slide-underline"
+        data-action="PROJECT_VIEW"
+        data-id="swift-swatch">
+        SwiftSwatch - UI designer
+      </li>
+      <li
+        id="li-cognaite"
+        class="slide-underline"
+        data-action="PROJECT_VIEW"
+        data-id="cognaite">
+        Cognaite - Starter Template
+      </li>
+      <li
+        id="li-chair-the-fed"
+        role="button"
+        class="slide-underline"
+        data-action="PROJECT_VIEW"
+        data-id="chair-the-fed">
+        Chair the Fed - Monetary Policy Simulator
+      </li>
+      <li
+        id="li-blog"
+        role="button"
+        class="slide-underline"
+        data-action="PROJECT_VIEW"
+        data-id="blog">
+        Personal Blog
+      </li>
+      <li
+        id="li-space-portfolio"
+        role="button"
+        class="slide-underline"
+        data-action="PROJECT_VIEW"
+        data-id="space-portfolio">
+        this.SpacePortfolio
+      </li>
+      <li
+        id="li-ai-story-tellers"
+        role="button"
+        class="slide-underline"
+        data-action="PROJECT_VIEW"
+        data-id="ai-story-tellers">
+        Neverending AI Story
+      </li>
+    </ul>
+    <div
+      id="project-content"
+      class="project-content"
+      data-action="PROJECT_VIEW"
+      data-id="project-content">
+      <div>
+        <p
+          id="project-description"
+          data-action="PROJECT_VIEW"
+          data-id="project-description">
+          Description: An educational platform allowing for the creation of
+          flashcards, quizzes, games, & tests
+        </p>
+      </div>
+      <div>
+        <div
+          class="projects-screenshot-container"
+          data-action="PROJECT_VIEW"
+          data-id="project-screenshot-container">
+          <img
+            id="project-screenshot"
+            class="projects-screenshot"
+            alt="Cephadex screenshot"
+            data-action="PROJECT_VIEW"
+            data-id="project-screenshot"
+            src="../src/assets/images/screenshots/cephadex-screenshot.webp" />
+        </div>
+        <div id="project-links-container">
+          <p>
+            Status:
+            <span
+              id="project-status"
+              data-action="PROJECT_VIEW"
+              data-id="project-status">
+              Online</span
+            >
+          </p>
+
+          <div
+            id="project-link"
+            class="links-section"
+            data-action="PROJECT_VIEW"
+            data-id="project-link">
+            <a href="https://cephadex.com" target="_blank">Access here</a>
+          </div>
+
+          <div
+            id="project-repo"
+            class="repo-section"
+            data-action="PROJECT_VIEW"
+            data-id="project-repo">
+            <a href="https://cephadex.com" target="_blank">Project Repo</a>
+          </div>
+        </div>
+      </div>
+      <div
+        id="project-feature-container"
+        class="feature-container"
+        data-action="PROJECT_VIEW"
+        data-id="project-feature-container">
+        <div class="feature-button-container">
+          <div class="empty-row"></div>
+          <button id="tech-btn" class="active">Tech</button>
+          <div class="empty-row"></div>
+          <button id="feat-btn" class="">Feature</button>
+          <div class="empty-row"></div>
+          <button id="misc-btn">Notes</button>
+          <div class="empty-row"></div>
+        </div>
+        <div
+          class="feature-content-container"
+          data-action="PROJECT_VIEW"
+          data-id="project-feature-container">
+          <span
+            id="project-tech-content"
+            class="tech-content"
+            data-action="PROJECT_VIEW"
+            data-id="project-tech-content">
+            <ul>
+              <li>FastAPI backend with RESTful API</li>
+              <li>React frontend with Redux for state management</li>
+              <li>PostgreSQL database for data storage</li>
+              <li>Redis for caching and session management</li>
+              <li>Deployed on VPS using Docker containers</li>
+            </ul>
+          </span>
+          <span
+            id="project-features-content"
+            class="feature-content active"
+            data-action="PROJECT_VIEW"
+            data-id="project-feature-content">
+            <ul>
+              <li>FastAPI backend with RESTful API</li>
+              <li>React frontend with Redux for state management</li>
+              <li>PostgreSQL database for data storage</li>
+              <li>Redis for caching and session management</li>
+              <li>Deployed on VPS using Docker containers</li>
+            </ul>
+          </span>
+          <span
+            id="project-notes-content"
+            class="notes-content"
+            data-action="PROJECT_VIEW"
+            data-id="project-notes-content">
+            <ul>
+              <li>FastAPI backend with RESTful API</li>
+              <li>React frontend with Redux for state management</li>
+              <li>PostgreSQL database for data storage</li>
+              <li>Redis for caching and session management</li>
+              <li>Deployed on VPS using Docker containers</li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,7 +21,7 @@ export class LogContentManager {
     }
 
     this.rssFeed = "https://blog.cognaite.com/feed/";
-    this.testRssFeed = "../src/templates/log-test-feed.xml";
+    this.testRssFeed = "../templates/log-test-feed.xml";
     this.logEntries = [];
     this.logIndex = [0];
     this.initialize();

@@ -163,6 +163,26 @@ body[data-orientation="portrait"] {
   border: 1px dashed var(--green-100);
 }
 
+.screen-content {
+  position: relative;
+  padding: 10px;
+  background: black;
+  margin: 5px;
+  z-index: 1;
+}
+
+.screen-content::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: black;
+  z-index: -1;
+  border-radius: inherit;
+}
+
 /**  Adapted from https://codepen.io/NeilSchulz/pen/ZYOzJWq 
  **/
 

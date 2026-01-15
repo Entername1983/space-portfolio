@@ -13,7 +13,7 @@ export class MonitorManager {
     if (MonitorManager.instance) {
       return MonitorManager.instance;
     }
-
+    MonitorManager.instance = this;
     this.monitor = document.querySelector("#spaceship-monitor");
     if (this.monitor == null) {
       console.error("Monitor Element not found, returning");

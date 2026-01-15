@@ -140,3 +140,30 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes slideOpen {
+  0% {
+    max-width: 100%;
+    white-space: nowrap;
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    max-width: 0%;
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+  }
+  99% {
+    max-width: 100%;
+    opacity: 1;
+    white-space: nowrap;
+  }
+  100% {
+    max-width: 100%;
+    opacity: 1;
+    white-space: wrap;
+  }
+}

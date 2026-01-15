@@ -19,5 +19,6 @@ export default defineConfig(({ command }) => {
       sourcemap: true,
       legalComments: "none",
     },
+    assetsInclude: ["src/templates/**/*.html"],
   };
 });

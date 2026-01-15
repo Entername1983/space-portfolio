@@ -172,9 +172,12 @@ export class Engine {
         break;
       case "PROJECT_NAVIGATION":
         this.displayManager.projectsContentManager.handleProjectNavigation(
-          actionTargetId
+          // we know action is not null sinc
+          actionTargetId.targetId
         );
         break;
+      case "IGNORE":
+        return;
       default:
         console.error(
           `unhandled action for delegated interaction: ${actionTargetId.action}`

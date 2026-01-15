@@ -1,12 +1,15 @@
 import PROJECTS, { type TProjectKey } from "../../data/projects";
 import type { IProject, IProjectList } from "../../data/types";
 import { fetchElementByID } from "../../util/utility";
+import { MonitorManager } from "../monitor-manager/monitor-manager";
 type TValidElements = Element[];
 export class ProjectsContentManager {
   private PROJECTS: IProjectList;
-
   constructor() {
     this.PROJECTS = PROJECTS;
+  }
+  private get monitorManager() {
+    return MonitorManager.instance;
   }
   hideMainMenu() {
     const mainMenu = fetchElementByID("#projects-main-menu");
@@ -68,6 +71,20 @@ export class ProjectsContentManager {
     projectStatus.textContent = project.status;
     (projectLink as HTMLAnchorElement).href = project.link ?? "#";
     (projectGithub as HTMLAnchorElement).href = project.github ?? "#";
+    const maxLength = 30;
+    let projectLinkText = "Unavailable";
+
+    if (project.link != null) {
+      if (project.link.length > maxLength) {
+        projectLinkText = `${project.link.slice(0, maxLength)}...`;
+      } else {
+        projectLinkText = project.link;
+      }
+      projectLinkText = projectLinkText.replace(/^https?:\/\//, "");
+    }
+    projectLink.textContent = projectLinkText;
+    projectGithub.textContent =
+      project.github != null ? "Access here" : "Private";
     // Clear existing content
     projectTechContent.innerHTML = project.featureContainer.tech
       .map((tech) => `<li>${tech}</li>`)
@@ -103,25 +120,20 @@ export class ProjectsContentManager {
       arrow.classList.add("active");
     });
   }
-  handleProjectNavigation(actionTargetId: {
-    action: string;
-    targetId: string | null;
-  }) {
+  handleProjectNavigation(targetId: string | undefined) {
     // if (actionTargetId.targetId == null) {
     //   console.error(`missing targetId for project navigation`);
     //   return;
     // }
-    console.log("Handling project navigation:", actionTargetId);
+    console.log("Handling project navigation:", targetId);
     this.hideTitleAndProjectContent();
     setTimeout(() => {
-      if (actionTargetId.targetId === "next") {
+      if (targetId === "next") {
         this.navigateToNextProject();
-      } else if (actionTargetId.targetId === "previous") {
+      } else if (targetId === "previous") {
         this.navigateToPreviousProject();
       } else {
-        console.error(
-          `invalid targetId for project navigation: ${actionTargetId.targetId}`
-        );
+        console.error(`invalid targetId for project navigation: ${targetId}`);
       }
 
       this.revealTitleAndProjectContent();
@@ -143,6 +155,7 @@ export class ProjectsContentManager {
       return;
     }
     this.loadProjectContent(nextProjectToLoad);
+    this.monitorManager?.show(`#${nextProjectToLoad.id}-logo`);
   }
   navigateToPreviousProject() {
     const displayTitleData = this.getDisplayTitleData();
@@ -158,6 +171,8 @@ export class ProjectsContentManager {
       return;
     }
     this.loadProjectContent(previousProjectToLoad);
+    console.log("Monitor Manager", this.monitorManager);
+    this.monitorManager?.show(`#${previousProjectToLoad.id}-logo`);
   }
   getDisplayTitleData(): string | undefined {
     /** Returns the data-title attribute of the display title element **/
