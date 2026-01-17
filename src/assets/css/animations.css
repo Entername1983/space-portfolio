@@ -90,18 +90,18 @@
   0%,
   50%,
   100% {
-    stroke: var(--red-900);
+    stroke: var(--primary-color);
     stroke-width: 2px;
-    /* Changed 0px to 0.5px for smoother interpolation */
-    filter: drop-shadow(0 0 0.5px rgb(122, 18, 0))
-      drop-shadow(0 0 0.5px rgb(133, 15, 0));
+    /* Use the color-mix or 'from' syntax we discussed for the glow */
+    filter: drop-shadow(0 0 1px var(--primary-shadow));
+    opacity: 0.7;
   }
-  20%,
-  70% {
-    stroke: var(--red-800);
+  25%,
+  75% {
+    stroke: var(--primary-color-light);
     stroke-width: 4px;
-    filter: drop-shadow(0 0 4px rgb(122, 18, 0))
-      drop-shadow(0 0 4px rgb(133, 15, 0));
+    filter: drop-shadow(0 0 8px var(--primary-shadow));
+    opacity: 1;
   }
 }
 @keyframes pulse {

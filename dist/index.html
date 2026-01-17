@@ -60,8 +60,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
 
     <link rel="icon" type="image/x-icon" href="./assets/favico-D_wWEht8.webp" />
-    <script type="module" crossorigin src="./assets/index-B_ePqMx5.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BLvR0v1g.css">
+    <script type="module" crossorigin src="./assets/index-Dvvw2aKX.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CijsyeRn.css">
   </head>
 
   <body data-orientation="portrait">
@@ -303,8 +303,17 @@
 
         <!------------------ INTERIOR SECTIONS----------------->
         <section id="interior-sections">
+
+
+
           <!------------------ SPACESHIP ----------------->
           <div id="spaceship-interior-section">
+
+<svg id = "svg-spaceship-overlay-desktop" preserveAspectRatio="none" viewBox="0 0 1542 871" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M621.194 665.613H902.049C906.909 665.613 911.011 669.459 911.507 674.557L929.487 859.542C930.059 865.429 925.638 870.5 920.03 870.5H608.157C602.654 870.5 598.269 865.608 598.677 859.816L611.713 674.832C612.08 669.616 616.234 665.613 621.194 665.613ZM509.33 689.65C551.863 689.65 586.381 725.669 586.381 770.146C586.381 814.624 551.864 850.643 509.33 850.643C466.797 850.642 432.28 814.624 432.28 770.146C432.28 725.669 466.797 689.651 509.33 689.65ZM970.158 682.335H1105.47C1117.8 682.335 1128.4 691.568 1130.58 704.292L1149.26 812.983C1152.08 829.366 1140.02 844.372 1124.15 844.372H979.831C966.672 844.372 955.646 833.902 954.424 820.17L944.751 711.479C943.357 695.816 955.155 682.335 970.158 682.335ZM54.9658 178.519C60.9606 181.695 64.9768 187.88 65.5791 194.893L113.674 754.897C114.479 764.275 109.045 772.993 100.547 776.028L0.5 811.764V149.657L54.9658 178.519ZM1541.5 811.764L1441.45 776.028C1432.95 772.993 1427.52 764.275 1428.33 754.897L1476.42 194.893C1477.02 187.879 1481.04 181.695 1487.04 178.519L1541.5 149.657V811.764ZM1387.26 164.424C1391.56 159.639 1399.04 160.449 1402.3 166.076L1415.44 188.705C1421.92 199.884 1424.87 212.915 1423.87 225.947L1382.42 763.859C1382.18 766.976 1379.2 768.955 1376.44 767.937L1317.02 746.006C1316.43 745.789 1315.89 745.447 1315.44 745L1235.91 666.97C1234.66 665.745 1234.17 663.879 1234.67 662.153L1371.34 186.86C1372.66 182.286 1374.97 178.095 1378.1 174.615L1387.26 164.424ZM135.693 165.555C138.959 159.928 146.44 159.116 150.741 163.901L159.901 174.093C163.029 177.572 165.342 181.764 166.657 186.338L303.326 661.632C303.822 663.357 303.339 665.223 302.091 666.448L222.561 744.478C222.105 744.925 221.566 745.267 220.979 745.483L161.561 767.415C158.801 768.434 155.818 766.455 155.577 763.338L114.128 225.426C113.124 212.393 116.075 199.362 122.562 188.184L135.693 165.555ZM359.875 37.5H1179.58C1184.4 37.5 1189.05 39.3663 1192.64 42.7441L1305.61 149.157C1313.98 157.043 1317.33 169.228 1314.23 180.562L1196.94 609.064C1194.54 617.831 1186.88 623.853 1178.18 623.854H914.779C912.597 623.854 910.47 624.561 908.693 625.877L886.376 642.405C884.769 643.595 882.851 644.233 880.886 644.233H649.59C647.344 644.233 645.168 643.4 643.45 641.879L626.035 626.459C624.138 624.779 621.728 623.854 619.233 623.854H358.887C350.158 623.853 342.474 617.787 340.104 608.977L224.688 180.055C221.636 168.712 225.032 156.549 233.43 148.701L346.871 42.6904C350.45 39.3459 355.081 37.5 359.875 37.5Z" />
+
+
+</svg>
             <div id="alien-info" class="info-container">
               <div id="alien-message-container">
                 <div id="info-content" class="info-content">
@@ -603,8 +612,8 @@
 
             <!----------------- CONTROL PANNEL ----------------->
             <div id="mobile-control-pannel">
-              <div id="radar-container">
-                <div class="radar">
+              <div id="sonar-container">
+                <div class="sonar">
                   <div class="sweep"></div>
                 </div>
               </div>
@@ -687,34 +696,67 @@
             </div>
 
             <!----------------- CONTROL BUTTONS----------------->
-            <div id="control-pannel-buttons">
+            <div id="control-pannel-row">
+              <div id="control-pannel-container">
               <div class="row-one-wrapper">
-                <div id="lightspeed-btn" class="control-btn">
+                       <div class="button-wrapper">
+                  <button id="control-bio" class="control-btn">
+                    <svg
+                      width="210"
+                      height="210"
+                      viewBox="0 0 210 210"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M61 149V101.5H7.5V10L104 101.5L203.5 10V101.5H147V203.5H203.5V149H147V168.5L104 203.5L61 168.5M61 149H7.5V203.5H61V168.5M61 149V168.5" />
+                      <path
+                        d="M105.5 10.5L75 39.5L105.5 68.5L136 39.5L105.5 10.5Z" />
+                    </svg>
+                  </button>
                   <svg
-                    width="210"
-                    height="210"
-                    viewBox="0 0 210 210"
+                    id="bio-btn-svg"
+                    class="svg-control-tooltips"
+                    viewBox="0 0 100 100"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M199.5 200H10.5L104.5 41L199.5 200Z" />
-                    <path d="M190 184.5H20" />
-                    <path d="M60 116.5L104.5 184L150 116.5" />
-                    <path d="M145.5 82.5L105 9L65.5 82.5L105 155L145.5 82.5Z" />
-                    <path d="M83 115L105.5 92L128 115" />
+                    <!-- small veer left text coordinates 70 55 -->
+                    <polyline points="90 100 90 60 70 55" fill="none" />
+                    <text class="svg-control-text" x="54" y="55">Bio</text>
                   </svg>
                 </div>
-                <svg
-                  id="lightspeed-btn-svg"
-                  class="svg-control-tooltips"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <polyline points="90 100 90 20 70 15" />
-                  <text class="svg-control-text" x="30" y="12">
-                    Light Speed
-                  </text>
-                </svg>
-                <div id="control-projects" class="control-btn">
+                                <div class="button-wrapper">
+                    <button id="control-acorn" class="control-btn">
+                      <svg
+                        width="210"
+                        height="210"
+                        viewBox="0 0 210 210"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 117.5H203L105.5 206L7 117.5Z" />
+                        <path d="M36 117.5L106.5 183L178 117.5" />
+                        <path d="M5 117L85 43V65L29.5 117.5" />
+                        <path d="M205 117L125 43V65L180.5 117.5" />
+                        <path d="M159 74L204.5 38.5V5L139 55" />
+                        <path d="M51.5 74L6 38.5V5L71.5 55" />
+                        <path d="M125 42.5V33L145 14.5V1.5" />
+                        <path d="M85 43V33.5L65 15V2" />
+                      </svg>
+                    </button>
+                    <svg
+                      id="acorn-btn-svg"
+                      class="svg-control-tooltips"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <!-- Large straight 50 20 -->
+                      <polyline points="50 100 50 20" fill="none" />
+                      <text class="svg-control-text" x="33" y="16" fill="white">
+                        Acorn
+                      </text>
+                    </svg>
+                </div>
+                <div class="button-wrapper">
+                <button id="control-projects" class="control-btn">
                   <svg
                     width="210"
                     height="210"
@@ -730,7 +772,7 @@
                     <path
                       d="M9 121.5H85V200.5M9 121.5V200.5H85M9 121.5L85 200.5" />
                   </svg>
-                </div>
+                </button>
                 <svg
                   id="projects-btn-svg"
                   class="svg-control-tooltips"
@@ -743,7 +785,81 @@
                     Projects
                   </text>
                 </svg>
-                <div id="control-one" class="control-btn">
+                </div>
+
+              </div>
+              <div class="row-two-wrapper">
+        
+
+
+
+
+
+                 <div class="button-wrapper">
+                <button id="lightspeed-btn" class="control-btn">
+                  <svg
+                    width="210"
+                    height="210"
+                    viewBox="0 0 210 210"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M199.5 200H10.5L104.5 41L199.5 200Z" />
+                    <path d="M190 184.5H20" />
+                    <path d="M60 116.5L104.5 184L150 116.5" />
+                    <path d="M145.5 82.5L105 9L65.5 82.5L105 155L145.5 82.5Z" />
+                    <path d="M83 115L105.5 92L128 115" />
+                  </svg>
+                </button>
+                <svg
+                  id="lightspeed-btn-svg"
+                  class="svg-control-tooltips"
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <polyline points="90 100 90 20 70 15" />
+                  <text class="svg-control-text" x="30" y="12">
+                    Light Speed
+                  </text>
+                </svg>
+                </div>
+                <div class="button-wrapper">
+                  <button id="control-log" class="control-btn">
+                    <svg
+                      width="210"
+                      height="210"
+                      viewBox="0 0 210 210"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M152 44V4H202L179 37.5L152 44ZM152 44L179 102.5L152 162.5M152 44V162.5M152 162.5V206H202L179 169.5L152 162.5Z" />
+                      <path d="M157 4.5L183 31.5" />
+                      <path d="M183.5 176.5L157 205.5" />
+                      <path
+                        d="M65 44V4H15L38 37.5L65 44ZM65 44L38 102.5L65 162.5M65 44V162.5M65 162.5V206H15L38 169.5L65 162.5Z" />
+                      <path d="M60 4.5L34 31.5" />
+                      <path d="M33.5 176.5L60 205.5" />
+                      <path d="M65.5 65.5H152M65.5 65.5H152" />
+                      <path d="M66 151H152.5M66 151H152.5" />
+                      <path d="M132.5 83.5H85V131H132.5V83.5Z" />
+                    </svg>
+                  </button>
+          
+                      <svg
+                        id="log-btn-svg"
+                        class="svg-control-tooltips"
+                        viewBox="0 0 100 100"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <!-- Large straight 50 20 -->
+                        <polyline points="50 100 50 20" fill="none" />
+                        <text class="svg-control-text" x="24" y="16" fill="white">
+                          Captain&apos;s Log
+                        </text>
+                      </svg>
+                </div>
+
+                              <div class="button-wrapper">
+                <button id="control-one" class="control-btn">
                   <svg
                     width="210"
                     height="210"
@@ -759,7 +875,7 @@
                     <path d="M26.5 100H61" />
                     <path d="M149 100H188.5" />
                   </svg>
-                </div>
+                </button>
                 <svg
                   id="one-btn-svg"
                   class="svg-control-tooltips"
@@ -769,93 +885,10 @@
                   <polyline points="10 100 10 20 30 15" fill="none" />
                   <text class="svg-control-text" x="32" y="15">Work</text>
                 </svg>
+                </div>
+         
               </div>
-              <div class="row-two-wrapper">
-                <div id="control-log" class="control-btn">
-                  <svg
-                    width="210"
-                    height="210"
-                    viewBox="0 0 210 210"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M152 44V4H202L179 37.5L152 44ZM152 44L179 102.5L152 162.5M152 44V162.5M152 162.5V206H202L179 169.5L152 162.5Z" />
-                    <path d="M157 4.5L183 31.5" />
-                    <path d="M183.5 176.5L157 205.5" />
-                    <path
-                      d="M65 44V4H15L38 37.5L65 44ZM65 44L38 102.5L65 162.5M65 44V162.5M65 162.5V206H15L38 169.5L65 162.5Z" />
-                    <path d="M60 4.5L34 31.5" />
-                    <path d="M33.5 176.5L60 205.5" />
-                    <path d="M65.5 65.5H152M65.5 65.5H152" />
-                    <path d="M66 151H152.5M66 151H152.5" />
-                    <path d="M132.5 83.5H85V131H132.5V83.5Z" />
-                  </svg>
-                </div>
-                <svg
-                  id="log-btn-svg"
-                  class="svg-control-tooltips"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <!-- Large straight 50 20 -->
-                  <polyline points="50 100 50 20" fill="none" />
-                  <text class="svg-control-text" x="24" y="16" fill="white">
-                    Captain&apos;s Log
-                  </text>
-                </svg>
-                <div id="control-acorn" class="control-btn">
-                  <svg
-                    width="210"
-                    height="210"
-                    viewBox="0 0 210 210"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 117.5H203L105.5 206L7 117.5Z" />
-                    <path d="M36 117.5L106.5 183L178 117.5" />
-                    <path d="M5 117L85 43V65L29.5 117.5" />
-                    <path d="M205 117L125 43V65L180.5 117.5" />
-                    <path d="M159 74L204.5 38.5V5L139 55" />
-                    <path d="M51.5 74L6 38.5V5L71.5 55" />
-                    <path d="M125 42.5V33L145 14.5V1.5" />
-                    <path d="M85 43V33.5L65 15V2" />
-                  </svg>
-                </div>
-                <svg
-                  id="acorn-btn-svg"
-                  class="svg-control-tooltips"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <!-- Large straight 50 20 -->
-                  <polyline points="50 100 50 20" fill="none" />
-                  <text class="svg-control-text" x="33" y="16" fill="white">
-                    Acorn
-                  </text>
-                </svg>
-                <div id="control-bio" class="control-btn">
-                  <svg
-                    width="210"
-                    height="210"
-                    viewBox="0 0 210 210"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M61 149V101.5H7.5V10L104 101.5L203.5 10V101.5H147V203.5H203.5V149H147V168.5L104 203.5L61 168.5M61 149H7.5V203.5H61V168.5M61 149V168.5" />
-                    <path
-                      d="M105.5 10.5L75 39.5L105.5 68.5L136 39.5L105.5 10.5Z" />
-                  </svg>
-                </div>
-                <svg
-                  id="bio-btn-svg"
-                  class="svg-control-tooltips"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <!-- small veer left text coordinates 70 55 -->
-                  <polyline points="90 100 90 60 70 55" fill="none" />
-                  <text class="svg-control-text" x="54" y="55">Bio</text>
-                </svg>
-              </div>
+            </div>
             </div>
           </div>
 
@@ -918,6 +951,39 @@
       </div>
     </main>
 
+    <!--- ALL re-usable SVG filters --->
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+  <defs>
+    <filter id="hyper-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.6  0 0 0 0 0.9  0 0 0 0 0.1  0 0 0 1 0" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="energy-shimmer">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise">
+        <animate attributeName="baseFrequency" values="0.05;0.07;0.05" dur="5s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
+    </filter>
+
+    <filter id="neon-outline">
+      <feMorphology operator="dilate" radius="2" in="SourceGraphic" result="thickened" />
+      <feGaussianBlur in="thickened" stdDeviation="3" result="blurred" />
+      <feMerge>
+        <feMergeNode in="blurred" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="digital-glitch">
+      <feTurbulence type="turbulence" baseFrequency="0.01 0.2" numOctaves="2" result="glitch-noise" />
+      <feDisplacementMap in="SourceGraphic" in2="glitch-noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
     <!-- Sanitizing the content coming from my blog -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
   </body>

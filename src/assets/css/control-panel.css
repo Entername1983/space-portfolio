@@ -1,6 +1,6 @@
 #spaceship-monitor {
   position: absolute;
-  bottom: 0%;
+  bottom: 1%;
   left: 60.5%;
   width: 14%;
   aspect-ratio: 1/1;
@@ -93,23 +93,23 @@ ul > li::before {
   display: block;
 }
 
-/** Radar 
+/** sonar 
 https://codepen.io/thebabydino/pen/AqbWeE
 **/
 
-#radar-container {
+#sonar-container {
   position: absolute;
-  bottom: 0.5%;
-  left: 25%;
+  bottom: 0.75%;
+  left: 27.5%;
   width: 11%;
   aspect-ratio: 1 / 1;
 }
 
-.radar,
+.sonar,
 .sweep {
   position: absolute;
 }
-.radar {
+.sonar {
   overflow: hidden;
   height: 100%;
   width: 100%;

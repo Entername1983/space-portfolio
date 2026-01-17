@@ -14,6 +14,10 @@
 body[data-orientation="portrait"] {
   background-color: black;
 
+  #svg-spaceship-overlay-desktop {
+    display: none;
+  }
+
   .wrapper {
     aspect-ratio: auto;
     height: 100dvh;
@@ -63,7 +67,7 @@ body[data-orientation="portrait"] {
     margin-right: auto;
   }
 
-  #radar-container {
+  #sonar-container {
     z-index: 300;
     border-radius: 100px;
     position: relative;
@@ -87,7 +91,7 @@ body[data-orientation="portrait"] {
     opacity: 0;
   }
 
-  #control-pannel-buttons {
+  /* #control-pannel-row {
     position: absolute;
     position-anchor: --control-pannel;
     top: anchor(top);
@@ -102,8 +106,8 @@ body[data-orientation="portrait"] {
     z-index: 40;
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-  .control-btn {
+  } */
+  /* .control-btn {
     position: relative;
     border: 1px solid grey;
     box-shadow: inset 0 0 2px 0px var(--green-100), 0 0 4px rgba(16, 34, 0, 0.8);
@@ -111,8 +115,8 @@ body[data-orientation="portrait"] {
     background-color: rgb(0, 0, 0);
     border-radius: 0;
     padding: 0.4rem;
-  }
-  .control-btn > svg {
+  } */
+  /* .control-btn > svg {
     display: block;
     stroke: var(--red-800);
     width: 100%;
@@ -184,7 +188,7 @@ body[data-orientation="portrait"] {
   }
   #lightspeed-btn > svg {
     animation-delay: 5s;
-  }
+  } */
 
   /* #control-one {
     position-anchor: --control-pannel;

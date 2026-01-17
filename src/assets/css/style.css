@@ -317,8 +317,8 @@ a:hover {
   pointer-events: none;
   opacity: 1;
   display: block;
-  z-index: 40;
-  background-image: url("../images/space/pilots_seat_1.png");
+  z-index: 50;
+  background-image: url("../images/spaceship/pilot-overlay-desktop.png");
 }
 
 #spaceship-interior-background {
@@ -329,12 +329,25 @@ a:hover {
   width: 100%;
   height: 100%;
   z-index: 38;
-  background-image: url("../images/space/pilots_seat_background.png");
+  /* background-image: url("../images/space/pilots_seat_background.png"); */
   background-size: cover;
   background-position: center;
   pointer-events: none;
   opacity: 1;
 }
+
+#svg-spaceship-overlay-desktop {
+  z-index: 100;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 101%;
+  width: 100%;
+  stroke-width: 2px;
+  stroke: gray;
+  filter: url(#hyper-glow);
+}
+
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;

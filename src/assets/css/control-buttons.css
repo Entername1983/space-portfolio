@@ -1,76 +1,9 @@
-#control-projects {
-  position: absolute;
-  bottom: 9%;
-  left: 56%;
-  width: 6%;
-  transform: translate(-50%, -43%);
-  cursor: pointer;
-  opacity: 1;
-  background-color: rgba(93, 187, 5, 0.5);
-  z-index: 39;
-  aspect-ratio: 1 / 1;
-  pointer-events: auto;
-}
-#control-projects:hover {
-  background-color: rgba(93, 187, 5, 0.9);
-}
-#control-log {
-  position: absolute;
-  bottom: 12%;
-  left: 48%;
-  width: 8%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  opacity: 1;
-  background-color: rgba(5, 199, 212, 0.5);
-  z-index: 39;
-  aspect-ratio: 8 / 4;
-  pointer-events: auto;
-}
-#control-log:hover {
-  background-color: rgba(5, 199, 212, 0.9);
-}
-#control-acorn {
-  position: absolute;
-  bottom: 8%;
-  left: 49%;
-  width: 7%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  opacity: 1;
-  background-color: rgba(171, 5, 212, 0.5);
-  z-index: 39;
-  aspect-ratio: 2 / 0.8;
-  pointer-events: auto;
-}
-#control-acorn:hover {
-  background-color: rgba(171, 5, 212, 0.9);
-}
-
-/** Control buttons **/
-
-#lightspeed-btn {
-  position: absolute;
-  bottom: 10%;
-  left: 39.5%;
-  width: 5%;
-  cursor: pointer;
-  opacity: 1;
-  background-color: rgba(187, 5, 81, 0.5);
-  z-index: 39;
-  aspect-ratio: 1 / 0.8;
-  pointer-events: auto;
-}
-#lightspeed-btn:hover {
-  background-color: rgba(245, 6, 6, 0.8);
-}
-
 /** Control Panel Hover Effects **/
 .svg-control-tooltips {
   position: absolute;
   pointer-events: none;
   z-index: 100;
-  height: 30%;
+  height: 300%;
 }
 .svg-control-text {
   fill: var(--green-100);
@@ -100,7 +33,7 @@
   position-anchor: --log-button;
   bottom: anchor(top);
   right: anchor(right);
-  transform: translate(7%, -10%);
+  transform: translate(37%, -1%);
 }
 #log-btn-svg > polyline {
   stroke-dasharray: 100;
@@ -131,7 +64,7 @@
   position-anchor: --profile-button;
   bottom: anchor(top);
   right: anchor(right);
-  transform: translate(5%, 0%);
+  transform: translate(-3%, 0%);
 }
 
 #bio-btn-svg > polyline {
@@ -164,7 +97,7 @@
   position-anchor: --profile-button;
   bottom: anchor(top);
   right: anchor(right);
-  transform: translate(5%, 0%);
+  transform: translate(-3%, 0%);
 }
 
 #lightspeed-btn-svg > polyline {
@@ -198,7 +131,7 @@
   position-anchor: --profile-button;
   bottom: anchor(top);
   left: anchor(right);
-  transform: translate(-48%, -8%);
+  transform: translate(-23%, -1%);
 }
 #projects-btn-svg > polyline {
   stroke-dasharray: 145;
@@ -229,7 +162,7 @@
   position-anchor: --one-button;
   bottom: anchor(top);
   left: anchor(right);
-  transform: translate(-14%, 0%);
+  transform: translate(-23%, 0%);
 }
 #one-btn-svg > polyline {
   stroke-dasharray: 102;
@@ -261,7 +194,7 @@
   position-anchor: --acorn-button;
   bottom: anchor(top);
   right: anchor(right);
-  transform: translate(30%, -4%);
+  transform: translate(37%, -2%);
 }
 #acorn-btn-svg > polyline {
   stroke-dasharray: 100;
@@ -284,37 +217,140 @@
   opacity: 1;
 }
 
-#control-bio {
-  position: absolute;
-  bottom: 17.5%;
-  left: 40%;
-  width: 3%;
-  cursor: pointer;
-  opacity: 1;
-  background-color: rgba(21, 44, 250, 0.5);
-  z-index: 39;
-  aspect-ratio: 1 / 1;
-  pointer-events: auto;
-}
-#control-bio:hover {
-  background-color: rgba(21, 44, 250, 0.8);
+/* .control-btn > svg {
+  display: none;
+} */
+
+#control-btn-pannel {
+  position: relative;
+  margin: auto;
+  width: 150px;
+  height: 100%;
+  anchor-name: --control-pannel;
+  border: 1px dashed yellow;
+  opacity: 0;
 }
 
-#control-one {
+#control-pannel-row {
   position: absolute;
-  bottom: 1%;
-  left: 40%;
-  width: 19%;
-  cursor: pointer;
-  opacity: 1;
-  background-color: rgba(250, 132, 21, 0.5);
-  z-index: 39;
-  aspect-ratio: 6 / 1;
-  pointer-events: auto;
+  position-anchor: --control-pannel;
+  background-color: none;
+  /* top: anchor(top); */
+  bottom: -2.5%;
+  left: -0.5%;
+  height: 23%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 22% 1fr;
+  /* grid-template-rows: repeat(2, auto); */
+  grid-template-areas: ". center-buttons-0 ."; /* gap: 40px; */
+  z-index: 40;
 }
-.one-button:hover {
-  background-color: rgba(250, 132, 21, 0.8);
+#control-pannel-container {
+  height: 100%;
+  grid-area: center-buttons-0;
+  background-color: black;
+  margin: 4px 22px;
+  display: grid;
+  grid-template-rows: auto;
+  gap: none;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+
+  transform-style: preserve-3d;
 }
-.control-btn > svg {
-  display: none;
+#control-pannel-container::before {
+  height: 120%;
+  width: 120%;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  background-color: black;
+}
+
+/** **/
+.row-one-wrapper,
+.row-two-wrapper {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  .button-wrapper {
+    /** VARS **/
+    --rx: 30deg;
+    --ry: 0deg;
+    --tz: 50px;
+    --primary-color: var(--green-900);
+    --primary-color-light: oklch(from var(--primary-color) 0.7 c h);
+    --primary-shadow: oklch(from var(--primary-color) l c h / 0.5);
+    --secondary-color: var(--green-800);
+    --secondary-color-light: oklch(from var(--secondary-color) 0.7 c h);
+    --secondary-shadow: oklch(from var(--secondary-color) l c h / 0.5);
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--tz));
+    transform-style: preserve-3d;
+
+    .control-btn {
+      cursor: pointer;
+      opacity: 1;
+      z-index: 39;
+      aspect-ratio: 1 / 1;
+      pointer-events: auto;
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
+      padding: 6px;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      box-shadow: 0 4px var(--primary-shadow), 0 40px 20px rgba(0, 0, 0, 0.3);
+      backface-visibility: hidden;
+      min-width: fit-content;
+      min-height: fit-content;
+      svg {
+        stroke: var(--secondary-color);
+        height: 100%;
+        width: 100%;
+        stroke-width: 4px;
+        filter: drop-shadow(0 0 3px var(--secondary-shadow))
+          drop-shadow(0 0 3px var(--secondary-shadow));
+        animation: alien-lang-pulse 20s infinite ease-in-out;
+      }
+      &:hover {
+        /* transform: translateZ(5px); */
+        /* box-shadow: 0 0 20px var(--secondary-shadow); */
+        /* background-color: var(--red-900); */
+        color: var(--secondary-color);
+        svg {
+          stroke: var(--secondary-color);
+          filter: drop-shadow(0 0 3px var(--secondary-color-light))
+            drop-shadow(0 0 3px var(--secondary-shadow));
+          animation: none;
+        }
+      }
+    }
+    &:hover {
+      --tz: 52px;
+    }
+  }
+}
+.row-one-wrapper {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+body[data-orientation="portrait"] {
+  #control-pannel-row {
+    grid-template-columns: 1fr 50% 1fr;
+    padding-top: 14%;
+  }
+  #control-pannel-container {
+    height: 40%;
+  }
 }
