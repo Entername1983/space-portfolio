@@ -167,3 +167,24 @@
     white-space: wrap;
   }
 }
+
+@keyframes neon-color-change {
+  0% {
+    stroke: var(--color-one);
+  }
+  20% {
+    stroke: var(--color-two);
+  }
+  40% {
+    stroke: var(--color-three);
+  }
+  60% {
+    stroke: var(--color-four);
+  }
+  80% {
+    stroke: var(--color-five);
+  }
+  100% {
+    stroke: var(--color-one);
+  }
+}

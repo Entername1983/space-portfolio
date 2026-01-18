@@ -234,39 +234,47 @@
 #control-pannel-row {
   position: absolute;
   position-anchor: --control-pannel;
-  background-color: none;
+  background-color: transparent;
   /* top: anchor(top); */
-  bottom: -2.5%;
+  bottom: 0%;
   left: -0.5%;
   height: 23%;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 22% 1fr;
-  /* grid-template-rows: repeat(2, auto); */
-  grid-template-areas: ". center-buttons-0 ."; /* gap: 40px; */
+  grid-template-areas: ". center-buttons-0 .";
   z-index: 40;
-}
-#control-pannel-container {
-  height: 100%;
-  grid-area: center-buttons-0;
-  background-color: black;
-  margin: 4px 22px;
-  display: grid;
-  grid-template-rows: auto;
-  gap: none;
-  perspective: 1000px;
-  -webkit-perspective: 1000px;
-
+  perspective: 1200px;
   transform-style: preserve-3d;
 }
+#control-pannel-container {
+  --rx: 30deg;
+  --ry: 0deg;
+  --tz: 50px;
+  height: 100%;
+  border: none;
+  grid-area: center-buttons-0;
+  background-color: transparent;
+  margin: 20px 22px;
+  display: grid;
+  grid-template-rows: auto;
+  padding: 10px;
+  gap: 0px;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--tz));
+  transform-style: preserve-3d;
+  z-index: 1;
+}
 #control-pannel-container::before {
-  height: 120%;
-  width: 120%;
+  height: 110%;
+  width: 110%;
   content: "";
   position: absolute;
   bottom: 0;
-  left: -10%;
+  left: -5%;
   background-color: black;
+  transform: translateZ(-1px);
 }
 
 /** **/
@@ -280,13 +288,13 @@
   transform-style: preserve-3d;
   .button-wrapper {
     /** VARS **/
-    --rx: 30deg;
+    --rx: 00deg;
     --ry: 0deg;
-    --tz: 50px;
-    --primary-color: var(--green-900);
+    --tz: 0px;
+    --primary-color: var(--red-900);
     --primary-color-light: oklch(from var(--primary-color) 0.7 c h);
     --primary-shadow: oklch(from var(--primary-color) l c h / 0.5);
-    --secondary-color: var(--green-800);
+    --secondary-color: var(--red-800);
     --secondary-color-light: oklch(from var(--secondary-color) 0.7 c h);
     --secondary-shadow: oklch(from var(--secondary-color) l c h / 0.5);
 
@@ -309,7 +317,9 @@
       justify-content: center;
       align-items: center;
       background: black;
-      box-shadow: 0 4px var(--primary-shadow), 0 40px 20px rgba(0, 0, 0, 0.3);
+      box-shadow:
+        0 4px var(--primary-shadow),
+        0 40px 20px rgba(0, 0, 0, 0.3);
       backface-visibility: hidden;
       min-width: fit-content;
       min-height: fit-content;
@@ -336,7 +346,7 @@
       }
     }
     &:hover {
-      --tz: 52px;
+      --tz: 5px;
     }
   }
 }
@@ -348,9 +358,66 @@
 body[data-orientation="portrait"] {
   #control-pannel-row {
     grid-template-columns: 1fr 50% 1fr;
-    padding-top: 14%;
+    padding-top: 10%;
   }
   #control-pannel-container {
-    height: 40%;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    --rx: 0deg;
+    --ry: 0deg;
+    --tz: 0px;
+    /* border: 1px solid oklch(from var(--red-800) 0.7 c h);
+    filter: drop-shadow(0 0 3px var(--red-800)); */
+
+    border-radius: 6px;
+    background-color: transparent;
+    margin: 6px;
+    gap: 10%;
+    /* transform: translateX(-50%); */
   }
+  #control-pannel-container::before {
+    content: none;
+  }
+  .control-btn {
+    svg {
+      max-height: 30px;
+      max-width: 30px;
+    }
+  }
+  /* @media (min-width: 380px) {
+    #control-pannel-container {
+      left: 7%;
+    }
+  }
+  @media (min-width: 430px) {
+    #control-pannel-container {
+      left: 10%;
+    }
+  } */
+}
+
+/** Stagger button animations **/
+
+/* First Row Buttons */
+.row-one-wrapper .button-wrapper:nth-child(1) svg {
+  animation-delay: 0.2s;
+}
+.row-one-wrapper .button-wrapper:nth-child(2) svg {
+  animation-delay: 0.4s;
+}
+.row-one-wrapper .button-wrapper:nth-child(3) svg {
+  animation-delay: 0.6s;
+}
+
+/* Second Row Buttons */
+.row-two-wrapper .button-wrapper:nth-child(1) svg {
+  animation-delay: 0.8s;
+}
+.row-two-wrapper .button-wrapper:nth-child(2) svg {
+  animation-delay: 1s;
+}
+.row-two-wrapper .button-wrapper:nth-child(3) svg {
+  animation-delay: 1.2s;
 }

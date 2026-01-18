@@ -40,7 +40,9 @@
   visibility: hidden;
   position: relative;
   opacity: 0;
-  transition: opacity 2s ease-in-out, visibility 0s 2s;
+  transition:
+    opacity 2s ease-in-out,
+    visibility 0s 2s;
 }
 .display-content.active {
   visibility: visible;
@@ -99,9 +101,9 @@ https://codepen.io/thebabydino/pen/AqbWeE
 
 #sonar-container {
   position: absolute;
-  bottom: 0.75%;
-  left: 27.5%;
-  width: 11%;
+  bottom: -1.8%;
+  left: 26%;
+  width: 14%;
   aspect-ratio: 1 / 1;
 }
 
@@ -114,9 +116,11 @@ https://codepen.io/thebabydino/pen/AqbWeE
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.5),
+  box-shadow:
+    0 0 0 1px hsla(0, 0%, 0%, 0.5),
     inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
-  background: repeating-radial-gradient(
+  background:
+    repeating-radial-gradient(
       transparent 0 23px,
       #287a33 24px 26px,
       #0000 27px
@@ -126,7 +130,11 @@ https://codepen.io/thebabydino/pen/AqbWeE
     linear-gradient(90deg, transparent 49.75%, #0e4c42 0 50.25%, transparent 0)
       50% no-repeat,
     linear-gradient(#333, #111);
-  background-size: 100%, 218px 218px, 218px 218px, 100%;
+  background-size:
+    100%,
+    218px 218px,
+    218px 218px,
+    100%;
 }
 .sweep {
   box-sizing: border-box;

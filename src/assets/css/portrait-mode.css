@@ -14,14 +14,19 @@
 body[data-orientation="portrait"] {
   background-color: black;
 
+  #desktop-circuit-board-overlay {
+    display: none;
+  }
+
   #svg-spaceship-overlay-desktop {
     display: none;
   }
 
   .wrapper {
     aspect-ratio: auto;
-    height: 100dvh;
+
     max-width: 500px;
+    height: 100dvh;
     will-change: transform;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -59,7 +64,9 @@ body[data-orientation="portrait"] {
     width: 80px;
     height: 80px;
     border: 1px solid var(--red-800);
-    box-shadow: inset 0 0 10px 0px var(--red-800), 0 0 10px rgba(255, 0, 0, 0.8);
+    box-shadow:
+      inset 0 0 10px 0px var(--red-800),
+      0 0 10px rgba(255, 0, 0, 0.8);
     align-self: center;
     bottom: auto;
     left: auto;
@@ -76,7 +83,9 @@ body[data-orientation="portrait"] {
     left: auto;
     aspect-ratio: 1 / 1;
     border: 1px solid var(--red-800);
-    box-shadow: inset 0 0 10px 0px var(--red-800), 0 0 10px rgba(255, 0, 0, 0.8);
+    box-shadow:
+      inset 0 0 10px 0px var(--red-800),
+      0 0 10px rgba(255, 0, 0, 0.8);
     align-self: center;
     margin-left: auto;
     margin-right: auto;
