@@ -356,6 +356,10 @@
   display: none;
   transition: opacity 0.3s ease-in-out;
 }
+#project-left-arrow:hover.active,
+#project-right-arrow:hover.active {
+  fill: var(--green-200);
+}
 #project-right-arrow {
   right: 0;
   left: auto;
@@ -368,9 +372,9 @@
 
 .feature-container:has(button.active) .feature-content-container {
   overflow: hidden;
-  transition-delay: 200ms;
+  /* transition-delay: 200ms;
   animation: slideOpen 0.6s ease-in-out;
-  animation-delay: 200ms;
+  animation-delay: 200ms; */
 }
 
 .feature-container:has(#tech-btn.active) .tech-content {

@@ -1,12 +1,18 @@
+import aiEchoesScreenshot from "../assets/images/screenshots/ai-echoes-screenshot.webp";
+import blogScreenshot from "../assets/images/screenshots/blog-screenshot.webp";
+import cephadexScreenshot from "../assets/images/screenshots/cephadex-screenshot.webp";
+import chairTheFedScreenshot from "../assets/images/screenshots/chair-the-fed-screenshot.webp";
+import spacePortfolioScreenshot from "../assets/images/screenshots/space-portfolio-screenshot.webp";
+import starterRepoScreenshot from "../assets/images/screenshots/starter-repo-screenshot.webp";
+import swiftSwatchScreenshot from "../assets/images/screenshots/swift-swatch-screenshot.webp";
 import type { IProjectList } from "./types";
-
 const PROJECTS: IProjectList = {
   cephadex: {
     id: "cephadex",
     name: "Cephadex",
     description:
       "An educational platform allowing for the creation of flashcards, quizzes, games, & tests",
-    screenshotUrl: "../src/assets/images/screenshots/cephadex-screenshot.webp",
+    screenshotUrl: cephadexScreenshot,
     status: "Online",
     link: "https://cephadex.com",
     featureContainer: {
@@ -37,8 +43,7 @@ const PROJECTS: IProjectList = {
     id: "swift-swatch",
     name: "Swift Swatch",
     description: "A UI designer allowing for the quick development of mock ups",
-    screenshotUrl:
-      "../src/assets/images/screenshots/swift-swatch-screenshot.webp",
+    screenshotUrl: swiftSwatchScreenshot,
     status: "Online",
     link: "https://swiftswatch.com",
     featureContainer: {
@@ -64,8 +69,7 @@ const PROJECTS: IProjectList = {
     id: "cognaite",
     name: "Cognaite",
     description: "A starter template on which to build projects",
-    screenshotUrl:
-      "../src/assets/images/screenshots/starter-repo-screenshot.webp",
+    screenshotUrl: starterRepoScreenshot,
     status: "Online",
     link: "https://cognaite.com",
     github: "https://github.com/Entername1983/Starter",
@@ -90,8 +94,7 @@ const PROJECTS: IProjectList = {
     id: "chair-the-fed",
     name: "Chair the Fed",
     description: "A monetary policy simulation game",
-    screenshotUrl:
-      "../src/assets/images/screenshots/chair-the-fed-screenshot.webp",
+    screenshotUrl: chairTheFedScreenshot,
     status: "Online",
     link: "https://entername1983.github.io/Chair-the-Fed/",
     github: "https://github.com/Entername1983/Chair-the-Fed",
@@ -110,8 +113,7 @@ const PROJECTS: IProjectList = {
     name: "Space Themed Portfolio",
     description:
       "This doubles as my portfolio as well as my attempt to go back to basics and build something from scratch. It strengthened my knowledge of webdev since I was previously using React.",
-    screenshotUrl:
-      "../src/assets/images/screenshots/space-portfolio-screenshot.webp",
+    screenshotUrl: spacePortfolioScreenshot,
     status: "Online",
     link: "https://space-portfolio.cognaite.com",
     featureContainer: {
@@ -129,7 +131,7 @@ const PROJECTS: IProjectList = {
     name: "Neverending AI Story",
     description:
       "A never ending story in the form of the game of exquisite cadavre told by many different AIs",
-    screenshotUrl: "../src/assets/images/screenshots/ai-echoes-screenshot.webp",
+    screenshotUrl: aiEchoesScreenshot,
     status: "Offline",
     github: "https://github.com/Entername1983/aiechoes",
     featureContainer: {
@@ -146,7 +148,7 @@ const PROJECTS: IProjectList = {
     id: "blog",
     name: "Personal Blog",
     description: "My personal blog, where I write about various topics.",
-    screenshotUrl: "../src/assets/images/screenshots/blog-screenshot.webp",
+    screenshotUrl: blogScreenshot,
     status: "Online",
     link: "https://blog.cognaite.com",
     featureContainer: {
