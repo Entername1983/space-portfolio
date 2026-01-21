@@ -155,72 +155,66 @@
         data-action="PROJECT_VIEW"
         data-id="project-feature-container">
         <div class="feature-button-container">
-          <button id="tech-btn" class="active">
+          <button
+            id="tech-btn"
+            class=""
+            data-action="PROJECT_CLICKS"
+            data-id="tech-btn">
             <span class="feature-title-icon">
               <svg
+                class="icon-title-one"
                 width="34"
                 height="34"
                 viewBox="0 0 34 34"
-                fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M23.5 6.79395V11.2061L19.5 13.4277L15.5 11.2061V6.79395L19.5 4.57227L23.5 6.79395Z"
-                  fill="#97EB22"
-                  fill-opacity="0.6"
-                  stroke="#97EB22" />
+                  d="M23.5 6.79395V11.2061L19.5 13.4277L15.5 11.2061V6.79395L19.5 4.57227L23.5 6.79395Z" />
                 <path
-                  d="M23.5 22.7939V27.2061L19.5 29.4277L15.5 27.2061V22.7939L19.5 20.5723L23.5 22.7939Z"
-                  stroke="#97EB22" />
+                  d="M18.5 14.7939V19.2061L14.5 21.4277L10.5 19.2061V14.7939L14.5 12.5723L18.5 14.7939Z" />
                 <path
-                  d="M18.5 14.7939V19.2061L14.5 21.4277L10.5 19.2061V14.7939L14.5 12.5723L18.5 14.7939Z"
-                  stroke="#97EB22" />
+                  d="M23.5 22.7939V27.2061L19.5 29.4277L15.5 27.2061V22.7939L19.5 20.5723L23.5 22.7939Z" />
               </svg>
             </span>
             Tech
           </button>
-          <button id="feat-btn" class="">
+          <button
+            id="feat-btn"
+            class="active"
+            data-action="PROJECT_CLICKS"
+            data-id="feat-btn">
             <span class="feature-title-icon">
               <svg
+                class="icon-title-two"
                 width="34"
                 height="34"
                 viewBox="0 0 34 34"
-                fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M23.5 6.79395V11.2051L19.5 13.4268L15.5 11.2051V6.79395L19.5 4.57227L23.5 6.79395Z"
-                  stroke="#97EB22" />
+                  d="M23.5 6.79395V11.2051L19.5 13.4268L15.5 11.2051V6.79395L19.5 4.57227L23.5 6.79395Z" />
                 <path
-                  d="M23.5 22.7939V27.2051L19.5 29.4268L15.5 27.2051V22.7939L19.5 20.5723L23.5 22.7939Z"
-                  stroke="#97EB22" />
+                  d="M18.5 14.7939V19.2051L14.5 21.4268L10.5 19.2051V14.7939L14.5 12.5723L18.5 14.7939Z" />
                 <path
-                  d="M18.5 14.7939V19.2051L14.5 21.4268L10.5 19.2051V14.7939L14.5 12.5723L18.5 14.7939Z"
-                  fill="#97EB22"
-                  fill-opacity="0.6"
-                  stroke="#97EB22" />
+                  d="M23.5 22.7939V27.2051L19.5 29.4268L15.5 27.2051V22.7939L19.5 20.5723L23.5 22.7939Z" />
               </svg>
             </span>
 
             Feature
           </button>
-          <button id="misc-btn">
+          <button id="misc-btn" data-action="PROJECT_CLICKS" data-id="misc-btn">
             <span class="feature-title-icon">
               <svg
+                class="icon-title-three"
                 width="34"
                 height="34"
                 viewBox="0 0 34 34"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M23.5 6.79395V11.2051L19.5 13.4268L15.5 11.2051V6.79395L19.5 4.57227L23.5 6.79395Z"
-                  stroke="#97EB22" />
+                  d="M23.5 6.79395V11.2051L19.5 13.4268L15.5 11.2051V6.79395L19.5 4.57227L23.5 6.79395Z" />
                 <path
-                  d="M23.5 22.7939V27.2051L19.5 29.4268L15.5 27.2051V22.7939L19.5 20.5723L23.5 22.7939Z"
-                  fill="#97EB22"
-                  fill-opacity="0.6"
-                  stroke="#97EB22" />
+                  d="M18.5 14.7939V19.2051L14.5 21.4268L10.5 19.2051V14.7939L14.5 12.5723L18.5 14.7939Z" />
                 <path
-                  d="M18.5 14.7939V19.2051L14.5 21.4268L10.5 19.2051V14.7939L14.5 12.5723L18.5 14.7939Z"
-                  stroke="#97EB22" />
+                  d="M23.5 22.7939V27.2051L19.5 29.4268L15.5 27.2051V22.7939L19.5 20.5723L23.5 22.7939Z" />
               </svg>
             </span>
             Notes
@@ -228,12 +222,12 @@
         </div>
         <div
           class="feature-content-container"
-          data-action="PROJECT_VIEW"
+          data-action=""
           data-id="project-feature-container">
           <ul
             id="project-tech-content"
-            class="tech-content"
-            data-action="PROJECT_VIEW"
+            class="tech-content active"
+            data-action=""
             data-id="project-tech-content">
             <li>FastAPI backend with RESTful API</li>
             <li>React frontend with Redux for state management</li>
@@ -244,25 +238,24 @@
           <ul
             id="project-features-content"
             class="feature-content active"
-            data-action="PROJECT_VIEW"
+            data-action=""
             data-id="project-feature-content">
-              <li>FastAPI backend with RESTful API</li>
-              <li>React frontend with Redux for state management</li>
-              <li>PostgreSQL database for data storage</li>
-              <li>Redis for caching and session management</li>
-              <li>Deployed on VPS using Docker containers</li>
+            <li>FastAPI backend with RESTful API</li>
+            <li>React frontend with Redux for state management</li>
+            <li>PostgreSQL database for data storage</li>
+            <li>Redis for caching and session management</li>
+            <li>Deployed on VPS using Docker containers</li>
           </ul>
           <ul
             id="project-notes-content"
             class="notes-content"
-            data-action="PROJECT_VIEW"
+            data-action=""
             data-id="project-notes-content">
-            <ul>
-              <li>FastAPI backend with RESTful API</li>
-              <li>React frontend with Redux for state management</li>
-              <li>PostgreSQL database for data storage</li>
-              <li>Redis for caching and session management</li>
-              <li>Deployed on VPS using Docker containers</li>
+            <li>FastAPI backend with RESTful API</li>
+            <li>React frontend with Redux for state management</li>
+            <li>PostgreSQL database for data storage</li>
+            <li>Redis for caching and session management</li>
+            <li>Deployed on VPS using Docker containers</li>
           </ul>
         </div>
       </div>

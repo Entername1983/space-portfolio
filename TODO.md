@@ -6,9 +6,11 @@
 
 Projects Menu
 
-- Projects menu, text underline shouldn't go the entire width of the row, just until text
-- On open text shouldn't transform
 - Finish individual Project pages
+- Hover on links should show underline
+- If repo is private should have disabled icon
+- Even spacing
+- Need better back button + placement
 
 Display
 
@@ -29,3 +31,10 @@ Acorn, One
 - About this project
 - Work?
 - Make assets available, like alien glyphs
+
+DONE
+
+Projects Menu
+
+- Projects menu, text underline shouldn't go the entire width of the row, just until text
+- On open text shouldn't transform

@@ -1,5 +1,7 @@
 import { type IClickable } from "./types";
 
+import { DELEGATED_CLICKABLES } from "./clickables-data";
+
 const CONTROL_HOVERABLES: IClickable[] = [
   {
     elementId: "#control-projects",
@@ -56,4 +58,4 @@ const CONTROL_HOVERABLES: IClickable[] = [
     data: {},
   },
 ];
-export const HOVERABLES = [...CONTROL_HOVERABLES];
+export const HOVERABLES = [...CONTROL_HOVERABLES, ...DELEGATED_CLICKABLES];

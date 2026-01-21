@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const instance = new Hoverables(item);
     hoverableInstances[key] = instance;
   });
+  console.log("Hoverable Instances", hoverableInstances);
 
   (function setGlowEffectRx() {
     const glowEffects = document.querySelectorAll(".glow-effect");

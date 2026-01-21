@@ -38,16 +38,16 @@ export class Hoverables {
 
     if (this.domElement) {
       this.domElement.addEventListener(
-        "mouseenter",
-        this.handleEvent as EventListener
+        "mouseover",
+        this.handleEvent as EventListener,
       );
       this.domElement.addEventListener(
         "mouseleave",
-        this.handleEvent as EventListener
+        this.handleEvent as EventListener,
       );
     } else {
       console.warn(
-        `Hoverables: Could not find DOM element with selector: ${element.elementId}`
+        `Hoverables: Could not find DOM element with selector: ${element.elementId}`,
       );
     }
   }
@@ -68,11 +68,11 @@ export class Hoverables {
     if (this.domElement) {
       this.domElement.removeEventListener(
         "mouseenter",
-        this.handleEvent as EventListener
+        this.handleEvent as EventListener,
       );
       this.domElement.removeEventListener(
         "mouseleave",
-        this.handleEvent as EventListener
+        this.handleEvent as EventListener,
       );
     }
   }

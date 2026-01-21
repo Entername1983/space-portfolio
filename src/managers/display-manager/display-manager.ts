@@ -31,7 +31,7 @@ export class DisplayManager {
     DisplayManager.instance = this;
     this.display = document.querySelector("#spaceship-display");
     this.displayContentContainer = document.querySelector(
-      "#display-content-container"
+      "#display-content-container",
     );
     this.displayIsOpen = false;
     this.DISPLAY_CONTENT_MAPPINGS = DISPLAY_CONTENT_MAPPINGS;
@@ -48,7 +48,7 @@ export class DisplayManager {
     this.clearScreenContent();
     if (!this.displayIsOpen) this.openScreen();
     const templateString = await this.fetchDisplayContentTemplate(
-      clickable.elementId
+      clickable.elementId,
     );
     if (this.displayContentContainer == null) {
       console.error(`missing display content container element`);
@@ -56,7 +56,7 @@ export class DisplayManager {
     }
     this.displayContentContainer.insertAdjacentHTML(
       "beforeend",
-      templateString
+      templateString,
     );
     this.displayContent();
     this.sortToSpecialContent(clickable);

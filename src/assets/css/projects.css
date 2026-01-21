@@ -54,7 +54,7 @@
 
     #project-content.active {
       display: flex;
-      gap: 20px;
+      gap: 24px;
       flex-direction: column;
     }
 
@@ -65,8 +65,8 @@
       gap: 20px;
     }
     #project-description {
-      padding-top: 10px;
-      padding-bottom: 20px;
+      /* padding-top: 10px;
+      padding-bottom: 20px; */
       flex: 1 1 0px;
     }
     #project-links-container {
@@ -92,13 +92,12 @@
       width: 50%;
       border-radius: 10px;
       overflow: hidden;
-      padding: 10px;
     }
     img {
       display: block;
-      box-shadow:
+      /* box-shadow:
         0 0 10px 2px var(--red-800),
-        inset 0 0 40px var(--red-900);
+        inset 0 0 40px var(--red-900); */
     }
   }
 }
@@ -145,7 +144,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  filter: opacity(50%);
+  filter: opacity(80%);
 }
 .projects-screenshot:hover {
   filter: opacity(100%);
@@ -191,6 +190,10 @@
 .feature-button-container {
   display: grid;
   gap: 20px;
+  --dark-red: var(--red-900);
+  --med-red: var(--red-700);
+  --light-green: var(--green-200);
+  --med-green: var(--green-400);
   button {
     position: relative;
     display: flex;
@@ -201,12 +204,68 @@
     background-color: black;
     border-radius: 10px;
     color: white;
-    border: 2px solid var(--red-900);
-    font-size: 24px;
+    border: 2px solid var(--dark-red);
+    font-size: 18px;
     z-index: 5;
+    transition: border-color 300ms ease-in-out;
+    .feature-title-icon {
+      --border-color: var(--med-red);
+      --fill-color: transparent;
+      --fill-color-active: var(--dark-red);
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      [class^="icon-title-"] {
+        --fill-color-1: var(--fill-color);
+        --fill-color-2: var(--fill-color);
+        --fill-color-3: var(--fill-color);
+        fill-opacity: 0.6;
+        stroke: var(--border-color);
+        transition:
+          fill 300ms ease-in-out,
+          stroke 300ms ease-in-out,
+          opacity 300ms ease-in-out;
+        path {
+          transition: 0.3s;
+          &:nth-child(1) {
+            fill: var(--fill-color-1);
+          }
+          &:nth-child(2) {
+            fill: var(--fill-color-2);
+          }
+          &:nth-child(3) {
+            fill: var(--fill-color-3);
+          }
+        }
+      }
+      .icon-title-one > path:nth-child(1) {
+        --fill-color-1: var(--fill-color-active);
+      }
+      .icon-title-two > path:nth-child(2) {
+        --fill-color-2: var(--fill-color-active);
+      }
+      .icon-title-three > path:nth-child(3) {
+        --fill-color-3: var(--fill-color-active);
+      }
+    }
+    &::before {
+      position: absolute;
+      right: -101px;
+      top: 50%;
+      z-index: 100;
+      content: "";
+      height: 1px;
+      width: 100px;
+      background-color: var(--dark-red);
+      animation: electricPulse 10s ease-in-out;
+      transition: background-color 300ms ease-in-out;
+      background-size: 200% 100%;
+    }
+
     &.active,
     &:hover {
-      border-color: var(--green-200);
+      border-color: var(--light-green);
       &::before {
         background: linear-gradient(
           90deg,
@@ -217,38 +276,26 @@
         background-size: 200% 100%;
         animation: sparkTravel 1.5s infinite linear;
       }
-    }
-    span {
-      display: flex;
-      justify-content: start;
-      align-items: center;
-    }
-    &::before {
-      position: absolute;
-      right: -101px;
-      top: 50%;
-      z-index: 100;
-      content: "";
-      height: 1px;
-      width: 100px;
-      color: var(--green-200);
-      background-color: var(--red-800);
-      animation: electricPulse 10s ease-in-out;
-
-      background-size: 200% 100%;
+      .feature-title-icon {
+        --border-color: var(--light-green);
+        --fill-color: transparent;
+        --fill-color-active: var(--med-green);
+      }
     }
   }
 }
 
 .feature-content-container {
-  padding: 10px 20px;
-  border: 2px solid var(--green-200);
+  --border-color: var(--green-200);
+  padding: 20px 40px;
+  border: 2px solid var(--border-color);
   display: grid;
   grid-template-areas: "stack";
   background-color: black;
   border-radius: 10px;
   max-height: 200px;
   z-index: 6;
+  color: white;
   ul {
     margin: 0px;
     padding: 0px;
@@ -256,12 +303,16 @@
     flex-direction: column;
     gap: 10px;
     flex-wrap: wrap;
-    height: 180px;
+    height: 160px;
   }
   li {
     list-style: none;
     position: relative;
     padding-left: 20px;
+    cursor: default;
+  }
+  li:hover {
+    color: var(--border-color);
   }
   li::before {
     position: absolute;
@@ -271,7 +322,7 @@
     height: 8px;
     width: 8px;
     border-radius: 100px;
-    border: 1px solid green;
+    border: 1px solid var(--border-color);
     background-color: black;
   }
 }

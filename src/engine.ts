@@ -1,5 +1,5 @@
 import { initCanvas } from "./canvas-animations";
-import type { IClickable, TElementId } from "./data/types";
+import type { IClickable, IInteractionResult, TElementId } from "./data/types";
 import { AlienAssistantManager } from "./managers/alien-manager/alien-manager";
 import { DisplayManager } from "./managers/display-manager/display-manager";
 import { IntroManager } from "./managers/intro-manager/intro-manager";
@@ -55,7 +55,7 @@ export class Engine {
     this.alienAssistantManager.checkStoredAlienSilencePreference();
     document.addEventListener(
       "layoutChanged",
-      this.handleLayoutChange.bind(this)
+      this.handleLayoutChange.bind(this),
     );
   }
   async startIntro() {
@@ -151,9 +151,45 @@ export class Engine {
     console.log("------------Event-------------", event);
     /** This is used to handle interactions of elements that are not initially loaded
      * in the DOM, using data target instead of standard clickable format **/
+
+    switch (event.type) {
+      case "mouseover":
+        this.handleMouseOverEvents(clickable, event);
+        break;
+      case "mouseleave":
+        this.handleMouseLeaveEvents(clickable, event);
+        break;
+      case "click":
+        this.handleClickEvents(clickable, event);
+        break;
+      default:
+        console.log("Unandled Event Type");
+        break;
+    }
+  }
+  handleMouseOverEvents(clickable: IClickable, event: Event) {
+    const actionTargetId = this.extractActionAndTargetFromDelegatedClick(event);
+    if (actionTargetId?.targetId == null) {
+      console.error(`missing actionTargetId`);
+      return;
+    }
+    switch (actionTargetId.action) {
+      case "PROJECT_CLICKS":
+        console.log("handle project click/hover", actionTargetId.targetId);
+        this.displayManager.projectsContentManager.displayFeatureContent(
+          `#${actionTargetId.targetId}`,
+        );
+        break;
+    }
+    return;
+  }
+  handleMouseLeaveEvents(clickable: IClickable, event: Event) {
+    console.log("handling mouse leave events");
+  }
+  handleClickEvents(clickable: IClickable, event: Event) {
     const actionTargetId = this.extractActionAndTargetFromDelegatedClick(event);
     if (actionTargetId == null) {
-      console.error(`missing actionTargetId`);
+      console.error(`missing actionTargetId2`);
       return;
     }
     switch (actionTargetId.action) {
@@ -173,21 +209,23 @@ export class Engine {
       case "PROJECT_NAVIGATION":
         this.displayManager.projectsContentManager.handleProjectNavigation(
           // we know action is not null sinc
-          actionTargetId.targetId
+          actionTargetId.targetId,
         );
         break;
+      case "PROJECT_CLICKS":
+        console.log("REACHED PROJECT CLICKS");
       case "IGNORE":
         return;
       default:
         console.error(
-          `unhandled action for delegated interaction: ${actionTargetId.action}`
+          `unhandled action for delegated interaction: ${actionTargetId.action}`,
         );
         break;
     }
   }
-  extractActionAndTargetFromDelegatedClick(event: Event) {
-    // const commandElement2 = event.target.closest("[data-action]");
-    // console.log("commandElement2", commandElement2);
+  extractActionAndTargetFromDelegatedClick(
+    event: Event,
+  ): undefined | IInteractionResult {
     if (event.target == null) {
       console.error(`missing event target`);
       return;
@@ -206,8 +244,15 @@ export class Engine {
       return;
     }
     const action = commandElement.dataset.action;
+    if (action == null) return;
     const targetId = commandElement.dataset.id;
-    return { action: action, targetId: targetId };
+    if (typeof targetId === "string") {
+      return { action: action, targetId: targetId };
+    }
+    if (targetId == null) {
+      return { action: action, targetId: targetId };
+    }
+    return;
   }
   handleViewProject(projectName: string) {
     this.addClickToList(`#${projectName}`);
@@ -228,13 +273,13 @@ export class Engine {
     }
     if (
       this.spaceSceneManager.checkIfActiveClickHasSceneMapping(
-        state.activeClick
+        state.activeClick,
       ) === true
     ) {
       this.spaceSceneManager.returnToSpaceship(state.activeClick);
     } else {
       const lastValidElement = this.spaceSceneManager.findLastValidSceneElement(
-        state.clickList
+        state.clickList,
       );
       if (lastValidElement == null) {
         console.error(`no valid scene element found in click list`);
@@ -245,7 +290,7 @@ export class Engine {
   }
   handleViewLog(actionTargetId) {
     this.displayManager.logContentManager.handleDelegatedInteraction(
-      actionTargetId
+      actionTargetId,
     );
   }
   toggleLightSpeed(clickable: IClickable, event: MouseEvent) {

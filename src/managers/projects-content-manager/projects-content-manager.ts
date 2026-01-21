@@ -1,5 +1,5 @@
 import PROJECTS, { type TProjectKey } from "../../data/projects";
-import type { IProject, IProjectList } from "../../data/types";
+import type { IProject, IProjectList, TElementId } from "../../data/types";
 import { fetchElementByID } from "../../util/utility";
 import { MonitorManager } from "../monitor-manager/monitor-manager";
 type TValidElements = Element[];
@@ -20,6 +20,16 @@ export class ProjectsContentManager {
     });
   }
 
+  displayFeatureContent(targetId: TElementId) {
+    console.log("displaying feature content");
+    const btnToActivate = fetchElementByID(targetId);
+    btnToActivate.classList.add("active");
+    const listOfButtons = ["#tech-btn", "#feat-btn", "#misc-btn"] as const;
+    const buttonsToDeactivate = listOfButtons.filter((id) => id !== targetId);
+    buttonsToDeactivate.forEach((id) => {
+      fetchElementByID(id).classList.remove("active");
+    });
+  }
   revealMainMenu() {
     const mainMenu = fetchElementByID("#projects-main-menu");
     gsap.to(mainMenu, {

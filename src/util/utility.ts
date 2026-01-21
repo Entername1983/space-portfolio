@@ -18,6 +18,12 @@ export function fetchElementByID(id: TElementId): Element {
   return element;
 }
 
+type HashString = `#${string}`;
+
+export function isHashString(value: string): value is HashString {
+  return value.startsWith("#");
+}
+
 export function progressiveTextDisplayAnimation(contentElement) {
   console.log("Starting progressive text display animation");
   console.log("contentElement:", contentElement);
@@ -51,7 +57,7 @@ export function progressiveTextDisplayAnimation(contentElement) {
           text: generateCorruptedText(originalText.length),
           ease: "none",
         },
-        `+=${index * 0.05}`
+        `+=${index * 0.05}`,
       );
     }
 
@@ -62,7 +68,7 @@ export function progressiveTextDisplayAnimation(contentElement) {
         text: originalText,
         ease: "none",
       },
-      `+=${index * 0.05}`
+      `+=${index * 0.05}`,
     );
   });
 
