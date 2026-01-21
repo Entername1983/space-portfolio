@@ -74,10 +74,17 @@
       display: flex;
       flex-direction: column;
       padding: 10px;
-
-      div {
+      gap: 4px;
+      .space-between {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        .links-section {
+          padding: 0;
+        }
+      }
+      .is-disabled {
+        cursor: not-allowed;
       }
     }
 
@@ -89,7 +96,9 @@
     }
     img {
       display: block;
-      box-shadow: 0 0 10px 2px var(--red-800), inset 0 0 40px var(--red-900);
+      box-shadow:
+        0 0 10px 2px var(--red-800),
+        inset 0 0 40px var(--red-900);
     }
   }
 }
@@ -129,7 +138,6 @@
 }
 #projects-main-menu li {
   font-size: 1.6rem;
-  width: 100%;
 }
 
 .projects-screenshot {
@@ -170,114 +178,110 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
   max-width: 800px;
+  gap: 50px;
 }
-
+@keyframes sparkTravel {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: -100% 0%;
+  }
+}
 .feature-button-container {
   display: grid;
+  gap: 20px;
   button {
     position: relative;
-    font-family: Orbitron;
-    padding: 16px 20px;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 4px 20px;
     cursor: pointer;
     background-color: black;
-    /*     border: 1px solid oklch(from var(--green-200) 30% calc(c / 2) h); */
-    border-radius: 10px 0px 0px 10px;
-    color: white;
-    border: none;
-    border-left: 2px solid var(--green-200);
-    z-index: 5;
-  }
-  button::before {
-    content: "";
-    position: absolute;
-    background-color: black;
-    top: -10px;
-    bottom: -10px;
-    left: 10px;
-    right: -10px;
-    z-index: -1;
-    opacity: 0;
-  }
-  button.active::before {
-    opacity: 1;
-  }
-  button::after {
-    content: "";
-    position: absolute;
-    top: -10px;
-    bottom: -10px;
-    left: -10px;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    opacity: 1;
-  }
-  button.active::after {
-    opacity: 0;
-  }
-  button.active {
-    z-index: 3;
-    color: var(--green-200);
-  }
-  .empty-row {
-    box-sizing: border-box;
-    position: relative;
-    justify-self: end;
     border-radius: 10px;
-    min-height: 20px;
-    border: 1px solid var(--green-200);
-    height: 100%;
-    width: 150px;
-    border-radius: 0px 10px 10px 0px;
-    border-left: none;
-    z-index: 4;
-  }
-  .empty-row:first-child {
-    border-top: none;
-  }
-  .empty-row:last-of-type {
-    border-bottom: none;
-  }
-  .empty-row:first-child::before {
-    content: "";
-    position: absolute;
-    background-color: black;
-    top: -10px;
-    right: 0;
-    height: 20px;
-    width: 20px;
-  }
+    color: white;
+    border: 2px solid var(--red-900);
+    font-size: 24px;
+    z-index: 5;
+    &.active,
+    &:hover {
+      border-color: var(--green-200);
+      &::before {
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--green-200) 50%,
+          transparent 100%
+        );
+        background-size: 200% 100%;
+        animation: sparkTravel 1.5s infinite linear;
+      }
+    }
+    span {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+    &::before {
+      position: absolute;
+      right: -101px;
+      top: 50%;
+      z-index: 100;
+      content: "";
+      height: 1px;
+      width: 100px;
+      color: var(--green-200);
+      background-color: var(--red-800);
+      animation: electricPulse 10s ease-in-out;
 
-  .empty-row:last-of-type::before {
-    content: "";
-    position: absolute;
-    background-color: black;
-    bottom: -10px;
-    right: 0;
-    height: 20px;
-    width: 20px;
+      background-size: 200% 100%;
+    }
   }
 }
 
 .feature-content-container {
-  padding: 20px;
-  border: 1px solid var(--green-200);
+  padding: 10px 20px;
+  border: 2px solid var(--green-200);
   display: grid;
   grid-template-areas: "stack";
   background-color: black;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
+  max-height: 200px;
+  z-index: 6;
+  ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+    height: 180px;
+  }
+  li {
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+  }
+  li::before {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    content: "";
+    height: 8px;
+    width: 8px;
+    border-radius: 100px;
+    border: 1px solid green;
+    background-color: black;
+  }
 }
-.feature-content-container > span {
+.feature-content-container > ul {
   grid-area: stack;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(20px);
-  transition: all 0.3s ease-in-out;
 }
-.feature-content-container > span.active {
+.feature-content-container > ul.active {
   opacity: 1;
-}
-.empty-row {
 }
 
 .feature-container:has(#tech-btn.active) .tech-content {
@@ -286,6 +290,7 @@
   transform: translateX(0);
 }
 
+/** ---------------------- PROJECT NAVIGATION ----------------- **/
 #project-left-arrow,
 #project-right-arrow {
   position: absolute;

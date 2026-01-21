@@ -118,16 +118,16 @@
             src="../src/assets/images/screenshots/cephadex-screenshot.webp" />
         </div>
         <div id="project-links-container">
-          <div>
+          <div class="space-between">
             <p>Status:</p>
             <p id="project-status">Online</p>
           </div>
 
-          <div>
+          <div class="space-between">
             <p>Link:</p>
             <a
               id="project-link"
-              class="links-section"
+              class="links-section slide-underline"
               data-action="IGNORE"
               href="https://cephadex.com"
               target="_blank"
@@ -135,11 +135,11 @@
             >
           </div>
 
-          <div>
+          <div class="space-between">
             <p>Repo:</p>
             <a
               id="project-repo"
-              class="repo-section"
+              class="repo-section slide-underline"
               data-action="IGNORE"
               data-id="project-repo"
               href="https://cephadex.com"
@@ -155,45 +155,104 @@
         data-action="PROJECT_VIEW"
         data-id="project-feature-container">
         <div class="feature-button-container">
-          <div class="empty-row"></div>
-          <button id="tech-btn" class="active">Tech</button>
-          <div class="empty-row"></div>
-          <button id="feat-btn" class="">Feature</button>
-          <div class="empty-row"></div>
-          <button id="misc-btn">Notes</button>
-          <div class="empty-row"></div>
+          <button id="tech-btn" class="active">
+            <span class="feature-title-icon">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.5 6.79395V11.2061L19.5 13.4277L15.5 11.2061V6.79395L19.5 4.57227L23.5 6.79395Z"
+                  fill="#97EB22"
+                  fill-opacity="0.6"
+                  stroke="#97EB22" />
+                <path
+                  d="M23.5 22.7939V27.2061L19.5 29.4277L15.5 27.2061V22.7939L19.5 20.5723L23.5 22.7939Z"
+                  stroke="#97EB22" />
+                <path
+                  d="M18.5 14.7939V19.2061L14.5 21.4277L10.5 19.2061V14.7939L14.5 12.5723L18.5 14.7939Z"
+                  stroke="#97EB22" />
+              </svg>
+            </span>
+            Tech
+          </button>
+          <button id="feat-btn" class="">
+            <span class="feature-title-icon">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.5 6.79395V11.2051L19.5 13.4268L15.5 11.2051V6.79395L19.5 4.57227L23.5 6.79395Z"
+                  stroke="#97EB22" />
+                <path
+                  d="M23.5 22.7939V27.2051L19.5 29.4268L15.5 27.2051V22.7939L19.5 20.5723L23.5 22.7939Z"
+                  stroke="#97EB22" />
+                <path
+                  d="M18.5 14.7939V19.2051L14.5 21.4268L10.5 19.2051V14.7939L14.5 12.5723L18.5 14.7939Z"
+                  fill="#97EB22"
+                  fill-opacity="0.6"
+                  stroke="#97EB22" />
+              </svg>
+            </span>
+
+            Feature
+          </button>
+          <button id="misc-btn">
+            <span class="feature-title-icon">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.5 6.79395V11.2051L19.5 13.4268L15.5 11.2051V6.79395L19.5 4.57227L23.5 6.79395Z"
+                  stroke="#97EB22" />
+                <path
+                  d="M23.5 22.7939V27.2051L19.5 29.4268L15.5 27.2051V22.7939L19.5 20.5723L23.5 22.7939Z"
+                  fill="#97EB22"
+                  fill-opacity="0.6"
+                  stroke="#97EB22" />
+                <path
+                  d="M18.5 14.7939V19.2051L14.5 21.4268L10.5 19.2051V14.7939L14.5 12.5723L18.5 14.7939Z"
+                  stroke="#97EB22" />
+              </svg>
+            </span>
+            Notes
+          </button>
         </div>
         <div
           class="feature-content-container"
           data-action="PROJECT_VIEW"
           data-id="project-feature-container">
-          <span
+          <ul
             id="project-tech-content"
             class="tech-content"
             data-action="PROJECT_VIEW"
             data-id="project-tech-content">
-            <ul>
-              <li>FastAPI backend with RESTful API</li>
-              <li>React frontend with Redux for state management</li>
-              <li>PostgreSQL database for data storage</li>
-              <li>Redis for caching and session management</li>
-              <li>Deployed on VPS using Docker containers</li>
-            </ul>
-          </span>
-          <span
+            <li>FastAPI backend with RESTful API</li>
+            <li>React frontend with Redux for state management</li>
+            <li>PostgreSQL database for data storage</li>
+            <li>Redis for caching and session management</li>
+            <li>Deployed on VPS using Docker containers</li>
+          </ul>
+          <ul
             id="project-features-content"
             class="feature-content active"
             data-action="PROJECT_VIEW"
             data-id="project-feature-content">
-            <ul>
               <li>FastAPI backend with RESTful API</li>
               <li>React frontend with Redux for state management</li>
               <li>PostgreSQL database for data storage</li>
               <li>Redis for caching and session management</li>
               <li>Deployed on VPS using Docker containers</li>
-            </ul>
-          </span>
-          <span
+          </ul>
+          <ul
             id="project-notes-content"
             class="notes-content"
             data-action="PROJECT_VIEW"
@@ -204,8 +263,7 @@
               <li>PostgreSQL database for data storage</li>
               <li>Redis for caching and session management</li>
               <li>Deployed on VPS using Docker containers</li>
-            </ul>
-          </span>
+          </ul>
         </div>
       </div>
     </div>

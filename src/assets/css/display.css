@@ -22,7 +22,9 @@ spaceship display needs to be larger than the actual screen space to ensure it f
   overflow: hidden;
   aspect-ratio: 1 / 0.8;
   clip-path: polygon(12% 0, 88% 0, 100% 16%, 88% 76%, 10% 76%, 0 18%);
-  transition: max-height 0.7s ease-in-out, opacity 0.4s ease-in-out;
+  transition:
+    max-height 0.7s ease-in-out,
+    opacity 0.4s ease-in-out;
 }
 #spaceship-display.open {
   max-height: 100%;
@@ -45,13 +47,16 @@ Content gets fetched and placed within this wrapper
   display: flex;
   flex-direction: column;
   width: 76%;
-  height: 66.5%;
-  max-height: 66.5%;
   z-index: 39;
   color: var(--green-200);
   pointer-events: auto;
   background-color: black;
   overflow: auto;
+}
+
+#spaceship-display.open #display-content-container {
+  /* height: 66.5%; */
+  max-height: 66.5%;
 }
 
 #display-title {
@@ -151,7 +156,10 @@ body[data-orientation="portrait"] {
   fill: var(--red-800);
   align-items: center;
   justify-content: center;
-  transition: border-color 0.3s ease, fill 0.3s ease, opacity 0.5s ease;
+  transition:
+    border-color 0.3s ease,
+    fill 0.3s ease,
+    opacity 0.5s ease;
 }
 #display-close-btn.active {
   display: flex;

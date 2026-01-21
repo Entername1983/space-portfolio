@@ -38,7 +38,7 @@ export class ProjectsContentManager {
     this.hideTitleAndProjectContent();
     if (projectToLoad == null) {
       console.error(
-        `project not found for projects content manager: ${targetId}`
+        `project not found for projects content manager: ${targetId}`,
       );
       return;
     }
@@ -52,7 +52,7 @@ export class ProjectsContentManager {
   loadProjectContent(project: IProject) {
     console.log("Loading project content for:", project.id);
     const projectContentContainer = fetchElementByID(
-      "#projects-content-container"
+      "#projects-content-container",
     );
     const projectName = fetchElementByID("#display-title");
     const projectDescription = fetchElementByID("#project-description");
@@ -62,17 +62,18 @@ export class ProjectsContentManager {
     const projectGithub = fetchElementByID("#project-repo");
     const projectTechContent = fetchElementByID("#project-tech-content");
     const projectFeaturesContent = fetchElementByID(
-      "#project-features-content"
+      "#project-features-content",
     );
     const projectNotesContent = fetchElementByID("#project-notes-content");
     this.changeMainTitleTo(project.name, project.id);
     projectDescription.textContent = project.description;
     (projectScreenshot as HTMLImageElement).src = project.screenshotUrl;
     projectStatus.textContent = project.status;
-    (projectLink as HTMLAnchorElement).href = project.link ?? "#";
-    (projectGithub as HTMLAnchorElement).href = project.github ?? "#";
+
+    // Setting up link to site
     const maxLength = 30;
     let projectLinkText = "Unavailable";
+    (projectLink as HTMLAnchorElement).href = project.link ?? "#";
 
     if (project.link != null) {
       if (project.link.length > maxLength) {
@@ -83,9 +84,18 @@ export class ProjectsContentManager {
       projectLinkText = projectLinkText.replace(/^https?:\/\//, "");
     }
     projectLink.textContent = projectLinkText;
-    projectGithub.textContent =
-      project.github != null ? "Access here" : "Private";
-    // Clear existing content
+
+    // Setting up link to repo
+    if (project.github == null) {
+      console.log("project is private");
+      projectGithub.classList.add("is-disabled");
+      projectGithub.removeAttribute("href");
+      projectGithub.textContent = "Private";
+    } else {
+      projectGithub.textContent = "Access here";
+      projectGithub.classList.remove("is-disabled");
+      (projectGithub as HTMLAnchorElement).href = project.github;
+    }
     projectTechContent.innerHTML = project.featureContainer.tech
       .map((tech) => `<li>${tech}</li>`)
       .join("");
@@ -150,7 +160,7 @@ export class ProjectsContentManager {
       this.PROJECTS[this.getNextProjectId(displayTitleData)];
     if (nextProjectToLoad == null) {
       console.error(
-        `previous project not found, currnet one: ${displayTitleData}`
+        `previous project not found, currnet one: ${displayTitleData}`,
       );
       return;
     }
@@ -166,7 +176,7 @@ export class ProjectsContentManager {
       this.PROJECTS[this.getPreviousProjectId(displayTitleData)];
     if (previousProjectToLoad == null) {
       console.error(
-        `previous project not found, currnet one: ${displayTitleData}`
+        `previous project not found, currnet one: ${displayTitleData}`,
       );
       return;
     }

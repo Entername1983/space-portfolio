@@ -1,20 +1,31 @@
-- realign control button hovers on desktop
-- Limit the message pop up when in display mode
-  - Have it so it doesn't display on close
-  - Have a checked box to stop display
-- Have a close button for the display
-- Have ability to toggle alien messages
+- Add exit lightspeed mode that dynamically appears in top left menu
+- Add close display button that appears in top left menu
 
-  - Only displays on control pannel, have param "silenceable"
-  - Have side menu that allows for silencing alien
+- Add welcome dialog with option to go simplified version
+- Create simplified version
 
-- Project pages
+Projects Menu
 
-Finishing touches
+- Projects menu, text underline shouldn't go the entire width of the row, just until text
+- On open text shouldn't transform
+- Finish individual Project pages
 
-- Align meteor path on mobile
-- Align satellite path on mobnile
+Display
 
-Done
+- Realign Sonar and Monitor Content
+- Adjust close display alignment
 
-- Setup monitor images on desktop to properly size
+Spaceship interior
+
+- Have colors change dynamically depending on menu opened up
+
+Bio
+
+- Finish desktop layout
+
+Acorn, One
+
+- Decide on content for these
+- About this project
+- Work?
+- Make assets available, like alien glyphs
