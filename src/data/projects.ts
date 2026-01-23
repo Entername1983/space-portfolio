@@ -1,18 +1,19 @@
 import aiEchoesScreenshot from "../assets/images/screenshots/ai-echoes-screenshot.webp";
 import blogScreenshot from "../assets/images/screenshots/blog-screenshot.webp";
-import cephadexScreenshot from "../assets/images/screenshots/cephadex-screenshot.webp";
 import chairTheFedScreenshot from "../assets/images/screenshots/chair-the-fed-screenshot.webp";
 import spacePortfolioScreenshot from "../assets/images/screenshots/space-portfolio-screenshot.webp";
 import starterRepoScreenshot from "../assets/images/screenshots/starter-repo-screenshot.webp";
 import swiftSwatchScreenshot from "../assets/images/screenshots/swift-swatch-screenshot.webp";
 import type { IProjectList } from "./types";
+
+import cephadexLogo from "../assets/images/CephadexLogoSix.png";
 const PROJECTS: IProjectList = {
   cephadex: {
     id: "cephadex",
     name: "Cephadex",
     description:
       "An educational platform allowing for the creation of flashcards, quizzes, games, & tests",
-    screenshotUrl: cephadexScreenshot,
+    screenshotUrl: cephadexLogo,
     status: "Online",
     link: "https://cephadex.com",
     featureContainer: {

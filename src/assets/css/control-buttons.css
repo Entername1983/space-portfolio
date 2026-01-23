@@ -9,7 +9,7 @@
   fill: var(--green-100);
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.2s 0.3s;
+  transition: opacity var(--transition-duration) 0.3s;
   font-size: 8px;
   text-decoration: underline;
   text-underline-offset: 2px;

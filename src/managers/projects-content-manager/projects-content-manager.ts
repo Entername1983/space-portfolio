@@ -5,19 +5,17 @@ import { MonitorManager } from "../monitor-manager/monitor-manager";
 type TValidElements = Element[];
 export class ProjectsContentManager {
   private PROJECTS: IProjectList;
+  private backBtn!: HTMLElement | null;
   constructor() {
     this.PROJECTS = PROJECTS;
+    this.backBtn = document.querySelector("#projects-back-button");
   }
   private get monitorManager() {
     return MonitorManager.instance;
   }
   hideMainMenu() {
     const mainMenu = fetchElementByID("#projects-main-menu");
-    gsap.to(mainMenu, {
-      autoAlpha: 0,
-      display: "none",
-      duration: 0,
-    });
+    mainMenu.classList.remove("active");
   }
 
   displayFeatureContent(targetId: TElementId) {
@@ -32,10 +30,8 @@ export class ProjectsContentManager {
   }
   revealMainMenu() {
     const mainMenu = fetchElementByID("#projects-main-menu");
-    gsap.to(mainMenu, {
-      autoAlpha: 1,
-      display: "flex",
-    });
+    mainMenu.classList.add("active");
+    console.log("revealing main menu");
   }
   show(targetId: TProjectKey) {
     /** Load project content based on project ID.
@@ -45,7 +41,7 @@ export class ProjectsContentManager {
      * **/
     const projectToLoad = this.PROJECTS[targetId];
 
-    this.hideTitleAndProjectContent();
+    this.removeProjectContent();
     if (projectToLoad == null) {
       console.error(
         `project not found for projects content manager: ${targetId}`,
@@ -54,10 +50,12 @@ export class ProjectsContentManager {
     }
     console.log("Showing project content:", targetId);
     this.hideMainMenu();
-    this.loadProjectContent(projectToLoad);
-    this.revealTitleAndProjectContent();
-    this.showBackButton();
-    this.showArrowButtons();
+    setTimeout(() => {
+      this.loadProjectContent(projectToLoad);
+      this.addTitleAndProjectContent();
+      this.showBackButton();
+      this.showArrowButtons();
+    }, 300);
   }
   loadProjectContent(project: IProject) {
     console.log("Loading project content for:", project.id);
@@ -216,18 +214,10 @@ export class ProjectsContentManager {
     });
   }
   showBackButton() {
-    const backBtn = fetchElementByID("#projects-back-button");
-    gsap.to(backBtn, {
-      autoAlpha: 1,
-      display: "block",
-    });
+    if (this.backBtn) this.backBtn.classList.add("active");
   }
   hideBackBtn() {
-    const backBtn = fetchElementByID("#projects-back-button");
-    gsap.to(backBtn, {
-      autoAlpha: 0,
-      display: "none",
-    });
+    if (this.backBtn) this.backBtn.classList.remove("active");
   }
   clearContent() {
     const mainMenu = fetchElementByID("#projects-content-container");
@@ -245,17 +235,47 @@ export class ProjectsContentManager {
     displayTitle.textContent = newTitle;
     displayTitle.setAttribute("data-title", titleData);
   }
-  hideTitleAndProjectContent() {
+  removeTitleAndProjectContent() {
+    /** Removes active class changing display value & opacity **/
+    this.removeTitle();
+    this.removeProjectContent();
+  }
+
+  removeTitle() {
     const titleElement = fetchElementByID("#display-title");
-    const projectContentElement = fetchElementByID("#project-content");
     titleElement.classList.remove("active");
+  }
+  removeProjectContent() {
+    const projectContentElement = fetchElementByID("#project-content");
     projectContentElement.classList.remove("active");
   }
+  addTitle() {
+    const titleElement = fetchElementByID("#display-title");
+    titleElement.classList.add("active");
+  }
+  addProjectContent() {
+    const projectContentElement = fetchElementByID("#project-content");
+    projectContentElement.classList.add("active");
+  }
+  addTitleAndProjectContent() {
+    /** Adds active class changing display value & opacity **/
+    this.addTitle();
+    this.addProjectContent();
+  }
   revealTitleAndProjectContent() {
+    /**Only toggles opacity **/
     const titleElement = fetchElementByID("#display-title");
     const projectContentElement = fetchElementByID("#project-content");
-    titleElement.classList.add("active");
-    projectContentElement.classList.add("active");
+    titleElement.classList.remove("invisible");
+    projectContentElement.classList.remove("invisible");
+  }
+  hideTitleAndProjectContent() {
+    /**Only toggles opacity **/
+
+    const titleElement = fetchElementByID("#display-title");
+    const projectContentElement = fetchElementByID("#project-content");
+    titleElement.classList.add("invisible");
+    projectContentElement.classList.add("invisible");
   }
   returnToMainScreen() {
     this.changeMainTitleTo("Projects");

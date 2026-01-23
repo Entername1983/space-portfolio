@@ -59,17 +59,21 @@ Content gets fetched and placed within this wrapper
   max-height: 66.5%;
   color: white;
   font-size: 1.6rem;
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease-in-out;
 }
-
+#spaceship-display.open #display-content-container.active {
+  opacity: 1;
+}
 #display-title {
   font-size: 2.8rem;
   text-align: center;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
+  /* transition: opacity var(--transition-duration) ease-in-out;
+  opacity: 0; */
 }
-#display-title.active {
+/* #display-title.active {
   opacity: 1;
-}
+} */
 
 body[data-orientation="portrait"] {
   #spaceship-display {
@@ -143,25 +147,47 @@ body[data-orientation="portrait"] {
     padding-left: 0;
   }
 }
-#display-close-btn {
-  border: 1px dashed var(--red-800);
-  display: none;
-  opacity: 0;
-  border-radius: 100px;
+
+#bottom-display-controls {
   position: absolute;
-  height: 30px;
-  width: 30px;
   bottom: 25.5%;
   right: 50%;
   z-index: 400;
-  transform: translate(50%, 0%);
-  fill: var(--red-800);
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  transform: translate(50%, 0%);
+  gap: 20px;
+  padding: 0px;
+  button {
+    padding: 0px;
+    svg {
+      max-height: 40px;
+      fill: var(--red-500);
+      &:hover {
+        fill: var(--green-100);
+      }
+    }
+  }
+}
+#display-close-btn {
+  display: none;
+  opacity: 0;
+
+  /* transform: translate(50%, 0%);
+  align-items: center;
+  justify-content: center; */
+
   transition:
-    border-color 0.3s ease,
-    fill 0.3s ease,
+    stroke var(--transition-duration) ease,
     opacity 0.5s ease;
+  > svg {
+    stroke: var(--red-500);
+    stroke-width: 0.5px;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    /* fill: var(--green-100); */
+  }
 }
 #display-close-btn.active {
   display: flex;
@@ -169,8 +195,9 @@ body[data-orientation="portrait"] {
 }
 
 #display-close-btn:hover {
-  fill: var(--green-100);
-  border: 1px dashed var(--green-100);
+  > svg {
+    stroke: var(--green-100);
+  }
 }
 
 .screen-content {

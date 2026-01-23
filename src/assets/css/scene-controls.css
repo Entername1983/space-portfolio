@@ -17,7 +17,10 @@
   opacity: 0;
   transition: opacity 2s ease-in-out;
   pointer-events: none;
-  transition: max-height 2s ease-out, opacity 0.3s ease, margin 0.3s ease;
+  transition:
+    max-height 2s ease-out,
+    opacity var(--transition-duration) ease,
+    margin var(--transition-duration) ease;
 }
 #back-btn.active {
   margin-bottom: 0px;
@@ -116,11 +119,16 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
   max-width: 40px;
   border-radius: 10px;
   border: 1px solid var(--red-800);
-  box-shadow: 0 0 20px 0px var(--red-800), 0 0 10px rgba(255, 0, 0, 0.8);
+  box-shadow:
+    0 0 20px 0px var(--red-800),
+    0 0 10px rgba(255, 0, 0, 0.8);
 
   overflow: hidden;
-  transition: transform 0.3s ease, max-width 0.4s ease,
-    grid-template-rows 0.4s ease, opacity 1s ease-in-out;
+  transition:
+    transform var(--transition-duration) ease,
+    max-width 0.4s ease,
+    grid-template-rows 0.4s ease,
+    opacity 1s ease-in-out;
 }
 #scene-controls:hover {
   max-width: 300px;
@@ -172,7 +180,9 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
     height: 46px;
     width: 46px;
     border-radius: 300px;
-    border: var(--red-800), solid 1px;
+    border:
+      var(--red-800),
+      solid 1px;
     transform: translate(-75%, -20%);
     background-color: black;
     overflow: hidden;
@@ -183,7 +193,9 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
 
     svg {
       fill: var(--red-800);
-      transition: transform 0.3s ease, fill 0.3s ease;
+      transition:
+        transform var(--transition-duration) ease,
+        fill var(--transition-duration) ease;
     }
   }
   .red-circle-for-btn {
@@ -200,7 +212,8 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
   color: var(--red-800);
   outline: 1px solid var(--red-800);
   outline-offset: 1px;
-  box-shadow: 0 0 8px 0px var(--red-800),
+  box-shadow:
+    0 0 8px 0px var(--red-800),
     0 0 8px 0px oklch(from var(--red-800) l c h / 0.8);
 }
 
@@ -211,7 +224,9 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
     background-color: var(--green-100);
   }
   .scene-control-icon {
-    border: var(--green-100), solid 1px;
+    border:
+      var(--green-100),
+      solid 1px;
     svg {
       fill: var(--green-100);
     }

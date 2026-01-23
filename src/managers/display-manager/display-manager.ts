@@ -1,4 +1,5 @@
 import type { IClickable, TElementId } from "../../data/types";
+import { fetchElementByClassName } from "../../util/utility";
 import { LogContentManager } from "../log-content-manager/log-content-manager";
 import { ProjectsContentManager } from "../projects-content-manager/projects-content-manager";
 
@@ -45,8 +46,18 @@ export class DisplayManager {
     return this.displayIsOpen;
   }
   async show(clickable: IClickable) {
+    console.log("clickable", clickable);
+    console.log("1");
+
+    this.hideDisplayContent();
     this.clearScreenContent();
-    if (!this.displayIsOpen) this.openScreen();
+
+    if (!this.displayIsOpen) {
+      this.openScreen();
+    }
+    await new Promise((resolve) => setTimeout(resolve, 300));
+
+    this.revealDisplayContent();
     const templateString = await this.fetchDisplayContentTemplate(
       clickable.elementId,
     );
@@ -60,8 +71,11 @@ export class DisplayManager {
     );
     this.displayContent();
     this.sortToSpecialContent(clickable);
-    // delay by 1 s
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    if (clickable.elementId === "#control-projects") {
+      this.projectsContentManager.revealMainMenu();
+    }
+    // Need this delay so close button only displays after screen is open
+    await new Promise((resolve) => setTimeout(resolve, 600));
     this.showCloseDisplayBtn();
   }
 
@@ -72,7 +86,7 @@ export class DisplayManager {
     }
     this.closeDisplayBtn.classList.add("active");
   }
-  hideBackBtn() {
+  hideCloseBtn() {
     if (this.closeDisplayBtn == null) {
       console.error(`closeDisplayBtn is null`);
       return;
@@ -96,8 +110,8 @@ export class DisplayManager {
   }
 
   resetAndCloseDisplay() {
-    this.hideBackBtn();
-
+    this.hideCloseBtn();
+    this.projectsContentManager.hideBackBtn();
     this.closeScreen();
     this.removeContent();
     // this.clearScreenContent();
@@ -127,21 +141,23 @@ export class DisplayManager {
     this.displayContentContainer.innerHTML = "";
   }
   displayContent() {
-    const displayContent = document.querySelector(".display-content");
-    if (displayContent == null) {
-      console.error(`displayContent is null`);
-      return;
-    }
+    console.log("displaying display content");
+    const displayContent = fetchElementByClassName(".display-content");
     displayContent.classList.add("active");
   }
   removeContent() {
-    const displayContent = document.querySelector(".display-content");
-    if (displayContent == null) {
-      console.error(`displayContent is null`);
-      return;
-    }
+    console.log("removing display content");
+    const displayContent = fetchElementByClassName(".display-content");
     displayContent.classList.remove("active");
   }
+
+  revealDisplayContent() {
+    this.displayContentContainer?.classList.add("active");
+  }
+  hideDisplayContent() {
+    this.displayContentContainer?.classList.remove("active");
+  }
+
   fillScreenContent() {}
 
   async fetchDisplayContentTemplate(elementId: TDisplayContentKeys) {

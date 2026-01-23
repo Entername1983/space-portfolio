@@ -96,6 +96,9 @@ export class Engine {
         this.displayManager.resetAndCloseDisplay();
         this.monitorManager.reInitialize();
         break;
+      case "GO_TO_PROJECT_MAIN_MENU":
+        this.displayManager.projectsContentManager.returnToMainScreen();
+        break;
       case "HOVER":
         this.handleHoverInteractions(clickable, event);
         break;
@@ -143,6 +146,7 @@ export class Engine {
       this.displayManager.resetAndCloseDisplay();
       this.monitorManager.reInitialize();
     } else {
+      this.displayManager.projectsContentManager.hideBackBtn();
       await this.displayManager.show(clickable);
     }
     this.addClickToList(clickable.elementId);
@@ -198,6 +202,7 @@ export class Engine {
           console.error(`missing targetId for project view`);
           return;
         }
+        console.log("handling view project");
         this.handleViewProject(actionTargetId.targetId);
         break;
       case "MAIN_PROJECT_MENU":

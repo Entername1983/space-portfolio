@@ -28,13 +28,14 @@
   z-index: 100;
   border: 1px solid var(--red-800);
   border-radius: 10px;
-  box-shadow: 0 0 20px 0px var(--red-800),
+  box-shadow:
+    0 0 20px 0px var(--red-800),
     0 0 10px oklch(from var(--red-800) / l c h 0.8);
   top: 20dvh;
   right: auto;
   left: 100px;
   bottom: auto;
-
+  z-index: 730;
   padding-right: 0;
   padding-left: 0;
   padding-top: 0;
@@ -110,7 +111,11 @@
 
 #proceed-btn {
   visibility: hidden;
+  max-width: 0px;
+  overflow: hidden;
+  transition: max-width var(--transition-duration) ease-in-out;
 }
 #proceed-btn.active {
   visibility: visible;
+  max-width: 200px;
 }

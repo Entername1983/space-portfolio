@@ -130,6 +130,12 @@ export const DISPLAY_CLICKABLES: IClickable[] = [
     targetId: null,
     data: {},
   },
+  {
+    elementId: "#projects-back-button",
+    action: "GO_TO_PROJECT_MAIN_MENU",
+    targetId: null,
+    data: {},
+  },
 ];
 
 export const PROJECT_CLICKABLES: IClickable[] = [
