@@ -14,17 +14,15 @@
 body[data-orientation="portrait"] {
   background-color: black;
 
-  #desktop-circuit-board-overlay {
-    display: none;
-  }
-
-  #svg-spaceship-overlay-desktop {
+  /** Remove things that are only used in landscape mode **/
+  #desktop-circuit-board-overlay,
+  #svg-spaceship-overlay-desktop,
+  #spaceship-interior {
     display: none;
   }
 
   .wrapper {
     aspect-ratio: auto;
-
     max-width: 500px;
     height: 100dvh;
     will-change: transform;
@@ -32,12 +30,9 @@ body[data-orientation="portrait"] {
     backface-visibility: hidden;
   }
 
-  #spaceship-interior-background {
+  /* #spaceship-interior-background {
     display: none;
-  }
-  #spaceship-interior {
-    display: none;
-  }
+  } */
 
   #mobile-spaceship-interior {
     position: absolute;
@@ -90,7 +85,7 @@ body[data-orientation="portrait"] {
     margin-left: auto;
     margin-right: auto;
   }
-  #control-btn-pannel {
+  /* #control-btn-pannel {
     position: relative;
     margin: auto;
     width: 150px;
@@ -98,7 +93,7 @@ body[data-orientation="portrait"] {
     anchor-name: --control-pannel;
     border: 1px dashed yellow;
     opacity: 0;
-  }
+  } */
 
   #mobile-spaceship-overlay {
     position: absolute;

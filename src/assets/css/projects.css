@@ -225,29 +225,6 @@
 .projects-screenshot:hover {
   filter: opacity(100%);
 }
-@media (max-width: 650px) {
-  .screen-content > ul {
-    margin-left: 0px;
-  }
-
-  /* .screen-content {
-    line-height: 1em;
-  }
-  .screen-content > ul {
-    line-height: 1em;
-  }
-  .screen-content > ul > li {
-    line-height: 1em;
-  } */
-  .project-content {
-    border: 1px dotted var(--green-100);
-    padding: 20px 10px;
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    display: none;
-  }
-}
 
 .feature-container {
   display: grid;
@@ -470,4 +447,92 @@
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
+}
+
+body[data-orientation="portrait"] {
+  #display-projects {
+    #display-title {
+      height: auto;
+    }
+
+    #projects-content-container {
+      .row-1,
+      .row-2,
+      .row-3 {
+        padding: 10px 0px;
+      }
+      #project-content .row-2 {
+        flex-direction: column;
+        gap: 6px;
+      }
+      #project-links-container {
+        .space-between {
+          .link-bubble {
+            min-width: 80px;
+            padding: 6px;
+          }
+        }
+      }
+    }
+    .feature-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+    .feature-button-container {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      button {
+        font-size: 12px;
+        padding: 4px 6px;
+        border-radius: 6px;
+        justify-content: center;
+
+        &::before {
+          bottom: -51px;
+          right: 50%;
+          height: 50px;
+          width: 2px;
+          top: auto;
+          animation: electricPulse 6s ease-in-out;
+        }
+        .feature-title-icon {
+          display: none;
+        }
+      }
+    }
+    .feature-content-container {
+      max-height: none;
+      ul {
+        height: auto;
+      }
+    }
+  }
+  #projects-main-menu {
+    height: auto;
+  }
+  #project-left-arrow,
+  #project-right-arrow {
+    top: 3%;
+  }
+}
+@media (max-width: 650px) {
+  .screen-content > ul {
+    margin-left: 0px;
+  }
+
+  /* .screen-content {
+    line-height: 1em;
+  }
+  .screen-content > ul {
+    line-height: 1em;
+  }
+  .screen-content > ul > li {
+    line-height: 1em;
+  } */
+  .project-content {
+    padding: 0px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: none;
+  }
 }
