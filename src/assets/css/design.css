@@ -2,7 +2,12 @@
   padding: 10px 10px;
 }
 #design {
+  text-align: start;
+
   padding: 10px;
+  > section {
+    margin-bottom: 20px;
+  }
   .description {
     padding-bottom: 8px;
     font-size: 1.4rem;
@@ -11,6 +16,9 @@
     margin-bottom: 10px;
   }
   h3 {
+    display: flex;
+    justify-content: start;
+    width: 100%;
     margin: 0px;
     margin-bottom: 10px;
   }

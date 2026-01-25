@@ -359,6 +359,7 @@ a:hover {
 }
 
 #svg-spaceship-overlay-desktop {
+  --color: grey;
   z-index: 100;
   position: absolute;
   top: 0px;
@@ -366,8 +367,32 @@ a:hover {
   height: 101%;
   width: 100%;
   stroke-width: 2px;
-  stroke: gray;
+  stroke: oklch(from var(--color) 0.4 c h);
   filter: url(#hyper-glow);
+  &.green {
+    --color: var(--green);
+  }
+  &.pink {
+    --color: var(--pink);
+  }
+  &.red {
+    --color: var(--red);
+  }
+  &.blue {
+    --color: var(--blue);
+  }
+  &.yellow {
+    --color: var(--yellow);
+  }
+  &.purple {
+    --color: var(--purple);
+  }
+  &.green-yellow {
+    --color: var(--green-yellow);
+  }
+  &.white {
+    --color: white;
+  }
 }
 
 @property --angle {
@@ -869,5 +894,52 @@ input:checked + .slider:before {
   }
   &.white {
     --color: white;
+  }
+
+  .vector-animation-1 {
+    /** Length 1181 **/
+    /* stroke: white;
+    stroke-dasharray: 10 1181;
+    stroke-dashoffset: 1181;
+    animation: electrical-pulse 4s linear infinite; */
+  }
+  .vector-animation-2 {
+    /** Length 1181 **/
+  }
+  .vector-animation-3 {
+    /** Length 605 **/
+  }
+  .vector-animation-4 {
+    /** Length 1048 **/
+  }
+  .vector-animation-5 {
+    /** Length 1462 **/
+  }
+  .vector-animation-6 {
+    /** Length 1462 **/
+  }
+  .vector-animation-7 {
+    /** Length 1035 **/
+  }
+  .vector-animation-8 {
+    /** Length 1033 **/
+  }
+  .vector-animation-9 {
+    /** Length 527 **/
+  }
+  .vector-animation-10 {
+    /** Length 527 **/
+  }
+  .vector-animation-11 {
+    /** Length 374.7 **/
+  }
+  .vector-animation-12 {
+    /** Length 1552 **/
+  }
+  .vector-animation-13 {
+    /** Length 1552 **/
+  }
+  .vector-animation-14 {
+    /** Length 605 **/
   }
 }

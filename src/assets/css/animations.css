@@ -170,14 +170,14 @@
 
 @keyframes neon-color-change {
   0% {
-    stroke: oklch(from var(--animated-color) 0.2 c h);
+    stroke: oklch(from var(--animated-color) 0.3 c h);
   }
 
   50% {
-    stroke: oklch(from var(--animated-color) 0.8 c h);
+    stroke: oklch(from var(--animated-color) 0.5 c h);
   }
 
   100% {
-    stroke: oklch(from var(--animated-color) 0.2 c h);
+    stroke: oklch(from var(--animated-color) 0.3 c h);
   }
 }

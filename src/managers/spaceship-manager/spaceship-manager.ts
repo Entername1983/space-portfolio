@@ -8,21 +8,20 @@ const SPACESHIP_COLORS = [
   "red",
   "green-yellow",
   "pink",
+  "purple",
 ] as const;
 
 const COLORS_MAPPING = {
   // MONITOR_CLICKABLES
   "#space-black-hole": "red",
   "#space-station": "blue",
-  "#star": "yellow",
+  "#star": "purple",
   "#satellite": "white",
   "#space-whale": "pink",
   "#red-planet": "red",
   "#asteroid": "green-yellow",
 
   // SPACE_SCENE_CLICKABLES
-  "#proceed-btn": "green",
-  "#back-btn": "red",
 
   // DELEGATED_CLICKABLES
   "#display-content-container": "white",
@@ -30,12 +29,10 @@ const COLORS_MAPPING = {
   // DISPLAY_CLICKABLES
   "#control-projects": "blue",
   "#control-bio": "green",
-  "#control-log": "yellow",
+  "#control-log": "purple",
   "#control-acorn": "green-yellow",
   "#control-design": "pink",
   "#lightspeed-btn": "white",
-  "#display-close-btn": "red",
-  "#projects-back-button": "yellow",
 
   // PROJECT_CLICKABLES
   "#li-swift-swatch": "green",
@@ -55,7 +52,8 @@ export class SpaceshipManager {
 
   private windowSvgOutlines!: HTMLElement | null;
   private circuitBoardSvg!: HTMLElement | null;
-
+  private mobileCircuitBoardSvg!: HTMLElement | null;
+  private mobileWindowSvgOutlines!: HTMLElement | null;
   constructor() {
     if (SpaceshipManager.instance) {
       return SpaceshipManager.instance;
@@ -65,11 +63,19 @@ export class SpaceshipManager {
       "#svg-spaceship-overlay-desktop",
     );
     this.circuitBoardSvg = document.querySelector("#desktop-side-decoration");
+    this.mobileCircuitBoardSvg = document.querySelector(
+      "#mobile-side-decoration",
+    );
+    this.mobileWindowSvgOutlines = document.querySelector(
+      "#mobile-spaceship-overlay-mask",
+    );
   }
   changeSpaceshipWallColor(clickable: IClickable) {
     const colorToUse = COLORS_MAPPING[clickable.elementId];
-    console.log("changing color to", colorToUse);
-    this.changeColorsTo(colorToUse);
+    if (colorToUse) {
+      console.log("changing color to", colorToUse);
+      this.changeColorsTo(colorToUse);
+    }
   }
 
   changeColorsTo(color: TSpaceshipColor) {
@@ -81,12 +87,16 @@ export class SpaceshipManager {
     SPACESHIP_COLORS.forEach((color) => {
       this.windowSvgOutlines?.classList.remove(color);
       this.circuitBoardSvg?.classList.remove(color);
+      this.mobileCircuitBoardSvg?.classList.remove(color);
+      this.mobileWindowSvgOutlines?.classList.remove(color);
     });
   }
   addColorClass(color: TSpaceshipColor) {
     console.log("adding this class", color);
     this.windowSvgOutlines?.classList.add(color);
     this.circuitBoardSvg?.classList.add(color);
+    this.mobileCircuitBoardSvg?.classList.add(color);
+    this.mobileWindowSvgOutlines?.classList.add(color);
   }
   changeToRandomColor() {
     const color: TSpaceshipColor =

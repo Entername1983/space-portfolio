@@ -68,7 +68,8 @@ export class Engine {
     console.log("element", clickable);
     console.log("STATE", state);
     if (clickable.elementId) {
-      this.spaceshipManager.changeSpaceshipWallColor(clickable);
+      if (event.type == "click")
+        this.spaceshipManager.changeSpaceshipWallColor(clickable);
     }
     switch (clickable.action) {
       case "VIEW_SPACE_ELEMENT":
