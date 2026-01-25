@@ -7,7 +7,7 @@ const DISPLAY_CONTENT_MAPPINGS: Record<TElementId, string> = {
   "#control-projects": "projects.html",
   "#control-log": "log.html",
   "#control-bio": "bio.html",
-  "#control-one": "one.html",
+  "#control-design": "design.html",
   "#control-acorn": "acorn.html",
 } as const;
 
@@ -99,7 +99,7 @@ export class DisplayManager {
     switch (clickable.elementId) {
       case "#control-bio":
         break;
-      case "#control-one":
+      case "#control-design":
         break;
       case "#control-log":
         this.logContentManager.show();

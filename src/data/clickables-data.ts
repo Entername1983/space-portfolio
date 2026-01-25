@@ -113,7 +113,7 @@ export const DISPLAY_CLICKABLES: IClickable[] = [
     data: { monitorTargetId: "#monitor-spaceship" },
   },
   {
-    elementId: "#control-one",
+    elementId: "#control-design",
     action: "DISPLAY_INTERACTION",
     targetId: null,
     data: { monitorTargetId: "#monitor-spaceship" },

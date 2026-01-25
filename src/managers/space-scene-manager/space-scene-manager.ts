@@ -63,7 +63,7 @@ export class SpaceSceneManager {
     return scene != null;
   }
   findLastValidSceneElement = (
-    elements: TElementId[]
+    elements: TElementId[],
   ): TElementId | undefined => {
     while (elements.length > 0) {
       const lastElement = elements.pop();
@@ -83,6 +83,7 @@ export class SpaceSceneManager {
     this.hideBackdrop(scene.backdrop);
     this.hideBackBtn();
     this.showSpaceElements();
+    this.brightenSpaceElements();
     this.updateCurrentScene("spaceship");
     this.updateCurrentBackdrop("#default");
   }
@@ -91,6 +92,14 @@ export class SpaceSceneManager {
     this.reavealBackdrop(backdrop);
     this.hideSpaceElements();
     this.revealBackBtn();
+  }
+
+  dimSpaceElements() {
+    this.spaceElements?.classList.add("dimmed");
+  }
+
+  brightenSpaceElements() {
+    this.spaceElements?.classList.remove("dimmed");
   }
 
   engageLightspeed() {

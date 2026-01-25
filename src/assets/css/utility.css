@@ -1,0 +1,7 @@
+.color-palette {
+  --color: var(--red);
+  --color-muted: oklch(from var(--color) l calc(c * 0.4) h);
+  --color-vibrant: oklch(from var(--color) l 0.3 h);
+  --color-light: oklch(from var(--color) 0.9 c h);
+  --color-dark: oklch(from var(--color) 0.3 c h);
+}

@@ -6,6 +6,7 @@ import { IntroManager } from "./managers/intro-manager/intro-manager";
 import { LayoutManager } from "./managers/layout-manager/layout-manager";
 import { MonitorManager } from "./managers/monitor-manager/monitor-manager";
 import { SpaceSceneManager } from "./managers/space-scene-manager/space-scene-manager";
+import { SpaceshipManager } from "./managers/spaceship-manager/spaceship-manager";
 import { state } from "./managers/state-manager/state-manager";
 // TODO: Change the singleton pattern to the following structure:
 // private static instance: Engine | null = null;
@@ -33,7 +34,7 @@ export class Engine {
   private displayManager!: DisplayManager;
   private spaceSceneManager!: SpaceSceneManager;
   private layoutManager!: LayoutManager;
-
+  private spaceshipManager!: SpaceshipManager;
   constructor() {
     if (Engine.instance) {
       return Engine.instance;
@@ -44,6 +45,7 @@ export class Engine {
     this.displayManager = new DisplayManager();
     this.spaceSceneManager = new SpaceSceneManager();
     this.layoutManager = new LayoutManager();
+    this.spaceshipManager = new SpaceshipManager();
     Engine.instance = this;
 
     this.initialize();
@@ -65,6 +67,9 @@ export class Engine {
   async handleInteraction(clickable: IClickable, event: MouseEvent) {
     console.log("element", clickable);
     console.log("STATE", state);
+    if (clickable.elementId) {
+      this.spaceshipManager.changeSpaceshipWallColor(clickable);
+    }
     switch (clickable.action) {
       case "VIEW_SPACE_ELEMENT":
         this.viewSpaceElement(clickable);
@@ -94,6 +99,7 @@ export class Engine {
         break;
       case "CLOSE_DISPLAY":
         this.displayManager.resetAndCloseDisplay();
+        this.spaceSceneManager.brightenSpaceElements();
         this.monitorManager.reInitialize();
         break;
       case "GO_TO_PROJECT_MAIN_MENU":
@@ -145,9 +151,11 @@ export class Engine {
     ) {
       this.displayManager.resetAndCloseDisplay();
       this.monitorManager.reInitialize();
+      this.spaceSceneManager.brightenSpaceElements();
     } else {
       this.displayManager.projectsContentManager.hideBackBtn();
       await this.displayManager.show(clickable);
+      this.spaceSceneManager.dimSpaceElements();
     }
     this.addClickToList(clickable.elementId);
   }
@@ -282,6 +290,7 @@ export class Engine {
       ) === true
     ) {
       this.spaceSceneManager.returnToSpaceship(state.activeClick);
+      this.monitorManager.reInitialize();
     } else {
       const lastValidElement = this.spaceSceneManager.findLastValidSceneElement(
         state.clickList,
@@ -291,6 +300,7 @@ export class Engine {
         return;
       }
       this.spaceSceneManager.returnToSpaceship(lastValidElement);
+      this.monitorManager.reInitialize();
     }
   }
   handleViewLog(actionTargetId) {

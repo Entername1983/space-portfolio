@@ -1,41 +1,20 @@
-#spaceship-monitor {
-  position: absolute;
-  bottom: 1%;
-  left: 60.5%;
-  width: 14%;
-  aspect-ratio: 1/1;
-  cursor: pointer;
-  opacity: 1;
-  background-color: black;
-  z-index: 39;
-  aspect-ratio: 1/ 0.8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-}
 #spaceship-content {
   color: var(--green-100);
   padding: 14px;
   display: none;
 }
 
-#spaceship-monitor > img {
-  pointer-events: auto;
-  opacity: 0.8;
-}
 .spaceship-2 {
   transform: rotate(25deg);
-  display: none;
+  /* display: none; */
 }
-.spaceship-2.active {
+/* .spaceship-2.active {
   display: block;
-}
+} */
 .spaceship-monitor > img:hover {
   opacity: 1;
 }
 
-.display-content,
 .display-content {
   visibility: hidden;
   position: relative;
@@ -84,10 +63,37 @@ ul > li::before {
   margin: 5px 0;
   line-height: 1.4;
 }
-
+#spaceship-monitor {
+  position: absolute;
+  bottom: 1%;
+  left: 60.5%;
+  width: 14%;
+  cursor: pointer;
+  opacity: 1;
+  background-color: black;
+  z-index: 39;
+  aspect-ratio: 1/ 0.8;
+  display: grid;
+  grid-template-areas: "stack";
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
 .monitor-content {
-  display: none;
+  /* display: none; */
+  pointer-events: auto;
+  grid-area: stack;
+  margin: auto;
   max-width: 60%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  &.active {
+    /* display: block; */
+    opacity: 1;
+    @starting-style {
+      opacity: 0;
+    }
+  }
 }
 .monitor-content.active {
   display: block;

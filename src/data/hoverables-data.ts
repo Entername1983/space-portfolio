@@ -16,7 +16,7 @@ const CONTROL_HOVERABLES: IClickable[] = [
     data: {},
   },
   {
-    elementId: "#control-one",
+    elementId: "#control-design",
     action: "HOVER",
     targetId: null,
     data: {},

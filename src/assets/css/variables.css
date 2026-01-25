@@ -1,6 +1,13 @@
 /** **/
 
 :root {
+  /*L - Lightneess - 0 -> 100%
+    C - Chroma (purity/intensity of color) - 0 -> 0.3+
+    H - Hue (angle on color weel) - 0 -> 360deg
+  
+  */
+  --red: oklch(0.64 0.29 26);
+
   --red-100: oklch(0.97 0.02 26);
   --red-200: oklch(0.92 0.05 26);
   --red-300: oklch(0.86 0.1 26);
@@ -9,6 +16,8 @@
   --red-700: oklch(0.64 0.29 26);
   --red-800: oklch(0.56 0.25 26);
   --red-900: oklch(0.37 0.17 26);
+
+  --green: oklch(0.74 0.32 145);
   --green-100: oklch(0.96 0.14 145);
   --green-200: oklch(0.89 0.23 145);
   --green-300: oklch(0.81 0.35 145);
@@ -17,6 +26,8 @@
   --green-700: oklch(0.59 0.25 145);
   --green-800: oklch(0.52 0.22 145);
   --green-900: oklch(0.35 0.15 145);
+
+  --blue: oklch(0.62 0.23 250);
   --blue-100: oklch(0.97 0.02 250);
   --blue-200: oklch(0.92 0.05 250);
   --blue-300: oklch(0.85 0.09 250);
@@ -25,6 +36,8 @@
   --blue-700: oklch(0.62 0.23 250);
   --blue-800: oklch(0.54 0.2 250);
   --blue-900: oklch(0.37 0.13 250);
+
+  --pink: oklch(0.72 0.25 1);
   --pink-100: oklch(0.97 0.02 1);
   --pink-200: oklch(0.93 0.05 1);
   --pink-300: oklch(0.86 0.1 1);
@@ -33,6 +46,40 @@
   --pink-700: oklch(0.64 0.29 1);
   --pink-800: oklch(0.56 0.25 1);
   --pink-900: oklch(0.37 0.17 1);
+
+  --grey: oklch(0.6 0.03 0);
+  --grey-100: oklch(0.75 0.01 0);
+  --grey-300: oklch(0.7 0.02 0);
+  --grey-500: oklch(0.6 0.03 0);
+  --grey-700: oklch(0.55 0.03 0);
+  --grey-900: oklch(0.35 0.02 0);
+
+  /* PURPLE (Hue: 300) */
+
+  --purple: oklch(0.55 0.25 300);
+  --purple-100: oklch(0.97 0.02 300);
+  --purple-300: oklch(0.85 0.1 300);
+  --purple-500: oklch(0.7 0.2 300);
+  --purple-700: oklch(0.55 0.25 300);
+  --purple-900: oklch(0.35 0.15 300);
+
+  /* YELLOW (Hue: 100) */
+  --yellow: oklch(94.802% 0.21855 117.013);
+  --yellow-100: oklch(0.97 0.05 100);
+  --yellow-300: oklch(0.85 0.15 100);
+  --yellow-500: oklch(0.75 0.2 100);
+  --yellow-700: oklch(0.6 0.18 100);
+  --yellow-900: oklch(0.4 0.12 100);
+
+  /* CYAN (Hue: 190) */
+  --cyan: oklch(0.72 0.16 190);
+  --cyan-100: oklch(0.97 0.03 190);
+  --cyan-300: oklch(0.85 0.12 190);
+  --cyan-500: oklch(0.72 0.16 190);
+  --cyan-700: oklch(0.58 0.18 190);
+  --cyan-900: oklch(0.38 0.12 190);
+
+  --green-yellow: oklch(0.913 0.2335 130.02);
 
   /** TIMING VARIABLES **/
   --transition-duration: 300ms;

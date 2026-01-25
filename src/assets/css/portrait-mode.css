@@ -157,7 +157,7 @@ body[data-orientation="portrait"] {
     justify-content: space-around;
     align-items: start;
   }
-  #control-one,
+  #control-design,
   #control-log,
   #control-bio,
   #control-acorn,
@@ -180,7 +180,7 @@ body[data-orientation="portrait"] {
       width: 30px;
     }
   }
-  #control-one > svg {
+  #control-design > svg {
     animation-delay: 1s;
   }
 
@@ -199,7 +199,7 @@ body[data-orientation="portrait"] {
     animation-delay: 5s;
   } */
 
-  /* #control-one {
+  /* #control-design {
     position-anchor: --control-pannel;
     bottom: calc(anchor(bottom) + 10px);
     left: anchor(left);

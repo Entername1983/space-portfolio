@@ -2,6 +2,21 @@
 
 Use this as an example to build relative colros from this base
 */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
 button,
 a,
 blockquote {
@@ -153,16 +168,17 @@ a:hover {
 /** ------!!!!!! ------------------------ LAYER 1 ---------------------!!!!!!!----------**/
 #space-elements {
   z-index: 30;
-  visibility: hidden;
+  /* visibility: hidden; */
   opacity: 0;
-  transition:
-    opacity 2s ease-in-out,
-    visibility 0s 2s;
+  transition: opacity 500ms ease-in-out;
+  /* visibility 0s 2s, */
 }
 
 #space-elements.active {
-  visibility: visible;
-  opacity: 1;
+  opacity: 0.8;
+}
+#space-elements.dimmed {
+  opacity: 0.3;
 }
 .space-element {
   position: absolute;
@@ -819,18 +835,39 @@ input:checked + .slider:before {
   right: 0;
 }
 #desktop-side-decoration {
-  --color-one: var(--green-100);
-  --color-two: var(--pink-700);
-  --color-three: var(--red-400);
-  --color-four: var(--green-900);
-  --color-five: var(--pink-400);
+  --color: white;
+  --animated-color: var(--color-muted);
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 700;
-  stroke: var(--pink-800);
+  stroke: var(--color);
   filter: url(#neon-outline);
-  animation: neon-color-change 20s infinite ease-in-out;
+  animation: neon-color-change 10s infinite ease-in-out;
+  &.green {
+    --color: var(--green);
+  }
+  &.pink {
+    --color: var(--pink);
+  }
+  &.red {
+    --color: var(--red);
+  }
+  &.blue {
+    --color: var(--blue);
+  }
+  &.yellow {
+    --color: var(--yellow);
+  }
+  &.purple {
+    --color: var(--purple);
+  }
+  &.green-yellow {
+    --color: var(--green-yellow);
+  }
+  &.white {
+    --color: white;
+  }
 }

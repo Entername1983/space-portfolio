@@ -17,6 +17,8 @@
 /* Variables */
 @import "./variables.css";
 
+/* Utility classes */
+@import "./utility.css";
 /* Animations */
 @import "./animations.css";
 /* Component Specific */
@@ -32,7 +34,7 @@
 @import "./log.css";
 @import "./bio.css";
 @import "./acorn.css";
-@import "./one.css";
+@import "./design.css";
 
 @import "./buttons.css";
 @import "./display.css";

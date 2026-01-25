@@ -31,7 +31,7 @@ export const ALIEN_INFO_MAPPINGS: Record<string, string> = {
   "#one-button": "Not quite sure what these do...",
   "#home-btn": "Want to get out of here?",
   "#back-btn": "Return to our ship?",
-  "#control-one": "Control one",
+  "#control-design": "Control one",
   "#control-bio":
     "I've hacked the emperial network, let's see what they have on our captain",
   "#control-projects":

@@ -155,7 +155,7 @@
 }
 
 /** One Button Hover **/
-#control-one {
+#control-design {
   anchor-name: --one-button;
 }
 #one-btn-svg {
@@ -169,18 +169,18 @@
   stroke-dashoffset: 102;
 }
 /* Changing visisbility on hover*/
-#control-one:hover + #one-btn-svg > polyline {
+#control-design:hover + #one-btn-svg > polyline {
   stroke-dashoffset: 0;
 }
-#control-one:hover + #one-btn-svg > text {
+#control-design:hover + #one-btn-svg > text {
   visibility: visible;
   opacity: 1;
 }
 /* Changing visisbility manually */
-#control-one + #one-btn-svg.active > polyline {
+#control-design + #one-btn-svg.active > polyline {
   stroke-dashoffset: 0;
 }
-#control-one + #one-btn-svg.active > text {
+#control-design + #one-btn-svg.active > text {
   visibility: visible;
   opacity: 1;
 }

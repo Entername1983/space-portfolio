@@ -38,7 +38,13 @@ Space Scene
 
 - Have planet and meteor fade when menus are activate
 
-DONE
+BUGS:
+
+- Cannot exit space scene when opening display + interacting wiht it then pressing back --> look at clicklist...
+  ---> can't reproduce
+- When closing individual project the project content is still visible after screen is closed - sort of solved, this is an issue for many items
+
+----------------------------DONE------------------------------
 
 Projects Menu
 
@@ -58,3 +64,5 @@ Projects
 Projects Menu
 
 - Finish individual Project pages
+
+- When exiting space scene monitor does not go back to spaceship
