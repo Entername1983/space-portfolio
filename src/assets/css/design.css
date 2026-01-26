@@ -1,10 +1,7 @@
-.display-content {
-  padding: 10px 10px;
-}
 #design {
-  text-align: start;
-
-  padding: 10px;
+  /* text-align: start; */
+  /* 
+  padding: 10px; */
   > section {
     margin-bottom: 20px;
   }
@@ -111,4 +108,20 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+}
+#design {
+  section {
+    margin-bottom: 20px;
+  }
+}
+
+body[data-orientation="portrait"] {
+  #color-palette-container {
+    & .single-color {
+      > div > div {
+        min-width: 80px;
+        min-height: 40px;
+      }
+    }
+  }
 }

@@ -1,61 +1,102 @@
 <div id="display-bio" class="display-content">
-  <h3 class="display-title">Pilot Bio</h3>
+  <h3 id="display-title" class="active">Pilot Bio</h3>
   <div class="bio-content screen-content">
+    <!-- 
+    Top section: basic info + image
+    Bottom section: lanaguages + links + skills
+
+  Top section:
+  - Desktop: grid, basic info 2fr, image 1fr
+  - Mobile: reverse order grid row auto
+
+  Bottom section: 
+  - Desktop: row 1 languages 2fr, links 1fr
+  row 2: skills
+  - Mobile: row 1 languages, row 2 skills, row 3 links
+  - For bottom section just duplicate links + display: none + block 
+  
+  -->
     <div class="top-section">
-      <div class="body-scan-overlay">
-        <img
-          class="full-body-image"
-          alt="full-body-scan-image"
-          src="../src/assets/images/full-body-scan.webp" />
+      <div class="body-section">
+        <div class="body-scan-overlay">
+          <img
+            class="full-body-image"
+            alt="full-body-scan-image"
+            src="../src/assets/images/full-body-scan.webp" />
+        </div>
       </div>
-      <div class="space-between-grid-row">
-        <p>Species:</p>
-        <p>Human</p>
-      </div>
-      <div class="space-between-grid-row">
-        <p>Gender:</p>
-        <p>Male</p>
-      </div>
-      <div class="space-between-grid-row">
-        <p>Name:</p>
-        <p>Kevin McCarthy</p>
-      </div>
-      <div class="space-between-grid-row">
-        <p>Last known location:</p>
-        <p>Ireland, Earth</p>
+      <div class="basic-info">
+        <div class="space-between-grid-row">
+          <p>Species:</p>
+          <p>Human</p>
+        </div>
+        <div class="space-between-grid-row">
+          <p>Gender:</p>
+          <p>Male</p>
+        </div>
+        <div class="space-between-grid-row">
+          <p>Name:</p>
+          <p>Kevin McCarthy</p>
+        </div>
+        <div class="space-between-grid-row">
+          <p>Last known location:</p>
+          <p>Ireland, Earth</p>
+        </div>
+
+        <div class="space-between-grid-row">
+          <p>Occupations:</p>
+          <ul>
+            <li>Full Stack Developer</li>
+            <li>Educator</li>
+            <li>Economist</li>
+            <li>Space Pirate</li>
+            <li>Entrepreneur</li>
+            <li>Ferengi Dentist</li>
+          </ul>
+        </div>
       </div>
     </div>
+
     <div class="bottom-section">
-      <div class="space-between-grid-row">
-        <p>Occupations:</p>
-        <ul>
-          <li>Full Stack Developer</li>
-          <li>Educator</li>
-          <li>Economist</li>
-          <li>Space Pirate</li>
-          <li>Entrepreneur</li>
-          <li>Ferengi Dentist</li>
-        </ul>
-      </div>
-      <div class="space-between-grid-row">
-        <p>Languages:</p>
-        <div>
-          <img
-            class="flag-icon"
-            alt="British Flag"
-            src="../src/assets/icons/GB.svg" />
-          <img
-            class="flag-icon"
-            alt="French Flag"
-            src="../src/assets/icons/FR.svg" />
-          <img
-            class="flag-icon"
-            alt="Chinese Flag"
-            src="../src/assets/icons/CN.svg" />
-          <img
-            class="flag-icon"
-            alt="Spanish Flag"
-            src="../src/assets/icons/SP.svg" />
+      <div class="languages-links">
+        <div class="space-between-grid-row">
+          <p>Languages:</p>
+          <div>
+            <img
+              class="flag-icon"
+              alt="British Flag"
+              src="../src/assets/icons/GB.svg" />
+            <img
+              class="flag-icon"
+              alt="French Flag"
+              src="../src/assets/icons/FR.svg" />
+            <img
+              class="flag-icon"
+              alt="Chinese Flag"
+              src="../src/assets/icons/CN.svg" />
+            <img
+              class="flag-icon"
+              alt="Spanish Flag"
+              src="../src/assets/icons/SP.svg" />
+          </div>
+        </div>
+        <div class="bio-links">
+          <a href="#" target="_blank">
+            <img
+              class=""
+              alt="github icon"
+              src="../src/assets/icons/github-icon.svg"
+          /></a>
+          <a href="#" target="_blank">
+            <img
+              class=""
+              alt="linkedin icon icon"
+              src="../src/assets/icons/linkedin-icon.svg"
+          /></a>
+
+          <a href="#" target="_blank">
+            <img class="" alt="CV icon" src="../src/assets/icons/cv-icon.svg"
+          /></a>
         </div>
       </div>
       <div>

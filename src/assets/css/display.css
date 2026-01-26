@@ -68,12 +68,7 @@ Content gets fetched and placed within this wrapper
 #display-title {
   font-size: 2.8rem;
   text-align: center;
-  /* transition: opacity var(--transition-duration) ease-in-out;
-  opacity: 0; */
 }
-/* #display-title.active {
-  opacity: 1;
-} */
 
 body[data-orientation="portrait"] {
   #spaceship-display {
@@ -119,7 +114,7 @@ body[data-orientation="portrait"] {
       padding-right: 30px;
     } */
   }
-  .display-title {
+  #display-title {
     font-size: 2rem;
   }
   h1 {
@@ -157,8 +152,10 @@ body[data-orientation="portrait"] {
   align-items: center;
   justify-content: space-between;
   transform: translate(50%, 0%);
-  gap: 20px;
+  border-radius: 1000px;
   padding: 0px;
+  background-color: oklch(0% 0 0 / 0.5);
+  box-shadow: 0 0 10px oklch(0% 0 0 / 0.5);
   button {
     padding: 0px;
     svg {
@@ -204,7 +201,7 @@ body[data-orientation="portrait"] {
   position: relative;
   padding: 10px;
   background: black;
-  margin: 5px;
+  /* margin: 5px; */
   z-index: 1;
 }
 

@@ -231,7 +231,7 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
       fill: var(--green-100);
     }
     svg.rotate-icon {
-      transform: rotate(90deg);
+      transform: rotate(90deg) translate(-2px, 0px);
     }
   }
   .scene-control-icon.back-icon {

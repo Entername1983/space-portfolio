@@ -44,6 +44,12 @@ BUGS:
   ---> can't reproduce
 - When closing individual project the project content is still visible after screen is closed - sort of solved, this is an issue for many items
 
+--------------- IN PROGRESS -------------------
+Overlay animation color change - still need to change buttons ...
+Mobile responsiveness
+
+.display-content --> we want to keep the side padding to 20px and then use an inner component for other padding to deal with scrollbar taking up too much room
+
 ----------------------------DONE------------------------------
 
 Projects Menu

@@ -45,8 +45,8 @@
 #log-content {
   overflow-y: auto;
   padding-top: 10px;
-  padding-left: 14px;
-  padding-right: 14px;
+  /* padding-left: 14px;
+  padding-right: 14px; */
   height: 93%;
   z-index: 100;
 }
@@ -110,7 +110,7 @@
 
 @media (max-width: 600px) {
   #display-log-header {
-    padding: 8px;
+    /* padding: 8px; */
     padding-top: 10px;
   }
 

@@ -30,7 +30,9 @@
 }
 /** PROJECT CONTENT PAGE -------------------------------- **/
 
-#display-projects {
+#display-projects,
+#display-bio,
+#design {
   #display-title {
     height: 10%;
     margin: 0px;
@@ -47,6 +49,9 @@
       background-color: var(--green-900);
     }
   }
+}
+
+#display-projects {
   .row-1,
   .row-2,
   .row-3 {
@@ -529,10 +534,10 @@ body[data-orientation="portrait"] {
   .screen-content > ul > li {
     line-height: 1em;
   } */
-  .project-content {
+  /* .project-content {
     padding: 0px 10px;
     margin-left: 10px;
     margin-right: 10px;
     display: none;
-  }
+  } */
 }
