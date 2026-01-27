@@ -319,59 +319,6 @@ body[data-orientation="portrait"] {
     display: none;
   }
 
-  .bio-content.screen-content {
-    color: var(--green-200);
-    font-size: 1.2rem;
-    flex-direction: column;
-    padding-bottom: 20px;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-    @media (max-height: 600px) {
-      font-size: 1.2rem;
-      line-height: 1.2rem;
-    }
-  }
-  .body-scan-overlay {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .body-scan-overlay {
-    max-height: 20dvh;
-  }
-  .full-body-image {
-    height: 22dvh;
-    transform: translate(0, -10%);
-  }
-  .bio-content .top-section {
-    display: flex;
-    gap: 4px;
-    flex-direction: column;
-  }
-  .bio-content .bottom-section {
-    padding-top: 4px;
-    display: flex;
-    gap: 4px;
-    flex-direction: column;
-  }
-  .bio-last-row {
-    display: flex;
-    justify-content: space-around;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 10px;
-  }
-  .space-between-grid-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-  .space-between-grid-row > ul {
-    padding-left: 0px;
-  }
   /** SPACE ELEMENTS **/
 
   #space-whale {

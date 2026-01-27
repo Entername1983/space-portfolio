@@ -68,10 +68,11 @@ export class ProjectsContentManager {
     const projectStatus = fetchElementByID("#project-status");
     const projectLink = fetchElementByID("#project-link");
     const projectGithub = fetchElementByID("#project-repo");
-    const projectTechContent = fetchElementByID("#project-tech-content");
     const projectFeaturesContent = fetchElementByID(
       "#project-features-content",
     );
+    const projectTechContent = fetchElementByID("#project-tech-content");
+
     const projectNotesContent = fetchElementByID("#project-notes-content");
     this.changeMainTitleTo(project.name, project.id);
     projectDescription.textContent = project.description;

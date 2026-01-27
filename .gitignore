@@ -1,2 +1,5 @@
 nginx.conf
-./node_modules
+node_modules
+scratchpad.html
+svg-animations.html
+TODO.md

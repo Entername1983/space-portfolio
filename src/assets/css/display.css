@@ -114,7 +114,7 @@ body[data-orientation="portrait"] {
       padding-right: 30px;
     } */
   }
-  #display-title {
+  .display-title {
     font-size: 2rem;
   }
   h1 {
