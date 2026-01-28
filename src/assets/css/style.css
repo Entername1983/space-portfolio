@@ -601,3 +601,27 @@ input:checked + .slider:before {
 .silenced.active {
   filter: grayscale(100%);
 }
+
+#welcome-dialog {
+  --color: var(--blue);
+  max-width: 800px;
+  max-height: 600px;
+  transform: translate(0%, 50%);
+  z-index: 1000;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px dashed grey;
+  .top {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    button {
+    }
+  }
+  h2 {
+  }
+}
