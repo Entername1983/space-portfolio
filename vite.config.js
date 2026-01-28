@@ -1,10 +1,11 @@
+import { resolve } from "path"; // <--- Add this import
 import { defineConfig } from "vite";
 
 export default defineConfig(({ command }) => {
   const isProduction = command === "build";
 
   return {
-    base: "",
+    base: "./", // Use "./" for relative paths in the built index.html
     esbuild: {
       drop: isProduction ? ["console", "debugger"] : [],
     },
@@ -17,8 +18,18 @@ export default defineConfig(({ command }) => {
     build: {
       outDir: "dist",
       sourcemap: true,
-      legalComments: "none",
+      minify: "esbuild",
+      rollupOptions: {
+        input: {
+          main: resolve(__dirname, "index.html"),
+          acorn: resolve(__dirname, "src/templates/acorn.html"),
+          bio: resolve(__dirname, "src/templates/bio.html"), // Fixed typo here
+          buttons: resolve(__dirname, "src/templates/buttons.html"),
+          design: resolve(__dirname, "src/templates/design.html"),
+          log: resolve(__dirname, "src/templates/log.html"),
+          projects: resolve(__dirname, "src/templates/projects.html"),
+        },
+      },
     },
-    assetsInclude: ["src/templates/**/*.html"],
   };
 });

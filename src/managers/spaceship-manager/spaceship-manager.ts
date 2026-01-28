@@ -54,6 +54,11 @@ export class SpaceshipManager {
   private circuitBoardSvg!: HTMLElement | null;
   private mobileCircuitBoardSvg!: HTMLElement | null;
   private mobileWindowSvgOutlines!: HTMLElement | null;
+  private desktopControlPanel!: HTMLElement | null;
+  private sonarContainer!: HTMLElement | null;
+  private spaceshipMonitor!: HTMLElement | null;
+  private sceneControls!: HTMLElement | null;
+
   constructor() {
     if (SpaceshipManager.instance) {
       return SpaceshipManager.instance;
@@ -69,6 +74,12 @@ export class SpaceshipManager {
     this.mobileWindowSvgOutlines = document.querySelector(
       "#mobile-spaceship-overlay-mask",
     );
+    this.desktopControlPanel = document.querySelector(
+      "#control-pannel-container",
+    );
+    this.sonarContainer = document.querySelector("#sonar-container");
+    this.spaceshipMonitor = document.querySelector("#spaceship-monitor");
+    this.sceneControls = document.querySelector("#scene-controls");
   }
   changeSpaceshipWallColor(clickable: IClickable) {
     const colorToUse = COLORS_MAPPING[clickable.elementId];
@@ -89,6 +100,10 @@ export class SpaceshipManager {
       this.circuitBoardSvg?.classList.remove(color);
       this.mobileCircuitBoardSvg?.classList.remove(color);
       this.mobileWindowSvgOutlines?.classList.remove(color);
+      this.desktopControlPanel?.classList.remove(color);
+      this.sonarContainer?.classList.remove(color);
+      this.spaceshipMonitor?.classList.remove(color);
+      this.sceneControls?.classList.remove(color);
     });
   }
   addColorClass(color: TSpaceshipColor) {
@@ -97,6 +112,10 @@ export class SpaceshipManager {
     this.circuitBoardSvg?.classList.add(color);
     this.mobileCircuitBoardSvg?.classList.add(color);
     this.mobileWindowSvgOutlines?.classList.add(color);
+    this.desktopControlPanel?.classList.add(color);
+    this.sonarContainer?.classList.add(color);
+    this.spaceshipMonitor?.classList.add(color);
+    this.sceneControls?.classList.add(color);
   }
   changeToRandomColor() {
     const color: TSpaceshipColor =

@@ -38,7 +38,7 @@ export class DisplayManager {
     this.DISPLAY_CONTENT_MAPPINGS = DISPLAY_CONTENT_MAPPINGS;
     this.projectsContentManager = new ProjectsContentManager();
     this.logContentManager = new LogContentManager();
-    this.TEMPLATES_PATH = "./templates/";
+    this.TEMPLATES_PATH = "./src/templates/";
     this.closeDisplayBtn = document.querySelector("#display-close-btn");
   }
 
@@ -46,9 +46,6 @@ export class DisplayManager {
     return this.displayIsOpen;
   }
   async show(clickable: IClickable) {
-    console.log("clickable", clickable);
-    console.log("1");
-
     this.hideDisplayContent();
     this.clearScreenContent();
 

@@ -1,0 +1,177 @@
+/* path.vector-animation-1: 560.88818359375
+path.vector-animation-2: 700.3446655273438
+path.vector-animation-3: 486.0292053222656
+path.vector-animation-4: 493.397216796875
+path.vector-animation-5: 240.6488494873047
+path.vector-animation-6: 166.18154907226562
+path.vector-animation-7: 240.6473846435547
+path.vector-animation-8: 491.2618103027344
+path.vector-animation-9: 485.0340270996094
+path.vector-animation-10: 700.3432006835938
+path.vector-animation-11: 277.7170104980469
+path.vector-animation-12: 746.1736450195312
+path.vector-animation-13: 277.71826171875
+path.vector-animation-14: 560.887939453125
+path.vector-animation-15: 746.1736450195312 */
+
+#desktop-circuit-board-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+/**
+Need animations to be the same speed for all
+
+duration
+length
+speed 
+
+px per second
+
+100px / 2s -> 
+
+
+
+
+**/
+#desktop-side-decoration {
+  --color: red;
+  --animated-color: var(--color-muted);
+  --animation-length: 10s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 700;
+  stroke: var(--color-vibrant);
+  filter: url(#neon-outline);
+  circle {
+    stroke: oklch(from var(--color-muted) 0.5 c h);
+  }
+  .vector {
+    animation: neon-color-change var(--animation-length) infinite ease-in-out;
+  }
+  &.green {
+    --color: var(--green);
+  }
+  &.pink {
+    --color: var(--pink);
+  }
+  &.red {
+    --color: var(--red);
+  }
+  &.blue {
+    --color: var(--blue);
+  }
+  &.yellow {
+    --color: var(--yellow);
+  }
+  &.purple {
+    --color: var(--purple);
+  }
+  &.green-yellow {
+    --color: var(--green-yellow);
+  }
+  &.white {
+    --color: white;
+  }
+
+  .vector {
+    stroke: var(--color-dark);
+    stroke-width: 2;
+
+    &.animated {
+      /** 
+      
+      * Each SVG has a different length
+      * Make each effect have the same speed by making animation 
+      duration vary
+
+      **/
+      --vector-length: 561;
+      --pulse-length: 3;
+      --dash-array: var(--pulse-length) var(--vector-length);
+      --negative-vector-length: calc(var(--vector-length) * -1);
+      --dash-offset: var(--vector-length);
+      --duration: 5.61s
+        /* --duration: calc((var(--vector-length) / 100) * 1s); */
+        stroke: oklch(from var(--color-muted) h s l / 0.2);
+      stroke-dasharray: var(--dash-array);
+      stroke-dashoffset: var(--dash-offset);
+      animation: electrical-pulse var(--duration) linear infinite;
+
+      &.vector-animation-2 {
+        --duration: 7s;
+        --vector-length: 700;
+        animation-delay: 0.5s;
+      }
+      &.vector-animation-3 {
+        --duration: 4.86s --vector-length: 486;
+        animation-delay: 1s;
+      }
+      &.vector-animation-4 {
+        --duration: 4.93s;
+        --vector-length: 493;
+        animation-delay: 1.5s;
+      }
+      &.vector-animation-5 {
+        --duration: 2.41s;
+        --vector-length: 241;
+        animation-delay: 2s;
+      }
+      &.vector-animation-6 {
+        --duration: 1.66s;
+        --vector-length: 166;
+        animation-delay: 2.5s;
+      }
+      &.vector-animation-7 {
+        --duration: 2.41s --vector-length: 241;
+        animation-delay: 2.5s;
+      }
+      &.vector-animation-8 {
+        --duration: 4.91s;
+        --vector-length: 491;
+        animation-delay: 3s;
+      }
+      &.vector-animation-9 {
+        --duration: 4.85s;
+        --vector-length: 485;
+        animation-delay: 3.5s;
+      }
+      &.vector-animation-10 {
+        --duration: 7s;
+        --vector-length: 700;
+        animation-delay: 4s;
+      }
+      &.vector-animation-11 {
+        --duration: 2.77s;
+        --vector-length: 277;
+        animation-delay: 4.5s;
+      }
+      &.vector-animation-12 {
+        --duration: 7.46s;
+        --vector-length: 746;
+        animation-delay: 5s;
+      }
+      &.vector-animation-13 {
+        --duration: 2.78s;
+        --vector-length: 278;
+        animation-delay: 5.5s;
+      }
+      &.vector-animation-14 {
+        --duration: 5.61s;
+        --vector-length: 561;
+        animation-delay: 5s;
+      }
+      &.vector-animation-15 {
+        --duration: 7.46s;
+        --vector-length: 746;
+        animation-delay: 5.5s;
+      }
+    }
+  }
+}

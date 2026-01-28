@@ -19,7 +19,7 @@
   visibility: hidden;
   position: relative;
   opacity: 0;
-  transition: opacity 500s ease-in-out;
+  transition: opacity var(--transition-duration) ease-in-out;
 }
 .display-content.active {
   visibility: visible;
@@ -45,10 +45,7 @@ body[data-orientation="portrait"] {
   .feature-container {
     gap: 20px;
   }
-  #scene-controls {
-    /* top: -4px;
-    left: -6px; */
-  }
+
   #project-left-arrow {
     left: 16px;
   }
@@ -70,7 +67,7 @@ body[data-orientation="portrait"] {
 }
 
 ul > li {
-  animation: terminalFlicker 0.1s infinite linear alternate;
+  animation: terminalFlicker 2s infinite linear alternate;
   cursor: pointer;
 }
 
@@ -136,55 +133,69 @@ https://codepen.io/thebabydino/pen/AqbWeE
 **/
 
 #sonar-container {
+  --color: var(--red);
+  /* contain: layout style paint; */
   position: absolute;
   bottom: -1.8%;
   left: 26%;
   width: 14%;
   aspect-ratio: 1 / 1;
-}
 
-.sonar,
-.sweep {
-  position: absolute;
-}
-.sonar {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 1px hsla(0, 0%, 0%, 0.5),
-    inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
-  background:
-    repeating-radial-gradient(
-      transparent 0 23px,
-      #287a33 24px 26px,
-      #0000 27px
-    ),
-    linear-gradient(transparent 49.75%, #0e4c42 0 50.25%, transparent 0) 50%
-      no-repeat,
-    linear-gradient(90deg, transparent 49.75%, #0e4c42 0 50.25%, transparent 0)
-      50% no-repeat,
-    linear-gradient(#333, #111);
-  background-size:
-    100%,
-    218px 218px,
-    218px 218px,
-    100%;
-}
-.sweep {
-  box-sizing: border-box;
-  border-right: solid 1px hsla(145, 50%, 40%, 0.3);
-  width: 50%;
-  height: 50%;
-  border-radius: 100% 0 0 0;
-  transform-origin: 100% 100%;
-  background: linear-gradient(
-    50deg,
-    rgba(34, 34, 34, 0) 56%,
-    hsla(145, 50%, 40%, 1)
-  );
-  animation: sweep 5s infinite linear;
+  .sonar,
+  .sweep {
+    position: absolute;
+    will-change: transform;
+    transform: transform3d(0, 0, 0);
+  }
+  .sonar {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 1px hsla(0, 0%, 0%, 0.5),
+      inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
+    /*TODO: Replace with image */
+    background:
+      repeating-radial-gradient(
+        transparent 0 23px,
+        var(--color-muted) 24px 26px,
+        #0000 27px
+      ),
+      linear-gradient(
+          transparent 49.75%,
+          var(--color-muted) 0 50.25%,
+          transparent 0
+        )
+        50% no-repeat,
+      linear-gradient(
+          90deg,
+          transparent 49.75%,
+          var(--color-muted) 0 50.25%,
+          transparent 0
+        )
+        50% no-repeat,
+      linear-gradient(#333, #111);
+    background-size:
+      100%,
+      218px 218px,
+      218px 218px,
+      100%;
+  }
+  .sweep {
+    box-sizing: border-box;
+    border-right: solid 1px var(--color-muted);
+    width: 50%;
+    height: 50%;
+    border-radius: 100% 0 0 0;
+    transform-origin: 100% 100%;
+    background: linear-gradient(
+      50deg,
+      rgba(34, 34, 34, 0) 56%,
+      hsla(from var(--color-muted) h s l, 1)
+    );
+    animation: sweep 5s infinite linear;
+  }
 }
 
 @media (max-width: 1100px) {

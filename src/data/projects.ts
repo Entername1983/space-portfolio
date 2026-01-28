@@ -1,4 +1,4 @@
-import aiEchoesScreenshot from "../assets/images/screenshots/ai-echoes-screenshot.webp";
+import neverendingAiStoryLogo from "../assets/images/aistorytellers.webp";
 import blogScreenshot from "../assets/images/screenshots/blog-screenshot.webp";
 import chairTheFedScreenshot from "../assets/images/screenshots/chair-the-fed-screenshot.webp";
 import spacePortfolioScreenshot from "../assets/images/screenshots/space-portfolio-screenshot.webp";
@@ -73,7 +73,7 @@ const PROJECTS: IProjectList = {
     screenshotUrl: starterRepoScreenshot,
     status: "Online",
     link: "https://cognaite.com",
-    github: "https://github.com/Entername1983/Starter",
+    github: "https://github.com/saganaut/Starter",
     featureContainer: {
       tech: [
         "Python (FastAPI)",
@@ -97,8 +97,8 @@ const PROJECTS: IProjectList = {
     description: "A monetary policy simulation game",
     screenshotUrl: chairTheFedScreenshot,
     status: "Online",
-    link: "https://entername1983.github.io/Chair-the-Fed/",
-    github: "https://github.com/Entername1983/Chair-the-Fed",
+    link: "https://saganaut.github.io/Chair-the-Fed/",
+    github: "https://github.com/saganaut/Chair-the-Fed",
     featureContainer: {
       tech: ["Javascript", "CSS", "HTML"],
       features: [
@@ -132,9 +132,9 @@ const PROJECTS: IProjectList = {
     name: "Neverending AI Story",
     description:
       "A never ending story in the form of the game of exquisite cadavre told by many different AIs",
-    screenshotUrl: aiEchoesScreenshot,
+    screenshotUrl: neverendingAiStoryLogo,
     status: "Offline",
-    github: "https://github.com/Entername1983/aiechoes",
+    github: "https://github.com/saganaut/aiechoes",
     featureContainer: {
       tech: ["Python (FastAPI)", "TypeScript", "React", "OpenAI API", "Redis"],
       features: [

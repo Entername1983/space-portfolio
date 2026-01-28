@@ -21,7 +21,7 @@ export class LogContentManager {
     }
 
     this.rssFeed = "https://blog.cognaite.com/feed/";
-    this.testRssFeed = "../templates/log-test-feed.xml";
+    this.testRssFeed = "./src/templates/log-test-feed.xml";
     this.logEntries = [];
     this.logIndex = [0];
     this.initialize();
@@ -33,8 +33,10 @@ export class LogContentManager {
     await this.fetchLog();
   }
   async fetchLog() {
+    console.log("fetching log", this.testRssFeed);
     const captainsLog = await fetch(this.testRssFeed).then((res) => res.text());
     await this.parseLogIntoArrayOfItems(captainsLog);
+    console.log("captains log", captainsLog);
   }
 
   async parseLogIntoArrayOfItems(captainsLog: unknown) {
@@ -55,7 +57,7 @@ export class LogContentManager {
       const pubDateNode = item.querySelector("pubDate");
       const contentNode = item.getElementsByTagNameNS(
         contentNamespace,
-        "encoded"
+        "encoded",
       )[0];
       const fullHtmlContent = contentNode ? contentNode.textContent : "";
 

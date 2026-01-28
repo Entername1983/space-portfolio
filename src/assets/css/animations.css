@@ -23,84 +23,40 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes electrical-pulse {
   0% {
-    stroke-dashoffset: 1062;
+    stroke-dashoffset: var(--vector-length);
+    opacity: 0;
+  }
+  1% {
+    stroke-dashoffset: var(--vector-length);
     opacity: 0.9;
   }
   49% {
-    stroke-dashoffset: 530;
+    stroke-dashoffset: 0;
     opacity: 0.9;
   }
   49.5% {
-    stroke-dashoffset: -1046;
+    stroke-dashoffset: var(--negative-vector-length);
     opacity: 0;
   }
   100% {
-    stroke-dashoffset: -1046;
+    stroke-dashoffset: var(--negative-vector-length);
     opacity: 0;
   }
 }
 
-@keyframes electrical-pulse-bottom {
-  0% {
-    stroke-dashoffset: 457;
-    opacity: 0;
-  }
-  1% {
-    stroke-dashoffset: 457;
-    opacity: 0.9;
-  }
-  49% {
-    stroke-dashoffset: 0;
-    opacity: 0.9;
-  }
-  49.5% {
-    stroke-dashoffset: -457;
-    opacity: 0;
-  }
-  100% {
-    stroke-dashoffset: -457;
-    opacity: 0;
-  }
-}
-@keyframes electrical-pulse-top {
-  0% {
-    stroke-dashoffset: 426;
-    opacity: 0;
-  }
-  1% {
-    stroke-dashoffset: 426;
-    opacity: 0.9;
-  }
-  49% {
-    stroke-dashoffset: 0;
-    opacity: 0.9;
-  }
-  49.5% {
-    stroke-dashoffset: -426;
-    opacity: 0;
-  }
-  100% {
-    stroke-dashoffset: -426;
-    opacity: 0;
-  }
-}
 @keyframes alien-lang-pulse {
   0%,
   50%,
   100% {
     stroke: var(--primary-color);
-    stroke-width: 2px;
-    /* Use the color-mix or 'from' syntax we discussed for the glow */
-    filter: drop-shadow(0 0 1px var(--primary-shadow));
     opacity: 0.7;
   }
   25%,
   75% {
     stroke: var(--primary-color-light);
-    stroke-width: 4px;
-    filter: drop-shadow(0 0 8px var(--primary-shadow));
     opacity: 1;
   }
 }
@@ -124,14 +80,6 @@
   }
 }
 
-@keyframes pulse {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.5;
-  }
-}
 @keyframes spin {
   from {
     transform: rotate(0deg);

@@ -21,14 +21,18 @@
 @import "./utility.css";
 /* Animations */
 @import "./animations.css";
+
+@import "./vector-animations.css";
+
 /* Component Specific */
 @import "./alien-sidekick.css";
 @import "./space-backdrops.css";
 @import "./control-panel.css";
+/* TODO: remove space station, move needed items from there to other css files */
 @import "./space-station.css";
 @import "./scene-controls.css";
 @import "./control-buttons.css";
-@import "./space-station.css";
+
 /* Sections */
 @import "./projects.css";
 @import "./log.css";

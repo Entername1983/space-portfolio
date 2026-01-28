@@ -54,14 +54,16 @@ body[data-orientation="portrait"] {
   }
 
   #spaceship-monitor {
+    --color: var(--red);
+
     position: relative;
     border-radius: 10px;
     width: 80px;
     height: 80px;
-    border: 1px solid var(--red-800);
+    border: 1px solid var(--color);
     box-shadow:
-      inset 0 0 10px 0px var(--red-800),
-      0 0 10px rgba(255, 0, 0, 0.8);
+      inset 0 0 10px 0px var(--color),
+      0 0 10px var(--color);
     align-self: center;
     bottom: auto;
     left: auto;
@@ -77,10 +79,10 @@ body[data-orientation="portrait"] {
     bottom: auto;
     left: auto;
     aspect-ratio: 1 / 1;
-    border: 1px solid var(--red-800);
+    border: 1px solid var(--color);
     box-shadow:
-      inset 0 0 10px 0px var(--red-800),
-      0 0 10px rgba(255, 0, 0, 0.8);
+      inset 0 0 10px 0px var(--color),
+      0 0 10px var(--color);
     align-self: center;
     margin-left: auto;
     margin-right: auto;
@@ -116,30 +118,6 @@ body[data-orientation="portrait"] {
     width: 100%;
     stroke-width: 1px;
     stroke: var(--color);
-    &.green {
-      --color: var(--green);
-    }
-    &.pink {
-      --color: var(--pink);
-    }
-    &.red {
-      --color: var(--red);
-    }
-    &.blue {
-      --color: var(--blue);
-    }
-    &.yellow {
-      --color: var(--yellow);
-    }
-    &.purple {
-      --color: var(--purple);
-    }
-    &.green-yellow {
-      --color: var(--green-yellow);
-    }
-    &.white {
-      --color: white;
-    }
   }
   #mobile-side-decoration {
     position: absolute;
@@ -200,30 +178,6 @@ body[data-orientation="portrait"] {
 
   #mobile-side-decoration {
     --color: var(--red);
-    &.green {
-      --color: var(--green);
-    }
-    &.pink {
-      --color: var(--pink);
-    }
-    &.red {
-      --color: var(--red);
-    }
-    &.blue {
-      --color: var(--blue);
-    }
-    &.yellow {
-      --color: var(--yellow);
-    }
-    &.purple {
-      --color: var(--purple);
-    }
-    &.green-yellow {
-      --color: var(--green-yellow);
-    }
-    &.white {
-      --color: white;
-    }
 
     .vector {
       stroke: var(--color-dark);
@@ -234,6 +188,13 @@ body[data-orientation="portrait"] {
     .side-vector-animation,
     .bottom-vector-animation,
     .top-vector-animation {
+      --vector-length: 1036;
+      --pulse-length: 10;
+      --dash-array: var(--pulse-length) var(--vector-length);
+      --negative-vector-length: calc(var(--vector-length) * -1);
+      --dash-offset: var(--vector-length);
+      stroke-dasharray: var(--dash-array);
+      stroke-dashoffset: var(--dash-offset);
       stroke: var(--color);
       stroke-width: 1;
       stroke-linecap: round;
@@ -242,8 +203,6 @@ body[data-orientation="portrait"] {
     }
 
     .side-vector-animation {
-      stroke-dasharray: 10 1036;
-      stroke-dashoffset: 1000;
       animation: electrical-pulse 4s linear infinite;
     }
     .side-vector-animation.left {
@@ -254,28 +213,24 @@ body[data-orientation="portrait"] {
     }
 
     .bottom-vector-animation {
-      stroke-dasharray: 10 457;
-      stroke-dashoffset: 457;
-      animation: electrical-pulse-bottom 4s linear infinite;
-    }
-
-    .bottom-vector-animation.upper {
-      animation-delay: -0.5s;
-    }
-
-    .bottom-vector-animation.lower {
-      animation-delay: -2.5s;
+      --vector-length: 457;
+      --pulse-length: 10;
+      animation: electrical-pulse 4s linear infinite;
+      &.upper {
+        animation-delay: 0.5s;
+      }
+      &.lower {
+        animation-delay: -2.5s;
+      }
     }
 
     .top-vector-animation {
-      stroke-dasharray: 10 426;
-      stroke-dashoffset: 426;
-      animation: electrical-pulse-top 4s linear infinite;
+      --vector-length: 426;
+      --pulse-length: 10;
+      animation: electrical-pulse 4s linear infinite;
     }
   }
-  .space-scene-video {
-    /* width: auto; */
-  }
+
   #space-whale-space-scene,
   #infected-satellite-space-scene {
     transform: rotate(-90deg) translate(0, -20%);
