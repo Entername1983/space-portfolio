@@ -23,7 +23,7 @@ export default defineConfig(({ command }) => {
         input: {
           main: resolve(__dirname, "index.html"),
           acorn: resolve(__dirname, "src/templates/acorn.html"),
-          bio: resolve(__dirname, "src/templates/bio.html"), // Fixed typo here
+          bio: resolve(__dirname, "src/templates/bio.html"),
           buttons: resolve(__dirname, "src/templates/buttons.html"),
           design: resolve(__dirname, "src/templates/design.html"),
           log: resolve(__dirname, "src/templates/log.html"),
