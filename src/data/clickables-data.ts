@@ -107,7 +107,7 @@ export const DISPLAY_CLICKABLES: IClickable[] = [
     data: { monitorTargetId: "#monitor-spaceship" },
   },
   {
-    elementId: "#control-acorn",
+    elementId: "#control-coming-soon",
     action: "DISPLAY_INTERACTION",
     targetId: null,
     data: { monitorTargetId: "#monitor-spaceship" },
@@ -180,11 +180,11 @@ export const PROJECT_CLICKABLES: IClickable[] = [
     },
   },
   {
-    elementId: "#li-acorn",
+    elementId: "#li-coming-soon",
     action: "PROJECT_INTERACTION",
-    targetId: "#acorn-logo",
+    targetId: "#coming-soon-logo",
     data: {
-      monitorTargetId: "#acorn-logo",
+      monitorTargetId: "#coming-soon-logo",
     },
   },
   {

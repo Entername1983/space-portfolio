@@ -60,8 +60,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
 
     <link rel="icon" type="image/x-icon" href="./assets/favico-D_wWEht8.webp" />
-    <script type="module" crossorigin src="./assets/main-D5t8mEFe.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-DyJD1HXk.css">
+    <script type="module" crossorigin src="./assets/main-D9x9auO0.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-1GVUa9KP.css">
   </head>
 
   <body data-orientation="portrait">
@@ -929,7 +929,7 @@
                   class="monitor-content"
                   src="./assets/aistorytellers-BJNX-fXm.webp" />
                 <img
-                  id="acorn-logo"
+                  id="coming-soon-logo"
                   class="monitor-content"
                   src="./assets/acorn-C1a7X2yy.png" />
                 <img
@@ -973,7 +973,7 @@
                     </svg>
                   </div>
                   <div class="button-wrapper">
-                    <button id="control-acorn" class="control-btn">
+                    <button id="control-coming-soon" class="control-btn">
                       <svg
                         width="210"
                         height="210"
@@ -991,7 +991,7 @@
                       </svg>
                     </button>
                     <svg
-                      id="acorn-btn-svg"
+                      id="coming-soon-btn-svg"
                       class="svg-control-tooltips"
                       viewBox="0 0 100 100"
                       fill="none"
@@ -999,7 +999,7 @@
                       <!-- Large straight 50 20 -->
                       <polyline points="50 100 50 20" fill="none" />
                       <text class="svg-control-text" x="33" y="16" fill="white">
-                        Acorn
+                        Coming soon
                       </text>
                     </svg>
                   </div>
@@ -1134,53 +1134,53 @@
           </div>
 
           <!------------------ SPACESTATION ----------------->
-          <div id="spacestation-interior-section">
+          <!-- <div id="spacestation-interior-section">
             <div class="spacestation-interior">
               <div class="cyan-door spacestation-door">
                 <div>
                   <a href="https://blog.cognaite.com/" target="_blank">
                     <img
                       class="behind-door"
-                      src="./assets/kem-logo-no-bg-light-RsljpfKZ.png" />
+                      src="./src/assets/images/kem-logo-no-bg-light.png" />
                   </a>
                 </div>
                 <img
                   class="door-img"
-                  src="data:image/webp;base64,UklGRuABAABXRUJQVlA4INQBAADQDwCdASpMAKgAPtFirE+oJakjIvZrWSAaCWUA02AI8P/T3F88pqwS2SQk9XXY7Gh4hHaYv7en7l3Y9J6tkdNqhLHLaU6tG+r5Fo+Q8DNQoRIj5qnPRhxyc+rkngVpDqO6Mod1ZzUPVGCaajfC9BLnOLF0WGsuFU69B5zU+g29I2gCmpX1xAAA/vhIgbakrj4pHw7Alwo3RmU6TMuqds6h13Qvz+BHlpnt9Jeq8+R2lpLSuVQfPwISww88a3CPlkDxgbXmW/S8m9ID4pH/Buvapsgl4NWPDqt/qu5mL79lbDCqitzJ3BAKrceKN+IFqRp9r7yHh0NK0DDfJADO6o9enixBgBW/KQ0bBKMv4NXGz3LCJBkgsi56vkpVnRgImLmX3QIrSxKtCJ/coVznbUb+w4IOmWoScOVge60mk7VAKZmiEGvQmbVImP2Dd6J6cTPJmQYA1pMu/ole+42I015f2hrqKkxjdvRHG9w8EDnR8dITCDzj+PkdkEldOqENVH3Esr97Qqw6q2KO+UYUNrxr67PSxTDG4yvLH0jxLOw2yLjVw0Sd949y+7ghUwpOT++Gc6Uig93pJ9Q6Nr6IFm8HQ1BOByGg6WWlIsh/w5gHmBx3wAA=" />
+                  src="./src/assets/images/space/spacestation-cyan-door.webp" />
               </div>
               <div class="red-door spacestation-door">
                 <div>
                   <a href="https://swiftswatch.com/about" target="_blank">
                     <img
                       class="behind-door"
-                      src="./assets/CephadexLogoSix-CKe2MmE2.png" />
+                      src="./src/assets/images/CephadexLogoSix.png" />
                     <img
                       class="behind-door"
-                      src="./assets/acorn-C1a7X2yy.png" />
+                      src="./src/assets/images/coming-soon.png" />
                     <img
                       class="behind-door"
-                      src="./assets/swift-swatch-logo-sm-emxXrVqV.png" />
+                      src="./src/assets/images/swift-swatch-logo-sm.png" />
                   </a>
                 </div>
                 <img
                   class="door-img"
-                  src="data:image/webp;base64,UklGRoYEAABXRUJQVlA4IHoEAABQMACdASrGAHkBPtFkqk+oL6QqKLOpYfAaCWVu3V24KgAQUDYyYobojTEDKT+O3BosvMoVFm7K3M9zicoAVoAg0KxE3DhKgWzunS80bJ3ScByyOYx/OuG2urH/RFK6lwXeKGfIa2tBO1xlvpAK6nMycdTpiZucjago5UzhDQcUCi0b6gqdfslECUoDygqNPEnhgP82VjWLXERLeGgbQbiWPAOEpVrbLkmrGRS0OemA25NTG5CMAXgrmbR1WlxQgvxjnAGZ8jfzlQSmnG1YssP+VghyRqdJMu2AxUMgabeh8Cpv0kNb5isRTGrdxWR/y+YREt4aBss1jYb0ogue5YG4lDeipX7+lxQaP5Q+HUNNuXw40Pyh8DsUCi7Cdty1YrsHCjAaQ+fUTd5fem9ntaxESlR9jvTLT3uBEerNHT42ouFWyHFDc8p6SPQNSD8OaH6VWSnx7hk5cj++SSSMw6ykTCz0VihI9zqkdH2WvC1RO97VCn4PU7nXFJuThujGo+9CaqOtUfkyNnMdaAD++jQsc0R/nzV26ys+xSVcoheSWLXDbv1qfwWcKR/Sg1xe8t+lo8YLb6UTwpR8Ezry1dADzz0Wyf6GsHpqDtkBCpJIPYC3IKxijTZWK+RirMx+7a19SkZNjPCAR8iYs9ujGA50pkE12ND6rwgbnUwAfhixk3HpnIGhHVYnokIukvvuUZeDMzkuEP7TQlDIOhc+aTQKonId/e9DlAAeMRfZW6QH8HhrM6Ia1b4s5BtyUndIQbm8gKj+rGLMRfcUzBM28C1EvNQWABoee06xZDYTmqdQQJgXY5CSZhpqtlWAOK/vb0m5zel0UDgGANqzUlN3iIrBgRPlA6KT095eEAMpkDJH951BOdCxniHcVXqMAWOALmDBhWRV+AWeWWF/heIGz32Ck3WXShuSXu9dEMX9JJJp4pIbKXwww6EKJ0JTebi/7gO6VERI+ez9Lp10q84KmgBnQtph5Z7vXJcNho8omF2P+IKHGFJRthb26M/6sS0+HmdPNyIdGyYjElIkG7zhQrzAa2VoIftfTntl58Luh3cEfnH5eZJNU2YkJBLJ31uGVSBjlT4MJNejY7S1fcWpiIP8N7hBA/+ghEA4JU+Hpnw1okn3e5z1Tx95i/3AOxTddBvIEO0yjSoAiXTicVH/Gi5hUtqs7upOsIAMx7V8xzdASIABIapqU7GtWPYLZpw5sb3sMn8pOKNJqjnFKhVLoxy7Kwpi7UqZoX3Ew1Qj3G5tRS16aCfmb3IIWI+QKXtf5sT98GG1kXGRdglS7McGvsxSO18YvUICwbxZNGKF61izIkET3yOz2Wan+CMBemLB9k/rYAyLDpc3j4KQAk/Gm+KMe6QvbbQDXGtz2OTOEEAQlC65qPSo2Bt2bOm706rzgZTZNAf78nFzvxXl5jpEX+9MK92J0jP4RQ825flSxHdEZX7ljPoZpdqVSz/x5kHOyDK2FwJcgKmBE1+dTx36Y0lOAnpZiWd1VRg0dVBR/RhpVSKhtbh95hxAAAA=" />
+                  src="./src/assets/images/space/spacestation-red-door.webp" />
               </div>
               <div class="yellow-door spacestation-door">
                 <div>
                   <a href="https://blog.cognaite.com/" target="_blank">
                     <img
                       class="behind-door"
-                      src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M80-600v-160q0-33%2023.5-56.5T160-840h640q33%200%2056.5%2023.5T880-760v160h-80v-160H160v160H80Zm80%20360q-33%200-56.5-23.5T80-320v-200h80v200h640v-200h80v200q0%2033-23.5%2056.5T800-240H160ZM40-120v-80h880v80H40Zm440-420ZM80-520v-80h240q11%200%2021%206t15%2016l47%2093%20123-215q5-9%2014-14.5t20-5.5q11%200%2021%205.5t15%2016.5l49%2098h235v80H620q-11%200-21-5.5T584-542l-26-53-123%20215q-5%2010-15%2015t-21%205q-11%200-20.5-6T364-382l-69-138H80Z'/%3e%3c/svg%3e" />
+                      src="./src/assets/images/browse_activity.svg" />
                   </a>
                 </div>
                 <img
                   class="door-img"
-                  src="data:image/webp;base64,UklGRhwCAABXRUJQVlA4IBACAACQDwCdASpPAKQAPtFcqVAoJKiipLQL6RAaCWMA0MS4jjAb8CHwaaStz+vgSGGL6Fpue8aD5cr2fmyScLK868esOapJ8FNuIW/7thQGxQFJq5XvjhDted6Oc1ca3FnocR+aUkeVgTHVi2Zvc/O/rcC9O4QL1rpc5/B8Pa3s1QfOI8SO3ZOAAP7eLjO7l0jKNqnOHM8rX/7GiWO8GlPNaC3zUks/a9N/LTCPTpg0FeJooNFnAM5G0CrJiQHdG3Jnan0U9cRKgc+AY09XZzWQd0LLje7wG4sT00Fk2fvB4YO7k9hy/Jl3vIcEOwaOj5vT0gA4iV1rIDdcGq5joq+7/CQtYbsoJQ3uXB5LmsFY+E34jlV/6i1IWwgIEKSLC25KnPr7AbubHvMS0/9URtM8mM/hn5Mi8Hb+3ti+2gNLI837BA8aukNM/sx/Hv37II7l8kHyilz3Rv8/0eRQJbz/2xTIOgMgkYUdukQ+LFXy1XueBBQ63EjGwU9RcdTWeDLqp2ldWRCUp3rbJ5FpfgkkafsCQ0J1lvjlPh/vEwU3Klv98G0M1PQ5wg42x4f4RWGHdhQy9e0ZmIfKcF7n9sGTbR79SmEcQo8fFKQkceREYy326L0aKPqIpG35mX2L0ALS0x0IzBNLG5Kn2Ah1zKlH70BG3IFipgYM9hqRsSHwB7i+aQ7aVpALob/oxuBm9DBTMAA=" />
+                  src="./src/assets/images/space/spacestation-yellow-door.webp" />
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <!------------------ SVG Layer ----------------->
         <section id="svg-hover-layer"></section>

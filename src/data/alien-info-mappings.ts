@@ -27,7 +27,7 @@ export const ALIEN_INFO_MAPPINGS: Record<string, string> = {
   "#infected-station-space-scene":
     "Euuh, that guy doesn't look too friendly... let&apos;s give this one a miss?",
   "#captains-log-button": "Captain&apos;s log",
-  "#control-acorn": "Building our Federation",
+  "#control-coming-soon": "Building our Federation",
   "#one-button": "Not quite sure what these do...",
   "#home-btn": "Want to get out of here?",
   "#back-btn": "Return to our ship?",

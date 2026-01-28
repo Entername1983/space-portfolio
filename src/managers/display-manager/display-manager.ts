@@ -8,7 +8,7 @@ const DISPLAY_CONTENT_MAPPINGS: Record<TElementId, string> = {
   "#control-log": "log.html",
   "#control-bio": "bio.html",
   "#control-design": "design.html",
-  "#control-acorn": "acorn.html",
+  "#control-coming-soon": "coming-soon.html",
 } as const;
 
 type TDisplayContentKeys = keyof typeof DISPLAY_CONTENT_MAPPINGS;
@@ -101,7 +101,7 @@ export class DisplayManager {
       case "#control-log":
         this.logContentManager.show();
         break;
-      case "#control-acorn":
+      case "#control-coming-soon":
         break;
     }
   }

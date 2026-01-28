@@ -1,3 +1,4 @@
+import testFeedUrl from "../../templates/log-test-feed.xml?url";
 import { AnimationManager } from "../animation-manager/animation-manager";
 
 export class LogContentManager {
@@ -21,7 +22,7 @@ export class LogContentManager {
     }
 
     this.rssFeed = "https://blog.cognaite.com/feed/";
-    this.testRssFeed = "/src/templates/log-test-feed.xml";
+    this.testRssFeed = testFeedUrl;
     this.logEntries = [];
     this.logIndex = [0];
     this.initialize();

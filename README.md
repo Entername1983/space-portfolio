@@ -101,7 +101,7 @@ The portfolio uses an interactive spaceship interface:
   - **Projects**: Project showcase
   - **Work**: Professional experience
   - **Captain's Log**: Blog and updates
-  - **Acorn**: Special projects
+  - **coming-soon**: Special projects
   - **Bio**: Personal information
 
 ## Customization

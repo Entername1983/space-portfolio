@@ -185,34 +185,34 @@
   opacity: 1;
 }
 
-/**Acorn Button Hover **/
+/**coming-soon Button Hover **/
 
-#control-acorn {
-  anchor-name: --acorn-button;
+#control-coming-soon {
+  anchor-name: --coming-soon-button;
 }
-#acorn-btn-svg {
-  position-anchor: --acorn-button;
+#coming-soon-btn-svg {
+  position-anchor: --coming-soon-button;
   bottom: anchor(top);
   right: anchor(right);
   transform: translate(37%, -2%);
 }
-#acorn-btn-svg > polyline {
+#coming-soon-btn-svg > polyline {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
 }
 /* Changing visisbility on hover*/
-#control-acorn:hover + #acorn-btn-svg > polyline {
+#control-coming-soon:hover + #coming-soon-btn-svg > polyline {
   stroke-dashoffset: 0;
 }
-#control-acorn:hover + #acorn-btn-svg > text {
+#control-coming-soon:hover + #coming-soon-btn-svg > text {
   visibility: visible;
   opacity: 1;
 }
 /* Changing visisbility manually */
-#control-acorn + #acorn-btn-svg.active > polyline {
+#control-coming-soon + #coming-soon-btn-svg.active > polyline {
   stroke-dashoffset: 0;
 }
-#control-acorn + #acorn-btn-svg.active > text {
+#control-coming-soon + #coming-soon-btn-svg.active > text {
   visibility: visible;
   opacity: 1;
 }

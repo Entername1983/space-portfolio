@@ -30,7 +30,7 @@ const COLORS_MAPPING = {
   "#control-projects": "blue",
   "#control-bio": "green",
   "#control-log": "purple",
-  "#control-acorn": "green-yellow",
+  "#control-coming-soon": "green-yellow",
   "#control-design": "pink",
   "#lightspeed-btn": "white",
 
@@ -40,7 +40,7 @@ const COLORS_MAPPING = {
   "#li-cognaite": "pink",
   "#li-chair-the-fed": "yellow",
   "#li-ai-story-tellers": "white",
-  "#li-acorn": "green-yellow",
+  "#li-coming-soon": "green-yellow",
   "#li-blog": "blue",
   "#li-space-portfolio": "green",
 };

@@ -22,7 +22,7 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         input: {
           main: resolve(__dirname, "index.html"),
-          acorn: resolve(__dirname, "src/templates/acorn.html"),
+          "coming-soon": resolve(__dirname, "src/templates/coming-soon.html"),
           bio: resolve(__dirname, "src/templates/bio.html"),
           buttons: resolve(__dirname, "src/templates/buttons.html"),
           design: resolve(__dirname, "src/templates/design.html"),
