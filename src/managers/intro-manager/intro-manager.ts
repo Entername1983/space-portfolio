@@ -7,6 +7,8 @@ export class IntroManager {
   private welcomeHeading!: HTMLElement | null;
   private fadeOverlay!: HTMLElement | null;
   private introTl: unknown;
+  private closeDialogButtons!: NodeListOf<Element> | null;
+  private dialog!: HTMLDialogElement | null;
 
   constructor() {
     if (IntroManager.instance) {
@@ -15,7 +17,64 @@ export class IntroManager {
     this.welcomeContent = document.querySelector("#welcome-content");
     this.welcomeHeading = document.querySelector("#welcome-heading");
     this.fadeOverlay = document.querySelector("#fade-overlay");
+    this.closeDialogButtons = document.querySelectorAll(".close-dialog");
+    this.dialog = document.querySelector("#welcome-dialog");
+    this.attachCloseDialogListeners();
+    this.openWelcomeModal();
     this.introTl = this.createIntroTl();
+  }
+  attachCloseDialogListeners() {
+    if (!this.closeDialogButtons?.length) return;
+
+    this.closeDialogButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const exitTl = gsap.timeline({
+          onComplete: () => {
+            this.dialog?.close();
+            this.introTl?.play();
+          },
+        });
+
+        exitTl.to(
+          this.dialog,
+          {
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power2.inOut",
+          },
+          0,
+        );
+
+        exitTl.to(
+          "#welcome-dialog::backdrop",
+          {
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power2.inOut",
+          },
+          0,
+        );
+      });
+    });
+  }
+  openWelcomeModal() {
+    if (!this.dialog) return;
+
+    this.dialog.showModal();
+
+    gsap.fromTo(
+      this.dialog,
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6, ease: "back.out(1.7)" },
+    );
+
+    gsap.fromTo(
+      "#welcome-dialog::backdrop",
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6 },
+    );
   }
   createIntroTl() {
     const tl = gsap.timeline({ paused: true });
@@ -33,10 +92,11 @@ export class IntroManager {
         stagger: 0.1,
         onComplete: () => gsap.to("h1", { duration: 3, opacity: 0 }),
       },
-      "<"
+      "<",
     );
     return tl;
   }
+
   startIntro() {
     this.initSatelliteAnimation();
     this.initPlanetAnimation();

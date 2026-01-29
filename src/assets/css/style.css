@@ -606,22 +606,38 @@ input:checked + .slider:before {
   --color: var(--blue);
   max-width: 800px;
   max-height: 600px;
-  transform: translate(0%, 50%);
-  z-index: 1000;
+  /* transform: translate(0%, 50%); */
   background-color: black;
   color: white;
-  display: flex;
-  flex-direction: column;
   border-radius: 10px;
   border: 1px dashed grey;
-  .top {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    button {
+  position: relative;
+
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  .top-right-corner {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+  .close-dialog {
+    stroke: white;
+    fill: white;
+    > svg {
+      height: 30px;
+      width: 30px;
     }
   }
+  .close-dialog:hover {
+    color: var(--color-vibrant);
+    stroke: var(--color-vibrant);
+    fill: var(--color-vibrant);
+  }
   h2 {
+  }
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
   }
 }
