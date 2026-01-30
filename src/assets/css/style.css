@@ -25,6 +25,9 @@ blockquote {
     color var(--transition-duration) ease,
     background-color var(--transition-duration) ease;
 }
+a:hover {
+  color: var(--green-200);
+}
 svg {
   transition:
     fill 1s ease,

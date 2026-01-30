@@ -8,6 +8,15 @@
       drop-shadow(0 0 5px rgb(133, 15, 0));
   } */
 
+/**  screen size 400 * 800
+
+display:
+narrow width 373
+wide width 292
+
+height 552
+**/
+
 #mobile-spaceship-overlay-mask {
   display: none;
 }
@@ -141,6 +150,7 @@ body[data-orientation="portrait"] {
     transform: translate(-200%, 0%);
     padding: 4px;
     pointer-events: auto;
+    border: 1px dotted grey;
   }
 
   #alien-img-container {
@@ -162,7 +172,7 @@ body[data-orientation="portrait"] {
   }
 
   .info-content {
-    padding-left: 60px;
+    padding-left: 40px;
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -310,5 +320,16 @@ body[data-orientation="portrait"] {
   #space-black-hole {
     max-height: 10%;
     max-width: none;
+  }
+  #control-pannel-container {
+    & .row-one-wrapper,
+    & .row-two-wrapper {
+      & .button-wrapper {
+        .control-btn {
+          border: 2px solid var(--primary-shadow);
+          box-shadow: none;
+        }
+      }
+    }
   }
 }

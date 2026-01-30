@@ -97,9 +97,10 @@ px per second
       --dash-array: var(--pulse-length) var(--vector-length);
       --negative-vector-length: calc(var(--vector-length) * -1);
       --dash-offset: var(--vector-length);
-      --duration: 5.61s
-        /* --duration: calc((var(--vector-length) / 100) * 1s); */
-        stroke: oklch(from var(--color-muted) h s l / 0.2);
+      --duration: 5.61s;
+      /* --duration: calc((var(--vector-length) / 100) * 1s); */
+      stroke: oklch(from var(--color-vibrant) h s l / 0.3);
+      /* stroke: white; */
       stroke-dasharray: var(--dash-array);
       stroke-dashoffset: var(--dash-offset);
       animation: electrical-pulse var(--duration) linear infinite;
@@ -110,7 +111,8 @@ px per second
         animation-delay: 0.5s;
       }
       &.vector-animation-3 {
-        --duration: 4.86s --vector-length: 486;
+        --duration: 4.86s;
+        --vector-length: 486;
         animation-delay: 1s;
       }
       &.vector-animation-4 {
@@ -129,7 +131,8 @@ px per second
         animation-delay: 2.5s;
       }
       &.vector-animation-7 {
-        --duration: 2.41s --vector-length: 241;
+        --duration: 2.41s;
+        --vector-length: 241;
         animation-delay: 2.5s;
       }
       &.vector-animation-8 {

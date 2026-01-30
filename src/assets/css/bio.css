@@ -114,7 +114,6 @@
 
 body[data-orientation="portrait"] {
   .bio-content.screen-content {
-    color: var(--green-200);
     font-size: 1.2rem;
     flex-direction: column;
     padding-bottom: 20px;
@@ -190,4 +189,31 @@ body[data-orientation="portrait"] {
 }
 .space-between-grid-row > ul {
   padding-left: 0px;
+}
+.skills-title {
+  font: 1.5rem;
+}
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-group strong {
+  min-width: 100px;
+}
+
+.pill {
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  border: 1px solid #f7dbdb;
+  transition: all 0.2s ease;
 }

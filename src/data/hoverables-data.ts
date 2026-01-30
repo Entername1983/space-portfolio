@@ -57,5 +57,29 @@ const CONTROL_HOVERABLES: IClickable[] = [
     targetId: null,
     data: {},
   },
+  {
+    elementId: "#email-me-btn",
+    action: "HOVER",
+    targetId: null,
+    data: {},
+  },
+  {
+    elementId: "#mode-switcher",
+    action: "HOVER",
+    targetId: null,
+    data: {},
+  },
+  {
+    elementId: "#scene-control-silence-btn",
+    action: "HOVER",
+    targetId: null,
+    data: {},
+  },
+  {
+    elementId: "#spaceship-monitor",
+    action: "HOVER",
+    targetId: null,
+    data: {},
+  },
 ];
 export const HOVERABLES = [...CONTROL_HOVERABLES, ...DELEGATED_CLICKABLES];

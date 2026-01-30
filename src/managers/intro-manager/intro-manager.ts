@@ -6,7 +6,7 @@ export class IntroManager {
   private welcomeContent!: HTMLElement | null;
   private welcomeHeading!: HTMLElement | null;
   private fadeOverlay!: HTMLElement | null;
-  private introTl: unknown;
+  private introTl!: gsap.core.Timeline;
   private closeDialogButtons!: NodeListOf<Element> | null;
   private dialog!: HTMLDialogElement | null;
 
@@ -20,7 +20,7 @@ export class IntroManager {
     this.closeDialogButtons = document.querySelectorAll(".close-dialog");
     this.dialog = document.querySelector("#welcome-dialog");
     this.attachCloseDialogListeners();
-    this.openWelcomeModal();
+    // this.openWelcomeModal();
     this.introTl = this.createIntroTl();
   }
   attachCloseDialogListeners() {

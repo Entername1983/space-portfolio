@@ -129,7 +129,7 @@ export class AlienAssistantManager {
           duration: 1,
           ease: "power4.out",
         },
-        "<"
+        "<",
       );
     return masterHoverTimeline;
   }
@@ -156,7 +156,7 @@ export class AlienAssistantManager {
     if (this.autoHideTimeout) {
       clearTimeout(this.autoHideTimeout);
     }
-    const DELAY_DURATION = 4000;
+    const DELAY_DURATION = 8000;
     this.fillInfo(elementId);
     this.revealAlien();
     this.autoHideTimeout = setTimeout(() => {
