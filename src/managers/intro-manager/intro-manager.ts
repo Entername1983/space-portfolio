@@ -84,16 +84,22 @@ export class IntroManager {
       autoAlpha: 0,
       duration: 1,
       ease: "power2.inOut",
-    }).from(
-      split.chars,
-      {
-        y: 20,
-        autoAlpha: 0,
-        stagger: 0.1,
-        onComplete: () => gsap.to("h1", { duration: 3, opacity: 0 }),
-      },
-      "<",
-    );
+    })
+      .from(
+        split.chars,
+        {
+          y: 20,
+          autoAlpha: 0,
+          stagger: 0.1,
+        },
+        "<",
+      )
+      .to("#welcome-heading", {
+        opacity: 0,
+        duration: 1,
+      })
+      .set("#welcome-heading", { display: "none" });
+
     return tl;
   }
 
