@@ -49,7 +49,7 @@ export const ALIEN_INFO_MAPPINGS: Record<string, string> = {
   "#scene-control-silence-btn":
     "You can toggle me here, that's toggle not tickle.",
   "#space-station":
-    "I'm not getting any response from that space station, shall we get a closer look?",
+    "I'm not getting any response from that space station, shall we take a closer look?",
 };
 
 export const complexSpaceElements = {
