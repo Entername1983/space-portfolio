@@ -49,6 +49,9 @@
   padding-right: 14px; */
   height: 93%;
   z-index: 100;
+  figure {
+    display: none;
+  }
 }
 #log-content-wrapper::before {
   content: "";
