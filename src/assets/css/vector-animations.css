@@ -48,12 +48,16 @@ px per second
   right: 0;
   z-index: 700;
   stroke: var(--color-vibrant);
-  filter: url(#neon-outline);
   circle {
     stroke: oklch(from var(--color-muted) 0.5 c h);
   }
   .vector {
     animation: neon-color-change var(--animation-length) infinite ease-in-out;
+  }
+  @-moz-document url-prefix() {
+    .vector {
+      animation: none;
+    }
   }
   &.green {
     --color: var(--green);
@@ -83,7 +87,8 @@ px per second
   .vector {
     stroke: var(--color-dark);
     stroke-width: 2;
-
+    filter: drop-shadow(0 0 4px var(--color-dark))
+      drop-shadow(0 0 8px var(--color-dark));
     &.animated {
       /** 
       
@@ -95,10 +100,11 @@ px per second
       --vector-length: 561;
       --pulse-length: 3;
       --dash-array: var(--pulse-length) var(--vector-length);
-      --negative-vector-length: calc(var(--vector-length) * -1);
+      /* --negative-vector-length: calc(var(--vector-length) * -1); */
       --dash-offset: var(--vector-length);
       --duration: 5.61s;
       /* --duration: calc((var(--vector-length) / 100) * 1s); */
+      will-change: stroke-dashoffset;
       stroke: oklch(from var(--color-vibrant) h s l / 0.3);
       /* stroke: white; */
       stroke-dasharray: var(--dash-array);

@@ -88,7 +88,7 @@
   visibility: visible;
   opacity: 1;
 }
-
+/**TODO: Need to wrap the SVGs in a DIV and use the anchor on that div **/
 /** Lightspeed btn-normal Hover **/
 #lightspeed-btn {
   anchor-name: --profile-button;

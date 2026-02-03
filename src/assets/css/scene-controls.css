@@ -182,9 +182,7 @@ https://www.reddit.com/r/css/comments/1hbyxc1/a_button_that_doesnt_change_width_
       height: 46px;
       width: 46px;
       border-radius: 300px;
-      border:
-        var(--red-800),
-        solid 1px;
+      border: var(--red-800) solid 1px;
       transform: translate(-75%, -20%);
       background-color: black;
       overflow: hidden;

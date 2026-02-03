@@ -1,9 +1,24 @@
+import polyfill from "@oddbird/css-anchor-positioning/fn";
 import { Clickables, Hoverables } from "./clickables";
 import { CLICKABLES } from "./data/clickables-data";
 import { HOVERABLES } from "./data/hoverables-data";
 import { Engine } from "./engine";
 
 document.addEventListener("DOMContentLoaded", () => {
+  async function initAnchorPolyfill() {
+    // Check if the browser natively supports anchor positioning
+    const isSupported = "anchorName" in document.documentElement.style;
+
+    if (!isSupported) {
+      console.log(
+        "Firefox/Old Browser detected: Applying Anchor Positioning Polyfill...",
+      );
+      await polyfill();
+    }
+  }
+
+  initAnchorPolyfill();
+
   console.log("starting");
   new Engine();
   const clickableInstances: Record<string, Clickables> = {};

@@ -29,6 +29,9 @@
 }
 
 body[data-orientation="portrait"] {
+  #display-log.display-content {
+    padding: 10px 30px;
+  }
   .display-content {
     padding: 10px 20px;
   }
