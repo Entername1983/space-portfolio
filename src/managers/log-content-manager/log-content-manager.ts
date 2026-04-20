@@ -21,7 +21,7 @@ export class LogContentManager {
       return LogContentManager.instance;
     }
 
-    this.rssFeed = "https://blog.cognaite.com/feed/";
+    this.rssFeed = "https://blog.mccarthykev.dev/feed/";
     this.testRssFeed = testFeedUrl;
     this.logEntries = [];
     this.logIndex = [0];
